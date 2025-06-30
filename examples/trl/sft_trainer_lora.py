@@ -122,7 +122,7 @@ class PeftSftTrainer(BasePlayPen):
                 eval_strategy="steps",
                 max_steps=10,
                 logging_steps=1,
-                per_device_train_batch_size=2
+                per_device_train_batch_size=1
             )
             
             # Initialize trainer context
