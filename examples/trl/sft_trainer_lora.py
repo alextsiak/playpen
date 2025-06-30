@@ -145,7 +145,7 @@ class PeftSftTrainer(BasePlayPen):
                 )
             )
             
-
+            torch.cuda.empty_cache()
             # Train on the dataset; this will save only the adapters to the checkpoints directory
             trainer.train()
 
