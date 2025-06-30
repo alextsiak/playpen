@@ -83,8 +83,6 @@ class PeftSftTrainer(BasePlayPen):
             }
         }
 
-        self.learner.model.gradient_checkpointing_enable()
-        self.learner.model.config.use_cache = False
 
         full_dataset = load_dataset("colab-potsdam/playpen-data", "interactions", split="train")
 
@@ -139,7 +137,8 @@ class PeftSftTrainer(BasePlayPen):
                 peft_config=LoraConfig(
                     r=16, lora_alpha=32,
                     lora_dropout=0.05,
-                    target_modules="all-linear",
+                    # target_modules="all-linear",
+                    target_modules=["q_proj", "v_proj"],
                     modules_to_save=["lm_head", "embed_token"],
                     task_type="CAUSAL_LM",
                 )
