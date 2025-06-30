@@ -8,6 +8,7 @@ from datasets import concatenate_datasets
 
 from playpen import BasePlayPen
 from collections import Counter
+import torch
 
 
 class PeftSftTrainer(BasePlayPen):
