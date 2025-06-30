@@ -83,6 +83,8 @@ class PeftSftTrainer(BasePlayPen):
             }
         }
 
+        self.learner.model.gradient_checkpointing_enable()
+        self.learner.model.config.use_cache = False
 
         full_dataset = load_dataset("colab-potsdam/playpen-data", "interactions", split="train")
 
@@ -124,6 +126,8 @@ class PeftSftTrainer(BasePlayPen):
                 logging_steps=1,
                 per_device_train_batch_size=1
             )
+
+
             
             # Initialize trainer context
             trainer = trl.SFTTrainer(
@@ -140,6 +144,7 @@ class PeftSftTrainer(BasePlayPen):
                     task_type="CAUSAL_LM",
                 )
             )
+            
 
             # Train on the dataset; this will save only the adapters to the checkpoints directory
             trainer.train()
