@@ -121,7 +121,8 @@ class PeftSftTrainer(BasePlayPen):
                 output_dir=output_dir,
                 eval_strategy="steps",
                 max_steps=10,
-                logging_steps=1
+                logging_steps=1,
+                per_device_train_batch_size=4
             )
             
             # Initialize trainer context
@@ -131,7 +132,6 @@ class PeftSftTrainer(BasePlayPen):
                 eval_dataset=stage_dataset["test"],
                 args=config,
                 # see https://huggingface.co/docs/trl/sft_trainer#training-adapters
-                per_device_train_batch_size=4,
                 peft_config=LoraConfig(
                     r=16, lora_alpha=32,
                     lora_dropout=0.05,
