@@ -135,7 +135,7 @@ class PeftSftTrainer(BasePlayPen):
                 args=config,
                 # see https://huggingface.co/docs/trl/sft_trainer#training-adapters
                 peft_config=LoraConfig(
-                    r=16, lora_alpha=32,
+                    r=16, lora_alpha=16,
                     lora_dropout=0.05,
                     # target_modules="all-linear",
                     target_modules=["q_proj", "v_proj"],
