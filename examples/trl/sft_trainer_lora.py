@@ -9,6 +9,7 @@ from datasets import concatenate_datasets
 from playpen import BasePlayPen
 from collections import Counter
 
+from playpen.curriculum import DIFFICULTY_BUCKETS
 
 class PeftSftTrainer(BasePlayPen):
 
@@ -25,76 +26,19 @@ class PeftSftTrainer(BasePlayPen):
         # Here we load the canonical training split as available in the huggingface playpen-data repository.
         # By default, the dataset is stored in ~/.cache/huggingface/datasets/ on your machine. This might take a while.
 
-
-
-
-        difficulties = {
-            "easy": {
-                "adventuregame": ["home_deliver_three_basic_easy", "home_deliver_three_basic_easy_invlimittwo"],
-                "codenames": [
-                    "easy", "none","unambiguous", "concrete"
-                ],
-                "guesswhat": ["Level_1", "Abs_Level_1"],
-                "imagegame": ["compact_grids"],
-                "matchit_ascii": ["same_grid"],
-                "reference_game": ["letter_grids", "number_grids", "line_grids_rows"],
-                "taboo": ["high_en"],
-                "textmapworld": ["small"],
-                "textmap_graphreasoning": ["small"],
-                "textmap_specificroom": ["on"],
-                "wordle": ["high_frequency_words_no_clue_no_critic"]
-            },
-            "medium": {
-                "adventuregame": ["home_deliver_three_planning_easy", "home_deliver_three_planning_easy_invlimittwo"],
-                "codenames": [
-                    "high", "difficult", "low",
-                    "ambiguous", "abstract"
-                ],
-                "guesswhat": ["Level_2", "Abs_Level_2"],
-                "imagegame": ["random_grids"],
-                "matchit_ascii": ["similar_grid_1", "similar_grid_2"],
-                "privateshared": [
-                    "travel-booking", "job-interview", "restaurant",
-                    "things-places", "letter-number"
-                ],
-                "reference_game": ["line_grids_columns"],
-                "taboo": ["medium_en"],
-                "textmapworld": ["medium"],
-                "textmap_graphreasoning": ["medium"],
-                "textmap_specificroom": ["close"],
-                "wordle": ["medium_frequency_words_no_clue_no_critic"],
-                "wordle_withclue": ["high_frequency_words_clue_no_critic"],
-                "wordle_withcritic": ["high_frequency_words_clue_with_critic"]
-            },
-            "hard": {
-                "adventuregame": [
-                    "home_deliver_three_basic_hard", "home_deliver_three_planning_hard",
-                    "home_deliver_three_basic_hard_invlimittwo", "home_deliver_three_planning_hard_invlimittwo"
-                ],
-                "guesswhat": ["Level_3", "Abs_Level_3"],
-                "matchit_ascii": ["different_grid"],
-                "reference_game": ["random_grids"],
-                "taboo": ["low_en"],
-                "textmapworld": ["large", "medium_cycle", "large_cycle"],
-                "textmap_graphreasoning": ["large"],
-                "textmap_specificroom": ["far"],
-                "wordle_withclue": ["medium_frequency_words_clue_no_critic"],
-                "wordle_withcritic": ["medium_frequency_words_clue_with_critic"]
-            }
-        }
-
-
         full_dataset = load_dataset("colab-potsdam/playpen-data", "interactions", split="train")
 
         full_dataset = full_dataset.filter(lambda episode: episode["meta"]["outcome"] == "success")
 
 
-        for stage_idx, (difficulty_lvl, games) in enumerate(difficulties.items()):
+        for stage_idx, (difficulty_lvl, games) in enumerate(DIFFICULTY_BUCKETS.items()):
             print(f"|||Currently training on {difficulty_lvl}")
 
-            stage_dataset = full_dataset.filter(lambda episode: episode["meta"]["game"] in games and
-                                                episode["meta"]["experiment"] in games[episode["meta"]["game"]])
-            
+            stage_dataset = full_dataset.filter(
+                lambda ep: (ep["meta"]["game"], ep["meta"]["experiment"])
+                           in games
+            )
+
             print(f"Stage: {difficulty_lvl}, #Examples: {len(stage_dataset)}")
             print(stage_dataset[0]["meta"])
 
