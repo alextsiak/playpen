@@ -124,7 +124,8 @@ class PeftSftTrainer(BasePlayPen):
                 max_steps=10,
                 logging_steps=1,
                 per_device_train_batch_size=1,
-                gradient_accumulation_steps=4
+                gradient_accumulation_steps=1,
+                fp16=True
             )
 
 
@@ -146,8 +147,6 @@ class PeftSftTrainer(BasePlayPen):
                 )
             )
 
-            torch.cuda.empty_cache()
-            self.learner.model.gradient_checkpointing_enable()
             
             # Train on the dataset; this will save only the adapters to the checkpoints directory
             trainer.train()
