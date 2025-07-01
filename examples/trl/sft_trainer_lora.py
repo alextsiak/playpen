@@ -145,8 +145,10 @@ class PeftSftTrainer(BasePlayPen):
                     task_type="CAUSAL_LM"
                 )
             )
-            
+
             torch.cuda.empty_cache()
+            self.learner.model.gradient_checkpointing_enable()
+            
             # Train on the dataset; this will save only the adapters to the checkpoints directory
             trainer.train()
 
