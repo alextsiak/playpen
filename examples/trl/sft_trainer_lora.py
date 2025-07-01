@@ -8,6 +8,7 @@ from datasets import concatenate_datasets
 
 from playpen import BasePlayPen
 from collections import Counter
+import torch
 
 from playpen.curriculum import DIFFICULTY_BUCKETS
 
@@ -66,7 +67,8 @@ class PeftSftTrainer(BasePlayPen):
                 eval_strategy="steps",
                 max_steps=10,
                 logging_steps=1,
-                per_device_train_batch_size=2
+                per_device_train_batch_size=1,
+                gradient_accumulation_steps=4
             )
 
 
@@ -79,17 +81,16 @@ class PeftSftTrainer(BasePlayPen):
                 args=config,
                 # see https://huggingface.co/docs/trl/sft_trainer#training-adapters
                 peft_config=LoraConfig(
-                    r=16, lora_alpha=16,
+                    r=8, lora_alpha=16,
                     lora_dropout=0.05,
-                    # target_modules="all-linear",
-                    target_modules=["q_proj", "v_proj"],
+                    target_modules="all-linear",
+                    # target_modules=["q_proj", "v_proj"],
                     modules_to_save=["lm_head", "embed_token"],
-                    task_type="CAUSAL_LM",
-                    use_rslora=True
+                    task_type="CAUSAL_LM"
                 )
             )
             
-
+            torch.cuda.empty_cache()
             # Train on the dataset; this will save only the adapters to the checkpoints directory
             trainer.train()
 
