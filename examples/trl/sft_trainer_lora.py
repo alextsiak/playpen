@@ -123,7 +123,7 @@ class PeftSftTrainer(BasePlayPen):
                 eval_strategy="steps",
                 max_steps=10,
                 logging_steps=1,
-                per_device_train_batch_size=2
+                per_device_train_batch_size=1
             )
 
 
@@ -138,11 +138,10 @@ class PeftSftTrainer(BasePlayPen):
                 peft_config=LoraConfig(
                     r=8, lora_alpha=16,
                     lora_dropout=0.05,
-                    # target_modules="all-linear",
-                    target_modules=["q_proj", "v_proj"],
+                    target_modules="all-linear",
+                    # target_modules=["q_proj", "v_proj"],
                     modules_to_save=["lm_head", "embed_token"],
-                    task_type="CAUSAL_LM",
-                    use_rslora=True
+                    task_type="CAUSAL_LM"
                 )
             )
             
