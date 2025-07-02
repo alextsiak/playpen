@@ -120,11 +120,11 @@ class PeftSftTrainer(BasePlayPen):
             config = trl.SFTConfig(  # inherits TrainingArguments
                 max_length=300,
                 output_dir=output_dir,
-                eval_strategy="steps",
-                max_steps=10,
+                eval_strategy="epochs",
+                max_steps=500,
                 logging_steps=1,
                 per_device_train_batch_size=1,
-                gradient_accumulation_steps=1,
+                gradient_accumulation_steps=4,
                 fp16=True
             )
 
