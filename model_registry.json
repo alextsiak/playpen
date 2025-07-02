@@ -50,7 +50,8 @@
     "requires_api_key": true,
     "premade_chat_template": true,
     "eos_to_cull": "<\\|eot_id\\|>",
-    "load_in_4bit": true
+    "load_in_4bit": true,
+
     }
 }, {
   "model_name": "llama3-8b-sft",
@@ -95,6 +96,24 @@
       "audio": false,
       "video": false
     }
+  }
+},
+{
+  "model_name": "unsloth-llama3-8b-instruct-4bit",
+  "backend": "huggingface_local",
+  "huggingface_id": "unsloth/llama-3-8b-Instruct-bnb-4bit", 
+  "release_date": "2024-04-17",
+  "open_weight": true,
+  "parameters": "8B",
+  "languages": ["en"],
+  "context_size": "8192",
+  "license": {
+    "name": "Meta Llama 3 Community License",
+    "url": "https://ai.meta.com/resources/models-and-libraries/llama-3/#license"
+  },
+  "model_config": {
+    "premade_chat_template": true,
+    "eos_to_cull": "<|eot_id|>"
   }
 }
 ]
