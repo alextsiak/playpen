@@ -49,8 +49,9 @@
   "model_config": {
     "requires_api_key": true,
     "premade_chat_template": true,
-    "eos_to_cull": "<\\|eot_id\\|>"
-  }
+    "eos_to_cull": "<\\|eot_id\\|>",
+    "load_in_4bit": true
+    }
 }, {
   "model_name": "llama3-8b-sft",
   "backend": "huggingface_local",
