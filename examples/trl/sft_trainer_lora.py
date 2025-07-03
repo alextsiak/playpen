@@ -126,7 +126,8 @@ class PeftSftTrainer(BasePlayPen):
                 logging_steps=1,
                 per_device_train_batch_size=1,
                 gradient_accumulation_steps=4,
-                fp16=True
+                fp16=True,
+                save_strategy="no"
             )
 
 
