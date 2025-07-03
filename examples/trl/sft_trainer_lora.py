@@ -2,7 +2,8 @@ from clemcore.backends.huggingface_local_api import HuggingfaceLocalModel
 from clemcore.clemgame import GameRegistry
 
 import trl
-from peft import LoraConfig
+from peft import LoraConfig, PeftModel, PeftConfig
+from transformers import AutoModelForCausalLM
 from datasets import load_dataset
 from datasets import concatenate_datasets
 
@@ -119,7 +120,7 @@ class PeftSftTrainer(BasePlayPen):
             # Initialize training configuration
             config = trl.SFTConfig(  # inherits TrainingArguments
                 max_length=300,
-                output_dir=output_dir,
+                # output_dir=output_dir,
                 eval_strategy="epoch",
                 max_steps=500,
                 logging_steps=1,
@@ -151,8 +152,15 @@ class PeftSftTrainer(BasePlayPen):
             # Train on the dataset; this will save only the adapters to the checkpoints directory
             trainer.train()
 
+            repo_id = f"alextsiak/peft-adapter-{model_name}-stage{stage_idx}"
+            trainer.model.push_to_hub(repo_id, use_temp_dir=True)
+
+            config = PeftConfig.from_pretrained(repo_id)
+            base_model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, torch_dtype=torch.float16)
+            model = PeftModel.from_pretrained(base_model, repo_id)
+
             # Update model with latest adapter weights before next stage
-            self.learner.model = trainer.model
+            self.learner.model = model
 
 
         # Optional: Uncomment these lines to merge and save directly
