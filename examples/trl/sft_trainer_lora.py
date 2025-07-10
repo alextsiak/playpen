@@ -2,8 +2,7 @@ from clemcore.backends.huggingface_local_api import HuggingfaceLocalModel
 from clemcore.clemgame import GameRegistry
 
 import trl
-from peft import LoraConfig, PeftModel, PeftConfig
-from transformers import AutoModelForCausalLM
+from peft import LoraConfig, get_peft_model
 from datasets import load_dataset
 from datasets import concatenate_datasets
 
@@ -90,6 +89,15 @@ class PeftSftTrainer(BasePlayPen):
 
         full_dataset = full_dataset.filter(lambda episode: episode["meta"]["outcome"] == "success")
 
+        lora_config = LoraConfig(
+                    r=8, lora_alpha=16,
+                    lora_dropout=0.05,
+                    target_modules="all-linear",
+                    modules_to_save=["lm_head", "embed_token"],
+                    task_type="CAUSAL_LM"
+        )
+
+        self.learner.model = get_peft_model(self.learner.model, lora_config)
 
         for stage_idx, (difficulty_lvl, games) in enumerate(difficulties.items()):
             print(f"|||Currently training on {difficulty_lvl}")
@@ -120,14 +128,13 @@ class PeftSftTrainer(BasePlayPen):
             # Initialize training configuration
             config = trl.SFTConfig(  # inherits TrainingArguments
                 max_length=300,
-                # output_dir=output_dir,
+                output_dir=output_dir,
                 eval_strategy="epoch",
                 max_steps=500,
                 logging_steps=1,
                 per_device_train_batch_size=1,
                 gradient_accumulation_steps=4,
-                fp16=True,
-                save_strategy="no"
+                fp16=True
             )
 
 
@@ -137,33 +144,18 @@ class PeftSftTrainer(BasePlayPen):
                 model=self.learner.model,
                 train_dataset=stage_dataset["train"],
                 eval_dataset=stage_dataset["test"],
-                args=config,
+                args=config
                 # see https://huggingface.co/docs/trl/sft_trainer#training-adapters
-                peft_config=LoraConfig(
-                    r=8, lora_alpha=16,
-                    lora_dropout=0.05,
-                    target_modules="all-linear",
-                    # target_modules=["q_proj", "v_proj"],
-                    modules_to_save=["lm_head", "embed_token"],
-                    task_type="CAUSAL_LM"
-                )
             )
 
             
             # Train on the dataset; this will save only the adapters to the checkpoints directory
             trainer.train()
 
-            repo_id = f"alextsiak/peft-adapter-{model_name}-stage{stage_idx}"
-            trainer.model.push_to_hub(repo_id, use_temp_dir=True)
-
-            config = PeftConfig.from_pretrained(repo_id)
-            base_model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, torch_dtype=torch.float16)
-            model = PeftModel.from_pretrained(base_model, repo_id)
-
             # Update model with latest adapter weights before next stage
-            self.learner.model = model
+            self.learner.model = trainer.model
 
 
         # Optional: Uncomment these lines to merge and save directly
         merged_model = trainer.model.merge_and_unload()
-        merged_model.save_pretrained(f"models/sft+lora/{self.learner.get_name()}")
+        merged_model.save_pretrained(f"models/sft+lora/{self.learner}")
