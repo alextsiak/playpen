@@ -130,7 +130,7 @@ class PeftSftTrainer(BasePlayPen):
                 max_length=300,
                 output_dir=output_dir,
                 eval_strategy="epoch",
-                max_steps=500,
+                max_steps=10,
                 logging_steps=1,
                 per_device_train_batch_size=1,
                 gradient_accumulation_steps=4
