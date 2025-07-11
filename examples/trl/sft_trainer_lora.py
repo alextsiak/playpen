@@ -133,8 +133,7 @@ class PeftSftTrainer(BasePlayPen):
                 max_steps=500,
                 logging_steps=1,
                 per_device_train_batch_size=1,
-                gradient_accumulation_steps=4,
-                fp16=True
+                gradient_accumulation_steps=4
             )
 
 
