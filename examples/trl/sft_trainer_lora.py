@@ -9,7 +9,15 @@ from datasets import concatenate_datasets
 from playpen import BasePlayPen
 from collections import Counter
 import torch
+import argparse
+import yaml
+import os
 
+def load_config(config_path="training_config.yaml"):
+    with open(config_path, "r") as f:
+        return yaml.safe_load(f)
+
+config = load_config()
 
 class PeftSftTrainer(BasePlayPen):
 
@@ -90,15 +98,16 @@ class PeftSftTrainer(BasePlayPen):
         full_dataset = full_dataset.filter(lambda episode: episode["meta"]["outcome"] == "success")
 
         lora_config = LoraConfig(
-                    r=8, lora_alpha=16,
-                    lora_dropout=0.05,
-                    target_modules="all-linear",
-                    modules_to_save=["lm_head", "embed_token"],
-                    task_type="CAUSAL_LM"
+            r=config["lora_r"],
+            lora_alpha=config["lora_alpha"],
+            lora_dropout=config["lora_dropout"],
+            target_modules="all-linear",
+            modules_to_save=["lm_head", "embed_token"],
+            task_type="CAUSAL_LM"
         )
-
+        print(f"Initial PEFT config: {self.learner.model.peft_config}")
         self.learner.model = get_peft_model(self.learner.model, lora_config)
-
+        print(self.learner.model.print_trainable_parameters())
         for stage_idx, (difficulty_lvl, games) in enumerate(difficulties.items()):
             print(f"|||Currently training on {difficulty_lvl}")
 
@@ -126,14 +135,15 @@ class PeftSftTrainer(BasePlayPen):
             output_dir = f"models/sft+lora/{model_name}/stage_{stage_idx}_{difficulty_lvl}"
 
             # Initialize training configuration
-            config = trl.SFTConfig(  # inherits TrainingArguments
+            config_trl = trl.SFTConfig(
                 max_length=300,
                 output_dir=output_dir,
                 eval_strategy="epoch",
-                max_steps=10,
+                max_steps=config["max_steps"],
                 logging_steps=1,
-                per_device_train_batch_size=1,
-                gradient_accumulation_steps=4
+                per_device_train_batch_size=config["batch_size"],
+                gradient_accumulation_steps=config["grad_accum_steps"],
+                learning_rate=config["learning_rate"]
             )
 
 
@@ -143,7 +153,7 @@ class PeftSftTrainer(BasePlayPen):
                 model=self.learner.model,
                 train_dataset=stage_dataset["train"],
                 eval_dataset=stage_dataset["test"],
-                args=config
+                args=config_trl
                 # see https://huggingface.co/docs/trl/sft_trainer#training-adapters
             )
 
