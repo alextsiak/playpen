@@ -12,6 +12,7 @@ import torch
 import argparse
 import yaml
 import os
+import wandb
 
 def load_config(config_path="training_config.yaml"):
     with open(config_path, "r") as f:
@@ -35,6 +36,12 @@ class PeftSftTrainer(BasePlayPen):
         # By default, the dataset is stored in ~/.cache/huggingface/datasets/ on your machine. This might take a while.
 
 
+        if config.get("wandb", {}).get("enable", False):
+            wandb.init(
+                project=config["wandb"]["project"],
+                name=config["wandb"].get("name", None),
+                config=config
+            )
 
 
         difficulties = {
@@ -143,7 +150,8 @@ class PeftSftTrainer(BasePlayPen):
                 logging_steps=1,
                 per_device_train_batch_size=config["batch_size"],
                 gradient_accumulation_steps=config["grad_accum_steps"],
-                learning_rate=config["learning_rate"]
+                learning_rate=config["learning_rate"],
+                report_to=["wandb"] if config.get("wandb", {}).get("enable", False) else []
             )
 
 
@@ -165,6 +173,9 @@ class PeftSftTrainer(BasePlayPen):
             self.learner.model = trainer.model
 
 
+        if config.get("wandb", {}).get("enable", False):
+            wandb.finish()
+            
         # Optional: Uncomment these lines to merge and save directly
         merged_model = trainer.model.merge_and_unload()
         merged_model.save_pretrained(f"models/sft+lora/{self.learner}")
