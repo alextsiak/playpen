@@ -112,7 +112,6 @@ class PeftSftTrainer(BasePlayPen):
             modules_to_save=["lm_head", "embed_token"],
             task_type="CAUSAL_LM"
         )
-        print(f"Initial PEFT config: {self.learner.model.peft_config}")
         self.learner.model = get_peft_model(self.learner.model, lora_config)
         print(self.learner.model.print_trainable_parameters())
         for stage_idx, (difficulty_lvl, games) in enumerate(difficulties.items()):
