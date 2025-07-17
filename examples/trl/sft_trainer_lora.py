@@ -148,7 +148,6 @@ class PeftSftTrainer(BasePlayPen):
                 max_steps=config["max_steps"],
                 logging_steps=1,
                 per_device_train_batch_size=config["batch_size"],
-                gradient_accumulation_steps=config["grad_accum_steps"],
                 learning_rate=config["learning_rate"],
                 report_to=["wandb"] if config.get("wandb", {}).get("enable", False) else []
             )
