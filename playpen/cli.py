@@ -152,7 +152,7 @@ def collect_failures(results_dir, model_name):
                         os.makedirs(os.path.dirname(dest_path), exist_ok=True)
                         shutil.copytree(episode_path, dest_path)
                 except json.JSONDecodeError:
-                    print("couldn't parse 'scores.json'")
+                    print("error: couldn't parse 'scores.json'")
 
 def cli(args: argparse.Namespace):
     if args.command_name == "list":
@@ -237,7 +237,16 @@ def main():
     eval_parser.add_argument("-L", "--max_tokens", type=int, default=300,
                              help="The token limit for generated responses. Should be the same as during training. "
                                   "Default: 300.")
-
+    failure_parser = sub_parsers.add_parser("failure-driven-learning", description="Play selected games with chosen model and gather failed episodes to make a new dataset from them")
+    failure_parser.add_argument("model", type=str,
+                             help="The model name of the model to be run (as listed by 'playpen list models').")
+    failure_parser.add_argument("-T", "--temperature", type=float, default=0.0,
+                             help="The temperature used for generation. Should be the same as during training. "
+                                  "Default: 0.0.")
+    failure_parser.add_argument("-L", "--max_tokens", type=int, default=300,
+                             help="The token limit for generated responses. Should be the same as during training. "
+                                  "Default: 300.")
+    
     # todo: add a 'playpen play' option to allow collection of new interaction data on the train split
 
     cli(parser.parse_args())
