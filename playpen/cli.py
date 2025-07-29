@@ -3,6 +3,7 @@ import inspect
 import importlib.util as importlib_util
 import json
 import os
+import shutil
 from pathlib import Path
 from typing import Dict, Callable, List
 from datetime import datetime
@@ -129,6 +130,29 @@ def evaluate(suite: str, model_spec: ModelSpec, gen_args: Dict, results_dir: Pat
         stat_score = evaluate_suite("static", model_spec, gen_args, results_dir, game_selector, dataset_name)
         store_eval_score(overall_results_file, "statscore", stat_score)
 
+def collect_failures(results_dir, model_name):
+    failures_dir = f"./failures_{model_name}"
+
+    for game in os.listdir(results_dir):
+        game_path = os.path.join(results_dir, game)
+        
+        for exp in os.listdir(game_path):
+            exp_path = os.path.join(game_path, exp)
+
+            for episode in os.listdir(exp_path):
+                episode_path = os.path.join(exp_path, episode)
+                scores_path = os.path.join(episode_path, "scores.json")
+
+            with open(scores_path, "r") as f:
+                try:
+                    data = json.load(f)
+                    episode_scores = data.get("episode_scores", {})
+                    if episode_scores.get("Aborted") == 1 or episode_scores.get("Lose") == 1:
+                        dest_path = os.path.join(failures_dir, game, exp, episode)
+                        os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                        shutil.copytree(episode_path, dest_path)
+                except json.JSONDecodeError:
+                    print("couldn't parse 'scores.json'")
 
 def cli(args: argparse.Namespace):
     if args.command_name == "list":
@@ -150,6 +174,19 @@ def cli(args: argparse.Namespace):
         gen_args = dict(temperature=args.temperature, max_tokens=args.max_tokens)
         evaluate(args.suite, model_spec, gen_args, args.results_dir, args.game, args.skip_gameplay)
 
+    if args.command_name == "learn-from-failures":
+        model_spec = ModelSpec.from_string(args.model)
+        gen_args = dict(temperature=args.temperature, max_tokens=args.max_tokens)
+        # create llama playthroughs
+        clem.run("{'benchmark':['2.0']}", [model_spec],
+                 gen_args=gen_args, results_dir=f"./results_{model_spec}")
+        # score them because for some reason run doesn't do that
+        clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{model_spec}")
+        # identify only failed instances from llama playthroughs and copy failed instances to new folder
+        collect_failures(f"./results_{model_spec}", f"{model_spec}")
+        print(f"Failed episodes played by {model_spec} copied in /results_{model_spec}")
+        print("Create new dataset by running: ")
+        print(f"python3 examples/trl/data_utils.py <path-to>/results_{model_spec}/")
 
 def main():
     parser = argparse.ArgumentParser()
