@@ -176,17 +176,18 @@ def cli(args: argparse.Namespace):
 
     if args.command_name == "learn-from-failures":
         model_spec = ModelSpec.from_string(args.model)
+        model_name = model_spec['model_name']
         gen_args = dict(temperature=args.temperature, max_tokens=args.max_tokens)
         # create llama playthroughs
         clem.run("{'benchmark':['2.0']}", [model_spec],
-                 gen_args=gen_args, results_dir_path=f"./results_{model_spec}")
+                 gen_args=gen_args, results_dir=f"./results_{model_name}")
         # score them because for some reason run doesn't do that
-        clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{model_spec}")
+        clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{model_name}")
         # identify only failed instances from llama playthroughs and copy failed instances to new folder
-        collect_failures(f"./results_{model_spec}", f"{model_spec}")
-        print(f"Failed episodes played by {model_spec} copied in /results_{model_spec}")
+        collect_failures(f"./results_{model_name}", model_name")
+        print(f"Failed episodes played by {model_name} copied in /results_{model_name}")
         print("Create new dataset by running: ")
-        print(f"python3 examples/trl/data_utils.py <path-to>/results_{model_spec}/")
+        print(f"python3 examples/trl/data_utils.py <path-to>/results_{model_name}/")
 
 def main():
     parser = argparse.ArgumentParser()
