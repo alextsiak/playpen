@@ -12,6 +12,7 @@ import clemcore.cli as clem
 from clemcore.backends import ModelSpec, ModelRegistry, BackendRegistry
 from clemcore.clemgame import GameRegistry, GameSpec
 from playpen import BasePlayPen
+from pathlib import Path
 
 
 def train(file_path: str, learner: ModelSpec, teacher: ModelSpec, temperature: float, max_tokens: int):
@@ -133,26 +134,34 @@ def evaluate(suite: str, model_spec: ModelSpec, gen_args: Dict, results_dir: Pat
 def collect_failures(results_dir, model_name):
     failures_dir = f"./failures_{model_name}"
 
-    for game in os.listdir(results_dir):
-        game_path = os.path.join(results_dir, game)
+    for f in os.listdir(results_dir):
+        file_path = os.path.join(results_dir, f)
         
-        for exp in os.listdir(game_path):
-            exp_path = os.path.join(game_path, exp)
+        for game in os.listdir(file_path):
+            game_path = os.path.join(file_path, game)
+            if not os.path.isdir(game_path):
+                continue
+            for exp_dir in Path(game_path).iterdir():
+                if not os.path.isdir(exp_dir):
+                    continue
+                for episode_dir in Path(exp_dir).iterdir():
+                    if not os.path.isdir(episode_dir):
+                        continue
+                    scores_path = episode_dir / "scores.json"
+                    with open(scores_path, "r") as f:
+                        try:
+                            data = json.load(f)
+                            episode_scores = data.get("episode scores", {})
+                            if episode_scores.get("Lose") == 1 or episode_scores.get("Aborted") == 1:
+                                dest_path = os.path.join(failures_dir, game, exp_dir.name, episode_dir.name)
+                                os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                                shutil.copytree(episode_dir, dest_path, dirs_exist_ok=True)
+                        except json.JSONDecodeError:
+                            print("error: couldn't parse '{scores_path}'")
+    print(f"Data copied to: {failures_dir}")
+    print("Create new dataset by running: ")
+    print(f"python3 examples/trl/data_utils.py {failures_dir}")
 
-            for episode in os.listdir(exp_path):
-                episode_path = os.path.join(exp_path, episode)
-                scores_path = os.path.join(episode_path, "scores.json")
-
-            with open(scores_path, "r") as f:
-                try:
-                    data = json.load(f)
-                    episode_scores = data.get("episode_scores", {})
-                    if episode_scores.get("Aborted") == 1 or episode_scores.get("Lose") == 1:
-                        dest_path = os.path.join(failures_dir, game, exp, episode)
-                        os.makedirs(os.path.dirname(dest_path), exist_ok=True)
-                        shutil.copytree(episode_path, dest_path)
-                except json.JSONDecodeError:
-                    print("error: couldn't parse 'scores.json'")
 
 def cli(args: argparse.Namespace):
     if args.command_name == "list":
@@ -179,15 +188,12 @@ def cli(args: argparse.Namespace):
         model_name = model_spec['model_name']
         gen_args = dict(temperature=args.temperature, max_tokens=args.max_tokens)
         # create llama playthroughs
-        clem.run("{'benchmark':['2.0']}", [model_spec],
-                 gen_args=gen_args, results_dir=f"./results_{model_name}")
+        #clem.run("{'benchmark':['2.0']}", [model_spec],
+        #gen_args=gen_args, results_dir=f"./results_{model_name}")
         # score them because for some reason run doesn't do that
-        clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{model_name}")
+        #clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{model_name}")
         # identify only failed instances from llama playthroughs and copy failed instances to new folder
-        collect_failures(f"./results_{model_name}", model_name")
-        print(f"Failed episodes played by {model_name} copied in /results_{model_name}")
-        print("Create new dataset by running: ")
-        print(f"python3 examples/trl/data_utils.py <path-to>/results_{model_name}/")
+        collect_failures(f"./results_{model_name}", model_name)
 
 def main():
     parser = argparse.ArgumentParser()
