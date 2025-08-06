@@ -188,10 +188,10 @@ def cli(args: argparse.Namespace):
         model_name = model_spec['model_name']
         gen_args = dict(temperature=args.temperature, max_tokens=args.max_tokens)
         # create llama playthroughs
-        #clem.run("{'benchmark':['2.0']}", [model_spec],
-        #gen_args=gen_args, results_dir=f"./results_{model_name}")
+        clem.run("{'benchmark':['2.0']}", [model_spec],
+        gen_args=gen_args, results_dir=f"./results_{model_name}")
         # score them because for some reason run doesn't do that
-        #clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{model_name}")
+        clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{model_name}")
         # identify only failed instances from llama playthroughs and copy failed instances to new folder
         collect_failures(f"./results_{model_name}", model_name)
 
