@@ -208,25 +208,33 @@ def cli(args: argparse.Namespace):
         evaluate(args.suite, model_spec, gen_args, args.results_dir, args.game, args.skip_gameplay)
 
     if args.command_name == "learn-from-failures":
-        model_spec = ModelSpec.from_string(args.model)
-        model_name = model_spec['model_name']
+        learner_spec = ModelSpec.from_string(args.learner)
+        learner_name = learner_spec['model_name']
+        teacher_spec = ModelSpec.from_string(args.teacher)
+        teacher_name = teacher_spec['model_name']
         gen_args = dict(temperature=args.temperature, max_tokens=args.max_tokens)
         # create llama playthroughs
-        clem.run("{'benchmark':['2.0']}", [model_spec],
-        gen_args=gen_args, results_dir=f"./results_{model_name}")
+        clem.run("{'benchmark':['2.0']}", [learner_spec],
+        gen_args=gen_args, results_dir=f"./results_{learner_name}")
         # score them because for some reason run doesn't do that
-        clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{model_name}")
+        clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{learner_name}")
         # identify only failed instances from llama playthroughs and copy failed instances to new folder
-        os.mkdir("failures_{model_name}/llama3-8b-t0.0", exist_ok=True)
-        collect_failures(f"./results_{model_name}", f"./failures_{model_name}/llama3-8b-t0.0")
-        print(f"Creating dataset from playpen/failures_{model_name}...")
-        create_conversational_dataset_for("failures_{model_name}")
-        print(f"Created dataset from playpen/failures_{model_name}")
+        os.mkdir(f"failures_{learner_name}/llama3-8b-t0.0", exist_ok=True)
+        collect_failures(f"./results_{learner_name}", f"./failures_{learner_name}/llama3-8b-t0.0")
+        print(f"Creating dataset from playpen/failures_{learner_name}...")
+        create_conversational_dataset_for(f"failures_{learner_name}")
+        print(f"Created dataset from playpen/failures_{learner_name}")
         print(f"Extracting tasks from dataset...")
         # make failed_instances.json
-        build_instances(f"playpen/failures_{model_name}/results.jsonl")
+        build_instances(f"playpen/failures_{learner_name}/results.jsonl")
         # run better model on these
-        #  
+        with open(os.path.join(os.path.dirname(f"playpen/failures_{learner_name}/results.jsonl"), "failed_instances.json")) as f:
+            dataset = json.load(f)
+        task_selector = to_task_selector(dataset)
+        print(f"Running better model {teacher_name} on failed instances...")
+        clem.run("{'benchmark':['2.0']}", [teacher_spec],
+                 gen_args=gen_args, results_dir=f"./results_{teacher_name}", task_selector=task_selector)
+        
 
 
 
@@ -280,8 +288,10 @@ def main():
                              help="The token limit for generated responses. Should be the same as during training. "
                                   "Default: 300.")
     failure_parser = sub_parsers.add_parser("learn-from-failures", description="Play selected games with chosen model and gather failed episodes to make a new dataset from them")
-    failure_parser.add_argument("model", type=str,
+    failure_parser.add_argument("--learner", type=str,
                              help="The model name of the model to be run (as listed by 'playpen list models').")
+    failure_parser.add_argument("--teacher", type=str,
+                             help="The model name of the model to learn from (as listed by 'playpen list models').")
     failure_parser.add_argument("-T", "--temperature", type=float, default=0.0,
                              help="The temperature used for generation. Should be the same as during training. "
                                   "Default: 0.0.")
