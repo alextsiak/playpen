@@ -13,6 +13,7 @@ from clemcore.backends import ModelSpec, ModelRegistry, BackendRegistry
 from clemcore.clemgame import GameRegistry, GameSpec
 from playpen import BasePlayPen
 from pathlib import Path
+from data_utils import create_conversational_dataset_for
 
 
 def train(file_path: str, learner: ModelSpec, teacher: ModelSpec, temperature: float, max_tokens: int):
@@ -131,9 +132,7 @@ def evaluate(suite: str, model_spec: ModelSpec, gen_args: Dict, results_dir: Pat
         stat_score = evaluate_suite("static", model_spec, gen_args, results_dir, game_selector, dataset_name)
         store_eval_score(overall_results_file, "statscore", stat_score)
 
-def collect_failures(results_dir, model_name):
-    failures_dir = f"./failures_{model_name}"
-
+def collect_failures(results_dir, failures_dir):
     for f in os.listdir(results_dir):
         file_path = os.path.join(results_dir, f)
         
@@ -157,10 +156,18 @@ def collect_failures(results_dir, model_name):
                                 os.makedirs(os.path.dirname(dest_path), exist_ok=True)
                                 shutil.copytree(episode_dir, dest_path, dirs_exist_ok=True)
                         except json.JSONDecodeError:
-                            print("error: couldn't parse '{scores_path}'")
+                            print("error: couldn't parse scores.json'")
     print(f"Data copied to: {failures_dir}")
-    print("Create new dataset by running: ")
-    print(f"python3 examples/trl/data_utils.py {failures_dir}")
+
+def build_instances(dataset_path: str):
+    '''
+    From a given dataset, build failed_instances.json, compatible with to_task_selector() - contains a list of rows with game, experiment, task_id columns
+    '''
+    data = json.load(dataset_path)
+    meta_data = data.get("meta")
+    instance_data = dict(list(meta_data.items())[:3])
+    with open("failed_instances.json", "w") as fp:
+        json.dump(instance_data, fp)
 
 
 def cli(args: argparse.Namespace):
@@ -193,7 +200,18 @@ def cli(args: argparse.Namespace):
         # score them because for some reason run doesn't do that
         clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{model_name}")
         # identify only failed instances from llama playthroughs and copy failed instances to new folder
-        collect_failures(f"./results_{model_name}", model_name)
+        os.mkdir("failures_{model_name}/llama3-8b-t0.0", exist_ok=True)
+        collect_failures(f"./results_{model_name}", f"./failures_{model_name}/llama3-8b-t0.0")
+        print(f"Creating dataset from ./failures_{model_name}...")
+        create_conversational_dataset_for("failures_{model_name}")
+        print(f"Created dataset from ./failures_{model_name}")
+        print(f"Extracting tasks from dataset...")
+        # make failed_instances.json
+        build_instances(f"./failures_{model_name}/results.jsonl")
+        # run better model on these
+        #  
+
+
 
 def main():
     parser = argparse.ArgumentParser()

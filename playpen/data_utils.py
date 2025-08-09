@@ -38,7 +38,6 @@ def create_conversational_dataset_for(top_dir):
             # We collect each episode from the perspective of all players individually
             for player_name, player_details in interactions["players"].items():
                 try:  # since clemcore 2.4
-                    player_name = player_details["player_name"]
                     game_role = player_details["game_role"]
                     model_name = player_details["model_name"]
                 except Exception as e:
