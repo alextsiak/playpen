@@ -13,7 +13,7 @@ from clemcore.backends import ModelSpec, ModelRegistry, BackendRegistry
 from clemcore.clemgame import GameRegistry, GameSpec
 from playpen import BasePlayPen
 from pathlib import Path
-from data_utils import create_conversational_dataset_for
+from .data_utils import create_conversational_dataset_for
 
 
 def train(file_path: str, learner: ModelSpec, teacher: ModelSpec, temperature: float, max_tokens: int):
@@ -163,11 +163,28 @@ def build_instances(dataset_path: str):
     '''
     From a given dataset, build failed_instances.json, compatible with to_task_selector() - contains a list of rows with game, experiment, task_id columns
     '''
-    data = json.load(dataset_path)
-    meta_data = data.get("meta")
-    instance_data = dict(list(meta_data.items())[:3])
-    with open("failed_instances.json", "w") as fp:
-        json.dump(instance_data, fp)
+    with open(dataset_path, "r") as f:
+        data = [json.loads(line) for line in f]
+
+    instances = []
+    seen = set()
+    for ep in data:
+        meta_data = ep.get("meta", {})
+        game = meta_data.get("game")
+        experiment = meta_data.get("experiment")
+        task_id = meta_data.get("task_id")
+        key = (game, experiment, task_id)
+
+        if key not in seen:
+            seen.add(key)
+            instance_data = {"game": game, "experiment": experiment, "task_id": task_id}
+            instances.append(instance_data)
+
+    output_path = os.path.join(os.path.dirname(dataset_path), "failed_instances.json")
+    with open(output_path, "w") as fp:
+        json.dump(instances, fp)
+
+    print(f"Saved failed instances to {output_path}")
 
 
 def cli(args: argparse.Namespace):
@@ -202,12 +219,12 @@ def cli(args: argparse.Namespace):
         # identify only failed instances from llama playthroughs and copy failed instances to new folder
         os.mkdir("failures_{model_name}/llama3-8b-t0.0", exist_ok=True)
         collect_failures(f"./results_{model_name}", f"./failures_{model_name}/llama3-8b-t0.0")
-        print(f"Creating dataset from ./failures_{model_name}...")
+        print(f"Creating dataset from playpen/failures_{model_name}...")
         create_conversational_dataset_for("failures_{model_name}")
-        print(f"Created dataset from ./failures_{model_name}")
+        print(f"Created dataset from playpen/failures_{model_name}")
         print(f"Extracting tasks from dataset...")
         # make failed_instances.json
-        build_instances(f"./failures_{model_name}/results.jsonl")
+        build_instances(f"playpen/failures_{model_name}/results.jsonl")
         # run better model on these
         #  
 
