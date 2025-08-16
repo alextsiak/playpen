@@ -159,7 +159,7 @@ def collect_failures(results_dir, failures_dir):
                             print("error: couldn't parse scores.json'")
     print(f"Data copied to: {failures_dir}")
 
-def build_instances(dataset_path: str):
+def build_instances(dataset_path: str, instances_name: str):
     '''
     From a given dataset, build failed_instances.json, compatible with to_task_selector() - contains a list of rows with game, experiment, task_id columns
     '''
@@ -180,11 +180,12 @@ def build_instances(dataset_path: str):
             instance_data = {"game": game, "experiment": experiment, "task_id": task_id}
             instances.append(instance_data)
 
-    output_path = os.path.join(os.path.dirname(dataset_path), "failed_instances.json")
+    output_path = os.path.join(os.path.dirname(dataset_path), f"{instances_name}.json")
     with open(output_path, "w") as fp:
         json.dump(instances, fp)
 
     print(f"Saved failed instances to {output_path}")
+
 
 
 def cli(args: argparse.Namespace):
@@ -213,28 +214,43 @@ def cli(args: argparse.Namespace):
         teacher_spec = ModelSpec.from_string(args.teacher)
         teacher_name = teacher_spec['model_name']
         gen_args = dict(temperature=args.temperature, max_tokens=args.max_tokens)
+
+        results_dir_learner = f"./results_{learner_name}"
+        failures_dir = f"./failures_{learner_name}/{learner_name}-t0.0"
+        results_dir_teacher = f"./results_{teacher_name}"
+
         # create llama playthroughs
         clem.run("{'benchmark':['2.0']}", [learner_spec],
-        gen_args=gen_args, results_dir=f"./results_{learner_name}")
+        gen_args=gen_args, results_dir=results_dir_learner)
+
         # score them because for some reason run doesn't do that
-        clem.score("{'benchmark':['2.0']}", results_dir=f"./results_{learner_name}")
+        clem.score("{'benchmark':['2.0']}", results_dir=results_dir_learner)
+
         # identify only failed instances from llama playthroughs and copy failed instances to new folder
-        os.mkdir(f"failures_{learner_name}/llama3-8b-t0.0", exist_ok=True)
-        collect_failures(f"./results_{learner_name}", f"./failures_{learner_name}/llama3-8b-t0.0")
-        print(f"Creating dataset from playpen/failures_{learner_name}...")
-        create_conversational_dataset_for(f"failures_{learner_name}")
-        print(f"Created dataset from playpen/failures_{learner_name}")
+        os.makedirs(failures_dir, exist_ok=True)
+        collect_failures(results_dir_learner, failures_dir)
+        print(f"Creating dataset from {failures_dir}...")
+        create_conversational_dataset_for(failures_dir)
+        print(f"Created dataset from {failures_dir}")
         print(f"Extracting tasks from dataset...")
+
         # make failed_instances.json
-        build_instances(f"playpen/failures_{learner_name}/results.jsonl")
+        build_instances(f"{failures_dir}/results.jsonl", "failed_instances")
+
         # run better model on these
-        with open(os.path.join(os.path.dirname(f"playpen/failures_{learner_name}/results.jsonl"), "failed_instances.json")) as f:
+        with open(os.path.join(os.path.dirname(f"./{failures_dir}results.jsonl"), "failed_instances.json")) as f:
             dataset = json.load(f)
         task_selector = to_task_selector(dataset)
         print(f"Running better model {teacher_name} on failed instances...")
         clem.run("{'benchmark':['2.0']}", [teacher_spec],
-                 gen_args=gen_args, results_dir=f"./results_{teacher_name}", task_selector=task_selector)
+                 gen_args=gen_args, results_dir=results_dir_teacher, task_selector=task_selector)
+        print(f"Creating conversational dataset from {teacher_name} runs...")
+        create_conversational_dataset_for(results_dir_teacher)
         
+        # finetune learner model on successful best model runs
+        print(f"Dataset created. Finetune learner model by running the command:")
+        print(f"playpen run sft_trainer_simple.py -l {learner_name}")
+
 
 
 
