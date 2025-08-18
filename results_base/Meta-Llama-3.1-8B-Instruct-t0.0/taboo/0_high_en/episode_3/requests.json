@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-08-14T17:12:18.214952",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-14 17:12:17.652770",
+        "call_duration": "0:00:00.562138",
+        "response": "CLUE: A structure built for defense or protection, often found in a strategic location.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-14T17:12:18.452816",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: FORTRESS<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-14 17:12:18.215270",
+        "call_duration": "0:00:00.237505",
+        "response": "GUESS: FORTRESS",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-14T17:12:18.957535",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: FORTRESS<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: FORTRESS<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Typically made of stone or earth, and often surrounded by walls.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-14 17:12:18.452935",
+        "call_duration": "0:00:00.504559",
+        "response": "CLUE: Typically made of stone or earth, and often surrounded by walls.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-14T17:12:19.167037",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: FORTRESS<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Typically made of stone or earth, and often surrounded by walls.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: FORTRESS<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Typically made of stone or earth, and often surrounded by walls.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: CASTLE<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-14 17:12:18.957831",
+        "call_duration": "0:00:00.209168",
+        "response": "GUESS: CASTLE",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-14T17:12:19.760007",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: FORTRESS<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Typically made of stone or earth, and often surrounded by walls.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: CASTLE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: FORTRESS<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Typically made of stone or earth, and often surrounded by walls.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: CASTLE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A common feature in medieval landscapes, especially in areas with a history of conflict.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-14 17:12:19.167152",
+        "call_duration": "0:00:00.592805",
+        "response": "CLUE: A common feature in medieval landscapes, especially in areas with a history of conflict.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-14T17:12:20.000695",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: FORTRESS<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Typically made of stone or earth, and often surrounded by walls.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: CASTLE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: A common feature in medieval landscapes, especially in areas with a history of conflict.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A structure built for defense or protection, often found in a strategic location.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: FORTRESS<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Typically made of stone or earth, and often surrounded by walls.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: CASTLE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: A common feature in medieval landscapes, especially in areas with a history of conflict.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: BASTION<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-14 17:12:19.760323",
+        "call_duration": "0:00:00.240334",
+        "response": "GUESS: BASTION",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  }
+]

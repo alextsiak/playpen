@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "game_name": "cladder",
+    "experiment_name": "full_v1.5_default",
+    "game_id": 1165,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T04:08:13.563783",
+        "action": {
+          "type": "send message",
+          "content": "You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\nImagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Pre-conditions has a direct effect on vaccination and disease. Vaccination has a direct effect on disease. The overall probability of getting the vaccine is 44%. For people refusing the vaccine, the probability of recovering from the disease is 68%. For people getting the vaccine, the probability of recovering from the disease is 40%. Is recovering from the disease more likely than dying from the disease overall?\nStart your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:08:21.262985",
+        "action": {
+          "type": "get message",
+          "content": "No\nThe probability of a person in this world being vaccinated is 44%. The probability of a person being unvaccinated is 56%. The probability of a person being unvaccinated and then recovering from the disease is 0.56 * 0.68 = 0.3824. The probability of a person being unvaccinated and then dying from the disease is 0.56 * (1 - 0.68) = 0.1792. The probability of a person being vaccinated and then recovering from the disease is 0.44 * 0.4 = 0.176. The probability of a person being vaccinated and then dying from the disease is 0.44 * (1 - 0.4) = 0.264. The total probability of a person in this world recovering from the disease is 0.3824 + 0.176 = 0.5584. The total probability of a person in this world dying from the disease is 0.1792 + 0.264 = 0.4432. Since 0.5584  0.4432, it is more likely for a person in this world to recover from the disease than to die from the disease.||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:08:21.263061",
+        "action": {
+          "type": "parsed",
+          "content": "No"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:08:21.263076",
+        "action": {
+          "type": "target",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:08:21.263087",
+        "action": {
+          "type": "wrong label",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

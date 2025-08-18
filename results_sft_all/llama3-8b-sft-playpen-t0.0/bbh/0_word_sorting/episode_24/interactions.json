@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "game_name": "bbh",
+    "experiment_name": "word_sorting",
+    "game_id": 24,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-14T17:49:19.820603",
+        "action": {
+          "type": "send message",
+          "content": "Sort a list of words.\n\nQ: Sort the following words alphabetically: List: oven costume counterpart\nA: costume counterpart oven\n\nQ: Sort the following words alphabetically: List: hypochlorite ponderosa phone credulity\nA: credulity hypochlorite phone ponderosa\n\nQ: Sort the following words alphabetically: List: newt arson parthia seismography mugho aspect census\nA: arson aspect census mugho newt parthia seismography\n\nQ: Sort the following words alphabetically: List: daffy hypothesis croupier dockyard household peccary triode minstrelsy nepotism sawtimber mantic info confess serenade summate silver duty loam mandate\nA:",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-14T17:49:28.015269",
+        "action": {
+          "type": "get message",
+          "content": "Q: daffy\nA: daffy\nQ: croupier\nA: croupier\nQ: dockyard\nA: dockyard\nQ: household\nA: household\nQ: info\nA: info\nQ: mandate\nA: mandate\nQ: mantic\nA: mantic\nQ: minstrelsy\nA: minstrelsy\nQ: peccary\nA: peccary\nQ: sawtimber\nA: sawtimber\nQ: serenade\nA: serenade\nQ: silver\nA: silver\nQ: summate\nA: summate\nQ: triode\nA: triode\nQ: duty\nA: duty\nQ: newt\nA: newt\nQ: parthia\nA: parthia\nQ: arson\nA: arson\nQ: aspect\nA: aspect\nQ: census\nA: census\nQ: mugho\nA: mugho\nQ: credulity\nA: credulity\nQ: hypochlorite\nA: hypochlorite\nQ: phone\nA: phone\nQ: ponderosa\nA: ponderosa\nQ: oven\nA: oven\nQ: costume\nA: costume\nQ: counterpart\nA: counterpart||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T17:49:28.015323",
+        "action": {
+          "type": "metadata",
+          "content": "Target: confess croupier daffy dockyard duty household hypothesis info loam mandate mantic minstrelsy nepotism peccary sawtimber serenade silver summate triode"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T17:49:28.015336",
+        "action": {
+          "type": "wrong answer",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

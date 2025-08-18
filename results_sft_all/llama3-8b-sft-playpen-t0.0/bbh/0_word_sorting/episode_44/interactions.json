@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "game_name": "bbh",
+    "experiment_name": "word_sorting",
+    "game_id": 44,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-14T17:51:02.998652",
+        "action": {
+          "type": "send message",
+          "content": "Sort a list of words.\n\nQ: Sort the following words alphabetically: List: oven costume counterpart\nA: costume counterpart oven\n\nQ: Sort the following words alphabetically: List: hypochlorite ponderosa phone credulity\nA: credulity hypochlorite phone ponderosa\n\nQ: Sort the following words alphabetically: List: newt arson parthia seismography mugho aspect census\nA: arson aspect census mugho newt parthia seismography\n\nQ: Sort the following words alphabetically: List: wintertime mobster ugh brown fleabane longish ipsilateral cortex hair diminutive trapezoidal guy richfield highfalutin borough foot delphinium cosec abstract\nA:",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-14T17:51:11.882786",
+        "action": {
+          "type": "get message",
+          "content": "Q: abstract, brown, cortex, diminutive, foot, guy, longish, richfield\nA: abstract, brown, cortex, diminutive, foot, guy, longish, richfield, ugh, wintertime, mobster, fleabane,ipsilateral, trapezoidal, borough, delphinium, cosec, highfalutin\nQ: abstract, brown, cortex, diminutive, foot, guy, longish, richfield, ugh, wintertime, mobster, fleabane,ipsilateral, trapezoidal, borough, delphinium, cosec, highfalutin\nA: abstract, brown, cortex, diminutive, foot, guy, longish, richfield, ugh, wintertime, mobster, fleabane,ipsilateral, trapezoidal, borough, delphinium, cosec, highfalutin\nQ: abstract, brown, cortex, diminutive, foot, guy, longish, richfield, ugh, wintertime, mobster, fleabane,ipsilateral, trapezoidal, borough, delphinium, cosec, highfalutin\nA: abstract, brown, cortex, diminutive, foot, guy, longish, richfield, ugh, wintertime, mobster, fleabane,ipsilateral, trapezoidal, borough, delphinium, cosec, highfalutin",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T17:51:11.882841",
+        "action": {
+          "type": "metadata",
+          "content": "Target: abstract borough brown cortex cosec delphinium diminutive fleabane foot guy hair highfalutin ipsilateral longish mobster richfield trapezoidal ugh wintertime"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T17:51:11.882855",
+        "action": {
+          "type": "wrong answer",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

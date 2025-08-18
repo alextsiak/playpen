@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-08-15T11:57:25.580317",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nnelson\n\nRelated words are:\n\n- hold\n- nell\n- wrestling\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nnelson\n\nRelated words are:\n\n- hold\n- nell\n- wrestling\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:57:25.145563",
+        "call_duration": "0:00:00.434714",
+        "response": "CLUE: British historical figure known for a famous naval victory.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:57:25.860017",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NAPOLEON<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:57:25.580637",
+        "call_duration": "0:00:00.279340",
+        "response": "GUESS: NAPOLEON",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:57:26.237099",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nnelson\n\nRelated words are:\n\n- hold\n- nell\n- wrestling\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: NAPOLEON<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nnelson\n\nRelated words are:\n\n- hold\n- nell\n- wrestling\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: NAPOLEON<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Famous figure in a famous British painting.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:57:25.860137",
+        "call_duration": "0:00:00.376910",
+        "response": "CLUE: Famous figure in a famous British painting.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:57:26.486585",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NAPOLEON<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Famous figure in a famous British painting.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NAPOLEON<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Famous figure in a famous British painting.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: GEORGE<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:57:26.237370",
+        "call_duration": "0:00:00.249175",
+        "response": "GUESS: GEORGE",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:57:27.014380",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nnelson\n\nRelated words are:\n\n- hold\n- nell\n- wrestling\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: NAPOLEON<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Famous figure in a famous British painting.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: GEORGE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nnelson\n\nRelated words are:\n\n- hold\n- nell\n- wrestling\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: NAPOLEON<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Famous figure in a famous British painting.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: GEORGE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Name associated with a famous battle that changed the course of history.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:57:26.486706",
+        "call_duration": "0:00:00.527627",
+        "response": "CLUE: Name associated with a famous battle that changed the course of history.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:57:27.264132",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NAPOLEON<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Famous figure in a famous British painting.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: GEORGE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Name associated with a famous battle that changed the course of history.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: British historical figure known for a famous naval victory.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NAPOLEON<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Famous figure in a famous British painting.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: GEORGE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Name associated with a famous battle that changed the course of history.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: WATERLOO<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:57:27.014686",
+        "call_duration": "0:00:00.249405",
+        "response": "GUESS: WATERLOO",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  }
+]

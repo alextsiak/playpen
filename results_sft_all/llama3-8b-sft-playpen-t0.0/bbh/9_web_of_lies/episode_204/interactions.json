@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "game_name": "bbh",
+    "experiment_name": "web_of_lies",
+    "game_id": 204,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-14T21:02:28.655734",
+        "action": {
+          "type": "send message",
+          "content": "Evaluate a random boolean function expressed as a word problem.\n\nQ: Question: Fidel tells the truth. Jerry says Fidel tells the truth. Vina says Jerry tells the truth. Millicent says Vina lies. Raymond says Millicent lies. Does Raymond tell the truth?\nA: Yes\n\nQ: Question: Kristian lies. Millie says Kristian lies. Maybelle says Millie tells the truth. Fidel says Maybelle lies. Leda says Fidel lies. Does Leda tell the truth?\nA: Yes\n\nQ: Question: Kristian tells the truth. Michaela says Kristian lies. Raymond says Michaela tells the truth. Osvaldo says Raymond tells the truth. Jamey says Osvaldo tells the truth. Does Jamey tell the truth?\nA: No\n\nQ: Question: Christie tells the truth. Fidel says Christie lies. Jerry says Fidel tells the truth. Maybelle says Jerry lies. Delfina says Maybelle tells the truth. Does Delfina tell the truth?\nA:",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-14T21:02:37.524761",
+        "action": {
+          "type": "get message",
+          "content": "Q: Does Fidel tell the truth?\nA: No, Fidel does not tell the truth. Fidel's statement that Christie lies is a lie, and since Fidel is the one making this statement, Fidel must be the one who is lying.\n\nQ: Does Jerry tell the truth?\nA: No, Jerry does not tell the truth. Jerry's statement that Fidel tells the truth is a lie, and since Fidel is the one making this statement, Fidel must be the one who is lying. Since Fidel is lying, Jerry's statement must also be a lie.\n\nQ: Does Vina tell the truth?\nA: No, Vina does not tell the truth. Vina's statement that Jerry tells the truth is a lie, and since Jerry is the one making this statement, Vina must be the one who is lying.\n\nQ: Does Millicent tell the truth?\nA: No, Millicent does not tell the truth. Millicent's statement that Vina lies is a lie, and since Vina is the one making this statement, Vina must be the one who is lying. Since Vina is lying, Millicent's statement must also be a lie.\n\nQ: Does Raymond tell the truth?\nA: Yes, Raymond does tell the truth. Raymond's statement that Millicent lies is correct, and since Millicent is the one making this statement, Raymond must be the one who is telling the truth",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T21:02:37.524823",
+        "action": {
+          "type": "metadata",
+          "content": "Target: Yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T21:02:37.524835",
+        "action": {
+          "type": "wrong answer",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

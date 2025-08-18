@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "game_name": "cladder",
+    "experiment_name": "full_v1.5_default",
+    "game_id": 1162,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T04:07:57.945811",
+        "action": {
+          "type": "send message",
+          "content": "You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\nImagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Pre-conditions has a direct effect on vaccination and disease. Vaccination has a direct effect on disease. For people with no pre-conditions and refusing the vaccine, the probability of recovering from the disease is 11%. For people with no pre-conditions and getting the vaccine, the probability of recovering from the disease is 22%. For people with pre-conditions and refusing the vaccine, the probability of recovering from the disease is 86%. For people with pre-conditions and getting the vaccine, the probability of recovering from the disease is 98%. The overall probability of pre-conditions is 56%. For people getting the vaccine, would it be more likely to see recovering from the disease if the person had not refused the vaccine?\nStart your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:08:06.819020",
+        "action": {
+          "type": "get message",
+          "content": "No\nThe probability of not having pre-conditions is 1 - 0.56 = 0.44. The probability of not having pre-conditions and not refusing the vaccine is 0.44. The probability of not having pre-conditions and not refusing the vaccine and still not recovering from the disease is 1 - 0.22 = 0.78. The probability of having pre-conditions and not refusing the vaccine is 0.56 - 0.44 = 0.12. The probability of having pre-conditions and not refusing the vaccine and still not recovering from the disease is 1 - 0.98 = 0.02. The probability of not having pre-conditions and not refusing the vaccine and still not recovering from the disease is 0.78, and the probability of having pre-conditions and not refusing the vaccine and still not recovering from the disease is 0.02. The total number of people not having pre-conditions and not refusing the vaccine is 0.44, and the total number of people having pre-conditions and not refusing the vaccine is 0.12. The number of people not having pre-conditions and not refusing the vaccine and still not recovering from the disease is 0.78 * 0.44 = 0.3432, and the number of people having pre-conditions and not refusing the vaccine and still not recovering from the disease is 0.02 * 0.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:08:06.819104",
+        "action": {
+          "type": "parsed",
+          "content": "No"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:08:06.819119",
+        "action": {
+          "type": "target",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:08:06.819130",
+        "action": {
+          "type": "correct label",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}
