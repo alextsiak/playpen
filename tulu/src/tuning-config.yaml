@@ -1,0 +1,53 @@
+tuning:
+  # type: sft
+  type: dpo
+
+base_model:
+  # name: unsloth/Llama-3.2-1B-bnb-4bit
+  # name: unsloth/Llama-3.2-3B-bnb-4bit
+  # name: unsloth/Meta-Llama-3.1-8B-Instruct
+  name: unsloth/Llama-3.2-1B-Instruct-bnb-4bit
+
+sft_dataset:
+  # name: allenai/tulu-3-sft-personas-math-grade
+  # name: allenai/tulu-3-sft-personas-math
+  # name: allenai/tulu-3-sft-personas-instruction-following
+  # name: allenai/tulu-3-sft-personas-algebra
+  # name: allenai/tulu-3-sft-personas-code
+  # name: allenai/tulu-3-sft-mixture
+  name: sft_dataset_509
+
+sft_model:
+  # name: alextsiak/llama-3.2-1B-bnb-4bit-mix-500st
+  # name: rodionzorin/llama-3.2-3B-bnb-4bit_finetuned_tulu-3-sft-mixture
+  # mzarev/Llama-3.1-8B-bnb-4bit-mix-500st
+  # name: unsloth/Meta-Llama-3.1-8B-Instruct
+  name: not_used
+
+preference_dataset:
+  #cname: allenai/llama-3.1-tulu-3-8b-preference-mixture
+  # name: allenai/llama-3.1-tulu-3-70b-preference-mixture
+  # name: allenai/llama-3.1-tulu-3-405b-preference-mixture
+  # name: allenai/tulu-3-IF-augmented-on-policy-8b
+  name: not_used
+  
+
+max_seq_length:
+  length: 2048
+
+low_rank_matrice:
+  size: 16 # also recommended 32, 64, 128
+
+influence:
+  rate: 16 # also recommended 32, 64, 128
+
+dropout:
+  rate: 0.05
+
+training:
+  learning_rate: 2e-4
+  batch_size: 4
+  grad_acc_steps: 4
+  max_training_steps: 700
+  warmup_steps: 20
+  beta: 0.1
