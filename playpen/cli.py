@@ -211,14 +211,14 @@ def cli(args: argparse.Namespace):
     if args.command_name == "learn-from-failures":
         learner_spec = ModelSpec.from_string(args.learner)
         learner_name = learner_spec['model_name']
-        teacher_spec = ModelSpec.from_string(args.teacher)
-        teacher_name = teacher_spec['model_name']
+        #teacher_spec = ModelSpec.from_string(args.teacher)
+        teacher_specs = [ModelSpec.from_string(t) for t in args.teacher.split()]
+        #teacher_name = teacher_spec['model_name']
         gen_args = dict(temperature=args.temperature, max_tokens=args.max_tokens)
 
         results_dir_learner = f"./results_{learner_name}"
         failures_dir = f"./failures_{learner_name}/{learner_name}-t0.0"
-        results_dir_teacher = f"./results_{teacher_name}"
-
+        
         # create llama playthroughs
         clem.run("{'benchmark':['2.0']}", [learner_spec],
         gen_args=gen_args, results_dir=results_dir_learner)
@@ -238,20 +238,22 @@ def cli(args: argparse.Namespace):
         build_instances(f"{failures_dir}/results.jsonl", "failed_instances")
 
         # run better model on these
-        with open(os.path.join(os.path.dirname(f"./{failures_dir}results.jsonl"), "failed_instances.json")) as f:
+        with open(os.path.join(os.path.dirname(f"./{failures_dir}/results.jsonl"), "failed_instances.json")) as f:
             dataset = json.load(f)
         task_selector = to_task_selector(dataset)
-        print(f"Running better model {teacher_name} on failed instances...")
-        clem.run("{'benchmark':['2.0']}", [teacher_spec],
-                 gen_args=gen_args, results_dir=results_dir_teacher, task_selector=task_selector)
+        results_dir_teacher = f"./results_teachers"
+        for teacher in teacher_specs:
+            teacher_name = teacher['model_name']
+            print(f"Running better model {teacher_name} on failed instances...")
+            clem.run("{'benchmark':['2.0']}", [teacher],
+                    gen_args=gen_args, results_dir=results_dir_teacher, task_selector=task_selector)
+            clem.score("{'benchmark':['2.0']}", results_dir=results_dir_teacher)
         print(f"Creating conversational dataset from {teacher_name} runs...")
         create_conversational_dataset_for(results_dir_teacher)
         
         # finetune learner model on successful best model runs
         print(f"Dataset created. Finetune learner model by running the command:")
-        print(f"playpen run sft_trainer_simple.py -l {learner_name}")
-
-
+        print(f"playpen run sft_trainer_lora.py -l {learner_name}")
 
 
 def main():

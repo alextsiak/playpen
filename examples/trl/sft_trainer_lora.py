@@ -45,8 +45,8 @@ class PeftSftTrainer(BasePlayPen):
 
 
         # dataset
-        dataset = load_dataset(path="./results_Mistral-Small-24B-Instruct-2501/results.jsonl")
-        #dataset = load_dataset("json", data_files="./results_Mistral-Small-24B-Instruct-2501/results.jsonl")
+        dataset = load_dataset(path="./results_teachers/results.jsonl")
+
 
 
         dataset = dataset.filter(lambda episode: episode["meta"]["outcome"] == "success")
