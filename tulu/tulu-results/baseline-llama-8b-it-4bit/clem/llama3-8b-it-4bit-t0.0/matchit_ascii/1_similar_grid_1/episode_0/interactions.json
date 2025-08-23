@@ -1,0 +1,541 @@
+{
+  "meta": {
+    "game_name": "matchit_ascii",
+    "experiment_name": "similar_grid_1",
+    "game_id": 0,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:57:10.974187",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\nX X ▢ X X\nX X ▢ X X\nX X X X X\nX X ▢ X X\nX X ▢ X X",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:13.064925",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: A 5x5 grid with a mix of filled and empty squares, featuring two rows of two filled squares in a row, two rows with a filled square in the middle, and a row of four filled squares.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:13.064988",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:57:13.065063",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\nX X X X X\nX X X X X\n▢ ▢ X ▢ ▢\nX X X X X\nX X X X X",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:15.067526",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: A 5x5 grid with a mix of X's and ▢'s, where ▢'s are placed in the third row, and the rest of the grid is filled with X's.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:15.067588",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:57:15.067657",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: A 5x5 grid with a mix of filled and empty squares, featuring two rows of two filled squares in a row, two rows with a filled square in the middle, and a row of four filled squares.\nNow ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:15.888857",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any filled squares in the first or last column of your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:15.888916",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:57:15.889005",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: A 5x5 grid with a mix of X's and ▢'s, where ▢'s are placed in the third row, and the rest of the grid is filled with X's.\nQUESTION: Are there any filled squares in the first or last column of your grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:16.842540",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No, there are no filled squares in the first or last column of my grid.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:16.842600",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:57:16.842669",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:17.667829",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any rows in your grid that have more than one filled square?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:17.667888",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:57:17.667964",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No, there are no filled squares in the first or last column of my grid.\nQUESTION: Are there any rows in your grid that have more than one filled square? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:18.579887",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes, there are rows in my grid that have more than one filled square.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:18.579947",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:57:18.580016",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:19.329452",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any filled squares in the second row of your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:19.329512",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:57:19.329596",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes, there are rows in my grid that have more than one filled square.\nQUESTION: Are there any filled squares in the second row of your grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:20.210161",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No, there are no filled squares in the second row of your grid.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:20.210247",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:57:20.210325",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:21.354597",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the filled squares in your grid placed in the same positions as the ▢'s in my grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:21.354658",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:57:21.354737",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No, there are no filled squares in the second row of your grid.\nQUESTION: Are the filled squares in your grid placed in the same positions as the ▢'s in my grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:22.677031",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No, the filled squares in my grid are not placed in the same positions as the ▢'s in your grid.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:22.677092",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:57:22.677175",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:24.049944",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the filled squares in your grid placed in the third row, similar to the placement of the ▢'s in my grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:24.050005",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:57:24.050092",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No, the filled squares in my grid are not placed in the same positions as the ▢'s in your grid.\nQUESTION: Are the filled squares in your grid placed in the third row, similar to the placement of the ▢'s in my grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:24.936640",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes, the filled squares in your grid are placed in the third row.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:24.936699",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:57:24.936768",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:26.451449",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the filled squares in your grid placed in the middle of the third row, similar to the placement of the ▢'s in my grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:26.451512",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:57:26.451590",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes, the filled squares in your grid are placed in the third row.\nQUESTION: Are the filled squares in your grid placed in the middle of the third row, similar to the placement of the ▢'s in my grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:28.139626",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No, the filled squares in your grid are not placed in the middle of the third row, similar to the placement of the ▢'s in my grid.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:28.139689",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:57:28.139761",
+        "action": {
+          "type": "send message",
+          "content": "Now come to a decision. What do you think: are your grid and the other grid described the same?  Write \"DECISION: same grid\" if you think they are the same grid or \"DECISION: different grids\" if you think they are different grids. Do not add anything else.\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:28.478097",
+        "action": {
+          "type": "get message",
+          "content": "DECISION: different grids",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:28.478154",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:28.478182",
+        "action": {
+          "type": "Decision Player B",
+          "content": "success"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:57:28.478272",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No, the filled squares in your grid are not placed in the middle of the third row, similar to the placement of the ▢'s in my grid.\nNow come to a decision. What do you think: are your grid and the other grid described the same?  Write \"DECISION: same grid\" if you think they are the same grid or \"DECISION: different grids\" if you think they are different grids. Do not add anything else.\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:28.819236",
+        "action": {
+          "type": "get message",
+          "content": "DECISION: different grids",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:28.819294",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:57:28.819310",
+        "action": {
+          "type": "Decision Player A",
+          "content": "success"
+        }
+      }
+    ]
+  ]
+}

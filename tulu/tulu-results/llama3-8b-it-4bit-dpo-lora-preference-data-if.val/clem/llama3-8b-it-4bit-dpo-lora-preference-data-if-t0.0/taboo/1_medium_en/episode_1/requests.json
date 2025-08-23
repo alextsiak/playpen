@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-08-21T19:56:17.715976",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nretrieve\n\nRelated words are:\n\n- remember\n- recover\n- bring\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nretrieve\n\nRelated words are:\n\n- remember\n- recover\n- bring\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:56:16.400883",
+        "call_duration": "0:00:01.315042",
+        "response": "CLUE: Something you might find in a lost place. Guess.",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:56:18.339270",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: TREASURE<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:56:17.716304",
+        "call_duration": "0:00:00.622916",
+        "response": "GUESS: TREASURE",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:56:19.393009",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nretrieve\n\nRelated words are:\n\n- remember\n- recover\n- bring\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: TREASURE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nretrieve\n\nRelated words are:\n\n- remember\n- recover\n- bring\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: TREASURE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Often hidden in a chest. Guess.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:56:18.339414",
+        "call_duration": "0:00:01.053543",
+        "response": "CLUE: Often hidden in a chest. Guess.",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:56:20.101675",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: TREASURE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Often hidden in a chest. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: TREASURE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Often hidden in a chest. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: JEWELS<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:56:19.393286",
+        "call_duration": "0:00:00.708336",
+        "response": "GUESS: JEWELS",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:56:21.250742",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nretrieve\n\nRelated words are:\n\n- remember\n- recover\n- bring\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: TREASURE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Often hidden in a chest. Guess.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: JEWELS<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nretrieve\n\nRelated words are:\n\n- remember\n- recover\n- bring\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: TREASURE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Often hidden in a chest. Guess.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: JEWELS<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: People do this to get it. Guess.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:56:20.101822",
+        "call_duration": "0:00:01.148867",
+        "response": "CLUE: People do this to get it. Guess.",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:56:25.594917",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: TREASURE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Often hidden in a chest. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: JEWELS<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: People do this to get it. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something you might find in a lost place. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: TREASURE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Often hidden in a chest. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: JEWELS<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: People do this to get it. Guess.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nI've used up my 3 tries. I lose this round.\n\nWould you like to start a new round? \n\nIf you want to continue, please give me the next CLUE. \n\n(If you want to start a new round, I",
+      "clem_player": {
+        "call_start": "2025-08-21 19:56:21.251012",
+        "call_duration": "0:00:04.343852",
+        "response": "I've used up my 3 tries. I lose this round.\n\nWould you like to start a new round? \n\nIf you want to continue, please give me the next CLUE. \n\n(If you want to start a new round, I",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  }
+]

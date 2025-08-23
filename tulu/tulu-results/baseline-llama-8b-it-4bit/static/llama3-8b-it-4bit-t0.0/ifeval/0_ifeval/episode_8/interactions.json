@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 64,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:36:19.937280",
+        "action": {
+          "type": "send message",
+          "content": "Write a funny article about why the dinosaurs went extinct and put double quotations marks around your whole response. Include exactly 8 bullet points in your response. The bullet points should be in the form of:\n* This is bullet 1\n* This is bullet 2\n...",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:36:47.545590",
+        "action": {
+          "type": "get message",
+          "content": "\"**The Utterly Ridiculous, Totally-Not-Scientific Explanation for the Dinosaurs' Demise**\"\n\nIt's a little-known fact that the dinosaurs didn't actually go extinct due to a massive asteroid impact or a combination of volcanic eruptions and climate change. No, no, no. It's much more complicated (and hilarious) than that. Here's the real story:\n\n* This is bullet 1: **The Great Dinosaur Dance Party**. It's said that the dinosaurs were so tired of the same old T-Rex, Triceratops, and Stegosaurus dance moves that they decided to throw a massive dance party to end all dance parties. Unfortunately, the music was so bad that it caused a rift in the space-time continuum, leading to their extinction.\n\n* This is bullet 2: **The Dinosaur Disco Disaster**. As the dinosaurs boogied the night away, their funky dance moves triggered a chain reaction of disco balls, platform shoes, and polyester suits, which ultimately led to a catastrophic explosion of sparkly, glittery goodness.\n\n* This is bullet 3: **The Giant Squid Invasion**. It's rumored that a group of giant squid, tired of being the ocean's most feared predators, decided to take over the land and rule with an iron... tentacle. The dinosaurs, caught off guard by the cephalopod coup, were quickly overwhelmed and, well, you know the rest.\n\n* This is bullet 4: **The Great Dinosaur Cook-Off**. In a bizarre twist, the dinosaurs were all competing in a cook-off to see who could make the tastiest T-Rex tacos. Unfortunately, the judges were a group of particularly picky pterodactyls, and the competition got out of hand, resulting in a culinary catastrophe.\n\n* This is bullet 5: **The Dinosaur Disco Ball of Doom**. As the dinosaurs danced the night away, they accidentally created a massive disco ball that reflected the sun's rays directly onto the Earth's surface, causing a massive solar flare that wiped out the entire species.\n\n* This is bullet 6: **The Time-Traveling Tourists**. A group of time-traveling tourists, tired of visiting the same old historical landmarks, decided to visit the Mesozoic Era and, well, let's just say they didn't exactly blend in with the locals.\n\n* This is bullet 7: **The Dinosaur Disco Fever**. It's said that the dinosaurs were so caught up in the excitement of the dance party that they started to dance themselves into a frenzy, causing a massive outbreak of disco fever that spread throughout the land and led to their extinction.\n\n* This is bullet 8: **The Giant Space Hamster**. In a bizarre twist, a giant space hamster, tired of being cooped up in its space station, decided to take over the Earth and rule with an iron... paw. The dinosaurs, caught off guard by the hamster's intergalactic ambitions, were quickly overwhelmed and, well, you know the rest.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:36:47.545646",
+        "action": {
+          "type": "target",
+          "content": {
+            "startend:quotation": {},
+            "detectable_format:number_bullet_lists": {
+              "num_bullets": 8
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:36:47.545932",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

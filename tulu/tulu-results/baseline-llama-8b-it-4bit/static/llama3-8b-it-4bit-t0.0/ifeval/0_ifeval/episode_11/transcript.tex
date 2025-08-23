@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Generate a forum thread about several people waiting to hear the latest local news. All sentences should be short. Refrain from using any commas. Use placeholders to represent different usernames. Use square brackets for placeholders, like [username1], [username2]. Please include at least 20 placeholders in the thread. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **Thread Title:** Waiting for Local News\\ \tt \\ \tt **[username1]**: Just heard the news is coming on at 7 PM.\\ \tt \\ \tt **[username2]**: I'm tuning in now.\\ \tt \\ \tt **[username3]**: Anyone know what it's about?\\ \tt \\ \tt **[username4]**: I heard it's about the new park.\\ \tt \\ \tt **[username5]**: I don't think so.\\ \tt \\ \tt **[username6]**: I saw a poster about a new restaurant.\\ \tt \\ \tt **[username7]**: That's not it.\\ \tt \\ \tt **[username8]**: I'm getting anxious.\\ \tt \\ \tt **[username9]**: Me too.\\ \tt \\ \tt **[username10]**: I just turned on the TV.\\ \tt \\ \tt **[username11]**: What's the channel?\\ \tt \\ \tt **[username12]**: Channel 5.\\ \tt \\ \tt **[username13]**: I'm changing the channel.\\ \tt \\ \tt **[username14]**: Wait for it.\\ \tt \\ \tt **[username15]**: The news is starting.\\ \tt \\ \tt **[username16]**: Let's listen.\\ \tt \\ \tt **[username17]**: I'm recording it.\\ \tt \\ \tt **[username18]**: Why?\\ \tt \\ \tt **[username19]**: In case I miss something.\\ \tt \\ \tt **[username20]**: I don't think that's necessary.\\ \tt \\ \tt **[username21]**: The anchor is speaking.\\ \tt \\ \tt **[username22]**: What's he saying?\\ \tt \\ \tt **[username23]**: I'm not sure.\\ \tt \\ \tt **[username24]**: Can someone transcribe it?\\ \tt \\ \tt **[username25]**: I'll try.\\ \tt \\ \tt **[username26]**: Go ahead.\\ \tt \\ \tt **[username27]**: Okay... he's talking about the new development.\\ \tt \\ \tt **[username28]**: That's what I thought.\\ \tt \\ \tt **[username29]**: I'm glad I'm not missing anything.\\ \tt \\ \tt **[username30]**: Me too. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'detectable_content:number_placeholders': {'num_placeholders': 20}, 'punctuation:no_comma': {}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

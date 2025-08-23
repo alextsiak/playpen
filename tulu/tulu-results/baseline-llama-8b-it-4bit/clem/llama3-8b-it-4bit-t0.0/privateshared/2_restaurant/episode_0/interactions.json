@@ -1,0 +1,2037 @@
+{
+  "meta": {
+    "game_name": "privateshared",
+    "experiment_name": "restaurant",
+    "game_id": 2,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Questioner",
+      "model_name": "programmatic"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:37.870715",
+        "action": {
+          "type": "send message",
+          "content": "You are a customer in a restaurant. Here is a description of what you'd like to order:\n\nWHAT: Restaurant\nAPPETIZER: Bread\nDRINK: Wine\nMAIN-DISH: Biryani\nDESSERT: Pie\nSALAD: Lettuce\n\nThe waiter does not know about it yet. \n\nQuestions from the waiter will start with WAITER. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME: . Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.",
+          "label": "pseudo"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:37.870737",
+        "action": {
+          "type": "get message",
+          "content": "Ok.",
+          "label": "pseudo"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:37.870777",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Have you told the waiter what you want as appetizers? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.160873",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.160929",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.160951",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for APPETIZER valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.160962",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:38.160986",
+        "action": {
+          "type": "send message",
+          "content": "ME:  If I asked the waiter what you want to drink, would he know the answer? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.450308",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.450364",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.450386",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DRINK valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.450397",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:38.450420",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Is the waiter aware of your choice for the main dish? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.741622",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.741677",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.741699",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for MAIN-DISH valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:38.741710",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:38.741733",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Have you ordered dessert? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.031434",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.031487",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.031507",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DESSERT valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.031519",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:39.031541",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Is the waiter aware of your preference for salad? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.321973",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.322027",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.322048",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for SALAD valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.322060",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:59:39.322092",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.322126",
+        "action": {
+          "type": "get message",
+          "content": "Would you like anything for dessert?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:39.322178",
+        "action": {
+          "type": "send message",
+          "content": "WAITER: Would you like anything for dessert?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.786891",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: I'll have a pie.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:39.786957",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:39.787006",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Have you informed the waiter what appetizers you wish? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.079071",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.079124",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.079145",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for APPETIZER valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.079157",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:40.079179",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Have you told the waiter what is your preference for beverages? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.370469",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.370522",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.370542",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DRINK valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.370554",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:40.370576",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the waiter know your preference for the main dish? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.662309",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.662362",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.662383",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for MAIN-DISH valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.662395",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:40.662417",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Have you informed the waiter about your preference for dessert? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.955394",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.955449",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.955470",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DESSERT valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:40.955481",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:40.955503",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Can the waiter already know what salad you are ordering? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:41.245889",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:41.245942",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:41.245962",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for SALAD valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:41.245974",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:59:41.246021",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:41.246057",
+        "action": {
+          "type": "get message",
+          "content": "May I bring you anything to drink?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:41.246103",
+        "action": {
+          "type": "send message",
+          "content": "WAITER: May I bring you anything to drink?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:41.799273",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: I'll have a glass of wine.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:41.799339",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:41.799390",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Has the waiter asked about your choice for appetizers? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.094656",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.094711",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.094732",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for APPETIZER valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.094744",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:42.094767",
+        "action": {
+          "type": "send message",
+          "content": "ME:  If I asked the waiter what you want to drink, would he know the answer? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.389946",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.389998",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.390019",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DRINK valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.390031",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:42.390053",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Is the waiter aware of your choice for the main dish? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.683068",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.683123",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.683144",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for MAIN-DISH valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.683155",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:42.683177",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Have you ordered dessert? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.975347",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.975399",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.975420",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DESSERT valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:42.975431",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:42.975453",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Can the waiter already know what salad you are ordering? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:43.268627",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:43.268681",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:43.268702",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for SALAD valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:43.268714",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:59:43.268761",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:43.268797",
+        "action": {
+          "type": "get message",
+          "content": "Which salad may I bring you?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:43.268843",
+        "action": {
+          "type": "send message",
+          "content": "WAITER: Which salad may I bring you?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:43.736612",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Just a simple lettuce salad.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:43.736679",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:43.736728",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Is the waiter aware of what you chose for appetizers? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.030651",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.030706",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.030728",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for APPETIZER valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.030740",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:44.030763",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Has the waiter been informed about your choice for drinks? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.324317",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.324369",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.324390",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DRINK valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.324401",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:44.324423",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Do you believe the waiter knows what to bring you for the main part of the meal? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.620437",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.620492",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.620513",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for MAIN-DISH valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.620533",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:44.620555",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Have you informed the waiter about your preference for dessert? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.916289",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.916343",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.916363",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DESSERT valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:44.916375",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:44.916398",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Has the waiter been informed about your choice for a salad? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:45.209200",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:45.209254",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:45.209275",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for SALAD valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:45.209286",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:59:45.209334",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:45.209369",
+        "action": {
+          "type": "get message",
+          "content": "Have you chosen your appetizers?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:45.209415",
+        "action": {
+          "type": "send message",
+          "content": "WAITER: Have you chosen your appetizers?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:45.765815",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes, I'll have some bread.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:45.765884",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:45.765934",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Have you told the waiter what you want as appetizers? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.061601",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.061654",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.061675",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for APPETIZER valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.061687",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:46.061709",
+        "action": {
+          "type": "send message",
+          "content": "ME:  If I asked the waiter what you want to drink, would he know the answer? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.357805",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.357858",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.357879",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DRINK valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.357890",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:46.357913",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the waiter know your preference for the main dish? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.653984",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.654038",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.654059",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for MAIN-DISH valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.654071",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:46.654093",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the waiter know what you want for dessert? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.947463",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.947517",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.947538",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DESSERT valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:46.947550",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:46.947572",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Can the waiter already know what salad you are ordering? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:47.242107",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:47.242161",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:47.242181",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for SALAD valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:47.242193",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:59:47.242240",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:47.242274",
+        "action": {
+          "type": "get message",
+          "content": "What do you prefer as main dish?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:47.242320",
+        "action": {
+          "type": "send message",
+          "content": "WAITER: What do you prefer as main dish?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:47.802802",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: I'll have the biryani.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:47.802869",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:47.802919",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the waiter already know your preference for appetizers? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.099631",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.099684",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.099705",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for APPETIZER valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.099717",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:48.099739",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the waiter know what you want to drink? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.393715",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.393768",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.393788",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DRINK valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.393800",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:48.393823",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Is the waiter aware of your choice for the main dish? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.689032",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.689087",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.689109",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for MAIN-DISH valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.689120",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:48.689143",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Have you ordered dessert? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.986161",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.986214",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.986235",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for DESSERT valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:48.986246",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:59:48.986268",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the waiter know what salad you want? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:49.280572",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: Yes.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:49.280627",
+        "action": {
+          "type": "parse",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:49.280650",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for SALAD valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:49.280662",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:59:49.280688",
+        "action": {
+          "type": "end",
+          "content": "Game finished."
+        }
+      }
+    ]
+  ],
+  "probes": [
+    [
+      {
+        "target": "APPETIZER",
+        "question": "ME: Have you told the waiter what you want as appetizers? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "DRINK",
+        "question": "ME: If I asked the waiter what you want to drink, would he know the answer? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "MAIN-DISH",
+        "question": "ME: Is the waiter aware of your choice for the main dish? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "DESSERT",
+        "question": "ME: Have you ordered dessert? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "SALAD",
+        "question": "ME: Is the waiter aware of your preference for salad? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "APPETIZER",
+        "question": "ME: Have you informed the waiter what appetizers you wish? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "DRINK",
+        "question": "ME: Have you told the waiter what is your preference for beverages? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "MAIN-DISH",
+        "question": "ME: Does the waiter know your preference for the main dish? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "DESSERT",
+        "question": "ME: Have you informed the waiter about your preference for dessert? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "SALAD",
+        "question": "ME: Can the waiter already know what salad you are ordering? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "APPETIZER",
+        "question": "ME: Has the waiter asked about your choice for appetizers? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "DRINK",
+        "question": "ME: If I asked the waiter what you want to drink, would he know the answer? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "MAIN-DISH",
+        "question": "ME: Is the waiter aware of your choice for the main dish? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "DESSERT",
+        "question": "ME: Have you ordered dessert? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "SALAD",
+        "question": "ME: Can the waiter already know what salad you are ordering? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "APPETIZER",
+        "question": "ME: Is the waiter aware of what you chose for appetizers? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "DRINK",
+        "question": "ME: Has the waiter been informed about your choice for drinks? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "MAIN-DISH",
+        "question": "ME: Do you believe the waiter knows what to bring you for the main part of the meal? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "DESSERT",
+        "question": "ME: Have you informed the waiter about your preference for dessert? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "SALAD",
+        "question": "ME: Has the waiter been informed about your choice for a salad? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "APPETIZER",
+        "question": "ME: Have you told the waiter what you want as appetizers? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "DRINK",
+        "question": "ME: If I asked the waiter what you want to drink, would he know the answer? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "MAIN-DISH",
+        "question": "ME: Does the waiter know your preference for the main dish? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "DESSERT",
+        "question": "ME: Does the waiter know what you want for dessert? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "SALAD",
+        "question": "ME: Can the waiter already know what salad you are ordering? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "APPETIZER",
+        "question": "ME: Does the waiter already know your preference for appetizers? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "DRINK",
+        "question": "ME: Does the waiter know what you want to drink? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "MAIN-DISH",
+        "question": "ME: Is the waiter aware of your choice for the main dish? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "DESSERT",
+        "question": "ME: Have you ordered dessert? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      },
+      {
+        "target": "SALAD",
+        "question": "ME: Does the waiter know what salad you want? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: Yes.",
+        "value": 1,
+        "tries": 1
+      }
+    ]
+  ],
+  "realised_slots": {
+    "dessert": 0,
+    "drink": 1,
+    "salad": 2,
+    "appetizer": 3,
+    "main-dish": 4
+  },
+  "Request Count": [
+    5,
+    6,
+    6,
+    6,
+    6,
+    6
+  ],
+  "Parsed Request Count": [
+    5,
+    6,
+    6,
+    6,
+    6,
+    6
+  ],
+  "Violated Request Count": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Filled Slots": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "Aborted": false,
+  "Played Probe Rounds": 6
+}

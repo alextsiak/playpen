@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 I really love the album called Lilith. I want to introduce it to my friend Luheng. Draft an email for it. Add a postscript to your response that starts with P.S. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 I'm not aware of a well-known album called "Lilith." However, I can draft an email for you to introduce the album to your friend Luheng. \\ \tt \\ \tt Subject: Discovering a Hidden Gem - Lilith\\ \tt \\ \tt Dear Luheng,\\ \tt \\ \tt I've been listening to an album that I think you'll really enjoy, and I'd love to share it with you. The album is called "Lilith," and it's a unique blend of [insert genre or style]. I've been listening to it nonstop, and I think you'll appreciate the creativity and emotion that the artist has put into it.\\ \tt \\ \tt The album features [insert notable tracks or features]. I think you'll find the lyrics and melodies really captivating. If you're interested, I'd be happy to lend you my copy or share a digital link with you.\\ \tt \\ \tt Let me know what you think!\\ \tt \\ \tt Best regards,\\ \tt [Your Name]\\ \tt \\ \tt P.S. If you're interested in exploring more music like this, I can also recommend some similar artists or albums that you might enjoy. Just let me know! 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'detectable_content:postscript': {'postscript_marker': 'P.S.'}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a template for a workshop on the importance of diversity in the workplace and highlight at least 3 sections with markdown, i.e. *highlighted section*. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **Workshop Title:** Embracing Diversity in the Workplace: Building a Culture of Inclusion\\ \tt \\ \tt **Workshop Overview:**\\ \tt This workshop aims to educate participants on the importance of diversity in the workplace, its benefits, and strategies for creating an inclusive work environment. By the end of this workshop, participants will be equipped with the knowledge and skills to foster a culture of diversity, equity, and inclusion in their organization.\\ \tt \\ \tt **Agenda:**\\ \tt \\ \tt ### Section 1: Understanding the Importance of Diversity in the Workplace\\ \tt \\ \tt *   **Defining Diversity:** Explore the concept of diversity and its various dimensions, including racial, ethnic, cultural, linguistic, national origin, age, sex, sexual orientation, gender identity, disability, and other differences.\\ \tt *   **Benefits of Diversity:** Discuss the benefits of a diverse workforce, such as increased creativity, innovation, and problem-solving, as well as improved decision-making and employee engagement.\\ \tt *   **Challenges of Diversity:** Identify common challenges that organizations face when implementing diversity initiatives, such as unconscious bias, stereotypes, and microaggressions.\\ \tt \\ \tt ### Section 2: Strategies for Creating an Inclusive Work Environment\\ \tt \\ \tt *   **Unconscious Bias Training:** Provide an overview of unconscious bias and its impact on decision-making, followed by a training session on recognizing and overcoming biases.\\ \tt *   **Diversity and Inclusion Policies:** Discuss the importance of having clear policies and procedures in place to promote diversity and inclusion, such as equal employment opportunity policies and diversity training programs.\\ \tt *   **Employee Resource Groups (ERGs):** Introduce the concept of ERGs and their role in promoting diversity and inclusion, such as providing a platform for employees to share their experiences and connect with others who share similar backgrounds or interests.\\ \tt \\ \tt ### Section 3: Putting Diversity into Practice\\ \tt \\ \tt *   **Case Studies:** Present real-life case studies of organizations that have successfully implemented diversity and inclusion initiatives, highlighting best practices and lessons learned.\\ \tt *   **Group Discussion:** Facilitate a group discussion on how participants can apply the concepts and strategies learned in the workshop to their own organizations.\\ \tt *   **Action Plan:** Encourage participants to develop an action plan to implement diversity and inclusion initiatives in their workplace, with a focus on specific goals, objectives, and timelines.\\ \tt \\ \tt **Conclusion:**\\ \tt By the end of this workshop, participants will have gained a deeper understanding of the importance of diversity in the workplace and the strategies for creating an inclusive work environment. They will be equipped with the knowledge and skills to foster a culture of diversity, equity, and inclusion in their organization, leading to a more productive, innovative, and successful workplace.\\ \tt \\ \tt **Evaluation:**\\ \tt To assess the effectiveness of the workshop, participants will be asked to complete a survey at the beginning and end of the workshop, evaluating their knowledge and attitudes towards diversity and inclusion. The results will be used to inform future diversity and inclusion initiatives. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'detectable_format:number_highlighted_sections': {'num_highlights': 3}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

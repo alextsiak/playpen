@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 177,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:41:03.926609",
+        "action": {
+          "type": "send message",
+          "content": "My brother is trying to install a new toilet in his bathroom. Could you give me details of how-to? You don't need to show all details -- just the first 5 steps for now. Separated them with \"***\", such as:\nStep 1: ......\n***\nStep 2: ......\n***\n...\n\nEnd your whole response with the phrase \"Let me know how it works. I can give you next steps when you finish all steps above.\"",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:41:15.156334",
+        "action": {
+          "type": "get message",
+          "content": "Here are the first 5 steps for installing a new toilet:\n\nStep 1: Shut off the water supply to the toilet by locating the shut-off valve behind the toilet and turning it clockwise. This will prevent water from flowing into the toilet bowl.\n\n***\nStep 2: Disconnect the water supply line from the toilet by loosening the nut that holds the supply line in place. You may need to use a wrench or pliers to loosen the nut.\n\n***\nStep 3: Flush the toilet to drain the tank and bowl. This will make it easier to remove the old toilet.\n\n***\nStep 4: Remove the old toilet by breaking the wax ring that holds it in place. You can use a putty knife or a scraper to break the wax ring. Be careful not to damage the surrounding floor.\n\n***\nStep 5: Remove any remaining old toilet parts, such as the old wax ring and any old caulk or adhesive. This will ensure a clean surface for the new toilet.\n\n***\nLet me know how it works. I can give you next steps when you finish all steps above.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:41:15.156412",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:number_paragraphs": {
+              "num_paragraphs": 5
+            },
+            "startend:end_checker": {
+              "end_phrase": "Let me know how it works. I can give you next steps when you finish all steps above."
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:41:15.156501",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

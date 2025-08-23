@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 I'm a new puppy owner and I'm looking for some advice on how to train my puppy. Can you help me? Give me a few options. In particular, I need you to end your response with "Which one you choose?". 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Congratulations on your new furry family member. Training a puppy requires patience, consistency, and positive reinforcement. Here are a few options to consider:\\ \tt \\ \tt **Option 1: Positive Reinforcement Training**\\ \tt This method focuses on rewarding good behavior with treats, praise, and affection. It's a gentle and effective approach that helps build trust between you and your puppy.\\ \tt \\ \tt **Option 2: Clicker Training**\\ \tt Clicker training uses a small device that makes a distinct sound when pressed, marking the exact moment your puppy performs the desired behavior. This method is great for teaching complex behaviors and can be very efficient.\\ \tt \\ \tt **Option 3: Puppy Socialization and Training Classes**\\ \tt Enrolling in a puppy socialization and training class can provide a structured environment for your puppy to learn basic obedience commands, interact with other dogs, and receive guidance from an experienced trainer.\\ \tt \\ \tt **Option 4: Online Puppy Training Resources**\\ \tt There are many online resources, such as videos, blogs, and forums, that offer puppy training advice and guidance. These resources can be a great supplement to in-person training or a starting point for new puppy owners.\\ \tt \\ \tt Which one you choose? 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'startend:end_checker': {'end_phrase': 'Which one you choose?'}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

@@ -1,0 +1,544 @@
+{
+  "meta": {
+    "game_name": "codenames",
+    "experiment_name": "risk_low",
+    "game_id": 6,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "ClueGiver",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:13.845695",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "pin",
+                "duck",
+                "ice",
+                "palm",
+                "bat",
+                "phoenix",
+                "crown",
+                "undertaker",
+                "check"
+              ],
+              "innocent": [
+                "missile",
+                "apple",
+                "center",
+                "octopus",
+                "ball",
+                "church",
+                "lap",
+                "state"
+              ],
+              "opponent": [
+                "police",
+                "olympus",
+                "glass",
+                "server",
+                "bear",
+                "hook",
+                "seal",
+                "pound"
+              ],
+              "assassin": []
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:40:13.845773",
+        "action": {
+          "type": "send message",
+          "content": "Provide one single-word clue that relates to some of your team's words from the list below. You can choose to how many and to which words your clue relates to.\nThe goal is to have your partner guess all of your team's words based on the clues you give them, before the other team has uncovered all of theirs. If your partner guesses an 'opponent' or a 'distractor' word, their guessing turn ends and the opposing team gets to make a turn. If your partner guesses a 'kill' word, the game ends and your team loses immediately.\nThe more words your clue relates to, the quicker you can win the game, but the harder the associations may be to guess for your partner, so choose your clue word wisely. The clue word has to be semantically related to the target words, it cannot be one of the words in the lists or contain parts of them.\n\nAlways give your single-word clue and your comma-separated list of related target words in the following format and make your answers as short as possible, never include any other text than is required in this form:\n\nCLUE: <WORD>\nTARGETS: <TARGETS>\n\nYour team words are: pin, duck, ice, palm, bat, phoenix, crown, undertaker, check.\nYour opponent's team words are: police, olympus, glass, server, bear, hook, seal, pound.\nDistractor words are: missile, apple, center, octopus, ball, church, lap, state.\nThe kill words are: .",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:14.750033",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: sport\nTARGETS: pin, duck, ice, palm, bat, phoenix",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:14.750291",
+        "action": {
+          "type": "clue",
+          "content": "sport"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:14.750321",
+        "action": {
+          "type": "targets",
+          "content": [
+            "pin",
+            "duck",
+            "ice",
+            "palm",
+            "bat",
+            "phoenix"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:14.750348",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "pin",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:14.750367",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "duck",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:14.750385",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "ice",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:14.750402",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "palm",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:14.750419",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "bat",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:14.750436",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "phoenix",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:40:14.750644",
+        "action": {
+          "type": "send message",
+          "content": "Provide a comma-separated list of up to 6 words from the following list that best relate or are most closely associated with the word 'sport'. Always start your list of guess(es) with 'GUESS: ' and do not include any other text in your answer.\n\nice, bear, crown, center, apple, missile, state, phoenix, undertaker, check, palm, police, bat, olympus, pound, church, hook, lap, duck, seal, ball, octopus, pin, server, glass",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:15.473591",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: ball, pin, hook, lap, center, pound",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:15.473707",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "ball",
+            "pin",
+            "hook",
+            "lap",
+            "center",
+            "pound"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:15.473746",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "ball",
+            "assignment": "innocent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:15.473769",
+        "action": {
+          "type": "turn end after",
+          "content": "ball"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:15.473970",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "bear",
+            "assignment": "opponent"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:15.474005",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "pin",
+                "duck",
+                "ice",
+                "palm",
+                "bat",
+                "phoenix",
+                "crown",
+                "undertaker",
+                "check"
+              ],
+              "innocent": [
+                "missile",
+                "apple",
+                "center",
+                "octopus",
+                "church",
+                "lap",
+                "state"
+              ],
+              "opponent": [
+                "police",
+                "olympus",
+                "glass",
+                "server",
+                "hook",
+                "seal",
+                "pound"
+              ],
+              "assassin": []
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [
+                  "ball"
+                ],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "bear"
+                ],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:40:15.474073",
+        "action": {
+          "type": "send message",
+          "content": "The word ball was guessed but is an innocent word. Your teammate's turn ended there.\nNow provide another clue relating to some of your remaining team words and a list of the related target words. Remember to start your clue with 'CLUE: ', put a new line, and start your comma-separated list of target words with 'TARGETS: '. Notice: some words have been removed from the lists compared to previous requests.\n\nYour remaining team words are: pin, duck, ice, palm, bat, phoenix, crown, undertaker, check.\nRemaining words for your opponent are: police, olympus, glass, server, bear, hook, seal, pound.\nRemaining distractor words are: missile, apple, center, octopus, church, lap, state.\nRemaining kill words are: .",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:16.136157",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: ring\nTARGETS: crown, check, palm",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:16.136405",
+        "action": {
+          "type": "clue",
+          "content": "ring"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:16.136435",
+        "action": {
+          "type": "targets",
+          "content": [
+            "crown",
+            "check",
+            "palm"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:16.136459",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "crown",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:16.136479",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "check",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:16.136497",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "palm",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:40:16.136722",
+        "action": {
+          "type": "send message",
+          "content": "The word ball was guessed but is an innocent word. Your turn ended there.\nNow provide another comma-separated list of at least 1 and up to 3 words from the following list of words that best relate or are most closely associated with the word 'ring'. Remember to start your answer with 'GUESS: '. Notice: some words have been removed from the list compared to previous requests.\n\nice, crown, center, apple, missile, state, phoenix, undertaker, check, palm, police, bat, olympus, pound, church, hook, lap, duck, seal, octopus, pin, server, glass",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:16.605242",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: crown, ring, palm",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:16.605349",
+        "action": {
+          "type": "validation error",
+          "content": {
+            "player": "Guesser",
+            "type": "guess is clue word",
+            "utterance": "crown, ring, palm",
+            "message": "Guessed word 'ring' is the same word as the provided clue word, you should only select words from the provided list.",
+            "guess": "ring",
+            "clue": "ring"
+          }
+        }
+      }
+    ]
+  ],
+  "board end status": {
+    "hidden": {
+      "team": [
+        "pin",
+        "duck",
+        "ice",
+        "palm",
+        "bat",
+        "phoenix",
+        "crown",
+        "undertaker",
+        "check"
+      ],
+      "innocent": [
+        "missile",
+        "apple",
+        "center",
+        "octopus",
+        "church",
+        "lap",
+        "state"
+      ],
+      "opponent": [
+        "police",
+        "olympus",
+        "glass",
+        "server",
+        "hook",
+        "seal",
+        "pound"
+      ],
+      "assassin": []
+    },
+    "revealed": {
+      "team": {
+        "team": [],
+        "innocent": [
+          "ball"
+        ],
+        "opponent": [],
+        "assassin": []
+      },
+      "opponent": {
+        "team": [],
+        "innocent": [],
+        "opponent": [
+          "bear"
+        ],
+        "assassin": []
+      }
+    }
+  },
+  "Number of turns": 3,
+  "Aborted": true,
+  "Lose": false,
+  "Game ended through assassin": false,
+  "Request Count": 4,
+  "Parsed Request Count": 3,
+  "Violated Request Count": 1,
+  "Cluegiver engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  },
+  "Guesser engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  }
+}

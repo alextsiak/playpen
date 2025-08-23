@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+
+.game-round {
+  padding: 20px 0 20px 0;
+  background-color: #f0f8ff; /* light background for content */
+  position: relative; /* Important to position the badge */
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge in top-right corner */
+.game-round::before {
+  content: "Round " attr(data-round);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #c4c3c3;
+  padding: 0px 2px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for ifeval, episode 153 with llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+<div class="game-round" data-round="0">
+    <div speaker="GM (Game Master) to Player 1 (InstructionFollower)" class="msg gm-a" style="">
+        <p>Can you write a poem about the pros and cons of playing a lot of video games? Please make sure it&#x27;s at least 40 sentences long (don&#x27;t forget to add punctuations). You must highlight some words or phrases in your response, like *highlighted phrase*.</p>
+    </div>
+
+    <div speaker="Player 1 (InstructionFollower) to GM (Game Master)" class="msg a-gm" style="">
+        <p>In virtual realms, we find our delight,<br/>Where pixels dance, and stories take flight.<br/>But playing video games, a double-edged sword,<br/>Can bring us joy, yet also leave us poor.<br/>We must weigh the pros and cons, with careful might,<br/>To decide if gaming&#x27;s worth the endless night.<br/><br/>Pros abound, like a treasure chest,<br/>*Endless entertainment*, a world to possess.<br/>We escape reality, in a digital haze,<br/>Where worries fade, and our spirits amaze.<br/>The thrill of victory, a rush to the heart,<br/>As we conquer quests, and never depart.<br/>The social bonds we form, a community strong,<br/>Where gamers unite, and friendships belong.<br/>We learn new skills, like problem-solving too,<br/>And strategic thinking, to see us through.<br/>The world of gaming, a realm to explore,<br/>Where imagination knows no bounds, evermore.<br/>We discover new worlds, with each new game,<br/>And the stories they tell, a tale to reclaim.<br/>The graphics, a feast, for the eyes to see,<br/>A symphony of colors, in perfect harmony.<br/>The music, a score, that echoes in our mind,<br/>A soundtrack to our adventures, forever aligned.<br/><br/>But cons exist, like a shadow in the night,<br/>*Addiction&#x27;s dark side*, a constant fight.<br/>We sacrifice time, for the virtual thrill,<br/>Leaving real life, to wither and chill.<br/>The health risks, a concern, we must not ignore,<br/>As we sit and stare, for hours, evermore.<br/>The social isolation, a price we pay,<br/>As we spend more time, in a digital way.<br/>The financial costs, a burden to bear,<br/>As we spend our cash, on games to share.<br/>The impact on relationships, a strain to see,<br/>As we neglect loved ones, in a virtual spree.<br/>The stress and anxiety, a weight to bear,<br/>As we face challenges, with no one to share.<br/>The sleep deprivation, a consequence to face,<br/>As we game through the night, in a frantic pace.<br/>The loss of productivity, a setback to our goal,<br/>As we spend more time, in a virtual role.<br/>The impact on our eyes, a risk to our sight,<br/>As we stare at screens, through day and night.<br/>The risk of cyberbullying, a threat to our well,<br/>As we interact online, with strangers to tell.<br/><br/>Yet, in moderation, gaming can be a friend,<br/>A healthy hobby, that never ends.<br/>We can set limits, to control our play,<br/>And balance our lives, in a healthy way.<br/>We can choose games, that promote our mind,<br/>And offer benefits, that leave us aligned.<br/>We can join online communities, to connect and share,<br/>And find support, in a virtual care.<br/>We can learn from others, in a digital space,<br/>And gain new insights, in a virtual place.<br/>We can explore new worlds, with a curious eye,<br/>And discover new things, as we game and fly.<br/>We can challenge ourselves, in a virtual test,<br/>And push our limits, to be our best.<br/>We can find inspiration, in a digital dream,<br/>And bring new ideas, to our waking scheme.<br/>We can connect with others, in a virtual meet,<br/>And form new friendships, that never retreat.<br/><br/>But let us not forget, the cons we&#x27;ve seen,<br/>*The dangers of excess*, a warning to be gleaned.<br/>Let us play responsibly, with a mindful heart,<br/>And balance our gaming, with a healthy start.<br/>Let us set boundaries, to control our play,<br/>And prioritize our lives, in a healthy way.<br/>Let us choose games, that promote our well-being,<br/>And offer benefits, that leave us feeling.<br/>Let us be aware, of the risks we face,<br/>And take steps to mitigate, the negative pace.<br/>Let us be mindful, of our gaming habits too,<br/>And make changes, to ensure our health shines through.<br/>Let us be responsible, in our gaming quest,<br/>And strive for balance, in our digital nest.<br/>Let us be aware, of the impact we make,<br/>And play games, that bring us joy, not a mistake. <br/><br/>In conclusion, gaming&#x27;s pros and cons we&#x27;ve weighed,<br/>A delicate balance, that we must have made.<br/>Let us play with care, and a mindful heart,<br/>And find the joy, in a healthy gaming start. <br/><br/>Note: I&#x27;ve highlighted some phrases in the poem, as per your request. The highlighted phrases are:<br/><br/>*Endless entertainment*<br/>*Addiction&#x27;s dark side*<br/>*The dangers of excess*</p>
+    </div>
+
+    <div speaker="Game Master: target" class="msg gm-gm" style="">
+        <p>{&#x27;detectable_format:number_highlighted_sections&#x27;: {&#x27;num_highlights&#x27;: 1}, &#x27;length_constraints:number_sentences&#x27;: {&#x27;relation&#x27;: &#x27;at least&#x27;, &#x27;num_sentences&#x27;: 40}}</p>
+    </div>
+
+    <div speaker="Game Master: followed all instructions" class="msg gm-gm" style="">
+        <p>game_result = WIN</p>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

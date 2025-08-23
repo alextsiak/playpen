@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a casual blog post about how the outer solar system is different from the inner solar system, and what that means for the possibility of life. Wrap your entire response with double quotation marks. Your response should contain 17 or more sentences. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "Exploring the vastness of our solar system, it's clear that the outer regions are vastly different from the inner ones. The farther you venture from the sun, the more extreme the conditions become. This difference in environment is crucial in understanding the possibility of life beyond Earth. The inner solar system, comprising Mercury, Venus, Earth, and Mars, is relatively warm and cozy, with temperatures that can support liquid water. In contrast, the outer planets like Jupiter, Saturn, Uranus, and Neptune are icy cold, with temperatures that would freeze most known forms of life. The gas giants in the outer solar system are also much larger and more massive than the rocky planets in the inner system. This disparity in size and mass affects the gravitational pull, making it difficult for smaller objects to escape the outer planets' strong gravitational fields. The outer solar system is also home to a plethora of moons, some of which have conditions that could potentially support life. For instance, Europa, a moon of Jupiter, has a thick icy crust covering a liquid water ocean, making it a prime candidate for hosting life. The outer solar system's unique characteristics also lead to the presence of comets and other small, icy bodies that can deliver organic materials to the inner planets. This delivery system could have played a crucial role in the origins of life on Earth. The outer solar system's harsh conditions, however, also make it challenging for life to emerge and thrive. The lack of a strong magnetic field in the outer planets, for example, exposes their surfaces to intense radiation from the sun. This radiation can damage the DNA of any potential life forms, making it harder for them to survive. Despite these challenges, the outer solar system still offers a wealth of opportunities for scientific discovery. The study of its moons, asteroids, and comets can provide valuable insights into the formation and evolution of our solar system. The possibility of life in the outer solar system is still a topic of debate among scientists, but the discovery of exoplanets and their potential for hosting life has sparked renewed interest in the search for extraterrestrial life. The search for life in the outer solar system is an ongoing and exciting area of research, with scientists using a variety of methods to search for signs of life, such as studying the atmospheres of moons and planets for signs of gases that could be produced by living organisms. The outer solar system's differences from the inner system offer a unique perspective on the possibility of life beyond Earth, and continued exploration of this region is crucial in our quest to understand the universe." 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'startend:quotation': {}, 'length_constraints:number_sentences': {'relation': 'at least', 'num_sentences': 17}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

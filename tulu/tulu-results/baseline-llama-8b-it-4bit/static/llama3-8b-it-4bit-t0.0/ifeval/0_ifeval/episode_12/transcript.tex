@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Compose a poem that has the word "land" and "river". It should be about nature and love. Also, the word "forest" should appear at least 3 times, and be written in English, with all letters lowercased. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 in the heart of the forest, where trees stand tall,\\ \tt a gentle breeze whispers, a love that enthralls.\\ \tt the forest's ancient wisdom, a secret it keeps,\\ \tt of a love that's pure and strong, in the forest's deep.\\ \tt \\ \tt the river's soothing melody, a serenade to the soul,\\ \tt echoes through the forest, where love's heart makes whole.\\ \tt in the forest's quiet hours, when sunbeams filter through,\\ \tt i find my heart's companion, in the forest, with you.\\ \tt \\ \tt the forest's verdant canopy, a shelter from life's storm,\\ \tt a haven where love's roots grow, in the forest's gentle form.\\ \tt the river's flowing waters, a reflection of our love,\\ \tt a bond that's strong and unbroken, sent from above.\\ \tt \\ \tt in the forest's mystic silence, where creatures roam free,\\ \tt i hear the whispers of love, in the forest, wild and carefree.\\ \tt the river's gentle lapping, a lullaby to the heart,\\ \tt a love that's pure and true, in the forest, we'll never be apart. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'keywords:frequency': {'relation': 'at least', 'keyword': 'forest', 'frequency': 3}, 'change_case:english_lowercase': {}, 'keywords:existence': {'keywords': ['land', 'river']}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

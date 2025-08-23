@@ -1,0 +1,1438 @@
+{
+  "meta": {
+    "game_name": "textmapworld",
+    "experiment_name": "small",
+    "game_id": 8,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "PathGuesser",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "PathDescriber",
+      "model_name": "programmatic"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:51.894513",
+        "action": {
+          "type": "send message",
+          "content": "Please help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.100713",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.100794",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:52.100829",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.100902",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.100934",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.100970",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Study room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:52.100997",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.307855",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.307934",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:52.307968",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.308039",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.308070",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.308104",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Study room\", \"new\": \"Laundry room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:52.308131",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.516430",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.516510",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:52.516553",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.516625",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Solarium. Currently available directions: west, east. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.516656",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.516691",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Solarium\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:52.516717",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Solarium. Currently available directions: west, east. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.725285",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.725368",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:52.725402",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.725475",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.725506",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.725541",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Solarium\", \"new\": \"Laundry room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:52.725567",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.945774",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.945858",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:52.945894",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.945967",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.945998",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:52.946034",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Study room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:52.946060",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.166734",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.166818",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:53.166852",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.166924",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.166955",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.166990",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Study room\", \"new\": \"Laundry room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:53.167017",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.386488",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.386575",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:53.386610",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.386681",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.386711",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.386745",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Study room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:53.386772",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.613839",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.613925",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:53.613959",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.614028",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.614058",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.614092",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Study room\", \"new\": \"Laundry room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:53.614118",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.841743",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.841833",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:53.841868",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.841941",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.841972",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:53.842007",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Study room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:53.842034",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.069774",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.069863",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:54.069898",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.069968",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.069999",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.070034",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Study room\", \"new\": \"Laundry room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:54.070060",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.301165",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.301256",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:54.301290",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.301361",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Solarium. Currently available directions: west, east. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.301391",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.301426",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Solarium\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:54.301452",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Solarium. Currently available directions: west, east. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.539853",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.539946",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:54.539982",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.540054",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.540085",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.540121",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Solarium\", \"new\": \"Laundry room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:54.540147",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.781003",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.781089",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:54.781123",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.781194",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.781226",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:54.781261",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Study room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:54.781287",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.023715",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.023803",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:55.023838",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.023908",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.023939",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.023975",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Study room\", \"new\": \"Laundry room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:55.024002",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.276582",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.276672",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:55.276707",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.276782",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.276813",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.276853",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Study room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:55.276882",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.531885",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.531984",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:55.532020",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.532093",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.532124",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.532159",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Study room\", \"new\": \"Laundry room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:55.532186",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.787338",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.787429",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:55.787464",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.787538",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Solarium. Currently available directions: west, east. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.787569",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:55.787604",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Solarium\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:55.787631",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Solarium. Currently available directions: west, east. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.046383",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.046478",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:56.046515",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.046592",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.046623",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.046661",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Solarium\", \"new\": \"Laundry room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:56.046689",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.312429",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.312561",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:56.312598",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.312677",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.312708",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.312745",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Laundry room\", \"new\": \"Study room\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:08:56.312771",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Study room. Currently available directions: north. What is your next command?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.579740",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.579852",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:08:56.579889",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.579965",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Laundry room. Currently available directions: south, west. What is your next command?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.579996",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.580033",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Study room\", \"new\": \"Laundry room\"}"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:08:56.580047",
+        "action": {
+          "type": "turns_limit",
+          "content": "20"
+        }
+      }
+    ]
+  ]
+}

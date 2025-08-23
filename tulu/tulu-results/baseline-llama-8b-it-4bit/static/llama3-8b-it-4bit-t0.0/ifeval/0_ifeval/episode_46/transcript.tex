@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 create a job description for a clifford blu employee who works at the cash register, and also monitors the shelves for stock level. Use the keyword 'people' and 'skills'. use only lowercase letters. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 job title: cash register associate\\ \tt \\ \tt at clifford blu, we're looking for a friendly and organized individual to join our team as a cash register associate. as a key member of our sales floor team, you will be responsible for operating the cash register, processing transactions, and maintaining a high level of customer service.\\ \tt \\ \tt key responsibilities:\\ \tt \\ \tt * operate the cash register accurately and efficiently, handling cash, credit card transactions, and other payment methods\\ \tt * maintain a clean and organized workspace, including the cash register area and surrounding shelves\\ \tt * monitor stock levels on the shelves and notify management when replenishment is needed\\ \tt * assist customers with purchases, answering questions and providing product information\\ \tt * work collaboratively with other team members to achieve sales goals and maintain a positive store environment\\ \tt * maintain a high level of product knowledge and stay up-to-date on new products and promotions\\ \tt \\ \tt people skills:\\ \tt \\ \tt * excellent communication and interpersonal skills, with the ability to interact with customers and colleagues in a friendly and professional manner\\ \tt * strong problem-solving skills, with the ability to think critically and resolve issues in a timely and effective manner\\ \tt * ability to work in a fast-paced environment, with multiple tasks and responsibilities\\ \tt \\ \tt skills:\\ \tt \\ \tt * basic math skills and attention to detail, with the ability to accurately handle cash and process transactions\\ \tt * proficiency in operating a cash register and other point-of-sale systems\\ \tt * ability to lift up to 25 pounds and stand for long periods of time\\ \tt * strong organizational and time management skills, with the ability to prioritize tasks and meet deadlines\\ \tt \\ \tt if you're a motivated and customer-focused individual with excellent people skills and a strong work ethic, we encourage you to apply for this exciting opportunity to join our team at clifford blu. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'change_case:english_lowercase': {}, 'keywords:existence': {'keywords': ['people', 'skills']}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

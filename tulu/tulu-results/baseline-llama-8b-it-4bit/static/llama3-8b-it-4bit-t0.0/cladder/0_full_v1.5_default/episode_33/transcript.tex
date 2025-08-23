@@ -1,0 +1,84 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\\ \tt Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Poverty has a direct effect on water quality and cholera. Water company has a direct effect on water quality. Water quality has a direct effect on cholera. Poverty is unobserved. We know that high poverty or global water company causes clean water. high poverty or clean water causes cholera contraction. We observed the person is served by a global water company and the region has low poverty. Would the person gets cholera if polluted water instead of clean water?\\ \tt Start your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 No\\ \tt \\ \tt In this hypothetical world, we have the following causal relationships:\\ \tt \\ \tt 1. Poverty → Water Quality (direct effect)\\ \tt 2. Water Company → Water Quality (direct effect)\\ \tt 3. Water Quality → Cholera (direct effect)\\ \tt \\ \tt We are given the following conditional relationships:\\ \tt \\ \tt 1. High Poverty or Global Water Company → Clean Water\\ \tt 2. High Poverty or Clean Water → Cholera Contraction\\ \tt \\ \tt We observe that the person is served by a global water company and the region has low poverty. This implies that the person is likely to receive clean water (due to the global water company) and is not in a region with high poverty.\\ \tt \\ \tt To determine the probability of the person getting cholera if they receive polluted water instead of clean water, we need to consider the following:\\ \tt \\ \tt - If the person receives polluted water, the water quality would be bad (due to the absence of the global water company's effect).\\ \tt - However, since the region has low poverty, the poverty effect on water quality is not relevant in this scenario.\\ \tt - The only relevant effect is the water quality effect on cholera, which is a direct effect.\\ \tt \\ \tt Given that the person is not in a region with high poverty, the effect of poverty on water quality is not relevant. The only relevant effect is the water company's effect on water quality, which is not present in this scenario (polluted water). \\ \tt \\ \tt However, we can use the conditional relationships to infer the effect of polluted water on cholera contraction. Since high poverty 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 No 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

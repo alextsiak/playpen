@@ -1,0 +1,551 @@
+{
+  "meta": {
+    "game_name": "matchit_ascii",
+    "experiment_name": "different_grid",
+    "game_id": 6,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    },
+    "Player 2": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:47:47.911992",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nX X X X X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:51.725993",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: X ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nX X X X X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:51.726050",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:47:51.726088",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\n▢ ▢ ▢ ▢ ▢\nX X X ▢ X\nX X ▢ X X\nX ▢ X X X\n▢ ▢ ▢ ▢ ▢",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:55.629344",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: ▢ ▢ ▢ ▢ ▢\nX X X ▢ X\nX X ▢ X X\nX ▢ X X X\n▢ ▢ ▢ ▢ ▢",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:55.629403",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:47:55.629439",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: X ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nX X X X X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nNow ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:57.020015",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any X's in the first row of your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:57.020079",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:47:57.020136",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: ▢ ▢ ▢ ▢ ▢\nX X X ▢ X\nX X ▢ X X\nX ▢ X X X\n▢ ▢ ▢ ▢ ▢\nQUESTION: Are there any X's in the first row of your grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:57.550222",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:57.550282",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:47:57.550317",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:59.101807",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any ▢'s in the third column of your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:59.101866",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:47:59.101908",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes.\nQUESTION: Are there any ▢'s in the third column of your grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:01.161435",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No. \n\nQUESTION: Are there any ▢'s in the last row of your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:01.161496",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:48:01.161531",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:02.795080",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any rows in your grid that consist entirely of ▢'s?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:02.795141",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:48:02.795191",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No. \n\nQUESTION: Are there any ▢'s in the last row of your grid?\nQUESTION: Are there any rows in your grid that consist entirely of ▢'s? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:07.067498",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes. \n\nQUESTION: Are there any ▢'s in the last row of your grid? \n\n(I'll answer this one after you confirm the second part of the question) \n\n(I'll wait for your response to the second part",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:07.067582",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:48:07.067620",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:08.542234",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any rows in your grid that consist entirely of X's?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:08.542296",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:48:08.542337",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes. \n\nQUESTION: Are there any ▢'s in the last row of your grid? \n\n(I'll answer this one after you confirm the second part of the question) \n\n(I'll wait for your response to the second part\nQUESTION: Are there any rows in your grid that consist entirely of X's? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:12.838375",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No. \n\nQUESTION: Are there any ▢'s in the last row of your grid? \n\n(I'll answer this one now) \n\nANSWER: Yes. \n\nQUESTION: Are there any rows in your grid that consist entirely",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:12.838437",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:48:12.838472",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:14.327751",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any columns in your grid that consist entirely of X's?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:14.327835",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:48:14.327891",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No. \n\nQUESTION: Are there any ▢'s in the last row of your grid? \n\n(I'll answer this one now) \n\nANSWER: Yes. \n\nQUESTION: Are there any rows in your grid that consist entirely\nQUESTION: Are there any columns in your grid that consist entirely of X's? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:18.663438",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes. \n\nQUESTION: Are there any rows in your grid that consist entirely of ▢'s? \n\n(I'll answer this one after you confirm the second part of the question) \n\n(I'll wait for your response to the second",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:18.663498",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:48:18.663532",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:20.346969",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any columns in your grid that consist entirely of ▢'s?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:20.347029",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:48:20.347072",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes. \n\nQUESTION: Are there any rows in your grid that consist entirely of ▢'s? \n\n(I'll answer this one after you confirm the second part of the question) \n\n(I'll wait for your response to the second\nQUESTION: Are there any columns in your grid that consist entirely of ▢'s? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:24.719026",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes. \n\nQUESTION: Are there any columns in your grid that consist entirely of ▢'s? \n\n(I'll answer this one now) \n\nANSWER: Yes. \n\nQUESTION: Are there any columns in your grid that consist",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:24.719099",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:48:24.719140",
+        "action": {
+          "type": "send message",
+          "content": "Now come to a decision. What do you think: are your grid and the other grid described the same?  Write \"DECISION: same grid\" if you think they are the same grid or \"DECISION: different grids\" if you think they are different grids. Do not add anything else.\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:25.298831",
+        "action": {
+          "type": "get message",
+          "content": "DECISION: different grids",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:25.298894",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:25.298914",
+        "action": {
+          "type": "Decision Player B",
+          "content": "success"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:48:25.298967",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes. \n\nQUESTION: Are there any columns in your grid that consist entirely of ▢'s? \n\n(I'll answer this one now) \n\nANSWER: Yes. \n\nQUESTION: Are there any columns in your grid that consist\nNow come to a decision. What do you think: are your grid and the other grid described the same?  Write \"DECISION: same grid\" if you think they are the same grid or \"DECISION: different grids\" if you think they are different grids. Do not add anything else.\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:25.880573",
+        "action": {
+          "type": "get message",
+          "content": "DECISION: different grids",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:25.880630",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:48:25.880645",
+        "action": {
+          "type": "Decision Player A",
+          "content": "success"
+        }
+      }
+    ]
+  ]
+}

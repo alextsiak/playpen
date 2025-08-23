@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2025-08-21T19:21:44.505399",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a text adventure game. I will describe what you can perceive in the game. You write the single action you want to take in the game starting with >. Write your plan for your next actions on the line below your action, starting with \"Next actions:\".\nFor example:\n> open cupboard\nNext actions: take orange, eat orange\n\nYour goal for this game is: Put the book on the shelf, the sandwich on the table and the broom on the counter.\n\nOnce you have achieved your goal, write \"> done\" to end the game.\n\nYou are in a living room now. There are a chair, a couch, a side table and a shelf. There are passages to a bedroom, a hallway and a kitchen here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a text adventure game. I will describe what you can perceive in the game. You write the single action you want to take in the game starting with >. Write your plan for your next actions on the line below your action, starting with \"Next actions:\".\nFor example:\n> open cupboard\nNext actions: take orange, eat orange\n\nYour goal for this game is: Put the book on the shelf, the sandwich on the table and the broom on the counter.\n\nOnce you have achieved your goal, write \"> done\" to end the game.\n\nYou are in a living room now. There are a chair, a couch, a side table and a shelf. There are passages to a bedroom, a hallway and a kitchen here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n> look around\n\nNext actions: move to kitchen, examine kitchen contents<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:21:43.205495",
+        "call_duration": "0:00:01.299846",
+        "response": "> look around\n\nNext actions: move to kitchen, examine kitchen contents",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:21:47.679986",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a text adventure game. I will describe what you can perceive in the game. You write the single action you want to take in the game starting with >. Write your plan for your next actions on the line below your action, starting with \"Next actions:\".\nFor example:\n> open cupboard\nNext actions: take orange, eat orange\n\nYour goal for this game is: Put the book on the shelf, the sandwich on the table and the broom on the counter.\n\nOnce you have achieved your goal, write \"> done\" to end the game.\n\nYou are in a living room now. There are a chair, a couch, a side table and a shelf. There are passages to a bedroom, a hallway and a kitchen here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n> look around\n\nNext actions: move to kitchen, examine kitchen contents<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nI don't know how to interpret this 'look' action.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a text adventure game. I will describe what you can perceive in the game. You write the single action you want to take in the game starting with >. Write your plan for your next actions on the line below your action, starting with \"Next actions:\".\nFor example:\n> open cupboard\nNext actions: take orange, eat orange\n\nYour goal for this game is: Put the book on the shelf, the sandwich on the table and the broom on the counter.\n\nOnce you have achieved your goal, write \"> done\" to end the game.\n\nYou are in a living room now. There are a chair, a couch, a side table and a shelf. There are passages to a bedroom, a hallway and a kitchen here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n> look around\n\nNext actions: move to kitchen, examine kitchen contents<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nI don't know how to interpret this 'look' action.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nYou are correct, \"look around\" is not a specific action in this context. \n\n> move to kitchen\n\nNext actions: examine kitchen contents, find book, move to shelf<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:21:44.513975",
+        "call_duration": "0:00:03.165941",
+        "response": "You are correct, \"look around\" is not a specific action in this context. \n\n> move to kitchen\n\nNext actions: examine kitchen contents, find book, move to shelf",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  }
+]

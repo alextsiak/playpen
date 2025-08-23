@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-07-21T12:04:45.629907",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbrandon\n\nRelated words are:\n\n- florida\n- england\n- colorado\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbrandon\n\nRelated words are:\n\n- florida\n- england\n- colorado\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A place in the United States with a famous lake.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:44.940114",
+        "call_duration": "0:00:00.689745",
+        "response": "CLUE: A place in the United States with a famous lake.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:45.917614",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Michigan<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:45.630207",
+        "call_duration": "0:00:00.287359",
+        "response": "GUESS: Michigan",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:46.518609",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbrandon\n\nRelated words are:\n\n- florida\n- england\n- colorado\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Michigan<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbrandon\n\nRelated words are:\n\n- florida\n- england\n- colorado\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Michigan<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Located in the southeastern part of the country.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:45.917742",
+        "call_duration": "0:00:00.600818",
+        "response": "CLUE: Located in the southeastern part of the country.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:46.806268",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Michigan<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Located in the southeastern part of the country.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Michigan<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Located in the southeastern part of the country.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Florida<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:46.518882",
+        "call_duration": "0:00:00.287338",
+        "response": "GUESS: Florida",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:47.450838",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbrandon\n\nRelated words are:\n\n- florida\n- england\n- colorado\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Michigan<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Located in the southeastern part of the country.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Florida<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbrandon\n\nRelated words are:\n\n- florida\n- england\n- colorado\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Michigan<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Located in the southeastern part of the country.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Florida<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A name often associated with a British royal family.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:46.806399",
+        "call_duration": "0:00:00.644389",
+        "response": "CLUE: A name often associated with a British royal family.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:47.741241",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Michigan<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Located in the southeastern part of the country.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Florida<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: A name often associated with a British royal family.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A place in the United States with a famous lake.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Michigan<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Located in the southeastern part of the country.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Florida<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: A name often associated with a British royal family.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Windsor<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:47.451137",
+        "call_duration": "0:00:00.290058",
+        "response": "GUESS: Windsor",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  }
+]

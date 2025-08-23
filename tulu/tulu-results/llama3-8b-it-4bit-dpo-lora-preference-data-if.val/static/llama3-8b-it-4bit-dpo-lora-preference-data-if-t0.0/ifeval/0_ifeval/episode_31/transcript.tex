@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write an email to your friend about what triggers you. Make sure to wrap the entire email in double quotation marks. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "Dear friend,\\ \tt \\ \tt I wanted to take a moment to talk to you about what triggers me lately. I've been feeling really overwhelmed by small talk and unnecessary details. When we're out with a group of people, I often find myself getting anxious when everyone is asking me questions about my daily life. It's not that I don't want to share, but sometimes I just want to focus on the present moment without feeling like I need to give a detailed account of my day.\\ \tt \\ \tt Another thing that triggers me is when people interrupt me while I'm speaking. I know it's not always intentional, but it can be really frustrating when I'm trying to express myself and someone cuts me off. It makes me feel like my thoughts aren't being valued or respected.\\ \tt \\ \tt Lastly, I've been feeling really sensitive to criticism lately. I know it's not always easy to hear, but when someone points out something I've done wrong, it can be really hurtful. I'm working on building my self-confidence, but it's still something I'm struggling with.\\ \tt \\ \tt I hope you can understand where I'm coming from. I value our friendship and I want to make sure we can communicate effectively. If you could be more mindful of these triggers, I would really appreciate it.\\ \tt \\ \tt Thanks for being such a great friend.\\ \tt \\ \tt Best,\\ \tt " \\ \tt \\ \tt (Note: I wrapped the entire email in double quotation marks as per your request) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'startend:quotation': {}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

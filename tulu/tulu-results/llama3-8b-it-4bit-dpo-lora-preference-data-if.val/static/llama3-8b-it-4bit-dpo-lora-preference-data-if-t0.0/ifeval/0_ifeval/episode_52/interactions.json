@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 517,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:45:18.285727",
+        "action": {
+          "type": "send message",
+          "content": "Blog post from the perspective of a 16 year old girl who is being followed by a stranger. Your response should contain less than 10 sentences and no commas.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:45:28.285871",
+        "action": {
+          "type": "get message",
+          "content": "I'm scared I'm being followed by a stranger. I see him everywhere I go. He's always lurking in the shadows. I try to ignore him but it's hard to shake the feeling of being watched. I've seen him on my way to school and on my way home. He's always dressed in dark clothes. I don't know what he wants but I know I don't like it. I've told my parents but they don't seem to take it seriously. I just want to feel safe again. I'm going to start taking different routes.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:45:28.285959",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:number_sentences": {
+              "relation": "less than",
+              "num_sentences": 10
+            },
+            "punctuation:no_comma": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:45:28.286391",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

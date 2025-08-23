@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Can you create a list of mega trends in the tech industry? Wrap your entire response with double quotation marks. Also, make sure the letter o appears at least 25 times in your response. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "Here's a list of mega trends in the tech industry, where innovation and technological advancements are occurring at an outstanding pace, often opening up new opportunities for outstanding entrepreneurs and organizations:\\ \tt \\ \tt 1. "The Internet of Things (IoT) is one of the most outstanding trends, where objects, often outfitted with sensors and other technologies, are interconnected, offering opportunities for outstanding efficiency and effectiveness in various industries.\\ \tt 2. "Artificial Intelligence (AI) is another outstanding trend, where machines are able to perform outstanding tasks, often opening up new opportunities for outstanding businesses and organizations.\\ \tt 3. "Cloud Computing is an outstanding trend, where data and applications are stored and processed in remote servers, often offering outstanding scalability and flexibility for outstanding businesses.\\ \tt 4. "Cybersecurity is an outstanding trend, where protecting computer systems and networks from outstanding threats, such as outstanding malware and outstanding hackers, is of utmost importance.\\ \tt 5. "5G Networks are an outstanding trend, where the next generation of wireless network technology offers outstanding speed, outstanding capacity, and outstanding reliability for outstanding mobile devices.\\ \tt 6. "Extended Reality (XR) is an outstanding trend, where virtual reality, augmented reality, and mixed reality technologies are often used to create outstanding immersive experiences for outstanding users.\\ \tt 7. "Quantum Computing is an outstanding trend, where the use of quantum-mechanical phenomena, such as superposition and entanglement, offers outstanding computing power and outstanding speed for outstanding complex calculations.\\ \tt 8. "Blockchain Technology is an outstanding trend, where a decentralized, distributed ledger technology offers outstanding security, transparency, and outstanding trust for outstanding transactions and data management.\\ \tt 9. "Autonomous Systems are an outstanding trend, where machines and vehicles are able to operate independently, often using outstanding sensors, outstanding algorithms, and outstanding machine learning techniques.\\ \tt 10. "Sustainable Technologies are an outstanding trend, where technologies, such as renewable energy, energy efficiency, and outstanding eco-friendly materials, are often used to reduce outstanding environmental impact and promote outstanding sustainability.\\ \tt \\ \tt These outstanding trends are often opening up new opportunities for outstanding businesses, organizations, and individuals, often requiring outstanding skills, outstanding knowledge, and outstanding innovation to stay ahead in the outstanding tech industry." 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'startend:quotation': {}, 'keywords:letter_frequency': {'let_relation': 'at least', 'letter': 'o', 'let_frequency': 25}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

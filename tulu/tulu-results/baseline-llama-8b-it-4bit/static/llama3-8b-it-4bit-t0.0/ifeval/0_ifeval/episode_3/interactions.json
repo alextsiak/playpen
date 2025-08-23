@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 30,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:34:36.932290",
+        "action": {
+          "type": "send message",
+          "content": "Write a social media post for students of Islamic history about the hajj pilgrimage. Use all lowercase letters and include the word story at least twice.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:34:50.554276",
+        "action": {
+          "type": "get message",
+          "content": "let's talk about one of the most significant events in islamic history - the hajj pilgrimage. every year, millions of muslims from all around the world come together to perform this sacred ritual in mecca, saudi arabia. it's a story of faith, unity, and devotion that transcends borders and cultures.\n\nthe hajj is a journey of a lifetime, where pilgrims reenact the story of prophet ibrahim's (peace be upon him) willingness to sacrifice his son ismael as a test of faith. it's a powerful reminder of the importance of trust in god's plan and the value of sacrifice in our lives.\n\nas pilgrims make their way through the holy cities of mecca and medina, they experience a sense of community and brotherhood that's hard to find elsewhere. it's a story of people from different backgrounds and countries coming together to celebrate their shared faith and values.\n\nthe hajj is a journey that's both physically and spiritually demanding, but it's also a source of great joy and spiritual renewal. it's a story of transformation, where pilgrims leave their worries and doubts behind and return home with a renewed sense of purpose and faith.\n\nso let's keep the story of the hajj alive by sharing our experiences and insights with each other. what's your favorite part of the hajj story? how has the hajj impacted your life? let's keep the conversation going! #hajj #islamichistory #faith #unity #devotion",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:34:50.554353",
+        "action": {
+          "type": "target",
+          "content": {
+            "change_case:english_lowercase": {},
+            "keywords:frequency": {
+              "relation": "at least",
+              "keyword": "story",
+              "frequency": 2
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:34:51.039877",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

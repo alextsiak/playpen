@@ -1,0 +1,915 @@
+{
+  "meta": {
+    "game_name": "codenames",
+    "experiment_name": "frequency_high",
+    "game_id": 2,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "ClueGiver",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:05.260388",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "girl",
+                "system",
+                "officer",
+                "date",
+                "street",
+                "office",
+                "honey",
+                "meeting",
+                "lawyer"
+              ],
+              "innocent": [
+                "security",
+                "evening",
+                "murder",
+                "trip",
+                "case",
+                "miss",
+                "sister"
+              ],
+              "opponent": [
+                "sex",
+                "stuff",
+                "future",
+                "christmas",
+                "store",
+                "charge",
+                "son",
+                "honor"
+              ],
+              "assassin": [
+                "army"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:41:05.260465",
+        "action": {
+          "type": "send message",
+          "content": "Provide one single-word clue that relates to some of your team's words from the list below. You can choose to how many and to which words your clue relates to.\nThe goal is to have your partner guess all of your team's words based on the clues you give them, before the other team has uncovered all of theirs. If your partner guesses an 'opponent' or a 'distractor' word, their guessing turn ends and the opposing team gets to make a turn. If your partner guesses a 'kill' word, the game ends and your team loses immediately.\nThe more words your clue relates to, the quicker you can win the game, but the harder the associations may be to guess for your partner, so choose your clue word wisely. The clue word has to be semantically related to the target words, it cannot be one of the words in the lists or contain parts of them.\n\nAlways give your single-word clue and your comma-separated list of related target words in the following format and make your answers as short as possible, never include any other text than is required in this form:\n\nCLUE: <WORD>\nTARGETS: <TARGETS>\n\nYour team words are: girl, system, officer, date, street, office, honey, meeting, lawyer.\nYour opponent's team words are: sex, stuff, future, christmas, store, charge, son, honor.\nDistractor words are: security, evening, murder, trip, case, miss, sister.\nThe kill words are: army.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:05.993295",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: wedding\nTARGETS: girl, officer, lawyer, date",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:05.993578",
+        "action": {
+          "type": "clue",
+          "content": "wedding"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:05.993609",
+        "action": {
+          "type": "targets",
+          "content": [
+            "girl",
+            "officer",
+            "lawyer",
+            "date"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:05.993633",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "girl",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:05.993653",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "officer",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:05.993671",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "lawyer",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:05.993687",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "date",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:41:05.993892",
+        "action": {
+          "type": "send message",
+          "content": "Provide a comma-separated list of up to 4 words from the following list that best relate or are most closely associated with the word 'wedding'. Always start your list of guess(es) with 'GUESS: ' and do not include any other text in your answer.\n\nofficer, date, christmas, army, system, son, murder, sister, street, lawyer, stuff, trip, security, case, honor, meeting, charge, miss, girl, office, evening, honey, store, future, sex",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543236",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: officer, date, sister, lawyer",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543347",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "officer",
+            "date",
+            "sister",
+            "lawyer"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543385",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "officer",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543407",
+        "action": {
+          "type": "target revealed",
+          "content": {
+            "word": "officer",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543428",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "date",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543445",
+        "action": {
+          "type": "target revealed",
+          "content": {
+            "word": "date",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543465",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "sister",
+            "assignment": "innocent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543483",
+        "action": {
+          "type": "turn end after",
+          "content": "sister"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543685",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "charge",
+            "assignment": "opponent"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:06.543720",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "girl",
+                "system",
+                "street",
+                "office",
+                "honey",
+                "meeting",
+                "lawyer"
+              ],
+              "innocent": [
+                "security",
+                "evening",
+                "murder",
+                "trip",
+                "case",
+                "miss"
+              ],
+              "opponent": [
+                "sex",
+                "stuff",
+                "future",
+                "christmas",
+                "store",
+                "son",
+                "honor"
+              ],
+              "assassin": [
+                "army"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [
+                  "officer",
+                  "date"
+                ],
+                "innocent": [
+                  "sister"
+                ],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "charge"
+                ],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:41:06.543789",
+        "action": {
+          "type": "send message",
+          "content": "The words officer, date were guessed correctly. The word sister was guessed but is an innocent word. Your teammate's turn ended there.\nNow provide another clue relating to some of your remaining team words and a list of the related target words. Remember to start your clue with 'CLUE: ', put a new line, and start your comma-separated list of target words with 'TARGETS: '. Notice: some words have been removed from the lists compared to previous requests.\n\nYour remaining team words are: girl, system, street, office, honey, meeting, lawyer.\nRemaining words for your opponent are: sex, stuff, future, christmas, store, charge, son, honor.\nRemaining distractor words are: security, evening, murder, trip, case, miss.\nRemaining kill words are: army.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.121366",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: furniture\nTARGETS: office, system",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.121603",
+        "action": {
+          "type": "clue",
+          "content": "furniture"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.121634",
+        "action": {
+          "type": "targets",
+          "content": [
+            "office",
+            "system"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.121659",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "office",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.121680",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "system",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:41:07.121886",
+        "action": {
+          "type": "send message",
+          "content": "The words officer, date were guessed correctly. The word sister was guessed but is an innocent word. Your turn ended there.\nNow provide another comma-separated list of at least 1 and up to 2 words from the following list of words that best relate or are most closely associated with the word 'furniture'. Remember to start your answer with 'GUESS: '. Notice: some words have been removed from the list compared to previous requests.\n\nchristmas, army, system, son, murder, street, lawyer, stuff, trip, security, case, honor, meeting, miss, girl, office, evening, honey, store, future, sex",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.502843",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: office, stuff",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.502955",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "office",
+            "stuff"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.502992",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "office",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.503015",
+        "action": {
+          "type": "target revealed",
+          "content": {
+            "word": "office",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.503035",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "stuff",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.503053",
+        "action": {
+          "type": "turn end after",
+          "content": "stuff"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.503253",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "sex",
+            "assignment": "opponent"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:07.503288",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "girl",
+                "system",
+                "street",
+                "honey",
+                "meeting",
+                "lawyer"
+              ],
+              "innocent": [
+                "security",
+                "evening",
+                "murder",
+                "trip",
+                "case",
+                "miss"
+              ],
+              "opponent": [
+                "future",
+                "christmas",
+                "store",
+                "son",
+                "honor"
+              ],
+              "assassin": [
+                "army"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [
+                  "officer",
+                  "date",
+                  "office"
+                ],
+                "innocent": [
+                  "sister"
+                ],
+                "opponent": [
+                  "stuff"
+                ],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "charge",
+                  "sex"
+                ],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:41:07.503357",
+        "action": {
+          "type": "send message",
+          "content": "The word office was guessed correctly. The word stuff was guessed but is an opponent word. Your teammate's turn ended there.\nNow provide another clue relating to some of your remaining team words and a list of the related target words. Remember to start your clue with 'CLUE: ', put a new line, and start your comma-separated list of target words with 'TARGETS: '. Notice: some words have been removed from the lists compared to previous requests.\n\nYour remaining team words are: girl, system, street, honey, meeting, lawyer.\nRemaining words for your opponent are: sex, future, christmas, store, son, honor.\nRemaining distractor words are: security, evening, murder, trip, case, miss.\nRemaining kill words are: army.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.092556",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: sweet\nTARGETS: honey, girl",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.092792",
+        "action": {
+          "type": "clue",
+          "content": "sweet"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.092823",
+        "action": {
+          "type": "targets",
+          "content": [
+            "honey",
+            "girl"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.092847",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "honey",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.092868",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "girl",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:41:08.093081",
+        "action": {
+          "type": "send message",
+          "content": "The word office was guessed correctly. The word stuff was guessed but is an opponent word. Your turn ended there.\nNow provide another comma-separated list of at least 1 and up to 2 words from the following list of words that best relate or are most closely associated with the word 'sweet'. Remember to start your answer with 'GUESS: '. Notice: some words have been removed from the list compared to previous requests.\n\nchristmas, army, system, son, murder, street, lawyer, trip, security, case, honor, meeting, miss, girl, evening, honey, store, future",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.398646",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: honey",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.398737",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "honey"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.398773",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "honey",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.398796",
+        "action": {
+          "type": "target revealed",
+          "content": {
+            "word": "honey",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.399019",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "future",
+            "assignment": "opponent"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:08.399052",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "girl",
+                "system",
+                "street",
+                "meeting",
+                "lawyer"
+              ],
+              "innocent": [
+                "security",
+                "evening",
+                "murder",
+                "trip",
+                "case",
+                "miss"
+              ],
+              "opponent": [
+                "christmas",
+                "store",
+                "son",
+                "honor"
+              ],
+              "assassin": [
+                "army"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [
+                  "officer",
+                  "date",
+                  "office",
+                  "honey"
+                ],
+                "innocent": [
+                  "sister"
+                ],
+                "opponent": [
+                  "stuff"
+                ],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "charge",
+                  "sex",
+                  "future"
+                ],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:41:08.399120",
+        "action": {
+          "type": "send message",
+          "content": "The word honey was guessed correctly. Your teammate's turn ended there.\nNow provide another clue relating to some of your remaining team words and a list of the related target words. Remember to start your clue with 'CLUE: ', put a new line, and start your comma-separated list of target words with 'TARGETS: '. Notice: some words have been removed from the lists compared to previous requests.\n\nYour remaining team words are: girl, system, street, meeting, lawyer.\nRemaining words for your opponent are: future, christmas, store, son, honor.\nRemaining distractor words are: security, evening, murder, trip, case, miss.\nRemaining kill words are: army.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:09.097606",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: place\nTARGETS: street, office, meeting",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:41:09.097878",
+        "action": {
+          "type": "validation error",
+          "content": {
+            "player": "Cluegiver",
+            "type": "target was already guessed",
+            "utterance": "CLUE: place\nTARGETS: street, office, meeting",
+            "message": "Targeted word 'office' was already guessed, pay attention to the newly provided list of remaining words.",
+            "target": "office",
+            "previous_targets": [
+              "officer",
+              "date",
+              "office",
+              "honey",
+              "sister",
+              "stuff"
+            ]
+          }
+        }
+      }
+    ]
+  ],
+  "board end status": {
+    "hidden": {
+      "team": [
+        "girl",
+        "system",
+        "street",
+        "meeting",
+        "lawyer"
+      ],
+      "innocent": [
+        "security",
+        "evening",
+        "murder",
+        "trip",
+        "case",
+        "miss"
+      ],
+      "opponent": [
+        "christmas",
+        "store",
+        "son",
+        "honor"
+      ],
+      "assassin": [
+        "army"
+      ]
+    },
+    "revealed": {
+      "team": {
+        "team": [
+          "officer",
+          "date",
+          "office",
+          "honey"
+        ],
+        "innocent": [
+          "sister"
+        ],
+        "opponent": [
+          "stuff"
+        ],
+        "assassin": []
+      },
+      "opponent": {
+        "team": [],
+        "innocent": [],
+        "opponent": [
+          "charge",
+          "sex",
+          "future"
+        ],
+        "assassin": []
+      }
+    }
+  },
+  "Number of turns": 4,
+  "Aborted": true,
+  "Lose": false,
+  "Game ended through assassin": false,
+  "Request Count": 7,
+  "Parsed Request Count": 6,
+  "Violated Request Count": 1,
+  "Cluegiver engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  },
+  "Guesser engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  }
+}

@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a story from a perspective of a man. Include some conversation in the story. Avoid using the letter i more than twice. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 I stepped out of my small cottage, taking a deep breath of the crisp morning air. The sun was just starting to rise, casting a warm glow over the rolling hills and fields of golden wheat. I stretched my arms, feeling the familiar ache in my back from a long day of labor.\\ \tt \\ \tt As I walked towards the village, I spotted my friend, Tom, standing outside the local tavern. He was a burly man with a thick beard and a quick wit. I approached him with a nod.\\ \tt \\ \tt "Morning, Tom," I said, clapping him on the back.\\ \tt \\ \tt "Good morning, mate," he replied, his voice gruff from sleep. "What brings you out so early?"\\ \tt \\ \tt "Just getting some fresh air," I said, gesturing towards the hills. "The view's not bad, is it?"\\ \tt \\ \tt Tom nodded, his eyes squinting against the sun. "Not bad at all. Though I'm not sure I'd want to be out here all day. The sun's going to be beating down soon enough."\\ \tt \\ \tt I chuckled. "You're not one for the outdoors, are you?"\\ \tt \\ \tt Tom shook his head. "No, I'm a tavern man, through and through. Give me a warm fire and a cold pint any day."\\ \tt \\ \tt I laughed. "Well, I suppose that's one way to spend the day. But I think I'll stick to the fields. There's work to be done."\\ \tt \\ \tt Tom nodded, his expression serious. "Aye, there is. We need all the help we can get. The harvest's coming soon, and we can't afford to be short-handed."\\ \tt \\ \tt I nodded, feeling a sense of responsibility wash over me. "I'll be there, Tom. Don't you worry."\\ \tt \\ \tt As we stood there, a young woman emerged from the tavern, carrying a tray of steaming hot bread. She smiled at us, her eyes sparkling with warmth.\\ \tt \\ \tt "Good morning, gentlemen," she said, her voice sweet. "Would you like some breakfast?"\\ \tt \\ \tt Tom's eyes lit up. "Aye, that sounds like just what we need. Thank you, lass."\\ \tt \\ \tt I smiled, feeling a sense of gratitude towards the young woman. "Thank you, indeed. You're a lifesaver."\\ \tt \\ \tt She smiled, her cheeks flushing with pleasure. "It's no trouble, gentlemen. Enjoy your breakfast."\\ \tt \\ \tt As we sat down to eat, I felt a sense of contentment wash over me. It was going to be a good day, I thought, as I took a bite of the warm bread. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'keywords:letter_frequency': {'let_relation': 'less than', 'letter': 'i', 'let_frequency': 3}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

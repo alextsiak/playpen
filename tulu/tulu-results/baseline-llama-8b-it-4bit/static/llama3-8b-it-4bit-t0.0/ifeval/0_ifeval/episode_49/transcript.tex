@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a 600+ word social media post for a startup that provides a platform for running realistic physics simulation. Make sure to include the word "bombs" at least once. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **Introducing Simul8: Revolutionizing the Future of Physics Simulation**\\ \tt \\ \tt Are you ready to take your understanding of the physical world to the next level? Do you want to simulate complex scenarios, test hypotheses, and predict outcomes with unparalleled accuracy? Look no further than Simul8, the cutting-edge platform that's changing the game in physics simulation.\\ \tt \\ \tt At Simul8, we're passionate about empowering innovators, researchers, and educators to explore the intricacies of physics in a realistic and immersive way. Our platform is designed to mimic the behavior of real-world systems, allowing you to model and analyze everything from the trajectory of projectiles to the dynamics of complex systems.\\ \tt \\ \tt With Simul8, you can:\\ \tt \\ \tt *   **Simulate real-world scenarios**: From the impact of a car crash to the explosion of a bomb, our platform allows you to recreate complex events with stunning accuracy.\\ \tt *   **Test hypotheses and theories**: Use our platform to validate or challenge your ideas, and gain a deeper understanding of the underlying physics.\\ \tt *   **Analyze and optimize systems**: Identify areas of inefficiency, predict outcomes, and make data-driven decisions to improve the performance of complex systems.\\ \tt *   **Educate and engage**: Our platform is perfect for teaching physics and engineering concepts, making complex ideas accessible and fun for students of all ages.\\ \tt \\ \tt But what sets Simul8 apart from other physics simulation platforms? Here are just a few reasons why we're the go-to choice for innovators and educators:\\ \tt \\ \tt *   **Advanced physics engine**: Our proprietary engine is built on a robust and accurate foundation, ensuring that your simulations are as realistic as possible.\\ \tt *   **User-friendly interface**: Our intuitive platform makes it easy to create and run simulations, even for those without extensive programming knowledge.\\ \tt *   **Collaboration tools**: Work with colleagues and students in real-time, sharing simulations and results to accelerate progress and foster innovation.\\ \tt *   **Extensive library of assets**: Access a vast collection of pre-built models, materials, and scenarios to get started quickly and save time.\\ \tt \\ \tt At Simul8, we're committed to pushing the boundaries of physics simulation and making it accessible to everyone. Whether you're a researcher, educator, or simply someone with a passion for physics, our platform is the perfect tool for exploring the wonders of the physical world.\\ \tt \\ \tt **Join the Simul8 community today** and discover a new world of possibilities. Sign up for a free trial, explore our documentation, or reach out to our team to learn more about how Simul8 can help you achieve your goals.\\ \tt \\ \tt **Get ready to simulate the impossible** and unlock the secrets of the physical world. With Simul8, the future of physics simulation is here.\\ \tt \\ \tt **Key Features:**\\ \tt \\ \tt *   **Realistic physics engine**: Accurate and robust simulations that mimic real-world behavior.\\ \tt *   **User-friendly interface**: Easy to use, even for those without extensive programming knowledge.\\ \tt *   **Collaboration tools**: Work with colleagues and students in real-time.\\ \tt *   **Extensive library of assets**: Access a vast collection of pre-built models, materials, and scenarios.\\ \tt *   **Free trial**: Try Simul8 risk-free and see the benefits for yourself.\\ \tt \\ \tt **What are you waiting for?** Sign up for a free trial today and start simulating the impossible with Simul8.\\ \tt \\ \tt **Follow us** for the latest updates, tutorials, and success stories from the Simul8 community.\\ \tt \\ \tt **Join the conversation** and share your thoughts on the future of physics simulation.\\ \tt \\ \tt **Let's simulate the impossible** together!\\ \tt \\ \tt **Contact us** to learn more about Simul8 and how it can help you achieve your goals.\\ \tt \\ \tt **Stay ahead of the curve** and be a part of the Simul8 revolution.\\ \tt \\ \tt **The future of physics simulation is here**. Join us today and discover a new world of possibilities. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'keywords:frequency': {'relation': 'at least', 'keyword': 'bombs', 'frequency': 1}, 'length_constraints:number_words': {'relation': 'at least', 'num_words': 600}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

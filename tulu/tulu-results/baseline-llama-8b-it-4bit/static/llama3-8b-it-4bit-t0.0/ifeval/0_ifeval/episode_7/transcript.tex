@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Take the text below as a starting point, and make it a complete article: "You may have to meet with a helper to work out a parenting plan. The first would be to estimate how many time you have everyday for parenting, and is that enough...."\\ \tt Avoid using the following keywords: sleep, cook, feed\\ \tt Mention the keyword 'schedule' for more than 5 times. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **Creating a Parenting Plan: Understanding Your Daily Schedule**\\ \tt \\ \tt When parents decide to co-parent, it's essential to work together to establish a parenting plan that suits everyone's needs. This plan should outline how you will share responsibilities, make decisions, and communicate with each other. You may have to meet with a helper, such as a mediator or a family therapist, to work out the details of your parenting plan.\\ \tt \\ \tt The first step in creating a parenting plan is to estimate how many hours you have available each day for parenting. This will help you determine if your schedule allows for the time you need to devote to your child. Consider your work schedule, personal commitments, and other responsibilities when calculating your available time.\\ \tt \\ \tt Next, you'll need to assess whether your schedule is sufficient to meet your child's needs. Will you have enough time to attend to your child's daily routine, including getting them ready for school, helping with homework, and engaging in activities together? If your schedule is tight, you may need to adjust your expectations or make arrangements for additional support.\\ \tt \\ \tt A well-planned schedule is crucial for successful co-parenting. By creating a schedule that works for both parents, you can ensure that your child receives the attention and care they need. This may involve dividing responsibilities, such as picking up your child from school or attending extracurricular activities.\\ \tt \\ \tt When creating your schedule, consider the following:\\ \tt \\ \tt * How will you allocate time for your child's daily routine?\\ \tt * What activities will you prioritize, and how will you make time for them?\\ \tt * How will you communicate with your co-parent about schedule changes or conflicts?\\ \tt * What arrangements will you make for childcare or backup care when one parent is unavailable?\\ \tt \\ \tt By establishing a clear schedule, you can avoid conflicts and ensure that your child's needs are met. Remember to review and adjust your schedule regularly to ensure it continues to work for everyone involved.\\ \tt \\ \tt In addition to creating a schedule, it's essential to establish a routine that works for both parents. This may involve setting regular times for activities, such as dinner or bedtime, and designating specific responsibilities for each parent. By sticking to a routine, you can provide a sense of stability and security for your child.\\ \tt \\ \tt Ultimately, creating a parenting plan and schedule that works for everyone involved requires flexibility, communication, and a willingness to compromise. By working together and being mindful of each other's schedules, you can build a strong foundation for co-parenting and provide a loving and supportive environment for your child. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'keywords:forbidden_words': {'forbidden_words': ['sleep', 'cook', 'feed']}, 'keywords:frequency': {'relation': 'at least', 'keyword': 'schedule', 'frequency': 6}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

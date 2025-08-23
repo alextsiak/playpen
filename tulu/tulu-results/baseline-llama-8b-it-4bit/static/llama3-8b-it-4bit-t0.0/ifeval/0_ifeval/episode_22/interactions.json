@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 183,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:41:34.330682",
+        "action": {
+          "type": "send message",
+          "content": "Write a story about the importance of understanding the truths that are not obvious. Add stress words which are capitalized. Limit those stress words for less than 20 times.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:42:00.760791",
+        "action": {
+          "type": "get message",
+          "content": "In the small village of Ashwood, nestled in the heart of a dense forest, there lived a young apprentice named Eira. She was learning the art of healing from the village's renowned healer, Thorne. Eira was a diligent student, but she often found herself frustrated with the seemingly **ARBITRARY** rules and **MYSTERIOUS** remedies that Thorne employed.\n\nOne day, while gathering herbs in the forest, Eira stumbled upon a **SECRET** glade. In the center of the clearing stood an ancient tree, its branches twisted and gnarled with age. As she approached the tree, Eira noticed that its bark was **SCRATCHED** and **SCRIBBLED** with strange symbols. She felt an **UNSETTLING** sense of curiosity and decided to investigate further.\n\nThorne, who had been watching Eira from a distance, approached her and revealed that the tree was a **LEGENDARY** site, where the village's ancestors had left behind a **HIDDEN** message. The symbols on the tree's bark were a **CRYPTIC** code, which, when deciphered, would reveal the secrets of the forest and its healing properties.\n\nEira was **THRILLED** to learn about the tree's significance and begged Thorne to teach her the code. Thorne, however, was **REERVED**, explaining that the code was **COMPLEX** and required a deep understanding of the forest's **SYMBOLIC** language.\n\nUndeterred, Eira spent countless hours studying the code, pouring over ancient texts and seeking out **EXPERT** opinions. As she delved deeper into the mystery, she began to **UNRAVEL** the secrets of the forest, discovering new healing properties and **UNCONVENTIONAL** remedies.\n\nThorne, who had been observing Eira's progress, was **IMPRESSED** by her dedication and **INSIGHT**. He revealed that the code was not just a **MYSTERIOUS** puzzle, but a **METAPHOR** for the complexities of life itself. Eira's journey had taught her that the truths that are not **OBSERVABLE** are often the most **POWERFUL** and **TRANSFORMATIVE**.\n\nFrom that day on, Eira approached her studies with a new sense of **CURIOUSITY** and **OPEN-MINDEDNESS**. She understood that the **OBVIOUS** is often just the tip of the iceberg, and that the **HIDDEN** truths are what truly hold the key to understanding and growth.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:42:00.760850",
+        "action": {
+          "type": "target",
+          "content": {
+            "change_case:capital_word_frequency": {
+              "capital_relation": "less than",
+              "capital_frequency": 20
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:42:00.763928",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

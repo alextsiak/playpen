@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Students are travelling to UCI for 3 days. Create a hilarious itinerary for them. Do not use the word 'university'. Your entire response should have exactly 4 paragraphs.  Separate paragraphs with the markdown divider: *** 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Welcome to the land of sun-kissed dreams! On day one, the students will embark on a thrilling adventure, starting with a 6:00 AM breakfast feast featuring an endless array of pancakes, waffles, and eggs. The morning will be filled with a series of trust-building exercises, including a giant game of capture the flag, a scavenger hunt, and a round of "dodge the foam pit." Don't worry, the foam pit is designed to be a safe and hilarious way to get those endorphins pumping. After all that excitement, the students will be treated to a leisurely stroll around the campus, where they'll get to admire the beautiful architecture and maybe even spot a few squirrels.\\ \tt \\ \tt *** \\ \tt \\ \tt The afternoon will be a time for creativity and self-expression. Students will have the opportunity to participate in a series of wacky workshops, including a class on extreme hula hooping, a session on the art of making the perfect grilled cheese sandwich, and a workshop on the ancient art of burrito wrapping. Yes, you read that right – burrito wrapping! It's a skill that requires finesse, patience, and a willingness to get a little messy. After all the creative chaos, the students will be treated to a catered dinner featuring a menu of international cuisine, including tacos, pizza, and (you guessed it) more grilled cheese sandwiches.\\ \tt \\ \tt *** \\ \tt \\ \tt Day two will be all about competition and teamwork. The students will be divided into teams and participate in a series of absurd challenges, including a giant water balloon toss, a round of "musical chairs" played on a giant inflatable obstacle course, and a game of "Simon Says" with a twist. The winning team will receive a prize, but let's be real – the real prize is the bragging rights and the memories that will last a lifetime. After all the competition, the students will be treated to a relaxing evening of stargazing, complete with a DIY s'mores bar and a screening of a classic comedy movie.\\ \tt \\ \tt *** \\ \tt \\ \tt On the final day, the students will embark on a series of thrilling adventures, including a visit to the world-famous arboretum, a hike through the nearby hills, and a round of "geocaching" – a real-life treasure hunt! The day will culminate in a farewell feast featuring a menu of student-favorite foods, including (you guessed it) more grilled cheese sandwiches. It's been a wild ride, but all good things must come to an end. The students will depart with memories, new friends, and a newfound appreciation for the art of burrito wrapping. Until next time, stay silly! 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_paragraphs': {'num_paragraphs': 4}, 'keywords:forbidden_words': {'forbidden_words': ['university']}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

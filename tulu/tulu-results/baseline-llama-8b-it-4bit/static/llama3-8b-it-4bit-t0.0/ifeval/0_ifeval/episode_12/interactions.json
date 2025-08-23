@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 104,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:38:04.847431",
+        "action": {
+          "type": "send message",
+          "content": "Compose a poem that has the word \"land\" and \"river\". It should be about nature and love. Also, the word \"forest\" should appear at least 3 times, and be written in English, with all letters lowercased.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:38:16.020425",
+        "action": {
+          "type": "get message",
+          "content": "in the heart of the forest, where trees stand tall,\na gentle breeze whispers, a love that enthralls.\nthe forest's ancient wisdom, a secret it keeps,\nof a love that's pure and strong, in the forest's deep.\n\nthe river's soothing melody, a serenade to the soul,\nechoes through the forest, where love's heart makes whole.\nin the forest's quiet hours, when sunbeams filter through,\ni find my heart's companion, in the forest, with you.\n\nthe forest's verdant canopy, a shelter from life's storm,\na haven where love's roots grow, in the forest's gentle form.\nthe river's flowing waters, a reflection of our love,\na bond that's strong and unbroken, sent from above.\n\nin the forest's mystic silence, where creatures roam free,\ni hear the whispers of love, in the forest, wild and carefree.\nthe river's gentle lapping, a lullaby to the heart,\na love that's pure and true, in the forest, we'll never be apart.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:38:16.020479",
+        "action": {
+          "type": "target",
+          "content": {
+            "keywords:frequency": {
+              "relation": "at least",
+              "keyword": "forest",
+              "frequency": 3
+            },
+            "change_case:english_lowercase": {},
+            "keywords:existence": {
+              "keywords": [
+                "land",
+                "river"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:38:16.025911",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

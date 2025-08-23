@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Hi, I'm looking for two Tamil movies to watch. Please recommend exactly two movies. Separated them by 6 asterisk symbols, like below:\\ \tt [Movie 1]\\ \tt [Description]\\ \tt ******\\ \tt [Movie 2]\\ \tt [Description]\\ \tt \\ \tt Your entire response should be entirely in Tamil, no other language is allowed, and should not contain any commas.  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Nimishangal\\ \tt Nimishangal 1999 ஆம் ஆண்டு வெளிவந்த தமிழ்த் திரைப்படமாகும். இதை இயக்கியவர் பாரதிராஜா ஆவார். இதில் ரஜினிகாந்த் மற்றும் மீனா ஆகியோர் நடித்திருக்கின்றனர்.\\ \tt \\ \tt ******\\ \tt Kaakha Kaakha\\ \tt Kaakha Kaakha 2003 ஆம் ஆண்டு வெளிவந்த தமிழ்த் திரைப்படமாகும். இதை இயக்கியவர் கே. வி. ஆனந்த் ஆவார். இதில் விஜய் மற்றும் சித்தாரா ஆகியோர் நடித்திருக்கின்றனர். 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'combination:two_responses': {}, 'language:response_language': {'language': 'ta'}, 'punctuation:no_comma': {}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

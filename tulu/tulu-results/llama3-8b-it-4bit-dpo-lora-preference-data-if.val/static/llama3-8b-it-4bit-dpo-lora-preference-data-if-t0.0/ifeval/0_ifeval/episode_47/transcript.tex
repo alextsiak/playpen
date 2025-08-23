@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Give me a 300+ word startup pitch for a company that provides a service that creates trusts for people online. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Here's a 300+ word startup pitch for a company that provides a service to create trusts for people online:\\ \tt \\ \tt Welcome to TrustGenie, a revolutionary platform that empowers individuals to establish secure and transparent trusts online. In today's digital age, people are increasingly seeking ways to manage their assets, protect their loved ones, and ensure their wishes are respected after they're gone. TrustGenie is the ultimate solution for those seeking a hassle-free and cost-effective way to create trusts, without the need for lawyers or lengthy paperwork.\\ \tt \\ \tt Our platform is designed to simplify the complex process of trust creation, making it accessible to anyone, anywhere. With TrustGenie, users can create a trust in just a few clicks, without the need for extensive legal knowledge. Our intuitive interface guides users through a series of questions, ensuring that their trust is tailored to their specific needs. This user-centric approach eliminates the need for expensive lawyer fees, saving users time and money.\\ \tt \\ \tt TrustGenie's online trust creation service offers numerous benefits, including:\\ \tt \\ \tt * Convenience: Create a trust from the comfort of your own home, at any time, and from any device.\\ \tt * Cost-effectiveness: Avoid expensive lawyer fees and save on paperwork costs.\\ \tt * Transparency: Our platform provides a clear and transparent view of the trust creation process, ensuring users understand every step.\\ \tt * Customization: Our algorithm ensures that the trust is tailored to the user's specific needs, providing peace of mind.\\ \tt * Security: TrustGenie employs robust security measures to safeguard user data and protect their assets.\\ \tt \\ \tt Our platform is designed to cater to a wide range of users, from individuals with modest assets to high-net-worth individuals. TrustGenie is the perfect solution for those seeking to:\\ \tt \\ \tt * Protect their assets from creditors or lawsuits\\ \tt * Ensure their wishes are respected after they're gone\\ \tt * Provide for their loved ones\\ \tt * Simplify the process of estate planning\\ \tt \\ \tt By leveraging technology, TrustGenie is poised to revolutionize the trust creation industry. Our platform is scalable, secure, and user-friendly, making it an attractive option for individuals seeking a hassle-free trust creation experience. With TrustGenie, users can rest assured that their assets are protected, and their wishes are respected. Join the trust revolution and experience the power of online trust creation with TrustGenie. Let us help you create a trust that's tailored to your needs, today. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_words': {'relation': 'at least', 'num_words': 300}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

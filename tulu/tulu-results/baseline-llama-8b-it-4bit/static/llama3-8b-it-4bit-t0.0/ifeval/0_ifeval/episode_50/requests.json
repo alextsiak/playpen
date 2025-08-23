@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "2025-07-21T12:52:38.454789",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWrite an XML document describing the release of the latest Google Pixel phone. The document must contain at least three placeholders, such as [price], and you must not use commas in your response.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 1280,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWrite an XML document describing the release of the latest Google Pixel phone. The document must contain at least three placeholders, such as [price], and you must not use commas in your response.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<phone-release>\n  <model-name>Google Pixel 7 Pro</model-name>\n  <release-date>2023-10-31</release-date>\n  <features>\n    <display>\n      <size>6.7 inches</size>\n      <resolution>3120 x 1440 pixels</resolution>\n    </display>\n    <camera>\n      <rear-camera>50 MP primary sensor + 12 MP telephoto lens + 48 MP ultra-wide-angle lens</rear-camera>\n      <front-camera>10.8 MP</front-camera>\n    </camera>\n    <battery>\n      <capacity>5124 mAh</capacity>\n      <fast-charging>Supports up to 30W fast charging</fast-charging>\n    </battery>\n  </features>\n  <pricing>\n    <base-model-price>[price]</base-model-price>\n    <storage-options>\n      <option>128 GB</option>\n      <option>256 GB</option>\n      <option>512 GB</option>\n    </storage-options>\n  </pricing>\n  <availability>\n    <pre-order-start-date>2023-10-01</pre-order-start-date>\n    <in-store-availability>Available in select stores on [release-date]</in-store-availability>\n  </availability>\n</phone-release><|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:52:23.974766",
+        "call_duration": "0:00:14.479963",
+        "response": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<phone-release>\n  <model-name>Google Pixel 7 Pro</model-name>\n  <release-date>2023-10-31</release-date>\n  <features>\n    <display>\n      <size>6.7 inches</size>\n      <resolution>3120 x 1440 pixels</resolution>\n    </display>\n    <camera>\n      <rear-camera>50 MP primary sensor + 12 MP telephoto lens + 48 MP ultra-wide-angle lens</rear-camera>\n      <front-camera>10.8 MP</front-camera>\n    </camera>\n    <battery>\n      <capacity>5124 mAh</capacity>\n      <fast-charging>Supports up to 30W fast charging</fast-charging>\n    </battery>\n  </features>\n  <pricing>\n    <base-model-price>[price]</base-model-price>\n    <storage-options>\n      <option>128 GB</option>\n      <option>256 GB</option>\n      <option>512 GB</option>\n    </storage-options>\n  </pricing>\n  <availability>\n    <pre-order-start-date>2023-10-01</pre-order-start-date>\n    <in-store-availability>Available in select stores on [release-date]</in-store-availability>\n  </availability>\n</phone-release>",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  }
+]

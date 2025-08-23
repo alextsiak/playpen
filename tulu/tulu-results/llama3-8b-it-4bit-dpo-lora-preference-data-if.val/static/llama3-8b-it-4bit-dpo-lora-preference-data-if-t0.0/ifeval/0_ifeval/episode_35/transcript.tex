@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a cover letter for a job in Ventura that is funny and would be enjoyed by someone named Darius, wrap the entire response in double quotation marks. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "Dear Hiring Manager,\\ \tt \\ \tt I'm Darius, and I'm here to save the world from boredom, one job application at a time. I'm not saying I'm the chosen one, but I'm pretty sure I'm the chosen one. If you're looking for someone who can bring a little bit of sunshine to your office, I'm your guy. I'm like a ray of sunshine, but without the sunburn.\\ \tt \\ \tt I'm applying for the job in Ventura because, let's be real, who wouldn't want to live in a place with a name that sounds like a pirate's treasure map? I'm ready to set sail on the high seas of productivity and make some waves in your company. Or, you know, just do my job and stuff.\\ \tt \\ \tt As a highly skilled and moderately caffeinated individual, I'm confident that I can bring a unique blend of humor and competence to your team. My skills include, but are not limited to: making dad jokes, eating pizza, and pretending to be interested in meetings.\\ \tt \\ \tt If you're looking for someone who can bring a little bit of excitement to your office, I'm your guy. I'm like a box of chocolates - you never know what kind of crazy I'll bring to the table. But one thing's for sure, I'll be the life of the party (unless there's a party, then I'll just be the guy who's too tired to party).\\ \tt \\ \tt Thanks for considering my application. I look forward to the opportunity to meet with you and discuss how I can bring my unique brand of awesomeness to your team.\\ \tt \\ \tt Sincerely,\\ \tt Darius"\\ \tt \\ \tt "Note: Please remove the double quotes at the beginning and end of the response if you're going to send it in. I just wanted to make it look pretty." \\ \tt \\ \tt (Note: I left the double quotes at the beginning and end of the response as per your request, but I added a note at the end to remind you to remove them if you're going to send it in.) \\ \tt \\ \tt Here is the corrected version without the note:\\ \tt \\ \tt "Dear Hiring Manager,\\ \tt \\ \tt I'm Darius, and I'm here to save the world from boredom, one job application at a time. I'm not saying I'm the chosen one, but I'm pretty sure I'm the chosen one. If you're looking for someone who can bring a little bit of sunshine to your office, I'm your guy. I'm like a ray of sunshine, but without the sunburn.\\ \tt \\ \tt I'm applying for the job in Ventura because, let's be real, who wouldn't want to live in a place with a name that sounds like a pirate's treasure map? I'm ready to set sail on the high seas of productivity and make some waves in your company. Or, you know, just do my job and stuff.\\ \tt \\ \tt As a highly skilled and moderately caffeinated individual, I'm confident that I can bring a unique blend of humor and competence to your team. My skills include, but are not limited to: making dad jokes, eating pizza, and pretending to be interested in meetings.\\ \tt \\ \tt If you're looking for someone who can bring a little bit of excitement to your office, I'm your guy. I'm like a box of chocolates - you never know what kind of crazy I'll bring to the table. But one thing's for sure, I'll be the life of the party (unless there's a party, then I'll just be the guy who's too tired to party).\\ \tt \\ \tt Thanks for considering my application. I look forward to the opportunity to meet with you and discuss how I can bring my unique brand of awesomeness to your team.\\ \tt \\ \tt Sincerely,\\ \tt Darius" 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'startend:quotation': {}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

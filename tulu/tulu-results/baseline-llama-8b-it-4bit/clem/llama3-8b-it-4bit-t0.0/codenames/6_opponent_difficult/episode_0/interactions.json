@@ -1,0 +1,714 @@
+{
+  "meta": {
+    "game_name": "codenames",
+    "experiment_name": "opponent_difficult",
+    "game_id": 5,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "ClueGiver",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:50.077826",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "tokyo",
+                "tablet",
+                "ball",
+                "disease",
+                "eagle",
+                "web",
+                "missile",
+                "telescope",
+                "life"
+              ],
+              "innocent": [
+                "board",
+                "washington",
+                "needle",
+                "hawk",
+                "platypus",
+                "bomb",
+                "slip"
+              ],
+              "opponent": [
+                "lion",
+                "africa",
+                "model",
+                "king",
+                "boom",
+                "contract",
+                "pipe",
+                "heart"
+              ],
+              "assassin": [
+                "novel"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:40:50.077904",
+        "action": {
+          "type": "send message",
+          "content": "Provide one single-word clue that relates to some of your team's words from the list below. You can choose to how many and to which words your clue relates to.\nThe goal is to have your partner guess all of your team's words based on the clues you give them, before the other team has uncovered all of theirs. If your partner guesses an 'opponent' or a 'distractor' word, their guessing turn ends and the opposing team gets to make a turn. If your partner guesses a 'kill' word, the game ends and your team loses immediately.\nThe more words your clue relates to, the quicker you can win the game, but the harder the associations may be to guess for your partner, so choose your clue word wisely. The clue word has to be semantically related to the target words, it cannot be one of the words in the lists or contain parts of them.\n\nAlways give your single-word clue and your comma-separated list of related target words in the following format and make your answers as short as possible, never include any other text than is required in this form:\n\nCLUE: <WORD>\nTARGETS: <TARGETS>\n\nYour team words are: tokyo, tablet, ball, disease, eagle, web, missile, telescope, life.\nYour opponent's team words are: lion, africa, model, king, boom, contract, pipe, heart.\nDistractor words are: board, washington, needle, hawk, platypus, bomb, slip.\nThe kill words are: novel.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:50.722781",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: capital\nTARGETS: tokyo, eagle",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:50.723057",
+        "action": {
+          "type": "clue",
+          "content": "capital"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:50.723087",
+        "action": {
+          "type": "targets",
+          "content": [
+            "tokyo",
+            "eagle"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:50.723112",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "tokyo",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:50.723131",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "eagle",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:40:50.723330",
+        "action": {
+          "type": "send message",
+          "content": "Provide a comma-separated list of up to 2 words from the following list that best relate or are most closely associated with the word 'capital'. Always start your list of guess(es) with 'GUESS: ' and do not include any other text in your answer.\n\npipe, novel, boom, model, heart, missile, telescope, contract, platypus, king, tablet, ball, life, lion, web, bomb, board, eagle, needle, washington, africa, hawk, tokyo, disease, slip",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.095888",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: king, washington",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.095995",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "king",
+            "washington"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.096033",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "king",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.096056",
+        "action": {
+          "type": "turn end after",
+          "content": "king"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.096249",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "africa",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.096277",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "boom",
+            "assignment": "opponent"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.096304",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "tokyo",
+                "tablet",
+                "ball",
+                "disease",
+                "eagle",
+                "web",
+                "missile",
+                "telescope",
+                "life"
+              ],
+              "innocent": [
+                "board",
+                "washington",
+                "needle",
+                "hawk",
+                "platypus",
+                "bomb",
+                "slip"
+              ],
+              "opponent": [
+                "lion",
+                "model",
+                "contract",
+                "pipe",
+                "heart"
+              ],
+              "assassin": [
+                "novel"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "king"
+                ],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "africa",
+                  "boom"
+                ],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:40:51.096373",
+        "action": {
+          "type": "send message",
+          "content": "The word king was guessed but is an opponent word. Your teammate's turn ended there.\nNow provide another clue relating to some of your remaining team words and a list of the related target words. Remember to start your clue with 'CLUE: ', put a new line, and start your comma-separated list of target words with 'TARGETS: '. Notice: some words have been removed from the lists compared to previous requests.\n\nYour remaining team words are: tokyo, tablet, ball, disease, eagle, web, missile, telescope, life.\nRemaining words for your opponent are: lion, africa, model, boom, contract, pipe, heart.\nRemaining distractor words are: board, washington, needle, hawk, platypus, bomb, slip.\nRemaining kill words are: novel.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.759101",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: technology\nTARGETS: tablet, missile, telescope",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.759348",
+        "action": {
+          "type": "clue",
+          "content": "technology"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.759378",
+        "action": {
+          "type": "targets",
+          "content": [
+            "tablet",
+            "missile",
+            "telescope"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.759403",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "tablet",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.759423",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "missile",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:51.759440",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "telescope",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:40:51.759644",
+        "action": {
+          "type": "send message",
+          "content": "The word king was guessed but is an opponent word. Your turn ended there.\nNow provide another comma-separated list of at least 1 and up to 3 words from the following list of words that best relate or are most closely associated with the word 'technology'. Remember to start your answer with 'GUESS: '. Notice: some words have been removed from the list compared to previous requests.\n\npipe, novel, model, heart, missile, telescope, contract, platypus, tablet, ball, life, lion, web, bomb, board, eagle, needle, washington, hawk, tokyo, disease, slip",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.229730",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: model, tablet, missile",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.229847",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "model",
+            "tablet",
+            "missile"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.229884",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "model",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.229907",
+        "action": {
+          "type": "turn end after",
+          "content": "model"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.230111",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "pipe",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.230139",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "lion",
+            "assignment": "opponent"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.230165",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "tokyo",
+                "tablet",
+                "ball",
+                "disease",
+                "eagle",
+                "web",
+                "missile",
+                "telescope",
+                "life"
+              ],
+              "innocent": [
+                "board",
+                "washington",
+                "needle",
+                "hawk",
+                "platypus",
+                "bomb",
+                "slip"
+              ],
+              "opponent": [
+                "contract",
+                "heart"
+              ],
+              "assassin": [
+                "novel"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "king",
+                  "model"
+                ],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "africa",
+                  "boom",
+                  "pipe",
+                  "lion"
+                ],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:40:52.230233",
+        "action": {
+          "type": "send message",
+          "content": "The word model was guessed but is an opponent word. Your teammate's turn ended there.\nNow provide another clue relating to some of your remaining team words and a list of the related target words. Remember to start your clue with 'CLUE: ', put a new line, and start your comma-separated list of target words with 'TARGETS: '. Notice: some words have been removed from the lists compared to previous requests.\n\nYour remaining team words are: tokyo, tablet, ball, disease, eagle, web, missile, telescope, life.\nRemaining words for your opponent are: lion, contract, pipe, heart.\nRemaining distractor words are: board, washington, needle, hawk, platypus, bomb, slip.\nRemaining kill words are: novel.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.820614",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: lens\nTARGETS: telescope, eagle",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.820866",
+        "action": {
+          "type": "clue",
+          "content": "lens"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.820896",
+        "action": {
+          "type": "targets",
+          "content": [
+            "telescope",
+            "eagle"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.820919",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "telescope",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:52.820940",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "eagle",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:40:52.821148",
+        "action": {
+          "type": "send message",
+          "content": "The word model was guessed but is an opponent word. Your turn ended there.\nNow provide another comma-separated list of at least 1 and up to 2 words from the following list of words that best relate or are most closely associated with the word 'lens'. Remember to start your answer with 'GUESS: '. Notice: some words have been removed from the list compared to previous requests.\n\nnovel, heart, missile, telescope, contract, platypus, tablet, ball, life, web, bomb, board, eagle, needle, washington, hawk, tokyo, disease, slip",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:54.177375",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: telescope, lens' opponent word is not in the list, however, 'lens' is associated with 'telescope'.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:54.177497",
+        "action": {
+          "type": "validation error",
+          "content": {
+            "player": "Guesser",
+            "type": "wrong number of guesses",
+            "utterance": "telescope, lens' opponent word is not in the list, however, 'lens' is associated with 'telescope'.",
+            "message": "You made too many guesses (4). You are only allowed to make 2 guesses!",
+            "guesses": [
+              "telescope",
+              "lens' opponent word is not in the list",
+              "however",
+              "lens' is associated with 'telescope"
+            ],
+            "number_of_allowed_guesses": 2
+          }
+        }
+      }
+    ]
+  ],
+  "board end status": {
+    "hidden": {
+      "team": [
+        "tokyo",
+        "tablet",
+        "ball",
+        "disease",
+        "eagle",
+        "web",
+        "missile",
+        "telescope",
+        "life"
+      ],
+      "innocent": [
+        "board",
+        "washington",
+        "needle",
+        "hawk",
+        "platypus",
+        "bomb",
+        "slip"
+      ],
+      "opponent": [
+        "contract",
+        "heart"
+      ],
+      "assassin": [
+        "novel"
+      ]
+    },
+    "revealed": {
+      "team": {
+        "team": [],
+        "innocent": [],
+        "opponent": [
+          "king",
+          "model"
+        ],
+        "assassin": []
+      },
+      "opponent": {
+        "team": [],
+        "innocent": [],
+        "opponent": [
+          "africa",
+          "boom",
+          "pipe",
+          "lion"
+        ],
+        "assassin": []
+      }
+    }
+  },
+  "Number of turns": 4,
+  "Aborted": true,
+  "Lose": false,
+  "Game ended through assassin": false,
+  "Request Count": 6,
+  "Parsed Request Count": 5,
+  "Violated Request Count": 1,
+  "Cluegiver engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  },
+  "Guesser engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 2,
+    "IGNORE NUMBER OF TARGETS": 0
+  }
+}

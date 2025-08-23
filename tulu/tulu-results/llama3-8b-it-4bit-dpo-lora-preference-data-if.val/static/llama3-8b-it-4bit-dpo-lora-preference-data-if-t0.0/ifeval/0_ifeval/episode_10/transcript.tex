@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a planning doc for a software engineer task. Follow the exact format below:\\ \tt \\ \tt Part 1. Task Summary\\ \tt [put details here]\\ \tt ***\\ \tt Part 2. Motivation\\ \tt [put details here]\\ \tt ***\\ \tt Part 3. Milestone objectives\\ \tt [put details here]\\ \tt ***\\ \tt Part 4. Timeline\\ \tt [put details here]\\ \tt ***\\ \tt Part 5. Doc history\\ \tt [put details here] 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Part 1. Task Summary\\ \tt Implement a user authentication system for the company's web application.\\ \tt ***\\ \tt Part 2. Motivation\\ \tt The current web application lacks a robust user authentication system, making it vulnerable to unauthorized access. Implementing a secure authentication system is crucial to protect user data and ensure compliance with industry standards. This task aims to enhance the application's security features, improve user experience, and provide a seamless login process.\\ \tt ***\\ \tt Part 3. Milestone objectives\\ \tt 1. Integrate a secure authentication library into the application.\\ \tt 2. Design a user-friendly login interface.\\ \tt 3. Implement password hashing and salting for secure password storage.\\ \tt 4. Develop a forgot password feature with email verification.\\ \tt 5. Conduct thorough testing to ensure the authentication system's reliability.\\ \tt \\ \tt Milestone objectives:\\ \tt - Integrate library: Complete the integration of the authentication library into the application.\\ \tt - Design interface: Design a visually appealing and user-friendly login interface.\\ \tt - Hash and salt: Implement password hashing and salting for secure password storage.\\ \tt - Forgot password: Develop a forgot password feature with email verification.\\ \tt - Testing: Conduct thorough testing to ensure the authentication system's reliability.\\ \tt \\ \tt ***\\ \tt Part 4. Timeline\\ \tt The task is expected to be completed within 4 weeks. The timeline is broken down into the following milestones:\\ \tt \\ \tt Week 1: Research and integration of the authentication library.\\ \tt Week 2: Design and development of the login interface.\\ \tt Week 3: Implementation of password hashing and salting, and forgot password feature.\\ \tt Week 4: Thorough testing and deployment of the authentication system.\\ \tt \\ \tt ***\\ \tt Part 5. Doc history\\ \tt Version 1.0: Initial document creation (December 2023)\\ \tt Version 1.1: Updated timeline and milestone objectives (July 26, 2024) 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_paragraphs': {'num_paragraphs': 5}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

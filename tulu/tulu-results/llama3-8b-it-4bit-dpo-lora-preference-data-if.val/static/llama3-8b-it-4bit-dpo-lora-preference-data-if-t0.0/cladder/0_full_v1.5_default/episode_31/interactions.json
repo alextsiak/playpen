@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "game_name": "cladder",
+    "experiment_name": "full_v1.5_default",
+    "game_id": 2679,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:03:37.420631",
+        "action": {
+          "type": "send message",
+          "content": "You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\nImagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gene has a direct effect on smoking and lung cancer. Pollution has a direct effect on smoking and lung cancer. Smoking has a direct effect on lung cancer. Pollution is unobserved. For people with nonsmoking genes and nonsmokers, the probability of lung cancer is 56%. For people with nonsmoking genes and smokers, the probability of lung cancer is 42%. For people with smoking genes and nonsmokers, the probability of lung cancer is 60%. For people with smoking genes and smokers, the probability of lung cancer is 40%. For people with nonsmoking genes and with low pollution, the probability of smoking is 76%. For people with nonsmoking genes and with high pollution, the probability of smoking is 48%. For people with smoking genes and with low pollution, the probability of smoking is 46%. For people with smoking genes and with high pollution, the probability of smoking is 21%. The overall probability of high pollution is 41%. Does gene positively affect lung cancer through smoking?\nStart your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:03:41.800617",
+        "action": {
+          "type": "get message",
+          "content": "Yes\n\nTo assess whether the gene positively affects lung cancer through smoking, we need to consider the relationships between the variables. The given information implies a causal relationship between the gene, smoking, and lung cancer. \n\nFirst, we need to establish the direction",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:03:41.800703",
+        "action": {
+          "type": "parsed",
+          "content": "Yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:03:41.800719",
+        "action": {
+          "type": "target",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:03:41.800731",
+        "action": {
+          "type": "correct label",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

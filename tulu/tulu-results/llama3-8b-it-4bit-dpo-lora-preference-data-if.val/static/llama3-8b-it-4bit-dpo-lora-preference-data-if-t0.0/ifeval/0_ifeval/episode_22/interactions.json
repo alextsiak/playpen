@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 183,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:25:29.990720",
+        "action": {
+          "type": "send message",
+          "content": "Write a story about the importance of understanding the truths that are not obvious. Add stress words which are capitalized. Limit those stress words for less than 20 times.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:26:10.418226",
+        "action": {
+          "type": "get message",
+          "content": "In a small village, there lived a young girl named Akira. She was known for her curiosity and desire to learn. One day, while wandering through the forest, she stumbled upon an old wise man. He was sitting by a stream, watching the water flow. Akira approached him, and they began to talk.\n\nThe wise man told her about the IMPORTANCE of understanding the truths that are not obvious. He explained that many people live their lives based on surface-level knowledge, never delving deeper into the mysteries of the world. Akira listened intently, her mind soaking up the words like a sponge.\n\nThe wise man continued, \"The world is full of DECEPTION and MISCONCEPTION. People often believe what they are told, without questioning the truth. But, Akira, it's the ones who dig deeper, who seek the TRUTH, that truly understand the world.\"\n\nAkira was intrigued. She asked the wise man to explain further. He told her about the time he spent in the mountains, learning from the ancient sages. They taught him about the balance of NATURE and the interconnectedness of all living things.\n\nAs they spoke, Akira began to see the world in a new light. She realized that there was more to life than what met the eye. The wise man smiled, \"Ah, Akira, you are beginning to see the world with NEW EYES. This is the first step towards true understanding.\"\n\nAkira spent many days with the wise man, learning about the world's secrets. She discovered that the truth was not always straightforward, but it was always there, waiting to be uncovered. The wise man taught her to question everything, to seek the answers that lay beneath the surface.\n\nAs Akira returned to her village, she felt a sense of CLARITY that she had never experienced before. She knew that she had been given a GIFT, a chance to see the world in a new way. From that day on, she approached life with a sense of WONDER and curiosity, always seeking to understand the truths that were not obvious.\n\nThe wise man's words echoed in her mind, \"The truth is not always easy to find, but it's always worth the search.\" And Akira knew that she would continue to seek the truth, no matter where it may lead.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:26:10.418339",
+        "action": {
+          "type": "target",
+          "content": {
+            "change_case:capital_word_frequency": {
+              "capital_relation": "less than",
+              "capital_frequency": 20
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:26:10.421787",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

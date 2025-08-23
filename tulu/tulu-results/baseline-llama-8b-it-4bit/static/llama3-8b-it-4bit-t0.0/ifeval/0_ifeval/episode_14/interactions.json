@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 114,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:38:28.419340",
+        "action": {
+          "type": "send message",
+          "content": "I really love the album called Lilith. I want to introduce it to my friend Luheng. Draft an email for it. Add a postscript to your response that starts with P.S.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:38:39.442890",
+        "action": {
+          "type": "get message",
+          "content": "I'm not aware of a well-known album called \"Lilith.\" However, I can draft an email for you to introduce the album to your friend Luheng. \n\nSubject: Discovering a Hidden Gem - Lilith\n\nDear Luheng,\n\nI've been listening to an album that I think you'll really enjoy, and I'd love to share it with you. The album is called \"Lilith,\" and it's a unique blend of [insert genre or style]. I've been listening to it nonstop, and I think you'll appreciate the creativity and emotion that the artist has put into it.\n\nThe album features [insert notable tracks or features]. I think you'll find the lyrics and melodies really captivating. If you're interested, I'd be happy to lend you my copy or share a digital link with you.\n\nLet me know what you think!\n\nBest regards,\n[Your Name]\n\nP.S. If you're interested in exploring more music like this, I can also recommend some similar artists or albums that you might enjoy. Just let me know!",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:38:39.442944",
+        "action": {
+          "type": "target",
+          "content": {
+            "detectable_content:postscript": {
+              "postscript_marker": "P.S."
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:38:39.443162",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

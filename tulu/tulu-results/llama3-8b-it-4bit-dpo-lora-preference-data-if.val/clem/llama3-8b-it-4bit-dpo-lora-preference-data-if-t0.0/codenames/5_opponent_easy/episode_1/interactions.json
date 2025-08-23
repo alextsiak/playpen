@@ -1,0 +1,332 @@
+{
+  "meta": {
+    "game_name": "codenames",
+    "experiment_name": "opponent_easy",
+    "game_id": 7,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "ClueGiver",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    },
+    "Player 2": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:52.035133",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "kid",
+                "button",
+                "cook",
+                "chest",
+                "crown",
+                "kangaroo",
+                "bank",
+                "buffalo",
+                "wall"
+              ],
+              "innocent": [
+                "tokyo",
+                "arm",
+                "line",
+                "pumpkin",
+                "pole",
+                "cold",
+                "lawyer"
+              ],
+              "opponent": [
+                "carrot",
+                "plot",
+                "soldier",
+                "whip",
+                "compound",
+                "crash",
+                "whale",
+                "snow"
+              ],
+              "assassin": [
+                "trip"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:42:52.035209",
+        "action": {
+          "type": "send message",
+          "content": "Provide one single-word clue that relates to some of your team's words from the list below. You can choose to how many and to which words your clue relates to.\nThe goal is to have your partner guess all of your team's words based on the clues you give them, before the other team has uncovered all of theirs. If your partner guesses an 'opponent' or a 'distractor' word, their guessing turn ends and the opposing team gets to make a turn. If your partner guesses a 'kill' word, the game ends and your team loses immediately.\nThe more words your clue relates to, the quicker you can win the game, but the harder the associations may be to guess for your partner, so choose your clue word wisely. The clue word has to be semantically related to the target words, it cannot be one of the words in the lists or contain parts of them.\n\nAlways give your single-word clue and your comma-separated list of related target words in the following format and make your answers as short as possible, never include any other text than is required in this form:\n\nCLUE: <WORD>\nTARGETS: <TARGETS>\n\nYour team words are: kid, button, cook, chest, crown, kangaroo, bank, buffalo, wall.\nYour opponent's team words are: carrot, plot, soldier, whip, compound, crash, whale, snow.\nDistractor words are: tokyo, arm, line, pumpkin, pole, cold, lawyer.\nThe kill words are: trip.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:53.698458",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: home\nTARGETS: kid, cook, bank, chest, wall.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:53.698775",
+        "action": {
+          "type": "clue",
+          "content": "home"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:53.698809",
+        "action": {
+          "type": "targets",
+          "content": [
+            "kid",
+            "cook",
+            "bank",
+            "chest",
+            "wall"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:53.698834",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "kid",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:53.698853",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "cook",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:53.698871",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "bank",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:53.698887",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "chest",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:53.698904",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "wall",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:42:53.699113",
+        "action": {
+          "type": "send message",
+          "content": "Provide a comma-separated list of up to 5 words from the following list that best relate or are most closely associated with the word 'home'. Always start your list of guess(es) with 'GUESS: ' and do not include any other text in your answer.\n\ncold, crash, tokyo, bank, crown, trip, kangaroo, buffalo, carrot, whip, button, plot, whale, chest, wall, lawyer, compound, pole, snow, cook, kid, arm, soldier, pumpkin, line",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:54.924730",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: home, wall, chest, button, line",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:54.924846",
+        "action": {
+          "type": "validation error",
+          "content": {
+            "player": "Guesser",
+            "type": "guess is clue word",
+            "utterance": "home, wall, chest, button, line",
+            "message": "Guessed word 'home' is the same word as the provided clue word, you should only select words from the provided list.",
+            "guess": "home",
+            "clue": "home"
+          }
+        }
+      }
+    ]
+  ],
+  "board end status": {
+    "hidden": {
+      "team": [
+        "kid",
+        "button",
+        "cook",
+        "chest",
+        "crown",
+        "kangaroo",
+        "bank",
+        "buffalo",
+        "wall"
+      ],
+      "innocent": [
+        "tokyo",
+        "arm",
+        "line",
+        "pumpkin",
+        "pole",
+        "cold",
+        "lawyer"
+      ],
+      "opponent": [
+        "carrot",
+        "plot",
+        "soldier",
+        "whip",
+        "compound",
+        "crash",
+        "whale",
+        "snow"
+      ],
+      "assassin": [
+        "trip"
+      ]
+    },
+    "revealed": {
+      "team": {
+        "team": [],
+        "innocent": [],
+        "opponent": [],
+        "assassin": []
+      },
+      "opponent": {
+        "team": [],
+        "innocent": [],
+        "opponent": [],
+        "assassin": []
+      }
+    }
+  },
+  "Number of turns": 2,
+  "Aborted": true,
+  "Lose": false,
+  "Game ended through assassin": false,
+  "Request Count": 2,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 1,
+  "Cluegiver engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 1,
+    "IGNORE NUMBER OF TARGETS": 0
+  },
+  "Guesser engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  }
+}

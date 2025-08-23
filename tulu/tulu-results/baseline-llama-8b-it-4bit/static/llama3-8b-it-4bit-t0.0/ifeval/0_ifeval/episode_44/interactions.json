@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 439,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:50:06.290950",
+        "action": {
+          "type": "send message",
+          "content": "Students are travelling to UCI for 3 days. Create a hilarious itinerary for them. Do not use the word 'university'. Your entire response should have exactly 4 paragraphs.  Separate paragraphs with the markdown divider: ***",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:50:25.045096",
+        "action": {
+          "type": "get message",
+          "content": "**Day 1: Arrival and Acclimation**\n\nThe students arrive at the campus, exhausted from their long journey. To wake them up, a surprise awaits - a giant inflatable unicorn perched on the quad, blasting disco music. The students are greeted by a group of energetic campus ambassadors, dressed in matching neon wigs and sunglasses, who hand out welcome packets and a map of the campus. The first activity of the day is a scavenger hunt, where teams have to find and take a photo with the most creative use of a campus landmark. The winning team gets a prize - a year's supply of pizza.\n\n***\n\n\n**Day 2: Campus Shenanigans**\n\nThe second day starts with a bang - literally. A group of students dressed as superheroes, complete with capes and masks, lead a campus-wide game of capture the flag. The twist? The flags are actually giant inflatable chickens, and the game is played with Nerf guns. After a morning of chaos, the students gather for a picnic lunch, where they're treated to a surprise performance by a local a cappella group. The afternoon is spent at the campus pool, where a giant inflatable obstacle course awaits. Who can make it through without getting splashed?\n\n***\n\n\n**Day 3: Campus Games and Giggles**\n\nThe final day of the trip is all about friendly competition. The students gather for a series of campus games, including a giant Jenga tournament, a water balloon toss, and a round of \"Would You Rather.\" The grand prize? A year's supply of ice cream. The day ends with a bonfire, where students can roast marshmallows and share stories of their favorite campus adventures. As the night winds down, the students are treated to a surprise fireworks display, complete with a giant \"UCI\" written in sparklers.\n\n***",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:50:25.045159",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:number_paragraphs": {
+              "num_paragraphs": 4
+            },
+            "keywords:forbidden_words": {
+              "forbidden_words": [
+                "university"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:50:25.045461",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

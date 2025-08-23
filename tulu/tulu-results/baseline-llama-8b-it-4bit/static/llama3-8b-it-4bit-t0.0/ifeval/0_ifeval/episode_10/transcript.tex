@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a planning doc for a software engineer task. Follow the exact format below:\\ \tt \\ \tt Part 1. Task Summary\\ \tt [put details here]\\ \tt ***\\ \tt Part 2. Motivation\\ \tt [put details here]\\ \tt ***\\ \tt Part 3. Milestone objectives\\ \tt [put details here]\\ \tt ***\\ \tt Part 4. Timeline\\ \tt [put details here]\\ \tt ***\\ \tt Part 5. Doc history\\ \tt [put details here] 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **Task Planning Document**\\ \tt \\ \tt **Part 1. Task Summary**\\ \tt \\ \tt **Task ID:** SE-001\\ \tt **Task Name:** Implement User Authentication System\\ \tt **Description:** Develop a user authentication system for the company's web application, allowing users to register, login, and manage their accounts securely.\\ \tt \\ \tt **Task Requirements:**\\ \tt \\ \tt * Implement user registration and login functionality\\ \tt * Integrate with existing database for user account management\\ \tt * Ensure secure password storage and authentication\\ \tt * Provide user account management features (e.g., password reset, account deletion)\\ \tt \\ \tt **Task Deliverables:**\\ \tt \\ \tt * Working user authentication system\\ \tt * Documentation on system architecture and implementation details\\ \tt * Test cases and test results for authentication functionality\\ \tt \\ \tt ***\\ \tt **Part 2. Motivation**\\ \tt \\ \tt The company's web application requires a robust user authentication system to ensure secure access to user accounts. The current system is vulnerable to security threats, and a new implementation is necessary to protect user data and prevent unauthorized access.\\ \tt \\ \tt **Business Benefits:**\\ \tt \\ \tt * Improved security and reduced risk of data breaches\\ \tt * Enhanced user experience with secure and reliable authentication\\ \tt * Compliance with industry security standards and regulations\\ \tt \\ \tt ***\\ \tt **Part 3. Milestone Objectives**\\ \tt \\ \tt **Milestone 1:** Research and Design (Due Date: 2024-07-31)\\ \tt \\ \tt * Research existing authentication systems and best practices\\ \tt * Design system architecture and implementation plan\\ \tt \\ \tt **Milestone 2:** Implementation (Due Date: 2024-08-14)\\ \tt \\ \tt * Develop user registration and login functionality\\ \tt * Integrate with existing database for user account management\\ \tt \\ \tt **Milestone 3:** Testing and Quality Assurance (Due Date: 2024-08-28)\\ \tt \\ \tt * Develop test cases and conduct unit testing\\ \tt * Perform integration testing and ensure system stability\\ \tt \\ \tt **Milestone 4:** Deployment and Documentation (Due Date: 2024-09-11)\\ \tt \\ \tt * Deploy user authentication system to production environment\\ \tt * Document system architecture and implementation details\\ \tt \\ \tt ***\\ \tt **Part 4. Timeline**\\ \tt \\ \tt **Task Start Date:** 2024-07-15\\ \tt **Task End Date:** 2024-09-11\\ \tt **Key Milestones:**\\ \tt \\ \tt * Research and Design: 2024-07-31\\ \tt * Implementation: 2024-08-14\\ \tt * Testing and Quality Assurance: 2024-08-28\\ \tt * Deployment and Documentation: 2024-09-11\\ \tt \\ \tt ***\\ \tt **Part 5. Doc History**\\ \tt \\ \tt **Revision History:**\\ \tt \\ \tt * Rev 1.0: Initial draft (2024-07-15)\\ \tt * Rev 1.1: Updated task requirements and deliverables (2024-07-20)\\ \tt * Rev 1.2: Added milestone objectives and timeline (2024-07-25)\\ \tt \\ \tt **Author:** [Your Name]\\ \tt **Reviewer:** [Reviewer's Name]\\ \tt **Approval Status:** Pending Review 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_paragraphs': {'num_paragraphs': 5}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

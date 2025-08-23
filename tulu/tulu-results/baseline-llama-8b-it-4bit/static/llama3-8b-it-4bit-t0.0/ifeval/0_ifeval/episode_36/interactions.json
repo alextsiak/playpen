@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 332,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:46:56.207358",
+        "action": {
+          "type": "send message",
+          "content": "Write a description for the Pixel 3A smartphone with at least 400 words. Wrap your entire response with double quotation marks.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:47:29.017224",
+        "action": {
+          "type": "get message",
+          "content": "\"Google's Pixel 3A is a mid-range Android smartphone that offers a unique blend of affordability, simplicity, and exceptional camera capabilities. Released in 2019, this device was designed to provide a more budget-friendly alternative to the flagship Pixel 3 series, while still delivering a high-quality user experience.\n\nThe Pixel 3A features a 5.6-inch OLED display with a resolution of 2220 x 1080 pixels, offering vibrant colors and crisp text. The screen is protected by Corning's Gorilla Glass 3, providing a durable and scratch-resistant surface. The device's design is minimalist and sleek, with a matte finish on the back and a subtle camera bump.\n\nUnder the hood, the Pixel 3A is powered by a Qualcomm Snapdragon 660 processor, which provides smooth performance and efficient battery life. The device comes with 4GB of RAM and 64GB of internal storage, which can be expanded using a microSD card. The battery life is decent, with a 3000mAh capacity that should last a day with moderate use.\n\nOne of the standout features of the Pixel 3A is its camera system. The device boasts a single 12.2-megapixel camera with a f/1.8 aperture, which captures stunning photos in a variety of lighting conditions. The camera also features advanced software capabilities, including Google's renowned Portrait mode, Night Sight, and Super Res Zoom. The front camera is a 8-megapixel shooter with a f/2.0 aperture, ideal for selfies and video calls.\n\nThe Pixel 3A runs on Android 9.0 (Pie) out of the box, with regular software updates and security patches. Google's Pixel Launcher provides a clean and intuitive interface, with features like Google Assistant, Google Photos, and Google Maps integrated into the home screen. The device also supports Google's AI-powered features, such as Google Assistant's voice recognition and Google Photos' automatic photo organization.\n\nIn terms of connectivity, the Pixel 3A supports Wi-Fi 802.11 a/b/g/n/ac, Bluetooth 5.0, and NFC. The device also features a USB-C port with fast charging capabilities, allowing users to quickly top up their battery. The Pixel 3A is also IP53-rated, providing some level of protection against dust and water.\n\nThe Pixel 3A is a great option for those who want a reliable and feature-rich smartphone without breaking the bank. With its exceptional camera capabilities, snappy performance, and clean software experience, this device is an excellent choice for anyone looking for a mid-range Android smartphone. Additionally, Google's commitment to software updates and security patches ensures that the Pixel 3A will remain a secure and up-to-date device for years to come.\n\nIn conclusion, the Pixel 3A is a well-rounded smartphone that offers a unique blend of affordability, simplicity, and exceptional camera capabilities. With its 5.6-inch OLED display, snappy performance, and advanced camera system, this device is an excellent choice for anyone looking for a mid-range Android smartphone. Whether you're a casual user or a photography enthusiast, the Pixel 3A is a great option to consider.\"",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:47:29.017279",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:number_words": {
+              "relation": "at least",
+              "num_words": 400
+            },
+            "startend:quotation": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:47:29.017523",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

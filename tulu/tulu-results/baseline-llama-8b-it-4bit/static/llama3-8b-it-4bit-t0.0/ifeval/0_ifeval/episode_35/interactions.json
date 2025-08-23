@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 323,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:46:44.178595",
+        "action": {
+          "type": "send message",
+          "content": "Write a cover letter for a job in Ventura that is funny and would be enjoyed by someone named Darius, wrap the entire response in double quotation marks.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:46:56.205372",
+        "action": {
+          "type": "get message",
+          "content": "\"Dear Hiring Manager,\n\nI'm Darius, the guy who's been searching for a job in Ventura that's not a surf instructor or a beach bum. I know what you're thinking, 'What's the deal with this guy?' Well, let me tell you, I'm a highly skilled individual with a passion for making people laugh and a knack for getting things done.\n\nAs a recent transplant to Ventura, I'm excited to join a team that shares my love for the laid-back California lifestyle. I'm not just looking for a job, I'm looking for a community that will make me feel like I'm part of the crew. And, let's be real, I'm pretty sure I'd be the life of the party at any company happy hour.\n\nIn all seriousness, I'm a quick learner, a team player, and a creative problem solver. I'm confident that my skills and experience make me a great fit for this role, and I'm excited to bring my unique perspective to your team.\n\nThanks for considering my application. I look forward to the opportunity to chat with you more about how I can contribute to your team.\n\nSincerely,\nDarius\"",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:46:56.205429",
+        "action": {
+          "type": "target",
+          "content": {
+            "startend:quotation": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:46:56.205454",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

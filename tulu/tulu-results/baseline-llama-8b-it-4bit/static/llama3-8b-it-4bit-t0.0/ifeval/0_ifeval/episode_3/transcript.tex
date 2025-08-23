@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a social media post for students of Islamic history about the hajj pilgrimage. Use all lowercase letters and include the word story at least twice. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 let's talk about one of the most significant events in islamic history - the hajj pilgrimage. every year, millions of muslims from all around the world come together to perform this sacred ritual in mecca, saudi arabia. it's a story of faith, unity, and devotion that transcends borders and cultures.\\ \tt \\ \tt the hajj is a journey of a lifetime, where pilgrims reenact the story of prophet ibrahim's (peace be upon him) willingness to sacrifice his son ismael as a test of faith. it's a powerful reminder of the importance of trust in god's plan and the value of sacrifice in our lives.\\ \tt \\ \tt as pilgrims make their way through the holy cities of mecca and medina, they experience a sense of community and brotherhood that's hard to find elsewhere. it's a story of people from different backgrounds and countries coming together to celebrate their shared faith and values.\\ \tt \\ \tt the hajj is a journey that's both physically and spiritually demanding, but it's also a source of great joy and spiritual renewal. it's a story of transformation, where pilgrims leave their worries and doubts behind and return home with a renewed sense of purpose and faith.\\ \tt \\ \tt so let's keep the story of the hajj alive by sharing our experiences and insights with each other. what's your favorite part of the hajj story? how has the hajj impacted your life? let's keep the conversation going! #hajj #islamichistory #faith #unity #devotion 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'change_case:english_lowercase': {}, 'keywords:frequency': {'relation': 'at least', 'keyword': 'story', 'frequency': 2}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 332,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:33:59.749037",
+        "action": {
+          "type": "send message",
+          "content": "Write a description for the Pixel 3A smartphone with at least 400 words. Wrap your entire response with double quotation marks.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:35:42.234013",
+        "action": {
+          "type": "get message",
+          "content": "\"Google's Pixel 3A smartphone was a game-changer in the world of Android devices, offering a perfect blend of affordability, performance, and innovative camera capabilities. Released in 2019, this device was designed to provide users with a premium smartphone experience without breaking the bank. The Pixel 3A was a significant upgrade from its predecessor, the Pixel 3, and offered several improvements that set it apart from other mid-range smartphones. Here's a detailed description of this remarkable device.\n\nThe Pixel 3A boasts a sleek and compact design, making it easy to carry around in a pocket or purse. Measuring 151.3 x 70.1 x 8.2 mm, this smartphone is compact enough to fit in most hands, yet still offers a 5.6-inch OLED display. The screen resolution is 2220 x 1080 pixels, providing a crisp and vibrant visual experience. The device's dimensions and weight make it comfortable to hold, and the smooth glass back offers a premium feel. The phone's color options include Clearly White, Just Black, and Purple-ish, giving users a range of choices to suit their style.\n\nOne of the standout features of the Pixel 3A is its camera system. The device boasts a single 12.2-megapixel camera with an f/1.8 aperture, which provides excellent low-light performance. The camera is capable of capturing stunning images with accurate colors and impressive detail. Google's software capabilities, such as Night Sight, allow users to take high-quality photos in low-light conditions, making it an ideal choice for photography enthusiasts. The camera app is intuitive and easy to use, with features like Portrait mode, which helps to blur the background and emphasize the subject. The front camera is a 8-megapixel sensor with an f/2.0 aperture, ideal for selfies and video calls.\n\nThe Pixel 3A runs on Android 9.0 (Pie) out of the box, providing users with a seamless and intuitive interface. The device is powered by a mid-range Qualcomm Snapdragon 660 processor, which offers a balance of performance and power efficiency. The processor is paired with 4GB of RAM, ensuring smooth multitasking and app performance. The device comes with 64GB of internal storage, which can be expanded using a microSD card. This means users can store their favorite apps, games, and files without worrying about running out of space.\n\nThe Pixel 3A features a 3000mAh battery, which provides a full day's worth of usage. The battery life is impressive, considering the device's compact size. The phone supports fast charging, allowing users to quickly top up their battery when needed. Google's Adaptive Brightness feature helps to optimize battery life by adjusting the screen's brightness based on the environment. This feature, combined with the device's power-saving mode, ensures that users get the most out of their battery.\n\nThe Pixel 3A offers a range of connectivity options, including Wi-Fi 802.11 a/b/g/n/ac, Bluetooth 5.0, and NFC. The device supports dual-band Wi-Fi, ensuring a stable and fast internet connection. The phone also features a USB-C port, which provides a fast and reversible charging experience. The device is compatible with Google's Pixel Buds, allowing users to enjoy wireless audio with their favorite music.\n\nOne of the key selling points of the Pixel 3A is its software support. Google is known for providing timely software updates, ensuring that users have access to the latest features and security patches. The device receives regular updates, including Android 10, which brought a range of new features and improvements. Google's commitment to software support means that users can enjoy a secure and up-to-date experience, even after the initial purchase.\n\nThe Pixel 3A offers a range of features that make it an attractive choice for users. The device features Google Assistant, which provides a personalized experience and helps users to get things done. The phone also supports Google's AR capabilities, allowing users to experience augmented reality in a new and exciting way. The device features a range of accessibility features, including text size adjustment, screen reader, and high contrast mode. These features make the Pixel 3A an ideal choice for users with disabilities.\n\nIn terms of performance, the Pixel 3A is a capable device that can handle demanding tasks with ease. The device features a mid-range processor, which provides a balance of performance and power efficiency. The phone's RAM and storage ensure smooth multitasking and app performance. The device is capable of running demanding games, such as Fortnite and PUBG, without any issues. The phone's performance is further enhanced by Google's software capabilities, which provide a seamless and intuitive experience.\n\nThe Pixel 3A is a great choice for users who want a premium smartphone experience without breaking the bank. The device offers a range of features, including a high-quality camera, compact design, and impressive battery life. The phone's software support is unparalleled, with regular updates and security patches. The device is compatible with a range of accessories, including Google's Pixel Buds. The Pixel 3A is an ideal choice for users who want a reliable and feature-packed smartphone.\n\nIn conclusion, the Pixel 3A is a remarkable device that offers a perfect blend of affordability, performance, and innovative camera capabilities. The device's compact design, high-quality camera, and impressive battery life make it an attractive choice for users. The phone's software support is unparalleled, with regular updates and security patches. The device is compatible with a range of accessories, including Google's Pixel Buds. The Pixel 3A is an ideal choice for users who want a reliable and feature-packed smartphone. With its impressive features and capabilities, the Pixel 3A is a game-changer in the world of Android devices.\"",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:35:42.234120",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:number_words": {
+              "relation": "at least",
+              "num_words": 400
+            },
+            "startend:quotation": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:35:42.234567",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

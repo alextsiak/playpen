@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write an email to your friend about what triggers you. Make sure to wrap the entire email in double quotation marks. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "Dear [Friend's Name],\\ \tt \\ \tt I hope this email finds you well. I wanted to take a moment to talk to you about something that's been on my mind lately. As you know, we've been friends for a long time, and I value our relationship deeply. However, there are a few things that tend to trigger me, and I thought it would be helpful to share them with you.\\ \tt \\ \tt Firstly, I get really frustrated when people interrupt me while I'm speaking. I know it's not always intentional, but it makes me feel like my thoughts and opinions aren't being valued. I'd appreciate it if you could make an effort to let me finish speaking before responding.\\ \tt \\ \tt Secondly, I'm sensitive to criticism, especially when it's not constructive. I know we all have different opinions, and I'm open to hearing yours, but please try to phrase it in a way that's not hurtful or condescending.\\ \tt \\ \tt Lastly, I get anxious when plans change at the last minute. I like to plan ahead and make sure everyone is on the same page, so if you need to make changes, please give me as much notice as possible.\\ \tt \\ \tt I know these are just small things, but they can make a big difference in how I feel. I appreciate your understanding and support.\\ \tt \\ \tt Best,\\ \tt [Your Name]" 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'startend:quotation': {}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

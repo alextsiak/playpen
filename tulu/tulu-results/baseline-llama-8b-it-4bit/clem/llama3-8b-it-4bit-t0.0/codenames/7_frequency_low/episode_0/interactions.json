@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "game_name": "codenames",
+    "experiment_name": "frequency_low",
+    "game_id": 1,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "ClueGiver",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:55.877546",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "foreignness",
+                "pleasantness",
+                "plantain",
+                "astrobiology",
+                "awardee",
+                "embroil",
+                "nearsightedness",
+                "backslapping",
+                "horsewoman"
+              ],
+              "innocent": [
+                "neurobiology",
+                "seamlessness",
+                "candidness",
+                "backwardness",
+                "ladylove",
+                "niftiness",
+                "deadliness"
+              ],
+              "opponent": [
+                "nearside",
+                "ducktail",
+                "unbelief",
+                "inexpensiveness",
+                "undulate",
+                "neuropsychologist",
+                "insurgence",
+                "deadfall"
+              ],
+              "assassin": [
+                "uncleanness"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:40:55.877624",
+        "action": {
+          "type": "send message",
+          "content": "Provide one single-word clue that relates to some of your team's words from the list below. You can choose to how many and to which words your clue relates to.\nThe goal is to have your partner guess all of your team's words based on the clues you give them, before the other team has uncovered all of theirs. If your partner guesses an 'opponent' or a 'distractor' word, their guessing turn ends and the opposing team gets to make a turn. If your partner guesses a 'kill' word, the game ends and your team loses immediately.\nThe more words your clue relates to, the quicker you can win the game, but the harder the associations may be to guess for your partner, so choose your clue word wisely. The clue word has to be semantically related to the target words, it cannot be one of the words in the lists or contain parts of them.\n\nAlways give your single-word clue and your comma-separated list of related target words in the following format and make your answers as short as possible, never include any other text than is required in this form:\n\nCLUE: <WORD>\nTARGETS: <TARGETS>\n\nYour team words are: foreignness, pleasantness, plantain, astrobiology, awardee, embroil, nearsightedness, backslapping, horsewoman.\nYour opponent's team words are: nearside, ducktail, unbelief, inexpensiveness, undulate, neuropsychologist, insurgence, deadfall.\nDistractor words are: neurobiology, seamlessness, candidness, backwardness, ladylove, niftiness, deadliness.\nThe kill words are: uncleanness.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:56.965482",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: Science\nTARGETS: astrobiology, nearsightedness, awardee, neuropsychologist",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:56.965789",
+        "action": {
+          "type": "clue",
+          "content": "science"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:56.965821",
+        "action": {
+          "type": "targets",
+          "content": [
+            "astrobiology",
+            "nearsightedness",
+            "awardee",
+            "neuropsychologist"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:56.965845",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "astrobiology",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:56.965865",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "nearsightedness",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:56.965883",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "awardee",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:56.965900",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "neuropsychologist",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:40:56.966124",
+        "action": {
+          "type": "send message",
+          "content": "Provide a comma-separated list of up to 4 words from the following list that best relate or are most closely associated with the word 'science'. Always start your list of guess(es) with 'GUESS: ' and do not include any other text in your answer.\n\ndeadfall, embroil, nearsightedness, niftiness, foreignness, awardee, ladylove, uncleanness, horsewoman, backslapping, plantain, inexpensiveness, astrobiology, nearside, pleasantness, neurobiology, insurgence, unbelief, deadliness, undulate, seamlessness, candidness, ducktail, neuropsychologist, backwardness",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:57.735356",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: astrobiology, neurobiology, science, nearsightedness",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:57.735464",
+        "action": {
+          "type": "validation error",
+          "content": {
+            "player": "Guesser",
+            "type": "guess is clue word",
+            "utterance": "astrobiology, neurobiology, science, nearsightedness",
+            "message": "Guessed word 'science' is the same word as the provided clue word, you should only select words from the provided list.",
+            "guess": "science",
+            "clue": "science"
+          }
+        }
+      }
+    ]
+  ],
+  "board end status": {
+    "hidden": {
+      "team": [
+        "foreignness",
+        "pleasantness",
+        "plantain",
+        "astrobiology",
+        "awardee",
+        "embroil",
+        "nearsightedness",
+        "backslapping",
+        "horsewoman"
+      ],
+      "innocent": [
+        "neurobiology",
+        "seamlessness",
+        "candidness",
+        "backwardness",
+        "ladylove",
+        "niftiness",
+        "deadliness"
+      ],
+      "opponent": [
+        "nearside",
+        "ducktail",
+        "unbelief",
+        "inexpensiveness",
+        "undulate",
+        "neuropsychologist",
+        "insurgence",
+        "deadfall"
+      ],
+      "assassin": [
+        "uncleanness"
+      ]
+    },
+    "revealed": {
+      "team": {
+        "team": [],
+        "innocent": [],
+        "opponent": [],
+        "assassin": []
+      },
+      "opponent": {
+        "team": [],
+        "innocent": [],
+        "opponent": [],
+        "assassin": []
+      }
+    }
+  },
+  "Number of turns": 2,
+  "Aborted": true,
+  "Lose": false,
+  "Game ended through assassin": false,
+  "Request Count": 2,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 1,
+  "Cluegiver engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  },
+  "Guesser engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  }
+}

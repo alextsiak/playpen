@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 457,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:40:37.814927",
+        "action": {
+          "type": "send message",
+          "content": "create a job description for a clifford blu employee who works at the cash register, and also monitors the shelves for stock level. Use the keyword 'people' and 'skills'. use only lowercase letters.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:40:54.600090",
+        "action": {
+          "type": "get message",
+          "content": "here's a job description for a clifford blu employee:\n\nwe're looking for a friendly and efficient team member to join our crew at the cash register. as a key part of our people, you'll be responsible for:\n\n* operating the cash register with accuracy and speed\n* handling customer transactions with a smile\n* monitoring the shelves for stock levels to ensure we're always stocked up\n* communicating with colleagues to maintain a smooth shopping experience\n\nto succeed in this role, you'll need to possess certain skills, including:\n\n* excellent communication skills to interact with our people\n* attention to detail to ensure accurate transactions\n* ability to multitask and stay organized\n* strong problem-solving skills to handle any issues that may arise\n\nif you're a team player with a passion for delivering great customer service, we want to hear from you! this role is perfect for someone who is comfortable working in a fast-paced environment and is eager to contribute to our people's success.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:40:54.600169",
+        "action": {
+          "type": "target",
+          "content": {
+            "change_case:english_lowercase": {},
+            "keywords:existence": {
+              "keywords": [
+                "people",
+                "skills"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:40:54.606206",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

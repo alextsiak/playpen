@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Give me a 300+ word startup pitch for a company that provides a service that creates trusts for people online. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **Introducing TrustGenie: Revolutionizing Trust Creation for the Digital Age**\\ \tt \\ \tt Imagine a world where creating a trust is as simple as filling out a form online. No more lengthy paperwork, no more lawyer fees, and no more hassle. Welcome to TrustGenie, the pioneering platform that empowers individuals to establish trusts with ease and convenience.\\ \tt \\ \tt **The Problem**\\ \tt \\ \tt Traditionally, creating a trust requires a significant amount of time, money, and expertise. Lawyers and law firms often charge exorbitant fees for their services, making it inaccessible to many individuals. Moreover, the process is often cumbersome, involving multiple documents, signatures, and notarizations. This has led to a significant gap in trust creation, particularly among small business owners, entrepreneurs, and individuals with limited financial resources.\\ \tt \\ \tt **The Solution**\\ \tt \\ \tt TrustGenie is an innovative online platform that streamlines the trust creation process. Our user-friendly interface guides individuals through a series of questions and prompts, generating a customized trust document in real-time. Our platform is designed to be intuitive, secure, and cost-effective, making it accessible to anyone with an internet connection.\\ \tt \\ \tt **Key Features**\\ \tt \\ \tt 1. **Easy Trust Creation**: Our platform allows individuals to create trusts in minutes, without the need for lawyer intervention.\\ \tt 2. **Customized Documents**: TrustGenie generates tailored trust documents, taking into account the individual's specific needs and circumstances.\\ \tt 3. **Secure Storage**: Our platform provides secure storage for trust documents, ensuring that they are protected from unauthorized access.\\ \tt 4. **Affordable Pricing**: We offer competitive pricing, making trust creation accessible to a wider audience.\\ \tt 5. **Expert Support**: Our team of experienced lawyers and trust experts is available to provide guidance and support throughout the process.\\ \tt \\ \tt **Market Opportunity**\\ \tt \\ \tt The trust creation market is vast and underserved. With the rise of online services and digital platforms, there is a growing demand for convenient and affordable trust creation solutions. TrustGenie is poised to capitalize on this trend, targeting small business owners, entrepreneurs, and individuals with limited financial resources.\\ \tt \\ \tt **Business Model**\\ \tt \\ \tt TrustGenie operates on a subscription-based model, offering individuals and businesses access to our platform and services. We also generate revenue through partnerships with law firms and financial institutions, providing them with a seamless and efficient way to offer trust creation services to their clients.\\ \tt \\ \tt **Join the TrustGenie Revolution**\\ \tt \\ \tt By partnering with TrustGenie, you'll be at the forefront of a revolution in trust creation. Our platform is designed to empower individuals and businesses to take control of their trust creation, without the need for lawyer intervention. Join us in shaping the future of trust creation and making it more accessible, convenient, and affordable for all. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_words': {'relation': 'at least', 'num_words': 300}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

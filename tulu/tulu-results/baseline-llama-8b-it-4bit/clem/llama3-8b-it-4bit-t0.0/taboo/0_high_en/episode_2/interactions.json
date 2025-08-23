@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "game_name": "taboo",
+    "experiment_name": "high_en",
+    "game_id": 8,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "WordDescriber",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "WordGuesser",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:04:27.476956",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:28.431422",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: It's a fundamental concept in computer science, often used in coding and game development.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:28.431475",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:28.431712",
+        "action": {
+          "type": "valid clue",
+          "content": "its a fundamental concept in computer science often used in coding and game development"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:04:28.431755",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n",
+          "label": "initial prompt"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:04:28.431771",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: It's a fundamental concept in computer science, often used in coding and game development.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:28.762560",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: ALGORITHM",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:28.762609",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:28.762639",
+        "action": {
+          "type": "valid guess",
+          "content": "algorithm"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:04:28.762681",
+        "action": {
+          "type": "send message",
+          "content": "GUESS: ALGORITHM",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:29.761046",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: It's a number that's used to determine something, like a score or a ranking.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:29.761096",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:29.761324",
+        "action": {
+          "type": "valid clue",
+          "content": "its a number thats used to determine something like a score or a ranking"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:04:29.761366",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: It's a number that's used to determine something, like a score or a ranking.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:30.050933",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: SCORE",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:30.050980",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:30.051011",
+        "action": {
+          "type": "valid guess",
+          "content": "score"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:04:30.051052",
+        "action": {
+          "type": "send message",
+          "content": "GUESS: SCORE",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:31.051554",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: It's a key part of many computer systems, helping them make decisions or process data.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:31.051604",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:31.051855",
+        "action": {
+          "type": "valid clue",
+          "content": "its a key part of many computer systems helping them make decisions or process data"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:04:31.051895",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: It's a key part of many computer systems, helping them make decisions or process data.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:31.344805",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: DATABASE",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:31.344851",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:31.344883",
+        "action": {
+          "type": "valid guess",
+          "content": "database"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:04:31.344910",
+        "action": {
+          "type": "max rounds reached",
+          "content": "3"
+        }
+      }
+    ]
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 153,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:40:23.676661",
+        "action": {
+          "type": "send message",
+          "content": "Can you write a poem about the pros and cons of playing a lot of video games? Please make sure it's at least 40 sentences long (don't forget to add punctuations). You must highlight some words or phrases in your response, like *highlighted phrase*.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:40:52.430685",
+        "action": {
+          "type": "get message",
+          "content": "In virtual realms, we find our delight,\nWhere *controllers* guide us through the night,\nA world of wonder, a world of play,\nWhere we escape, and let our worries stray.\n\nBut as we delve, and our hours slip away,\nWe must consider the pros and the sway,\nOf gaming's influence on our daily lives,\nA double-edged sword, that cuts through strife.\n\nOn one hand, it's a social bond we form,\nWith friends and strangers, in a virtual norm,\nWe connect, we share, we laugh, and we play,\nTogether, in a world, that's far away.\n\nIt's a stress-reliever, a calming breeze,\nThat soothes our minds, and brings us to our knees,\nIn a world of *high scores*, we find our pride,\nAnd the thrill of victory, is our heart's inside.\n\nBut on the other hand, there's a darker side,\nA world of addiction, where we can't divide,\nThe line between fun, and a *gaming disorder*,\nThat consumes our lives, and leaves us in a disorder.\n\nWe sacrifice our time, our health, our sleep,\nFor just one more level, or a *raid to keep*,\nWe neglect our duties, our relationships too,\nAnd the consequences, are a price we must pay anew.\n\nOur eyes, they strain, our backs, they ache,\nFrom hours of sitting, in a *gaming trance* we make,\nOur social skills, they wither away,\nAs we interact, only with a screen's gray.\n\nBut still, we play, and we can't resist,\nThe allure of *loot boxes*, and the thrill of the list,\nWe're drawn to the *grind*, the *raid*, the *quest*,\nAnd the sense of accomplishment, is our gaming quest.\n\nSo let's be aware, of the pros and the cons,\nAnd find a balance, that makes our hearts feel strong,\nLet's play with moderation, and a clear mind,\nAnd remember, there's a world, beyond the digital find.\n\nFor in the end, it's not just about the game,\nBut about our lives, and the choices we proclaim,\nSo let's be mindful, of our gaming habits too,\nAnd find a healthy balance, that's good for me and you.\n\nIn the virtual world, we find our delight,\nBut in the real world, we must shine with all our might,\nLet's play with purpose, and a sense of control,\nAnd remember, gaming's just a part of our soul.\n\nSo let's play on, but with a careful eye,\nAnd remember, there's a world, beyond the digital sky,\nWhere we can connect, and share, and play,\nBut also live, and love, and find our way.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:40:52.430741",
+        "action": {
+          "type": "target",
+          "content": {
+            "detectable_format:number_highlighted_sections": {
+              "num_highlights": 1
+            },
+            "length_constraints:number_sentences": {
+              "relation": "at least",
+              "num_sentences": 40
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:40:52.431195",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

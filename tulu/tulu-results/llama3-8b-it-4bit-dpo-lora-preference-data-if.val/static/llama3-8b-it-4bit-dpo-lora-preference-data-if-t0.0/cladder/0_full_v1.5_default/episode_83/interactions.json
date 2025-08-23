@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "game_name": "cladder",
+    "experiment_name": "full_v1.5_default",
+    "game_id": 8207,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:07:23.710115",
+        "action": {
+          "type": "send message",
+          "content": "You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\nImagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Tijv has a direct effect on tijw and xevo. Xevo has a direct effect on gyzp. Tijw has a direct effect on gyzp. For those who are not tijv and are not xevo, the probability of gyzp is 29%. For those who are not tijv and are xevo, the probability of gyzp is 14%. For those who are tijv and are not xevo, the probability of gyzp is 11%. For those who are tijv and are xevo, the probability of gyzp is 16%. The overall probability of tijv is 88%. Will xevo increase the chance of gyzp?\nStart your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:07:28.087400",
+        "action": {
+          "type": "get message",
+          "content": "Yes\n\nTo determine whether xevo increases the chance of gyzp, we need to compare the probabilities of gyzp among different groups. The given probabilities are: \n- 29% for those who are not tijv and are not",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:07:28.087485",
+        "action": {
+          "type": "parsed",
+          "content": "Yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:07:28.087500",
+        "action": {
+          "type": "target",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:07:28.087511",
+        "action": {
+          "type": "correct label",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

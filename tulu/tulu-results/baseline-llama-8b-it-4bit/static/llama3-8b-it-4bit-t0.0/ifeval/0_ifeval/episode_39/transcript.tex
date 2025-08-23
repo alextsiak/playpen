@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a JSON schema for a beta cruiser that includes at least one placeholder represented by square brackets. The response must be in English and all lowercase letters. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 here is a json schema for a beta cruiser:\\ \tt \\ \tt ```json\\ \tt {\\ \tt   "$schema": "http://json-schema.org/draft-07/schema#",\\ \tt   "title": "beta cruiser",\\ \tt   "description": "schema for a beta cruiser",\\ \tt   "type": "object",\\ \tt   "properties": {\\ \tt     "name": {\\ \tt       "type": "string",\\ \tt       "description": "name of the cruiser"\\ \tt     },\\ \tt     "size": {\\ \tt       "type": "number",\\ \tt       "description": "size of the cruiser in meters"\\ \tt     },\\ \tt     "speed": {\\ \tt       "type": "number",\\ \tt       "description": "speed of the cruiser in km/h"\\ \tt     },\\ \tt     "armament": {\\ \tt       "type": "array",\\ \tt       "description": "list of armaments on the cruiser",\\ \tt       "items": {\\ \tt         "type": "object",\\ \tt         "properties": {\\ \tt           "type": {\\ \tt             "type": "string",\\ \tt             "description": "type of armament [e.g. gun, missile, etc.]"\\ \tt           },\\ \tt           "caliber": {\\ \tt             "type": "string",\\ \tt             "description": "caliber of the armament [e.g. 5 inch, 30mm, etc.]"\\ \tt           },\\ \tt           "quantity": {\\ \tt             "type": "number",\\ \tt             "description": "quantity of the armament"\\ \tt           }\\ \tt         },\\ \tt         "required": ["type", "caliber", "quantity"]\\ \tt       }\\ \tt     },\\ \tt     "crew": {\\ \tt       "type": "number",\\ \tt       "description": "number of crew members"\\ \tt     }\\ \tt   },\\ \tt   "required": ["name", "size", "speed", "armament", "crew"]\\ \tt }\\ \tt ```\\ \tt \\ \tt this schema defines a beta cruiser with the following properties:\\ \tt \\ \tt - `name`: the name of the cruiser\\ \tt - `size`: the size of the cruiser in meters\\ \tt - `speed`: the speed of the cruiser in km/h\\ \tt - `armament`: a list of armaments on the cruiser, each with a `type`, `caliber`, and `quantity`\\ \tt - `crew`: the number of crew members\\ \tt \\ \tt the `armament` property is an array of objects, where each object has a `type`, `caliber`, and `quantity` property. the `type` property is a string that represents the type of armament, such as a gun or a missile. the `caliber` property is a string that represents the caliber of the armament, such as 5 inch or 30mm. the `quantity` property is a number that represents the quantity of the armament. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'detectable_content:number_placeholders': {'num_placeholders': 1}, 'change_case:english_lowercase': {}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

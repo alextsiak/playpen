@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 389,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:37:01.633027",
+        "action": {
+          "type": "send message",
+          "content": "Write a JSON schema for a beta cruiser that includes at least one placeholder represented by square brackets. The response must be in English and all lowercase letters.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:37:30.809401",
+        "action": {
+          "type": "get message",
+          "content": "```json\n{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"title\": \"beta cruiser\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"speed\": {\"type\": \"number\"},\n    \"armour\": {\"type\": \"number\"},\n    \"weapons\": {\"type\": \"array\", \"items\": [\"string\"]},\n    \"engines\": {\"type\": \"array\", \"items\": [\"string\"]},\n    \"max_capacity\": {\"type\": \"number\", \"description\": \"max capacity [units]\"}\n  },\n  \"required\": [\"name\", \"speed\", \"armour\", \"weapons\", \"engines\", \"max_capacity\"]\n}\n``` \n\ni replaced the placeholder with \"units\" but if you want it to be a square bracket, here is the modified version:\n\n```json\n{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"title\": \"beta cruiser\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\"type\": \"string\"},\n    \"speed\": {\"type\": \"number\"},\n    \"armour\": {\"type\": \"number\"},\n    \"weapons\": {\"type\": \"array\", \"items\": [\"string\"]},\n    \"engines\": {\"type\": \"array\", \"items\": [\"string\"]},\n    \"max_capacity\": {\"type\": \"number\", \"description\": \"max capacity [\"]}\n  },\n  \"required\": [\"name\", \"speed\", \"armour\", \"weapons\", \"engines\", \"max_capacity\"]\n}\n```",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:37:30.809502",
+        "action": {
+          "type": "target",
+          "content": {
+            "detectable_content:number_placeholders": {
+              "num_placeholders": 1
+            },
+            "change_case:english_lowercase": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:37:30.815426",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

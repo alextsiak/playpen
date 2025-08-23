@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a proposal for a research project on the impact of the liberian civil war on the country's economy. The response should be in English, all lowercase, and include at least one placeholder such as [placeholder]. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **proposal for research project: assessing the impact of the liberian civil war on the country's economy**\\ \tt \\ \tt **background**\\ \tt \\ \tt liberia, a small west african country, experienced a devastating civil war from 1989 to 2003. the conflict, which lasted for over a decade, resulted in the deaths of an estimated [placeholder] people and the displacement of hundreds of thousands more. the war also had a profound impact on the country's economy, which was already one of the weakest in the world.\\ \tt \\ \tt **research question**\\ \tt \\ \tt this research project aims to investigate the impact of the liberian civil war on the country's economy. specifically, it seeks to answer the following research question:\\ \tt \\ \tt what were the economic consequences of the liberian civil war, and how did they affect the country's economic development in the post-conflict period?\\ \tt \\ \tt **objectives**\\ \tt \\ \tt the objectives of this research project are:\\ \tt \\ \tt 1. to examine the economic costs of the liberian civil war, including the destruction of infrastructure, the loss of human capital, and the disruption of trade and commerce.\\ \tt 2. to assess the impact of the war on the country's economic sectors, including agriculture, manufacturing, and services.\\ \tt 3. to evaluate the effectiveness of post-conflict economic policies and interventions in promoting economic recovery and growth.\\ \tt 4. to identify the key factors that contributed to the country's economic resilience and recovery in the post-conflict period.\\ \tt \\ \tt **methodology**\\ \tt \\ \tt this research project will employ a mixed-methods approach, combining both qualitative and quantitative data collection and analysis methods. the following data sources will be used:\\ \tt \\ \tt 1. secondary data: economic indicators, such as gdp, inflation, and unemployment rates, will be collected from various sources, including the world bank, the international monetary fund, and the liberian government.\\ \tt 2. primary data: surveys and interviews will be conducted with key stakeholders, including business owners, farmers, and government officials, to gather information on the economic consequences of the war and the effectiveness of post-conflict economic policies.\\ \tt 3. case studies: in-depth case studies will be conducted on specific economic sectors, such as agriculture and manufacturing, to examine the impact of the war on these sectors and the responses of key stakeholders.\\ \tt \\ \tt **expected outcomes**\\ \tt \\ \tt this research project is expected to contribute to the following outcomes:\\ \tt \\ \tt 1. a better understanding of the economic consequences of the liberian civil war and the factors that contributed to the country's economic resilience and recovery.\\ \tt 2. a set of policy recommendations for promoting economic development and reducing poverty in post-conflict liberia.\\ \tt 3. a contribution to the existing literature on the economic impact of conflict and the effectiveness of post-conflict economic policies.\\ \tt \\ \tt **timeline**\\ \tt \\ \tt the research project is expected to be completed within [placeholder] months, with the following milestones:\\ \tt \\ \tt 1. literature review and data collection: [placeholder] months\\ \tt 2. data analysis and case study development: [placeholder] months\\ \tt 3. writing and revising the research report: [placeholder] months\\ \tt \\ \tt **budget**\\ \tt \\ \tt the budget for this research project is estimated to be [placeholder] dollars, which will cover the following expenses:\\ \tt \\ \tt 1. data collection and analysis: [placeholder] dollars\\ \tt 2. case study development: [placeholder] dollars\\ \tt 3. travel and accommodation: [placeholder] dollars\\ \tt 4. research assistant fees: [placeholder] dollars\\ \tt \\ \tt **conclusion**\\ \tt \\ \tt this research project aims to contribute to the existing literature on the economic impact of conflict and the effectiveness of post-conflict economic policies. it is expected to provide valuable insights into the economic consequences of the liberian civil war and the factors that contributed to the country's economic resilience and recovery. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'change_case:english_lowercase': {}, 'detectable_content:number_placeholders': {'num_placeholders': 1}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

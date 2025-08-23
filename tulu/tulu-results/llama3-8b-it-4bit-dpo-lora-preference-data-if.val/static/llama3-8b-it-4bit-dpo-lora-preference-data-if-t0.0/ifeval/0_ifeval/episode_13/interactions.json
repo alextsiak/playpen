@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 112,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:17:41.903641",
+        "action": {
+          "type": "send message",
+          "content": "What's a good way to ask Sonia out? Please reply with exactly 4 paragraphs and separate each paragraph with two new lines. Put double quotation marks around your entire response. The very first paragraph must start with the word \"weekend\".",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:19:32.976119",
+        "action": {
+          "type": "get message",
+          "content": "\"weekend plans are always more fun when shared with someone special, and I think you might be that someone. When I see you around, I notice the way you smile and the way you light up the room. It's hard not to be drawn to your energy, and I think we could have a great time together. Whether it's trying out a new restaurant or going for a hike, I think we could create some amazing memories.\n\n \n\nI've been thinking about asking you out for a while now, and I'm finally mustering up the courage to do it. I know it's a bit nerve-wracking, but I think it's worth it. You seem like someone who appreciates the little things in life, and I think we could have a great connection. Maybe we could grab coffee or dinner sometime and see where things go? I promise I'm not looking for anything too serious, just a chance to get to know you better.\n\n \n\nThe thing is, I don't want to make things too awkward if you're not interested. So, I'm asking you out in a way that's low-pressure and respectful. If you're not feeling it, no big deal - we can still be friends. But if you are feeling it, I'd love to take things to the next level. Let me know what you think, and we can go from there.\n\n \n\nI hope you'll consider saying yes, but either way, I'm glad we've had a chance to chat. You're an amazing person, and I think you deserve someone who appreciates you for who you are. If you're interested, let's grab coffee or dinner soon and see where things go. Either way, I hope we can stay in touch and maybe even become friends. Good luck, and I hope you'll take a chance on me!\"",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:19:32.976230",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:nth_paragraph_first_word": {
+              "num_paragraphs": 4,
+              "first_word": "weekend",
+              "nth_paragraph": 1
+            },
+            "startend:quotation": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:19:32.976472",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

@@ -1,0 +1,332 @@
+{
+  "meta": {
+    "game_name": "codenames",
+    "experiment_name": "association_difficult",
+    "game_id": 5,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "ClueGiver",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    },
+    "Player 2": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:41.086189",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "onion",
+                "knife",
+                "rabbi",
+                "decade",
+                "recliner",
+                "peru",
+                "reverend",
+                "apple",
+                "raspberry"
+              ],
+              "innocent": [
+                "bishop",
+                "scotland",
+                "bourbon",
+                "stool",
+                "cherry",
+                "peppers",
+                "missile"
+              ],
+              "opponent": [
+                "month",
+                "banana",
+                "minister",
+                "margarita",
+                "cucumber",
+                "minute",
+                "korea",
+                "dresser"
+              ],
+              "assassin": [
+                "eggplant"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:42:41.086267",
+        "action": {
+          "type": "send message",
+          "content": "Provide one single-word clue that relates to some of your team's words from the list below. You can choose to how many and to which words your clue relates to.\nThe goal is to have your partner guess all of your team's words based on the clues you give them, before the other team has uncovered all of theirs. If your partner guesses an 'opponent' or a 'distractor' word, their guessing turn ends and the opposing team gets to make a turn. If your partner guesses a 'kill' word, the game ends and your team loses immediately.\nThe more words your clue relates to, the quicker you can win the game, but the harder the associations may be to guess for your partner, so choose your clue word wisely. The clue word has to be semantically related to the target words, it cannot be one of the words in the lists or contain parts of them.\n\nAlways give your single-word clue and your comma-separated list of related target words in the following format and make your answers as short as possible, never include any other text than is required in this form:\n\nCLUE: <WORD>\nTARGETS: <TARGETS>\n\nYour team words are: onion, knife, rabbi, decade, recliner, peru, reverend, apple, raspberry.\nYour opponent's team words are: month, banana, minister, margarita, cucumber, minute, korea, dresser.\nDistractor words are: bishop, scotland, bourbon, stool, cherry, peppers, missile.\nThe kill words are: eggplant.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:42.634665",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: food\nTARGETS: onion, apple, raspberry, banana, cherry",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:42.634935",
+        "action": {
+          "type": "clue",
+          "content": "food"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:42.634969",
+        "action": {
+          "type": "targets",
+          "content": [
+            "onion",
+            "apple",
+            "raspberry",
+            "banana",
+            "cherry"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:42.634995",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "onion",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:42.635015",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "apple",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:42.635032",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "raspberry",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:42.635050",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "banana",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:42.635066",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "cherry",
+            "assignment": "innocent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:42:42.635267",
+        "action": {
+          "type": "send message",
+          "content": "Provide a comma-separated list of up to 5 words from the following list that best relate or are most closely associated with the word 'food'. Always start your list of guess(es) with 'GUESS: ' and do not include any other text in your answer.\n\nmissile, month, korea, raspberry, eggplant, reverend, minister, rabbi, stool, banana, onion, peppers, margarita, scotland, cucumber, decade, bourbon, apple, bishop, dresser, minute, peru, cherry, recliner, knife",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:43.928522",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: food, onion, peppers, banana, apple.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:42:43.928653",
+        "action": {
+          "type": "validation error",
+          "content": {
+            "player": "Guesser",
+            "type": "guess is clue word",
+            "utterance": "food, onion, peppers, banana, apple.",
+            "message": "Guessed word 'food' is the same word as the provided clue word, you should only select words from the provided list.",
+            "guess": "food",
+            "clue": "food"
+          }
+        }
+      }
+    ]
+  ],
+  "board end status": {
+    "hidden": {
+      "team": [
+        "onion",
+        "knife",
+        "rabbi",
+        "decade",
+        "recliner",
+        "peru",
+        "reverend",
+        "apple",
+        "raspberry"
+      ],
+      "innocent": [
+        "bishop",
+        "scotland",
+        "bourbon",
+        "stool",
+        "cherry",
+        "peppers",
+        "missile"
+      ],
+      "opponent": [
+        "month",
+        "banana",
+        "minister",
+        "margarita",
+        "cucumber",
+        "minute",
+        "korea",
+        "dresser"
+      ],
+      "assassin": [
+        "eggplant"
+      ]
+    },
+    "revealed": {
+      "team": {
+        "team": [],
+        "innocent": [],
+        "opponent": [],
+        "assassin": []
+      },
+      "opponent": {
+        "team": [],
+        "innocent": [],
+        "opponent": [],
+        "assassin": []
+      }
+    }
+  },
+  "Number of turns": 2,
+  "Aborted": true,
+  "Lose": false,
+  "Game ended through assassin": false,
+  "Request Count": 2,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 1,
+  "Cluegiver engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  },
+  "Guesser engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 1,
+    "IGNORE NUMBER OF TARGETS": 0
+  }
+}

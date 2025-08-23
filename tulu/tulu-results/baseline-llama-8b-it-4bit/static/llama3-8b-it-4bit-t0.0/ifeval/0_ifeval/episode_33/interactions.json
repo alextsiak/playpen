@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 297,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:46:13.944298",
+        "action": {
+          "type": "send message",
+          "content": "Rewrite the following text so that it is funny to software engineers using notations from the book \"The C Programming Language\": \"The use of the various constructions described in this chapter is one of the most distinctive features of the C programming language.\" Make this sound like it is being said by the president of the United States and capitalize every letter.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:46:21.882524",
+        "action": {
+          "type": "get message",
+          "content": "\"My fellow Americans, and all you software engineers out there, I am pleased to declare that the use of the various constructions described in this chapter, including but not limited to: the if statement (if (condition) statement); the switch statement (switch (expression) { case constant: statement; }); the for loop (for (init; condition; increment) statement); and the while loop (while (condition) statement), is one of the most DISTINCTIVE FEATURES of the C programming language, a language that has been the backbone of our great nation's technological advancements, from the humblest of embedded systems to the mightiest of supercomputers. May the bitwise operators (|, &, ^, ~) and the pointer arithmetic (ptr++) forever be with us!\"",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:46:21.882578",
+        "action": {
+          "type": "target",
+          "content": {
+            "change_case:english_capital": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:46:21.882603",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

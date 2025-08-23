@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a funny poem for kids about a product that you would like to sell. The poem should have exactly 6 stanzas. Separated the stanzas using 3 asterisk markers: *** 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 ***\\ \tt \\ \tt In a land of fun and play,\\ \tt There's a product that's here to stay,\\ \tt It's a silly hat, so bright and bold,\\ \tt The Laugh-a-Lot Hat, worth more than gold!\\ \tt \\ \tt It's got a nose that wiggles with glee,\\ \tt And a mouth that smiles at you and me,\\ \tt It's like a clown, but not too big,\\ \tt Just the right size for a kid's gig!\\ \tt \\ \tt You can wear it to the park or the store,\\ \tt It's perfect for a fun-filled day galore,\\ \tt You'll laugh and play and have a ball,\\ \tt With the Laugh-a-Lot Hat, standing tall!\\ \tt \\ \tt It's made of soft, comfy material too,\\ \tt So you can wear it all day, it's true,\\ \tt No more boring hats, no more dull days,\\ \tt With the Laugh-a-Lot Hat, in a fun-filled way!\\ \tt \\ \tt You can wear it to a party or a show,\\ \tt It's the perfect accessory, don't you know,\\ \tt You'll be the star of the party scene,\\ \tt With the Laugh-a-Lot Hat, so bright and clean!\\ \tt \\ \tt So come and get your Laugh-a-Lot Hat today,\\ \tt And laugh and play in a fun-filled way,\\ \tt It's the perfect gift for a friend or a foe,\\ \tt The Laugh-a-Lot Hat, is a product to know! 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_paragraphs': {'num_paragraphs': 6}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

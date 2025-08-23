@@ -1,0 +1,651 @@
+{
+  "meta": {
+    "game_name": "codenames",
+    "experiment_name": "concrete",
+    "game_id": 5,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "ClueGiver",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    },
+    "Player 2": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:48.050959",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "ball",
+                "bedsheet",
+                "pedometer",
+                "scooter",
+                "pocketknife",
+                "pickaxe",
+                "flyswatter",
+                "necklace",
+                "peroxide"
+              ],
+              "innocent": [
+                "blackbird",
+                "tail",
+                "wasp",
+                "taxicab",
+                "saltshaker",
+                "eyeball",
+                "jelly"
+              ],
+              "opponent": [
+                "teeth",
+                "flute",
+                "cuticle",
+                "bandanna",
+                "binoculars",
+                "fish",
+                "elbow",
+                "watchband"
+              ],
+              "assassin": [
+                "undershirt"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:43:48.051037",
+        "action": {
+          "type": "send message",
+          "content": "Provide one single-word clue that relates to some of your team's words from the list below. You can choose to how many and to which words your clue relates to.\nThe goal is to have your partner guess all of your team's words based on the clues you give them, before the other team has uncovered all of theirs. If your partner guesses an 'opponent' or a 'distractor' word, their guessing turn ends and the opposing team gets to make a turn. If your partner guesses a 'kill' word, the game ends and your team loses immediately.\nThe more words your clue relates to, the quicker you can win the game, but the harder the associations may be to guess for your partner, so choose your clue word wisely. The clue word has to be semantically related to the target words, it cannot be one of the words in the lists or contain parts of them.\n\nAlways give your single-word clue and your comma-separated list of related target words in the following format and make your answers as short as possible, never include any other text than is required in this form:\n\nCLUE: <WORD>\nTARGETS: <TARGETS>\n\nYour team words are: ball, bedsheet, pedometer, scooter, pocketknife, pickaxe, flyswatter, necklace, peroxide.\nYour opponent's team words are: teeth, flute, cuticle, bandanna, binoculars, fish, elbow, watchband.\nDistractor words are: blackbird, tail, wasp, taxicab, saltshaker, eyeball, jelly.\nThe kill words are: undershirt.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:50.148220",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: tool\nTARGETS: pickaxe, pocketknife, flyswatter, necklace, peroxide.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:50.148586",
+        "action": {
+          "type": "clue",
+          "content": "tool"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:50.148624",
+        "action": {
+          "type": "targets",
+          "content": [
+            "pickaxe",
+            "pocketknife",
+            "flyswatter",
+            "necklace",
+            "peroxide"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:50.148649",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "pickaxe",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:50.148669",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "pocketknife",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:50.148686",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "flyswatter",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:50.148703",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "necklace",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:50.148719",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "peroxide",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:43:50.148930",
+        "action": {
+          "type": "send message",
+          "content": "Provide a comma-separated list of up to 5 words from the following list that best relate or are most closely associated with the word 'tool'. Always start your list of guess(es) with 'GUESS: ' and do not include any other text in your answer.\n\njelly, peroxide, binoculars, necklace, taxicab, tail, scooter, blackbird, bandanna, pickaxe, saltshaker, cuticle, pocketknife, ball, wasp, undershirt, eyeball, pedometer, flyswatter, fish, teeth, flute, elbow, bedsheet, watchband",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149350",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: pickaxe, pocketknife, pedometer, flyswatter, binoculars.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149476",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "pickaxe",
+            "pocketknife",
+            "pedometer",
+            "flyswatter",
+            "binoculars"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149518",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "pickaxe",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149541",
+        "action": {
+          "type": "target revealed",
+          "content": {
+            "word": "pickaxe",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149563",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "pocketknife",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149581",
+        "action": {
+          "type": "target revealed",
+          "content": {
+            "word": "pocketknife",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149600",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "pedometer",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149619",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "flyswatter",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149636",
+        "action": {
+          "type": "target revealed",
+          "content": {
+            "word": "flyswatter",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149655",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "binoculars",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149673",
+        "action": {
+          "type": "turn end after",
+          "content": "binoculars"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149893",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "teeth",
+            "assignment": "opponent"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:52.149931",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "ball",
+                "bedsheet",
+                "scooter",
+                "necklace",
+                "peroxide"
+              ],
+              "innocent": [
+                "blackbird",
+                "tail",
+                "wasp",
+                "taxicab",
+                "saltshaker",
+                "eyeball",
+                "jelly"
+              ],
+              "opponent": [
+                "flute",
+                "cuticle",
+                "bandanna",
+                "fish",
+                "elbow",
+                "watchband"
+              ],
+              "assassin": [
+                "undershirt"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [
+                  "pickaxe",
+                  "pocketknife",
+                  "pedometer",
+                  "flyswatter"
+                ],
+                "innocent": [],
+                "opponent": [
+                  "binoculars"
+                ],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "teeth"
+                ],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:43:52.150001",
+        "action": {
+          "type": "send message",
+          "content": "The words pickaxe, pocketknife, pedometer, flyswatter were guessed correctly. The word binoculars was guessed but is an opponent word. Your teammate's turn ended there.\nNow provide another clue relating to some of your remaining team words and a list of the related target words. Remember to start your clue with 'CLUE: ', put a new line, and start your comma-separated list of target words with 'TARGETS: '. Notice: some words have been removed from the lists compared to previous requests.\n\nYour remaining team words are: ball, bedsheet, scooter, necklace, peroxide.\nRemaining words for your opponent are: teeth, flute, cuticle, bandanna, fish, elbow, watchband.\nRemaining distractor words are: blackbird, tail, wasp, taxicab, saltshaker, eyeball, jelly.\nRemaining kill words are: undershirt.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:53.371532",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: fabric\nTARGETS: bedsheet, necklace.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:53.371802",
+        "action": {
+          "type": "clue",
+          "content": "fabric"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:53.371838",
+        "action": {
+          "type": "targets",
+          "content": [
+            "bedsheet",
+            "necklace"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:53.371862",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "bedsheet",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:53.371882",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "necklace",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:43:53.372098",
+        "action": {
+          "type": "send message",
+          "content": "The words pickaxe, pocketknife, pedometer, flyswatter were guessed correctly. The word binoculars was guessed but is an opponent word. Your turn ended there.\nNow provide another comma-separated list of at least 1 and up to 2 words from the following list of words that best relate or are most closely associated with the word 'fabric'. Remember to start your answer with 'GUESS: '. Notice: some words have been removed from the list compared to previous requests.\n\njelly, peroxide, necklace, taxicab, tail, scooter, blackbird, bandanna, saltshaker, cuticle, ball, wasp, undershirt, eyeball, fish, flute, elbow, bedsheet, watchband",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:54.411213",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: undershirt, bedsheet.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:54.411340",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "undershirt",
+            "bedsheet"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:54.411381",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "undershirt",
+            "assignment": "assassin"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:54.411405",
+        "action": {
+          "type": "turn end after",
+          "content": "undershirt"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:54.411604",
+        "action": {
+          "type": "game end",
+          "content": "opponent has won through assassin"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:54.411637",
+        "action": {
+          "type": "game end",
+          "content": "opponent has won through assassin"
+        }
+      }
+    ]
+  ],
+  "board end status": {
+    "hidden": {
+      "team": [
+        "ball",
+        "bedsheet",
+        "scooter",
+        "necklace",
+        "peroxide"
+      ],
+      "innocent": [
+        "blackbird",
+        "tail",
+        "wasp",
+        "taxicab",
+        "saltshaker",
+        "eyeball",
+        "jelly"
+      ],
+      "opponent": [
+        "flute",
+        "cuticle",
+        "bandanna",
+        "fish",
+        "elbow",
+        "watchband"
+      ],
+      "assassin": []
+    },
+    "revealed": {
+      "team": {
+        "team": [
+          "pickaxe",
+          "pocketknife",
+          "pedometer",
+          "flyswatter"
+        ],
+        "innocent": [],
+        "opponent": [
+          "binoculars"
+        ],
+        "assassin": [
+          "undershirt"
+        ]
+      },
+      "opponent": {
+        "team": [],
+        "innocent": [],
+        "opponent": [
+          "teeth"
+        ],
+        "assassin": []
+      }
+    }
+  },
+  "Number of turns": 3,
+  "Aborted": false,
+  "Lose": true,
+  "Game ended through assassin": true,
+  "Request Count": 4,
+  "Parsed Request Count": 4,
+  "Violated Request Count": 0,
+  "Cluegiver engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 2,
+    "IGNORE NUMBER OF TARGETS": 0
+  },
+  "Guesser engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 2,
+    "IGNORE NUMBER OF TARGETS": 0
+  }
+}

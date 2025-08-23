@@ -1,0 +1,541 @@
+{
+  "meta": {
+    "game_name": "matchit_ascii",
+    "experiment_name": "different_grid",
+    "game_id": 6,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:58:17.364639",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nX X X X X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:20.203361",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: A 5x5 grid with a mix of X and ▢ symbols, where the bottom row has three ▢ symbols in a row, the middle row has three ▢ symbols in a row, and the top and bottom rows have an X symbol at each end with ▢ symbols in between.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:20.203426",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:58:20.203498",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\n▢ ▢ ▢ ▢ ▢\nX X X ▢ X\nX X ▢ X X\nX ▢ X X X\n▢ ▢ ▢ ▢ ▢",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:21.637722",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: A 5x5 grid with a mix of filled and empty squares, containing a symmetrical pattern of X's and ▢'s.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:21.637782",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:58:21.637853",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: A 5x5 grid with a mix of X and ▢ symbols, where the bottom row has three ▢ symbols in a row, the middle row has three ▢ symbols in a row, and the top and bottom rows have an X symbol at each end with ▢ symbols in between.\nNow ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:22.330936",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Does your grid have any X symbols in the middle column?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:22.330993",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:58:22.331079",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: A 5x5 grid with a mix of filled and empty squares, containing a symmetrical pattern of X's and ▢'s.\nQUESTION: Does your grid have any X symbols in the middle column? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:23.195617",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No, my grid does not have any X symbols in the middle column.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:23.195675",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:58:23.195742",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:23.935252",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Does your grid have any ▢ symbols in the top row?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:23.935309",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:58:23.935382",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No, my grid does not have any X symbols in the middle column.\nQUESTION: Does your grid have any ▢ symbols in the top row? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:24.715842",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes, my grid has ▢ symbols in the top row.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:24.715900",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:58:24.715968",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:25.421290",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Does your grid have any X symbols in the second column?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:25.421347",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:58:25.421428",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes, my grid has ▢ symbols in the top row.\nQUESTION: Does your grid have any X symbols in the second column? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:26.211421",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes, my grid has an X symbol in the second column.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:26.211477",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:58:26.211545",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:26.961033",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are all the X symbols in your grid in a horizontal line?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:26.961092",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:58:26.961165",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes, my grid has an X symbol in the second column.\nQUESTION: Are all the X symbols in your grid in a horizontal line? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:27.840754",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No, the X symbols in my grid are not in a horizontal line.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:27.840811",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:58:27.840876",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:28.637892",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any ▢ symbols in the third row of your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:28.637951",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:58:28.638038",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No, the X symbols in my grid are not in a horizontal line.\nQUESTION: Are there any ▢ symbols in the third row of your grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:29.564509",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No, there are no ▢ symbols in the third row of my grid.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:29.564577",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:58:29.564646",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:30.715945",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the X symbols in your grid all in a single row, but not necessarily at the top or bottom?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:30.716004",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:58:30.716080",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No, there are no ▢ symbols in the third row of my grid.\nQUESTION: Are the X symbols in your grid all in a single row, but not necessarily at the top or bottom? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:32.005120",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes, the X symbols in my grid are all in a single row, but not necessarily at the top or bottom.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:32.005178",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:58:32.005248",
+        "action": {
+          "type": "send message",
+          "content": "Now come to a decision. What do you think: are your grid and the other grid described the same?  Write \"DECISION: same grid\" if you think they are the same grid or \"DECISION: different grids\" if you think they are different grids. Do not add anything else.\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:32.333505",
+        "action": {
+          "type": "get message",
+          "content": "DECISION: different grids",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:32.333562",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:32.333578",
+        "action": {
+          "type": "Decision Player B",
+          "content": "success"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:58:32.333663",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes, the X symbols in my grid are all in a single row, but not necessarily at the top or bottom.\nNow come to a decision. What do you think: are your grid and the other grid described the same?  Write \"DECISION: same grid\" if you think they are the same grid or \"DECISION: different grids\" if you think they are different grids. Do not add anything else.\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:32.661106",
+        "action": {
+          "type": "get message",
+          "content": "DECISION: different grids",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:32.661161",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:58:32.661176",
+        "action": {
+          "type": "Decision Player A",
+          "content": "success"
+        }
+      }
+    ]
+  ]
+}

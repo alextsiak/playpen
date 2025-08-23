@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a funny article about why the dinosaurs went extinct and put double quotations marks around your whole response. Include exactly 8 bullet points in your response. The bullet points should be in the form of:\\ \tt * This is bullet 1\\ \tt * This is bullet 2\\ \tt ... 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "Ah, the Great Dinosaur Debacle: Why They Went Extinct (and It's Not What You Think)"\\ \tt \\ \tt "Let's face it, folks, the dinosaurs were a bit of a handful. They were loud, they were messy, and they had a tendency to eat each other. But, alas, their demise was not just a result of their own bad behavior. Here are the top reasons why they went extinct:\\ \tt \\ \tt * This is bullet 1: They were just too cool for school. I mean, who needs to be the smartest species around when you can just be the biggest?\\ \tt * This is bullet 2: Their fashion sense was questionable. I mean, who thought it was a good idea to wear a frill on your head?\\ \tt * This is bullet 3: They were a bit too fond of the whole 'eating each other' thing. It's just not sustainable, folks.\\ \tt * This is bullet 4: Their love of karaoke was unmatched. Who needs a voice when you can just roar?\\ \tt * This is bullet 5: They were a bit too reliant on the 'dino-mite' method of transportation. I mean, who needs roads when you can just stomp on things?\\ \tt * This is bullet 6: Their obsession with shiny objects was just too much. I mean, who needs a functioning society when you can just collect rocks?\\ \tt * This is bullet 7: They were a bit too fond of the whole 'dino- drama' thing. I mean, who needs peace and harmony when you can just have a good old-fashioned dinosaur soap opera?\\ \tt * This is bullet 8: And finally, they just couldn't handle the pressure of being the center of attention. I mean, who needs to be the star of the show when you can just be a footnote in history?" 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'startend:quotation': {}, 'detectable_format:number_bullet_lists': {'num_bullets': 8}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

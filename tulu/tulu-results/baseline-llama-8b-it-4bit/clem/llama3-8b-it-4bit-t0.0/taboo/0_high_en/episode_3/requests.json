@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-07-21T12:04:32.033294",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nsexy\n\nRelated words are:\n\n- toothsome\n- autoerotic\n- titillating\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nsexy\n\nRelated words are:\n\n- toothsome\n- autoerotic\n- titillating\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:31.347156",
+        "call_duration": "0:00:00.686086",
+        "response": "CLUE: Something that attracts people's attention in a sensual way.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:32.366468",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Seduction<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:32.033620",
+        "call_duration": "0:00:00.332802",
+        "response": "GUESS: Seduction",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:32.836093",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nsexy\n\nRelated words are:\n\n- toothsome\n- autoerotic\n- titillating\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Seduction<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nsexy\n\nRelated words are:\n\n- toothsome\n- autoerotic\n- titillating\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Seduction<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Often associated with romantic relationships.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:32.366598",
+        "call_duration": "0:00:00.469447",
+        "response": "CLUE: Often associated with romantic relationships.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:33.123908",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Seduction<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Often associated with romantic relationships.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Seduction<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Often associated with romantic relationships.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Romance<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:32.836365",
+        "call_duration": "0:00:00.287495",
+        "response": "GUESS: Romance",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:33.813385",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nsexy\n\nRelated words are:\n\n- toothsome\n- autoerotic\n- titillating\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Seduction<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Often associated with romantic relationships.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Romance<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nsexy\n\nRelated words are:\n\n- toothsome\n- autoerotic\n- titillating\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Seduction<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Often associated with romantic relationships.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Romance<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Can be found in art, music, or literature.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:33.124038",
+        "call_duration": "0:00:00.689295",
+        "response": "CLUE: Can be found in art, music, or literature.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:34.105755",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Seduction<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Often associated with romantic relationships.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Romance<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Can be found in art, music, or literature.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Something that attracts people's attention in a sensual way.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Seduction<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Often associated with romantic relationships.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Romance<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Can be found in art, music, or literature.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Beauty<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:33.813660",
+        "call_duration": "0:00:00.292046",
+        "response": "GUESS: Beauty",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  }
+]

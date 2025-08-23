@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 376,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:48:05.978433",
+        "action": {
+          "type": "send message",
+          "content": "Write a funny poem for kids about a product that you would like to sell. The poem should have exactly 6 stanzas. Separated the stanzas using 3 asterisk markers: ***",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:48:19.557003",
+        "action": {
+          "type": "get message",
+          "content": "***\n\nIn a land of fun and play,\nThere's a product that's here to stay,\nIt's a silly hat, so bright and bold,\nThe Laugh-a-Lot Hat, worth more than gold!\n\nIt's got a nose that wiggles with glee,\nAnd a mouth that smiles at you and me,\nIt's like a clown, but not too big,\nJust the right size for a kid's gig!\n\nYou can wear it to the park or the store,\nIt's perfect for a fun-filled day galore,\nYou'll laugh and play and have a ball,\nWith the Laugh-a-Lot Hat, standing tall!\n\nIt's made of soft, comfy material too,\nSo you can wear it all day, it's true,\nNo more boring hats, no more dull days,\nWith the Laugh-a-Lot Hat, in a fun-filled way!\n\nYou can wear it to a party or a show,\nIt's the perfect accessory, don't you know,\nYou'll be the star of the party scene,\nWith the Laugh-a-Lot Hat, so bright and clean!\n\nSo come and get your Laugh-a-Lot Hat today,\nAnd laugh and play in a fun-filled way,\nIt's the perfect gift for a friend or a foe,\nThe Laugh-a-Lot Hat, is a product to know!",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:48:19.557061",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:number_paragraphs": {
+              "num_paragraphs": 6
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:48:19.557140",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

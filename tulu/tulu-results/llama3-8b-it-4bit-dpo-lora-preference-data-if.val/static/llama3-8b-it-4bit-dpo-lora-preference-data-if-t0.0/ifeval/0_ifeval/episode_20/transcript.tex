@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 My brother is trying to install a new toilet in his bathroom. Could you give me details of how-to? You don't need to show all details -- just the first 5 steps for now. Separated them with "***", such as:\\ \tt Step 1: ......\\ \tt ***\\ \tt Step 2: ......\\ \tt ***\\ \tt ...\\ \tt \\ \tt End your whole response with the phrase "Let me know how it works. I can give you next steps when you finish all steps above." 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Here are the first 5 steps for your brother:\\ \tt \\ \tt Step 1: Shut off the water supply to the toilet by locating the shut-off valve behind the toilet and turning it clockwise. This will prevent any water from flowing into the toilet while the installation is in progress.\\ \tt ***\\ \tt Step 2: Disconnect the water supply line from the toilet by loosening the nut that holds the supply line in place. Be prepared for any water that may still be in the line to spill out.\\ \tt ***\\ \tt Step 3: Remove the old toilet by breaking the wax ring that holds it in place. This may require some force, but be careful not to damage the surrounding floor.\\ \tt ***\\ \tt Step 4: Inspect the flange (the metal ring that holds the toilet in place) for any old wax or debris. Clean it thoroughly to ensure a proper seal with the new toilet.\\ \tt ***\\ \tt Step 5: Place the new toilet onto the flange, ensuring it is centered and the bolts are aligned with the holes in the flange. Use a spirit level to ensure the toilet is properly aligned.\\ \tt ***\\ \tt Let me know how it works. I can give you next steps when you finish all steps above. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_paragraphs': {'num_paragraphs': 5}, 'startend:end_checker': {'end_phrase': 'Let me know how it works. I can give you next steps when you finish all steps above.'}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

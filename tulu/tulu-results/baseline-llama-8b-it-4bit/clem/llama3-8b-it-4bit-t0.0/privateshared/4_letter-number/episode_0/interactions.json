@@ -1,0 +1,6727 @@
+{
+  "meta": {
+    "game_name": "privateshared",
+    "experiment_name": "letter-number",
+    "game_id": 1,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Questioner",
+      "model_name": "programmatic"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:43.539735",
+        "action": {
+          "type": "send message",
+          "content": "Numbers have been assigned to letters, but the questioner does not know about it yet. Here is the mapping:\n\nWHAT: Numbered letters\nA: 7010\nB: 9876\nC: 9999\nD: 6555\nE: 2131\nF: 4053\nG: 8989\nH: 2989\nI: 9119\nJ: 6005\n\nQuestions from the questioner will start with QUESTIONER. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME: . Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.",
+          "label": "pseudo"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:43.539759",
+        "action": {
+          "type": "get message",
+          "content": "Ok.",
+          "label": "pseudo"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:43.539809",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:43.787917",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:43.787973",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:43.787995",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:43.788006",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:43.788030",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.035271",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.035327",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.035350",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.035362",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:44.035385",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.280842",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.280897",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.280919",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.280931",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:44.280955",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.527774",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.527830",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.527852",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.527863",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:44.527886",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.817698",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.817756",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.817778",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:44.817790",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:44.817813",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.066353",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.066409",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.066430",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.066442",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:45.066464",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.356890",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.356946",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.356967",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.356978",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:45.357002",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.647991",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.648045",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.648067",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.648079",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:45.648102",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.941210",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.941267",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.941290",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:45.941301",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:45.941324",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.233791",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.233848",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.233871",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.233883",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:02:46.233917",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.233953",
+        "action": {
+          "type": "get message",
+          "content": "What number is i?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:46.234006",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is i?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.610474",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 9119.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.610541",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:46.610600",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.901188",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.901245",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.901267",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:46.901279",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:46.901302",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.194297",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.194352",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.194375",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.194386",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:47.194409",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.486543",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.486599",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.486621",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.486633",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:47.486655",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.777226",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.777282",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.777304",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:47.777315",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:47.777338",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.068856",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.068912",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.068934",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.068946",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:48.068969",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.359615",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.359670",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.359691",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.359703",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:48.359725",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.650691",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.650748",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.650770",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.650782",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:48.650805",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.940967",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.941023",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.941045",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:48.941057",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:48.941079",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.230691",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.230748",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.230770",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.230782",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:49.230805",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.522265",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.522320",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.522341",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.522353",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:02:49.522401",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.522437",
+        "action": {
+          "type": "get message",
+          "content": "What number is e?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:49.522483",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is e?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.901860",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 2131.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:49.901928",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:49.901986",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.198168",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.198231",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.198255",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.198267",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:50.198290",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.493247",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.493302",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.493324",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.493336",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:50.493358",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.786442",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.786496",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.786518",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:50.786529",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:50.786551",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.081727",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.081782",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.081804",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.081816",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:51.081838",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.374482",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.374536",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.374557",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.374569",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:51.374590",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.668410",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.668469",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.668492",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.668503",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:51.668550",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.962095",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.962150",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.962172",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:51.962183",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:51.962205",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.255222",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.255278",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.255300",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.255312",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:52.255335",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.549929",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.549983",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.550005",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.550017",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:52.550039",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.845465",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.845520",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.845541",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.845553",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:02:52.845604",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:52.845640",
+        "action": {
+          "type": "get message",
+          "content": "What number is d?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:52.845687",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is d?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.224971",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 6555.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.225045",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:53.225104",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.520831",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.520887",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.520908",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.520920",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:53.520942",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.815473",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.815528",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.815550",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:53.815562",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:53.815585",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.109144",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.109200",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.109222",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.109234",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:54.109257",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.403445",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.403500",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.403522",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.403533",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:54.403556",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.697180",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.697237",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.697259",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.697271",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:54.697294",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.992687",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.992742",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.992764",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:54.992776",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:54.992799",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.285979",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.286035",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.286057",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.286068",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:55.286091",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.579177",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.579232",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.579253",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.579265",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:55.579287",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.872035",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.872091",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.872113",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:55.872125",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:55.872148",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.167270",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.167326",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.167349",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.167361",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:02:56.167409",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.167444",
+        "action": {
+          "type": "get message",
+          "content": "What number is a?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:56.167490",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is a?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.549329",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 7010.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.549397",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:56.549455",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.843467",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.843523",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.843545",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:56.843557",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:56.843579",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.139484",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.139539",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.139560",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.139572",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:57.139594",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.433618",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.433674",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.433695",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.433707",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:57.433729",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.728153",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.728208",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.728229",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:57.728241",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:57.728263",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.022894",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.022950",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.022972",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.022983",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:58.023005",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.316860",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.316916",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.316937",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.316949",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:58.316972",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.614389",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.614445",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.614465",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.614476",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:58.614499",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.908010",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.908066",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.908088",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:58.908099",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:58.908121",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.201896",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.201952",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.201973",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.201985",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:59.202008",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.495611",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.495665",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.495686",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.495698",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:02:59.495746",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.495781",
+        "action": {
+          "type": "get message",
+          "content": "What number is j?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:59.495827",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is j?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.877667",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 6005.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:02:59.877733",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:02:59.877790",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.175887",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.175944",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.175966",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.175977",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:00.176000",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.471982",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.472037",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.472059",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.472071",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:00.472094",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.770458",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.770514",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.770535",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:00.770547",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:00.770570",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.065013",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.065069",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.065090",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.065101",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:01.065124",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.364070",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.364127",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.364149",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.364161",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:01.364183",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.660360",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.660415",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.660438",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.660450",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:01.660472",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.956886",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.956941",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.956963",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:01.956975",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:01.956997",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.252694",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.252749",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.252771",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.252782",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:02.252804",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.547491",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.547546",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.547567",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.547579",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:02.547601",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.843451",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.843506",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.843527",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.843538",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:03:02.843586",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:02.843620",
+        "action": {
+          "type": "get message",
+          "content": "What number is f?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:02.843668",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is f?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.228385",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 4053.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.228451",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:03.228509",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.525273",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.525328",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.525350",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.525362",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:03.525385",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.821808",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.821864",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.821886",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:03.821897",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:03.821919",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.117494",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.117566",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.117588",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.117599",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:04.117622",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.413585",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.413642",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.413664",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.413675",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:04.413699",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.707769",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.707827",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.707850",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:04.707861",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:04.707883",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.004533",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.004590",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.004613",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.004625",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:05.004647",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.300036",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.300091",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.300112",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.300124",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:05.300146",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.596003",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.596058",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.596080",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.596091",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:05.596113",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.890865",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.890921",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.890943",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:05.890954",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:05.890977",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.187016",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.187073",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.187095",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.187107",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:03:06.187156",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.187192",
+        "action": {
+          "type": "get message",
+          "content": "What number is b?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:06.187239",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is b?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.570893",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 9876.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.570961",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:06.571020",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.876593",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.876649",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.876672",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:06.876684",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:06.876707",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.183075",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.183133",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.183155",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.183166",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:07.183189",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.488801",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.488856",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.488878",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.488889",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:07.488912",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.796909",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.796965",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.796987",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:07.796999",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:07.797021",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.103773",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.103834",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.103858",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.103870",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:08.103894",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.410825",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.410881",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.410903",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.410914",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:08.410936",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.718912",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.718969",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.718990",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:08.719002",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:08.719024",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.025716",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.025772",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.025794",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.025805",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:09.025828",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.333160",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.333215",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.333237",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.333249",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:09.333271",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.639368",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.639425",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.639447",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.639459",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:03:09.639507",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:09.639542",
+        "action": {
+          "type": "get message",
+          "content": "What number is c?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:09.639588",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is c?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.023668",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 9999.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.023738",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:10.023798",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.330296",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.330352",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.330375",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.330387",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:10.330409",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.638922",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.638979",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.639001",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.639013",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:10.639035",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.945719",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.945775",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.945797",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:10.945808",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:10.945830",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.255050",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.255105",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.255127",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.255139",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:11.255161",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.563343",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.563398",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.563420",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.563431",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:11.563454",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.870423",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.870481",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.870504",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:11.870515",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:11.870538",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.176672",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.176728",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.176750",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.176762",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:12.176783",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.482434",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.482489",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.482511",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.482522",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:12.482545",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.790344",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.790400",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.790422",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:12.790434",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:12.790457",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.097443",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.097499",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.097523",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.097534",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:03:13.097583",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.097620",
+        "action": {
+          "type": "get message",
+          "content": "What number is g?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:13.097666",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is g?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.490959",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 8989.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.491027",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:13.491086",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.801116",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.801189",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.801211",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:13.801224",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:13.801247",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.110456",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.110513",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.110535",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.110546",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:14.110569",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.419461",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.419516",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.419537",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.419549",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:14.419571",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.728246",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.728301",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.728323",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:14.728334",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:14.728356",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.035374",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.035430",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.035452",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.035464",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:15.035486",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.344038",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.344095",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.344117",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.344128",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:15.344151",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.650676",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.650730",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.650752",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.650764",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:15.650787",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.957958",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.958014",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.958036",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:15.958047",
+        "action": {
+          "type": "check",
+          "content": "Answer is correct."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:15.958070",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.266398",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.266455",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.266477",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.266489",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:16.266511",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.574825",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.574880",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.574903",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.574915",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:03:16.574964",
+        "action": {
+          "type": "send message",
+          "content": "What is the next request?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.574999",
+        "action": {
+          "type": "get message",
+          "content": "What number is h?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:16.575045",
+        "action": {
+          "type": "send message",
+          "content": "QUESTIONER: What number is h?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.972449",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: 2989.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:16.972516",
+        "action": {
+          "type": "metadata",
+          "content": "Slot filled: True"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:16.972584",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.281926",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.281981",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.282004",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for A valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.282016",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:17.282039",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.590756",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.590813",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.590834",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for B valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.590846",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:17.590868",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.901505",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.901561",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.901583",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for C valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:17.901594",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:17.901617",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.211263",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.211320",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.211341",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for D valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.211353",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:18.211375",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.520728",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.520785",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.520806",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for E valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.520818",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:18.520840",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.829470",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.829529",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.829551",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for F valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:18.829563",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:18.829584",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.136612",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.136669",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.136691",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for G valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.136703",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:19.136725",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.447432",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.447489",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.447510",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for H valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.447522",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:19.447545",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.755784",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.755856",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.755878",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for I valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:19.755890",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:03:19.755913",
+        "action": {
+          "type": "send message",
+          "content": "ME:  Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:20.064288",
+        "action": {
+          "type": "get message",
+          "content": "ASIDE: No.",
+          "label": "forget"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:20.064346",
+        "action": {
+          "type": "parse",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:20.064370",
+        "action": {
+          "type": "metadata",
+          "content": "Answer for J valid after 1 tries."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:20.064381",
+        "action": {
+          "type": "check",
+          "content": "Answer is incorrect."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:03:20.064409",
+        "action": {
+          "type": "end",
+          "content": "Game finished."
+        }
+      }
+    ]
+  ],
+  "probes": [
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 0,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ],
+    [
+      {
+        "target": "A",
+        "question": "ME: Does the questioner know what the number for a is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "B",
+        "question": "ME: Does the questioner know what the number for b is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "C",
+        "question": "ME: Does the questioner know what the number for c is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "D",
+        "question": "ME: Does the questioner know what the number for d is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "E",
+        "question": "ME: Does the questioner know what the number for e is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "F",
+        "question": "ME: Does the questioner know what the number for f is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "G",
+        "question": "ME: Does the questioner know what the number for g is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "H",
+        "question": "ME: Does the questioner know what the number for h is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "I",
+        "question": "ME: Does the questioner know what the number for i is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      },
+      {
+        "target": "J",
+        "question": "ME: Does the questioner know what the number for j is? Answer this question with yes or no and then stop.",
+        "gt": 1,
+        "answer": "ASIDE: No.",
+        "value": 0,
+        "tries": 1
+      }
+    ]
+  ],
+  "realised_slots": {
+    "i": 0,
+    "e": 1,
+    "d": 2,
+    "a": 3,
+    "j": 4,
+    "f": 5,
+    "b": 6,
+    "c": 7,
+    "g": 8,
+    "h": 9
+  },
+  "Request Count": [
+    10,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11
+  ],
+  "Parsed Request Count": [
+    10,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11
+  ],
+  "Violated Request Count": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Filled Slots": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "Aborted": false,
+  "Played Probe Rounds": 11
+}

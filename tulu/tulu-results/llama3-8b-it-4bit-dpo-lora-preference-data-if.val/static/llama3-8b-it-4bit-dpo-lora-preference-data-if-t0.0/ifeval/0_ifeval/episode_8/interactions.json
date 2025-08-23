@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 64,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:14:58.588195",
+        "action": {
+          "type": "send message",
+          "content": "Write a funny article about why the dinosaurs went extinct and put double quotations marks around your whole response. Include exactly 8 bullet points in your response. The bullet points should be in the form of:\n* This is bullet 1\n* This is bullet 2\n...",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:15:30.532517",
+        "action": {
+          "type": "get message",
+          "content": "\"Ah, the Great Dinosaur Debacle: Why They Went Extinct (and It's Not What You Think)\"\n\n\"Let's face it, folks, the dinosaurs were a bit of a handful. They were loud, they were messy, and they had a tendency to eat each other. But, alas, their demise was not just a result of their own bad behavior. Here are the top reasons why they went extinct:\n\n* This is bullet 1: They were just too cool for school. I mean, who needs to be the smartest species around when you can just be the biggest?\n* This is bullet 2: Their fashion sense was questionable. I mean, who thought it was a good idea to wear a frill on your head?\n* This is bullet 3: They were a bit too fond of the whole 'eating each other' thing. It's just not sustainable, folks.\n* This is bullet 4: Their love of karaoke was unmatched. Who needs a voice when you can just roar?\n* This is bullet 5: They were a bit too reliant on the 'dino-mite' method of transportation. I mean, who needs roads when you can just stomp on things?\n* This is bullet 6: Their obsession with shiny objects was just too much. I mean, who needs a functioning society when you can just collect rocks?\n* This is bullet 7: They were a bit too fond of the whole 'dino- drama' thing. I mean, who needs peace and harmony when you can just have a good old-fashioned dinosaur soap opera?\n* This is bullet 8: And finally, they just couldn't handle the pressure of being the center of attention. I mean, who needs to be the star of the show when you can just be a footnote in history?\"",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:15:30.532611",
+        "action": {
+          "type": "target",
+          "content": {
+            "startend:quotation": {},
+            "detectable_format:number_bullet_lists": {
+              "num_bullets": 8
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:15:30.532957",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

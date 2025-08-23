@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Students are travelling to UCI for 3 days. Create a hilarious itinerary for them. Do not use the word 'university'. Your entire response should have exactly 4 paragraphs.  Separate paragraphs with the markdown divider: *** 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **Day 1: Arrival and Acclimation**\\ \tt \\ \tt The students arrive at the campus, exhausted from their long journey. To wake them up, a surprise awaits - a giant inflatable unicorn perched on the quad, blasting disco music. The students are greeted by a group of energetic campus ambassadors, dressed in matching neon wigs and sunglasses, who hand out welcome packets and a map of the campus. The first activity of the day is a scavenger hunt, where teams have to find and take a photo with the most creative use of a campus landmark. The winning team gets a prize - a year's supply of pizza.\\ \tt \\ \tt ***\\ \tt \\ \tt \\ \tt **Day 2: Campus Shenanigans**\\ \tt \\ \tt The second day starts with a bang - literally. A group of students dressed as superheroes, complete with capes and masks, lead a campus-wide game of capture the flag. The twist? The flags are actually giant inflatable chickens, and the game is played with Nerf guns. After a morning of chaos, the students gather for a picnic lunch, where they're treated to a surprise performance by a local a cappella group. The afternoon is spent at the campus pool, where a giant inflatable obstacle course awaits. Who can make it through without getting splashed?\\ \tt \\ \tt ***\\ \tt \\ \tt \\ \tt **Day 3: Campus Games and Giggles**\\ \tt \\ \tt The final day of the trip is all about friendly competition. The students gather for a series of campus games, including a giant Jenga tournament, a water balloon toss, and a round of "Would You Rather." The grand prize? A year's supply of ice cream. The day ends with a bonfire, where students can roast marshmallows and share stories of their favorite campus adventures. As the night winds down, the students are treated to a surprise fireworks display, complete with a giant "UCI" written in sparklers.\\ \tt \\ \tt *** 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_paragraphs': {'num_paragraphs': 4}, 'keywords:forbidden_words': {'forbidden_words': ['university']}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

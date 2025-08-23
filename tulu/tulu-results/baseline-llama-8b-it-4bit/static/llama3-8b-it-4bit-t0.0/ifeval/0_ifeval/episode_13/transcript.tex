@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 What's a good way to ask Sonia out? Please reply with exactly 4 paragraphs and separate each paragraph with two new lines. Put double quotation marks around your entire response. The very first paragraph must start with the word "weekend". 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "weekend plans are always more fun with someone special, and I was wondering if you'd like to join me for a casual dinner or a walk in the park. I've been thinking about you lately, and I thought it would be great to get to know you better in a relaxed setting. Maybe we could grab some coffee or ice cream and see where the day takes us?\\ \tt \\ \tt \\ \tt ____________________________________________________\\ \tt \\ \tt \\ \tt I know it's a bit forward, but I wanted to be honest with you and let you know how I feel. I think you're an amazing person, and I'd love the chance to spend more time with you. If you're not interested, I completely understand, and I promise to respect your decision. But if you are, I'd be thrilled to take things to the next level and see where our connection goes.\\ \tt \\ \tt \\ \tt ____________________________________________________\\ \tt \\ \tt \\ \tt If you're free and interested, let me know, and we can start making plans. I'm not looking for anything too serious, just a chance to hang out and see if there's a spark between us. Either way, I hope you know that you're an incredible person, and I'm glad we've had the chance to meet. Fingers crossed!" 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:nth_paragraph_first_word': {'num_paragraphs': 4, 'first_word': 'weekend', 'nth_paragraph': 1}, 'startend:quotation': {}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

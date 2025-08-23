@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a funny poem for kids about a product that you would like to sell. The poem should have exactly 6 stanzas. Separated the stanzas using 3 asterisk markers: *** 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 In a land of fun and play,\\ \tt We have a product that's here to stay.\\ \tt It's a silly hat, so bright and bold,\\ \tt That makes you laugh, and never grows old.\\ \tt It's colorful, it's fun, it's a delight,\\ \tt Wear it and smile, with all your might.\\ \tt \\ \tt ***\\ \tt \\ \tt This hat is magic, don't you know?\\ \tt It makes you invisible, don't you show.\\ \tt Just put it on, and you'll be free,\\ \tt To sneak around, wild and carefree.\\ \tt You'll be a ninja, with a grin so wide,\\ \tt And your friends will laugh, with joy inside.\\ \tt \\ \tt ***\\ \tt \\ \tt It's not just magic, it's also bright,\\ \tt Reflecting sunbeams, with all its might.\\ \tt You'll be a shining star, in the morning dew,\\ \tt A beacon of fun, for me and you.\\ \tt It's a hat that's happy, it's a hat that's free,\\ \tt A symbol of joy, for you and me.\\ \tt \\ \tt ***\\ \tt \\ \tt This hat is silly, it's a work of art,\\ \tt A masterpiece, that's a happy heart.\\ \tt It's a hat that's quirky, it's a hat that's fun,\\ \tt A treasure to wear, for everyone.\\ \tt You'll be a trendsetter, with this hat on your head,\\ \tt A fashionista, in a world that's ahead.\\ \tt \\ \tt ***\\ \tt \\ \tt It's not just a hat, it's an experience too,\\ \tt A way to express, your personality anew.\\ \tt You'll be a superhero, with a cape so bright,\\ \tt Saving the world, with all your might.\\ \tt It's a hat that's heroic, it's a hat that's bold,\\ \tt A symbol of courage, that never grows old.\\ \tt \\ \tt ***\\ \tt \\ \tt So come and get it, don't be shy,\\ \tt This hat is waiting, for you to buy.\\ \tt It's a hat that's wonderful, it's a hat that's true,\\ \tt A product that's fun, for me and you.\\ \tt It's a hat that's magical, it's a hat that's fun,\\ \tt A treasure to wear, for everyone! 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_paragraphs': {'num_paragraphs': 6}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

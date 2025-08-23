@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 376,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:36:25.561075",
+        "action": {
+          "type": "send message",
+          "content": "Write a funny poem for kids about a product that you would like to sell. The poem should have exactly 6 stanzas. Separated the stanzas using 3 asterisk markers: ***",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:37:01.630632",
+        "action": {
+          "type": "get message",
+          "content": "In a land of fun and play,\nWe have a product that's here to stay.\nIt's a silly hat, so bright and bold,\nThat makes you laugh, and never grows old.\nIt's colorful, it's fun, it's a delight,\nWear it and smile, with all your might.\n\n***\n\nThis hat is magic, don't you know?\nIt makes you invisible, don't you show.\nJust put it on, and you'll be free,\nTo sneak around, wild and carefree.\nYou'll be a ninja, with a grin so wide,\nAnd your friends will laugh, with joy inside.\n\n***\n\nIt's not just magic, it's also bright,\nReflecting sunbeams, with all its might.\nYou'll be a shining star, in the morning dew,\nA beacon of fun, for me and you.\nIt's a hat that's happy, it's a hat that's free,\nA symbol of joy, for you and me.\n\n***\n\nThis hat is silly, it's a work of art,\nA masterpiece, that's a happy heart.\nIt's a hat that's quirky, it's a hat that's fun,\nA treasure to wear, for everyone.\nYou'll be a trendsetter, with this hat on your head,\nA fashionista, in a world that's ahead.\n\n***\n\nIt's not just a hat, it's an experience too,\nA way to express, your personality anew.\nYou'll be a superhero, with a cape so bright,\nSaving the world, with all your might.\nIt's a hat that's heroic, it's a hat that's bold,\nA symbol of courage, that never grows old.\n\n***\n\nSo come and get it, don't be shy,\nThis hat is waiting, for you to buy.\nIt's a hat that's wonderful, it's a hat that's true,\nA product that's fun, for me and you.\nIt's a hat that's magical, it's a hat that's fun,\nA treasure to wear, for everyone!",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:37:01.630721",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:number_paragraphs": {
+              "num_paragraphs": 6
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:37:01.630814",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

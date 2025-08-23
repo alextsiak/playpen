@@ -1,0 +1,541 @@
+{
+  "meta": {
+    "game_name": "matchit_ascii",
+    "experiment_name": "same_grid",
+    "game_id": 4,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:56:33.002611",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\nX X X X X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nX X X X X",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:34.521091",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: A 5x5 grid with a central 3x3 section filled with ▢ symbols, and the rest of the grid filled with X symbols.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:34.521151",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:56:34.521224",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\nX X X X X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nX X X X X",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:36.043991",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: A 5x5 grid with a central 3x3 section filled with ▢ symbols, and the rest of the grid filled with X symbols.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:36.044049",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:56:36.044122",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: A 5x5 grid with a central 3x3 section filled with ▢ symbols, and the rest of the grid filled with X symbols.\nNow ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:37.394378",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the ▢ symbols in your grid arranged in a specific pattern or are they randomly placed within the central 3x3 section?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:37.394438",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:56:37.394528",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: A 5x5 grid with a central 3x3 section filled with ▢ symbols, and the rest of the grid filled with X symbols.\nQUESTION: Are the ▢ symbols in your grid arranged in a specific pattern or are they randomly placed within the central 3x3 section? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:38.566321",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: The ▢ symbols in my grid are arranged in a specific pattern, forming a 3x3 square.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:38.566382",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:56:38.566452",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:39.697261",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any ▢ symbols in your grid that are not part of the central 3x3 section?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:39.697322",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:56:39.697397",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: The ▢ symbols in my grid are arranged in a specific pattern, forming a 3x3 square.\nQUESTION: Are there any ▢ symbols in your grid that are not part of the central 3x3 section? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:41.313225",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes, there is one ▢ symbol in my grid that is not part of the central 3x3 section, it is located in the second row.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:41.313287",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:56:41.313357",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:42.983950",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the ▢ symbols in your grid aligned with the edges of the grid, or are they positioned in a way that they do not touch the edges of the grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:42.984015",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:56:42.984106",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes, there is one ▢ symbol in my grid that is not part of the central 3x3 section, it is located in the second row.\nQUESTION: Are the ▢ symbols in your grid aligned with the edges of the grid, or are they positioned in a way that they do not touch the edges of the grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:43.907213",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: The ▢ symbols in my grid are aligned with the edges of the grid.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:43.907274",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:56:43.907344",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:45.358920",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the X symbols in your grid arranged in a specific pattern, such as a straight line or a diagonal line, or are they randomly placed?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:45.358982",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:56:45.359059",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: The ▢ symbols in my grid are aligned with the edges of the grid.\nQUESTION: Are the X symbols in your grid arranged in a specific pattern, such as a straight line or a diagonal line, or are they randomly placed? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:46.025094",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: The X symbols in my grid are randomly placed.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:46.025153",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:56:46.025221",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:47.616601",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the X symbols in your grid placed in a way that they form a border around the central 3x3 section, touching the edges of the grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:47.616660",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:56:47.616744",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: The X symbols in my grid are randomly placed.\nQUESTION: Are the X symbols in your grid placed in a way that they form a border around the central 3x3 section, touching the edges of the grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:49.032248",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes, the X symbols in my grid form a border around the central 3x3 section, touching the edges of the grid.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:49.032308",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:56:49.032375",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:50.368409",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the dimensions of your grid (number of rows and columns) the same as the dimensions of my grid (5x5)?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:50.368471",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:56:50.368554",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes, the X symbols in my grid form a border around the central 3x3 section, touching the edges of the grid.\nQUESTION: Are the dimensions of your grid (number of rows and columns) the same as the dimensions of my grid (5x5)? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:51.531992",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes, the dimensions of my grid are the same as the dimensions of your grid (5x5).",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:51.532050",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:56:51.532118",
+        "action": {
+          "type": "send message",
+          "content": "Now come to a decision. What do you think: are your grid and the other grid described the same?  Write \"DECISION: same grid\" if you think they are the same grid or \"DECISION: different grids\" if you think they are different grids. Do not add anything else.\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:51.874585",
+        "action": {
+          "type": "get message",
+          "content": "DECISION: same grid",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:51.874641",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:51.874656",
+        "action": {
+          "type": "Decision Player B",
+          "content": "success"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:56:51.874737",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes, the dimensions of my grid are the same as the dimensions of your grid (5x5).\nNow come to a decision. What do you think: are your grid and the other grid described the same?  Write \"DECISION: same grid\" if you think they are the same grid or \"DECISION: different grids\" if you think they are different grids. Do not add anything else.\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:52.216997",
+        "action": {
+          "type": "get message",
+          "content": "DECISION: same grid",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:52.217054",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:56:52.217069",
+        "action": {
+          "type": "Decision Player A",
+          "content": "success"
+        }
+      }
+    ]
+  ]
+}

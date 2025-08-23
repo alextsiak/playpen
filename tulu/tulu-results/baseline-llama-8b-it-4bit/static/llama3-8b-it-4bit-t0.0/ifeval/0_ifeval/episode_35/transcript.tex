@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a cover letter for a job in Ventura that is funny and would be enjoyed by someone named Darius, wrap the entire response in double quotation marks. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "Dear Hiring Manager,\\ \tt \\ \tt I'm Darius, the guy who's been searching for a job in Ventura that's not a surf instructor or a beach bum. I know what you're thinking, 'What's the deal with this guy?' Well, let me tell you, I'm a highly skilled individual with a passion for making people laugh and a knack for getting things done.\\ \tt \\ \tt As a recent transplant to Ventura, I'm excited to join a team that shares my love for the laid-back California lifestyle. I'm not just looking for a job, I'm looking for a community that will make me feel like I'm part of the crew. And, let's be real, I'm pretty sure I'd be the life of the party at any company happy hour.\\ \tt \\ \tt In all seriousness, I'm a quick learner, a team player, and a creative problem solver. I'm confident that my skills and experience make me a great fit for this role, and I'm excited to bring my unique perspective to your team.\\ \tt \\ \tt Thanks for considering my application. I look forward to the opportunity to chat with you more about how I can contribute to your team.\\ \tt \\ \tt Sincerely,\\ \tt Darius" 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'startend:quotation': {}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

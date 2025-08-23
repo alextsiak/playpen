@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 212,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:26:44.201471",
+        "action": {
+          "type": "send message",
+          "content": "Plan a 12-day trip to Italy for professionals in finance, including Rome, Florence, and Venice. Make it in a format of a list with at least one placeholder, such as [address]. The response must be in English and all lowercase letters.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:27:22.105631",
+        "action": {
+          "type": "get message",
+          "content": "here is a 12-day trip to italy for professionals in finance:\n\n1. day 1: arrive in rome, check into hotel at [address]. spend the day exploring the city, visiting the colosseum, roman forum, and pantheon.\n2. day 2: visit the vatican city, including the sistine chapel and st. peter's basilica. enjoy a traditional italian lunch in the city.\n3. day 3: visit the galleria borghese, a museum housing an impressive collection of baroque and Renaissance art. spend the evening exploring the trastevere neighborhood.\n4. day 4: travel to florence, check into hotel. visit the uffizi gallery, one of the world's oldest and most famous art museums. explore the duomo and piazza della signoria.\n5. day 5: visit the accademia gallery to see michelangelo's famous sculpture, david. stroll along the arno river and visit the ponte vecchio.\n6. day 6: visit the prato district, a hub for fashion and design. enjoy a wine tasting at a local vineyard.\n7. day 7: travel to venice, check into hotel. explore the st. mark's square, including the basilica and campanile. take a gondola ride through the canals.\n8. day 8: visit the doge's palace, a stunning example of venetian architecture. explore the rialto market and bridge.\n9. day 9: visit the gallerie dell'academia, a museum housing an impressive collection of art. take a vaporetto ride to the nearby islands.\n10. day 10: visit the teatro alla scala, one of the world's most famous opera houses. enjoy a traditional venetian dinner.\n11. day 11: spend the day exploring the dorsoduro neighborhood, known for its charming canals and historic buildings. visit the ca' rezzonico museum.\n12. day 12: depart from venice, reflecting on the incredible experiences and memories made during the trip.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:27:22.105741",
+        "action": {
+          "type": "target",
+          "content": {
+            "detectable_content:number_placeholders": {
+              "num_placeholders": 1
+            },
+            "change_case:english_lowercase": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:27:22.105814",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

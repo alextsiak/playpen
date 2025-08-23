@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 create a job description for a clifford blu employee who works at the cash register, and also monitors the shelves for stock level. Use the keyword 'people' and 'skills'. use only lowercase letters. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 here's a job description for a clifford blu employee:\\ \tt \\ \tt we're looking for a friendly and efficient team member to join our crew at the cash register. as a key part of our people, you'll be responsible for:\\ \tt \\ \tt * operating the cash register with accuracy and speed\\ \tt * handling customer transactions with a smile\\ \tt * monitoring the shelves for stock levels to ensure we're always stocked up\\ \tt * communicating with colleagues to maintain a smooth shopping experience\\ \tt \\ \tt to succeed in this role, you'll need to possess certain skills, including:\\ \tt \\ \tt * excellent communication skills to interact with our people\\ \tt * attention to detail to ensure accurate transactions\\ \tt * ability to multitask and stay organized\\ \tt * strong problem-solving skills to handle any issues that may arise\\ \tt \\ \tt if you're a team player with a passion for delivering great customer service, we want to hear from you! this role is perfect for someone who is comfortable working in a fast-paced environment and is eager to contribute to our people's success. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'change_case:english_lowercase': {}, 'keywords:existence': {'keywords': ['people', 'skills']}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

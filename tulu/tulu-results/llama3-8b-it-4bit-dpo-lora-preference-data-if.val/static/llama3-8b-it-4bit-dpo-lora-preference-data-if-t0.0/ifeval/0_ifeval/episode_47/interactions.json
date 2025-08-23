@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 469,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:40:54.608154",
+        "action": {
+          "type": "send message",
+          "content": "Give me a 300+ word startup pitch for a company that provides a service that creates trusts for people online.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:41:36.008977",
+        "action": {
+          "type": "get message",
+          "content": "Here's a 300+ word startup pitch for a company that provides a service to create trusts for people online:\n\nWelcome to TrustGenie, a revolutionary platform that empowers individuals to establish secure and transparent trusts online. In today's digital age, people are increasingly seeking ways to manage their assets, protect their loved ones, and ensure their wishes are respected after they're gone. TrustGenie is the ultimate solution for those seeking a hassle-free and cost-effective way to create trusts, without the need for lawyers or lengthy paperwork.\n\nOur platform is designed to simplify the complex process of trust creation, making it accessible to anyone, anywhere. With TrustGenie, users can create a trust in just a few clicks, without the need for extensive legal knowledge. Our intuitive interface guides users through a series of questions, ensuring that their trust is tailored to their specific needs. This user-centric approach eliminates the need for expensive lawyer fees, saving users time and money.\n\nTrustGenie's online trust creation service offers numerous benefits, including:\n\n* Convenience: Create a trust from the comfort of your own home, at any time, and from any device.\n* Cost-effectiveness: Avoid expensive lawyer fees and save on paperwork costs.\n* Transparency: Our platform provides a clear and transparent view of the trust creation process, ensuring users understand every step.\n* Customization: Our algorithm ensures that the trust is tailored to the user's specific needs, providing peace of mind.\n* Security: TrustGenie employs robust security measures to safeguard user data and protect their assets.\n\nOur platform is designed to cater to a wide range of users, from individuals with modest assets to high-net-worth individuals. TrustGenie is the perfect solution for those seeking to:\n\n* Protect their assets from creditors or lawsuits\n* Ensure their wishes are respected after they're gone\n* Provide for their loved ones\n* Simplify the process of estate planning\n\nBy leveraging technology, TrustGenie is poised to revolutionize the trust creation industry. Our platform is scalable, secure, and user-friendly, making it an attractive option for individuals seeking a hassle-free trust creation experience. With TrustGenie, users can rest assured that their assets are protected, and their wishes are respected. Join the trust revolution and experience the power of online trust creation with TrustGenie. Let us help you create a trust that's tailored to your needs, today.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:41:36.009070",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:number_words": {
+              "relation": "at least",
+              "num_words": 300
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:41:36.009328",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

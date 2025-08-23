@@ -1,0 +1,892 @@
+{
+  "meta": {
+    "game_name": "codenames",
+    "experiment_name": "ambiguous",
+    "game_id": 7,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "ClueGiver",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    },
+    "Player 2": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:39.511399",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "vault",
+                "glare",
+                "diet",
+                "stalk",
+                "jumper",
+                "post",
+                "chop",
+                "hip",
+                "plot"
+              ],
+              "innocent": [
+                "pot",
+                "liver",
+                "stud",
+                "cock",
+                "lap",
+                "funk",
+                "truck"
+              ],
+              "opponent": [
+                "peel",
+                "chase",
+                "founder",
+                "shock",
+                "bush",
+                "scarf",
+                "stable",
+                "trace"
+              ],
+              "assassin": [
+                "pound"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:43:39.511475",
+        "action": {
+          "type": "send message",
+          "content": "Provide one single-word clue that relates to some of your team's words from the list below. You can choose to how many and to which words your clue relates to.\nThe goal is to have your partner guess all of your team's words based on the clues you give them, before the other team has uncovered all of theirs. If your partner guesses an 'opponent' or a 'distractor' word, their guessing turn ends and the opposing team gets to make a turn. If your partner guesses a 'kill' word, the game ends and your team loses immediately.\nThe more words your clue relates to, the quicker you can win the game, but the harder the associations may be to guess for your partner, so choose your clue word wisely. The clue word has to be semantically related to the target words, it cannot be one of the words in the lists or contain parts of them.\n\nAlways give your single-word clue and your comma-separated list of related target words in the following format and make your answers as short as possible, never include any other text than is required in this form:\n\nCLUE: <WORD>\nTARGETS: <TARGETS>\n\nYour team words are: vault, glare, diet, stalk, jumper, post, chop, hip, plot.\nYour opponent's team words are: peel, chase, founder, shock, bush, scarf, stable, trace.\nDistractor words are: pot, liver, stud, cock, lap, funk, truck.\nThe kill words are: pound.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:41.088839",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: light\nTARGETS: glare, post, hip, plot, vault",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:41.089184",
+        "action": {
+          "type": "clue",
+          "content": "light"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:41.089218",
+        "action": {
+          "type": "targets",
+          "content": [
+            "glare",
+            "post",
+            "hip",
+            "plot",
+            "vault"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:41.089244",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "glare",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:41.089264",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "post",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:41.089283",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "hip",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:41.089300",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "plot",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:41.089317",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "vault",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:43:41.089523",
+        "action": {
+          "type": "send message",
+          "content": "Provide a comma-separated list of up to 5 words from the following list that best relate or are most closely associated with the word 'light'. Always start your list of guess(es) with 'GUESS: ' and do not include any other text in your answer.\n\ncock, glare, truck, chase, stable, post, scarf, jumper, funk, diet, liver, chop, pot, lap, plot, stud, hip, vault, peel, pound, trace, founder, bush, shock, stalk",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:42.406171",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: glare, shock, trace, post, peel.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:42.406297",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "glare",
+            "shock",
+            "trace",
+            "post",
+            "peel"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:42.406340",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "glare",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:42.406368",
+        "action": {
+          "type": "target revealed",
+          "content": {
+            "word": "glare",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:42.406389",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "shock",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:42.406408",
+        "action": {
+          "type": "turn end after",
+          "content": "shock"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:42.406622",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "scarf",
+            "assignment": "opponent"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:42.406660",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "vault",
+                "diet",
+                "stalk",
+                "jumper",
+                "post",
+                "chop",
+                "hip",
+                "plot"
+              ],
+              "innocent": [
+                "pot",
+                "liver",
+                "stud",
+                "cock",
+                "lap",
+                "funk",
+                "truck"
+              ],
+              "opponent": [
+                "peel",
+                "chase",
+                "founder",
+                "bush",
+                "stable",
+                "trace"
+              ],
+              "assassin": [
+                "pound"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [
+                  "glare"
+                ],
+                "innocent": [],
+                "opponent": [
+                  "shock"
+                ],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "scarf"
+                ],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:43:42.406729",
+        "action": {
+          "type": "send message",
+          "content": "The word glare was guessed correctly. The word shock was guessed but is an opponent word. Your teammate's turn ended there.\nNow provide another clue relating to some of your remaining team words and a list of the related target words. Remember to start your clue with 'CLUE: ', put a new line, and start your comma-separated list of target words with 'TARGETS: '. Notice: some words have been removed from the lists compared to previous requests.\n\nYour remaining team words are: vault, diet, stalk, jumper, post, chop, hip, plot.\nRemaining words for your opponent are: peel, chase, founder, bush, scarf, stable, trace.\nRemaining distractor words are: pot, liver, stud, cock, lap, funk, truck.\nRemaining kill words are: pound.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:44.160219",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: strength\nTARGETS: vault, jumper, post, hip, plot, chop",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:44.160493",
+        "action": {
+          "type": "clue",
+          "content": "strength"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:44.160532",
+        "action": {
+          "type": "targets",
+          "content": [
+            "vault",
+            "jumper",
+            "post",
+            "hip",
+            "plot",
+            "chop"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:44.160559",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "vault",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:44.160579",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "jumper",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:44.160597",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "post",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:44.160615",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "hip",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:44.160632",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "plot",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:44.160649",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "chop",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:43:44.160864",
+        "action": {
+          "type": "send message",
+          "content": "The word glare was guessed correctly. The word shock was guessed but is an opponent word. Your turn ended there.\nNow provide another comma-separated list of at least 1 and up to 6 words from the following list of words that best relate or are most closely associated with the word 'strength'. Remember to start your answer with 'GUESS: '. Notice: some words have been removed from the list compared to previous requests.\n\ncock, truck, chase, stable, post, jumper, funk, diet, liver, chop, pot, lap, plot, stud, hip, vault, peel, pound, trace, founder, bush, stalk",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:45.645901",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: stable, stud, pound, peel, vault, trace.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:45.646036",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "stable",
+            "stud",
+            "pound",
+            "peel",
+            "vault",
+            "trace"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:45.646078",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "stable",
+            "assignment": "opponent"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:45.646102",
+        "action": {
+          "type": "turn end after",
+          "content": "stable"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:45.646313",
+        "action": {
+          "type": "opponent revealed",
+          "content": {
+            "word": "trace",
+            "assignment": "opponent"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:45.646348",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "vault",
+                "diet",
+                "stalk",
+                "jumper",
+                "post",
+                "chop",
+                "hip",
+                "plot"
+              ],
+              "innocent": [
+                "pot",
+                "liver",
+                "stud",
+                "cock",
+                "lap",
+                "funk",
+                "truck"
+              ],
+              "opponent": [
+                "peel",
+                "chase",
+                "founder",
+                "bush"
+              ],
+              "assassin": [
+                "pound"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [
+                  "glare"
+                ],
+                "innocent": [],
+                "opponent": [
+                  "shock",
+                  "stable"
+                ],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [
+                  "scarf",
+                  "trace"
+                ],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:43:45.646417",
+        "action": {
+          "type": "send message",
+          "content": "The word stable was guessed but is an opponent word. Your teammate's turn ended there.\nNow provide another clue relating to some of your remaining team words and a list of the related target words. Remember to start your clue with 'CLUE: ', put a new line, and start your comma-separated list of target words with 'TARGETS: '. Notice: some words have been removed from the lists compared to previous requests.\n\nYour remaining team words are: vault, diet, stalk, jumper, post, chop, hip, plot.\nRemaining words for your opponent are: peel, chase, founder, bush, trace.\nRemaining distractor words are: pot, liver, stud, cock, lap, funk, truck.\nRemaining kill words are: pound.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:47.072286",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: pattern\nTARGETS: stalk, plot, diet, chop",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:47.072574",
+        "action": {
+          "type": "clue",
+          "content": "pattern"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:47.072606",
+        "action": {
+          "type": "targets",
+          "content": [
+            "stalk",
+            "plot",
+            "diet",
+            "chop"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:47.072631",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "stalk",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:47.072651",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "plot",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:47.072668",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "diet",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:47.072685",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "chop",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:43:47.072897",
+        "action": {
+          "type": "send message",
+          "content": "The word stable was guessed but is an opponent word. Your turn ended there.\nNow provide another comma-separated list of at least 1 and up to 4 words from the following list of words that best relate or are most closely associated with the word 'pattern'. Remember to start your answer with 'GUESS: '. Notice: some words have been removed from the list compared to previous requests.\n\ncock, truck, chase, post, jumper, funk, diet, liver, chop, pot, lap, plot, stud, hip, vault, peel, pound, founder, bush, stalk",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:48.045988",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: plot, pound, peel.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:48.046149",
+        "action": {
+          "type": "guesses",
+          "content": [
+            "plot",
+            "pound",
+            "peel"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:48.046198",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "plot",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:48.046222",
+        "action": {
+          "type": "target revealed",
+          "content": {
+            "word": "plot",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:48.046243",
+        "action": {
+          "type": "team revealed",
+          "content": {
+            "word": "pound",
+            "assignment": "assassin"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:48.046262",
+        "action": {
+          "type": "turn end after",
+          "content": "pound"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:48.046465",
+        "action": {
+          "type": "game end",
+          "content": "opponent has won through assassin"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:43:48.046501",
+        "action": {
+          "type": "game end",
+          "content": "opponent has won through assassin"
+        }
+      }
+    ]
+  ],
+  "board end status": {
+    "hidden": {
+      "team": [
+        "vault",
+        "diet",
+        "stalk",
+        "jumper",
+        "post",
+        "chop",
+        "hip"
+      ],
+      "innocent": [
+        "pot",
+        "liver",
+        "stud",
+        "cock",
+        "lap",
+        "funk",
+        "truck"
+      ],
+      "opponent": [
+        "peel",
+        "chase",
+        "founder",
+        "bush"
+      ],
+      "assassin": []
+    },
+    "revealed": {
+      "team": {
+        "team": [
+          "glare",
+          "plot"
+        ],
+        "innocent": [],
+        "opponent": [
+          "shock",
+          "stable"
+        ],
+        "assassin": [
+          "pound"
+        ]
+      },
+      "opponent": {
+        "team": [],
+        "innocent": [],
+        "opponent": [
+          "scarf",
+          "trace"
+        ],
+        "assassin": []
+      }
+    }
+  },
+  "Number of turns": 4,
+  "Aborted": false,
+  "Lose": true,
+  "Game ended through assassin": true,
+  "Request Count": 6,
+  "Parsed Request Count": 6,
+  "Violated Request Count": 0,
+  "Cluegiver engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  },
+  "Guesser engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 3,
+    "IGNORE NUMBER OF TARGETS": 0
+  }
+}

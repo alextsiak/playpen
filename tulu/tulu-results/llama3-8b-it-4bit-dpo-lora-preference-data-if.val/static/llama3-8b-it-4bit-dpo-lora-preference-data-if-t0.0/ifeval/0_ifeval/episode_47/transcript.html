@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+
+.game-round {
+  padding: 20px 0 20px 0;
+  background-color: #f0f8ff; /* light background for content */
+  position: relative; /* Important to position the badge */
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge in top-right corner */
+.game-round::before {
+  content: "Round " attr(data-round);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #c4c3c3;
+  padding: 0px 2px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for ifeval, episode 469 with llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+<div class="game-round" data-round="0">
+    <div speaker="GM (Game Master) to Player 1 (InstructionFollower)" class="msg gm-a" style="">
+        <p>Give me a 300+ word startup pitch for a company that provides a service that creates trusts for people online.</p>
+    </div>
+
+    <div speaker="Player 1 (InstructionFollower) to GM (Game Master)" class="msg a-gm" style="">
+        <p>Here&#x27;s a 300+ word startup pitch for a company that provides a service to create trusts for people online:<br/><br/>Welcome to TrustGenie, a revolutionary platform that empowers individuals to establish secure and transparent trusts online. In today&#x27;s digital age, people are increasingly seeking ways to manage their assets, protect their loved ones, and ensure their wishes are respected after they&#x27;re gone. TrustGenie is the ultimate solution for those seeking a hassle-free and cost-effective way to create trusts, without the need for lawyers or lengthy paperwork.<br/><br/>Our platform is designed to simplify the complex process of trust creation, making it accessible to anyone, anywhere. With TrustGenie, users can create a trust in just a few clicks, without the need for extensive legal knowledge. Our intuitive interface guides users through a series of questions, ensuring that their trust is tailored to their specific needs. This user-centric approach eliminates the need for expensive lawyer fees, saving users time and money.<br/><br/>TrustGenie&#x27;s online trust creation service offers numerous benefits, including:<br/><br/>* Convenience: Create a trust from the comfort of your own home, at any time, and from any device.<br/>* Cost-effectiveness: Avoid expensive lawyer fees and save on paperwork costs.<br/>* Transparency: Our platform provides a clear and transparent view of the trust creation process, ensuring users understand every step.<br/>* Customization: Our algorithm ensures that the trust is tailored to the user&#x27;s specific needs, providing peace of mind.<br/>* Security: TrustGenie employs robust security measures to safeguard user data and protect their assets.<br/><br/>Our platform is designed to cater to a wide range of users, from individuals with modest assets to high-net-worth individuals. TrustGenie is the perfect solution for those seeking to:<br/><br/>* Protect their assets from creditors or lawsuits<br/>* Ensure their wishes are respected after they&#x27;re gone<br/>* Provide for their loved ones<br/>* Simplify the process of estate planning<br/><br/>By leveraging technology, TrustGenie is poised to revolutionize the trust creation industry. Our platform is scalable, secure, and user-friendly, making it an attractive option for individuals seeking a hassle-free trust creation experience. With TrustGenie, users can rest assured that their assets are protected, and their wishes are respected. Join the trust revolution and experience the power of online trust creation with TrustGenie. Let us help you create a trust that&#x27;s tailored to your needs, today.</p>
+    </div>
+
+    <div speaker="Game Master: target" class="msg gm-gm" style="">
+        <p>{&#x27;length_constraints:number_words&#x27;: {&#x27;relation&#x27;: &#x27;at least&#x27;, &#x27;num_words&#x27;: 300}}</p>
+    </div>
+
+    <div speaker="Game Master: followed all instructions" class="msg gm-gm" style="">
+        <p>game_result = WIN</p>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

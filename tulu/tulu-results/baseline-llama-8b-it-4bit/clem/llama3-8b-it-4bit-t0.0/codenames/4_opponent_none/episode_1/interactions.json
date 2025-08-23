@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "game_name": "codenames",
+    "experiment_name": "opponent_none",
+    "game_id": 7,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "ClueGiver",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:43.094362",
+        "action": {
+          "type": "board status",
+          "content": {
+            "hidden": {
+              "team": [
+                "bond",
+                "ring",
+                "stadium",
+                "torch",
+                "berlin",
+                "ghost",
+                "mug",
+                "ambulance",
+                "pipe"
+              ],
+              "innocent": [
+                "forest",
+                "dance",
+                "horseshoe",
+                "scale",
+                "theater",
+                "agent",
+                "ninja"
+              ],
+              "opponent": [
+                "dog",
+                "pass",
+                "ray",
+                "screen",
+                "mine",
+                "piano",
+                "needle",
+                "date"
+              ],
+              "assassin": [
+                "round"
+              ]
+            },
+            "revealed": {
+              "team": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              },
+              "opponent": {
+                "team": [],
+                "innocent": [],
+                "opponent": [],
+                "assassin": []
+              }
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:40:43.094440",
+        "action": {
+          "type": "send message",
+          "content": "Provide one single-word clue that relates to some of your team's words from the list below. You can choose to how many and to which words your clue relates to.\nThe goal is to have your partner guess all of your team's words based on the clues you give them, before the other team has uncovered all of theirs. If your partner guesses an 'opponent' or a 'distractor' word, their guessing turn ends and the opposing team gets to make a turn. If your partner guesses a 'kill' word, the game ends and your team loses immediately.\nThe more words your clue relates to, the quicker you can win the game, but the harder the associations may be to guess for your partner, so choose your clue word wisely. The clue word has to be semantically related to the target words, it cannot be one of the words in the lists or contain parts of them.\n\nAlways give your single-word clue and your comma-separated list of related target words in the following format and make your answers as short as possible, never include any other text than is required in this form:\n\nCLUE: <WORD>\nTARGETS: <TARGETS>\n\nYour team words are: bond, ring, stadium, torch, berlin, ghost, mug, ambulance, pipe.\nYour opponent's team words are: dog, pass, ray, screen, mine, piano, needle, date.\nDistractor words are: forest, dance, horseshoe, scale, theater, agent, ninja.\nThe kill words are: round.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:43.738472",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: award\nTARGETS: bond, ring, torch",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:43.738760",
+        "action": {
+          "type": "clue",
+          "content": "award"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:43.738791",
+        "action": {
+          "type": "targets",
+          "content": [
+            "bond",
+            "ring",
+            "torch"
+          ]
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:43.738815",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "bond",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:43.738835",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "ring",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:43.738852",
+        "action": {
+          "type": "word targeted",
+          "content": {
+            "word": "torch",
+            "assignment": "team"
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:40:43.739054",
+        "action": {
+          "type": "send message",
+          "content": "Provide a comma-separated list of up to 3 words from the following list that best relate or are most closely associated with the word 'award'. Always start your list of guess(es) with 'GUESS: ' and do not include any other text in your answer.\n\nring, stadium, round, forest, theater, piano, mine, agent, pipe, needle, torch, ghost, dog, scale, mug, bond, ray, ambulance, ninja, pass, horseshoe, berlin, dance, screen, date",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:44.201102",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: round, prize, trophy",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:40:44.201204",
+        "action": {
+          "type": "validation error",
+          "content": {
+            "player": "Guesser",
+            "type": "guess word is hallucination",
+            "utterance": "round, prize, trophy",
+            "message": "Guessed word 'prize' was not listed, you can only guess words provided in the lists.",
+            "guess": "prize",
+            "previous_guesses": [],
+            "remaining_words": [
+              "ring",
+              "stadium",
+              "round",
+              "forest",
+              "theater",
+              "piano",
+              "mine",
+              "agent",
+              "pipe",
+              "needle",
+              "torch",
+              "ghost",
+              "dog",
+              "scale",
+              "mug",
+              "bond",
+              "ray",
+              "ambulance",
+              "ninja",
+              "pass",
+              "horseshoe",
+              "berlin",
+              "dance",
+              "screen",
+              "date"
+            ]
+          }
+        }
+      }
+    ]
+  ],
+  "board end status": {
+    "hidden": {
+      "team": [
+        "bond",
+        "ring",
+        "stadium",
+        "torch",
+        "berlin",
+        "ghost",
+        "mug",
+        "ambulance",
+        "pipe"
+      ],
+      "innocent": [
+        "forest",
+        "dance",
+        "horseshoe",
+        "scale",
+        "theater",
+        "agent",
+        "ninja"
+      ],
+      "opponent": [
+        "dog",
+        "pass",
+        "ray",
+        "screen",
+        "mine",
+        "piano",
+        "needle",
+        "date"
+      ],
+      "assassin": [
+        "round"
+      ]
+    },
+    "revealed": {
+      "team": {
+        "team": [],
+        "innocent": [],
+        "opponent": [],
+        "assassin": []
+      },
+      "opponent": {
+        "team": [],
+        "innocent": [],
+        "opponent": [],
+        "assassin": []
+      }
+    }
+  },
+  "Number of turns": 2,
+  "Aborted": true,
+  "Lose": false,
+  "Game ended through assassin": false,
+  "Request Count": 2,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 1,
+  "Cluegiver engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  },
+  "Guesser engaged flags": {
+    "IGNORE RAMBLING": 0,
+    "IGNORE FALSE TARGETS OR GUESSES": 0,
+    "REPROMPT ON ERROR": 0,
+    "STRIP WORDS": 0,
+    "IGNORE NUMBER OF TARGETS": 0
+  }
+}

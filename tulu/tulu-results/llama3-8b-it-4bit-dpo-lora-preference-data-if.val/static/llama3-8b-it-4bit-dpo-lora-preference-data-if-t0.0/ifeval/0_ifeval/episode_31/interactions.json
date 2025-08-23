@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 294,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:31:38.870386",
+        "action": {
+          "type": "send message",
+          "content": "Write an email to your friend about what triggers you. Make sure to wrap the entire email in double quotation marks.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:32:03.264140",
+        "action": {
+          "type": "get message",
+          "content": "\"Dear friend,\n\nI wanted to take a moment to talk to you about what triggers me lately. I've been feeling really overwhelmed by small talk and unnecessary details. When we're out with a group of people, I often find myself getting anxious when everyone is asking me questions about my daily life. It's not that I don't want to share, but sometimes I just want to focus on the present moment without feeling like I need to give a detailed account of my day.\n\nAnother thing that triggers me is when people interrupt me while I'm speaking. I know it's not always intentional, but it can be really frustrating when I'm trying to express myself and someone cuts me off. It makes me feel like my thoughts aren't being valued or respected.\n\nLastly, I've been feeling really sensitive to criticism lately. I know it's not always easy to hear, but when someone points out something I've done wrong, it can be really hurtful. I'm working on building my self-confidence, but it's still something I'm struggling with.\n\nI hope you can understand where I'm coming from. I value our friendship and I want to make sure we can communicate effectively. If you could be more mindful of these triggers, I would really appreciate it.\n\nThanks for being such a great friend.\n\nBest,\n\" \n\n(Note: I wrapped the entire email in double quotation marks as per your request)",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:32:03.264227",
+        "action": {
+          "type": "target",
+          "content": {
+            "startend:quotation": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:32:03.264260",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

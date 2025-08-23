@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a story from a perspective of a man. Include some conversation in the story. Avoid using the letter i more than twice. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 I sat on the porch, sipping my morning coffee. The sun was rising over the hills, casting a warm glow over the landscape. My neighbor, Old Tom, approached me, a gentle smile on his face.\\ \tt \\ \tt "Good morning, young man," he said, his voice low and soothing.\\ \tt \\ \tt "Good morning, Tom," I replied, taking a sip of my coffee.\\ \tt \\ \tt We sat in comfortable silence for a moment, watching the world wake up. Then Tom spoke up.\\ \tt \\ \tt "Beautiful day, isn't it?" he said, his eyes scanning the horizon.\\ \tt \\ \tt I nodded, not wanting to break the spell. "Yes, it's a great day."\\ \tt \\ \tt Tom leaned back in his chair, his eyes squinting against the sun. "You know, I've been thinking about my garden. I need to get some new soil in."\\ \tt \\ \tt "Ah, good idea," I said, nodding. "Fresh soil will do wonders for your plants."\\ \tt \\ \tt Tom nodded, his face thoughtful. "Yes, I think you're right. I'll get some tomorrow."\\ \tt \\ \tt We sat in silence for a moment, the only sound the chirping of birds. Then Tom spoke up.\\ \tt \\ \tt "You know, I've been meaning to ask you something. How's your brother doing?"\\ \tt \\ \tt I smiled, thinking of my brother. "He's doing well, thanks for asking. He's been busy with work."\\ \tt \\ \tt Tom nodded, his face sympathetic. "Good, good. I'm glad to hear that."\\ \tt \\ \tt We sat in comfortable silence for a moment, watching the world go by. Then I stood up, finishing my coffee.\\ \tt \\ \tt "Well, Tom, it was good talking to you," I said, smiling.\\ \tt \\ \tt "Likewise, young man," he replied, standing up to walk with me to the door.\\ \tt \\ \tt I smiled, feeling grateful for the conversation. "Thanks for the chat, Tom."\\ \tt \\ \tt He nodded, his face smiling. "Anytime, my friend." 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'keywords:letter_frequency': {'let_relation': 'less than', 'letter': 'i', 'let_frequency': 3}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

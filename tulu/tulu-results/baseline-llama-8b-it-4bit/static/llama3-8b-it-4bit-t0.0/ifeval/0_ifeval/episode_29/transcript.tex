@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Create an itinerary for a 3-day trip to Moscow that uses the word founding less than twice. Don't add anything before and after the JSON code. Your entire output should just contain a JSON code block. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 {\\ \tt   "day1": {\\ \tt     "morning": {\\ \tt       "9:00 AM": "Breakfast at a local café",\\ \tt       "10:00 AM": "Visit the Kremlin, a historic fortified complex that serves as the official residence of the President of Russia",\\ \tt       "11:30 AM": "Explore the Armory Chamber, a museum showcasing the country's rich cultural heritage"\\ \tt     },\\ \tt     "afternoon": {\\ \tt       "1:00 PM": "Lunch at a traditional Russian restaurant",\\ \tt       "2:30 PM": "Visit the nearby Red Square, a famous public square in the heart of Moscow",\\ \tt       "4:00 PM": "Walk through the nearby St. Basil's Cathedral, a beautiful example of Russian architecture"\\ \tt     },\\ \tt     "evening": {\\ \tt       "7:00 PM": "Dinner at a local restaurant",\\ \tt       "9:00 PM": "Enjoy a performance at the Bolshoi Theatre, one of the world's most renowned ballet and opera companies"\\ \tt     }\\ \tt   },\\ \tt   "day2": {\\ \tt     "morning": {\\ \tt       "9:00 AM": "Breakfast at a local café",\\ \tt       "10:00 AM": "Visit the Tretyakov Gallery, a world-renowned museum of Russian art",\\ \tt       "12:00 PM": "Explore the nearby Novodevichy Convent, a historic monastery complex"\\ \tt     },\\ \tt     "afternoon": {\\ \tt       "1:00 PM": "Lunch at a local restaurant",\\ \tt       "2:30 PM": "Visit the Museum of Cosmonautics, a museum showcasing the history of space exploration in Russia",\\ \tt       "4:00 PM": "Walk through the nearby Gorky Park, a popular public park in Moscow"\\ \tt     },\\ \tt     "evening": {\\ \tt       "7:00 PM": "Dinner at a local restaurant",\\ \tt       "9:00 PM": "Enjoy a stroll along the Moscow River embankment, taking in the city's vibrant nightlife"\\ \tt     }\\ \tt   },\\ \tt   "day3": {\\ \tt     "morning": {\\ \tt       "9:00 AM": "Breakfast at a local café",\\ \tt       "10:00 AM": "Visit the Peter the Great Museum-City, a museum showcasing the history of Moscow's founding and development",\\ \tt       "12:00 PM": "Explore the nearby Izmailovo Kremlin, a historic fortified complex"\\ \tt     },\\ \tt     "afternoon": {\\ \tt       "1:00 PM": "Lunch at a local restaurant",\\ \tt       "2:30 PM": "Visit the Moscow Metro Museum, a museum showcasing the history of the city's famous metro system",\\ \tt       "4:00 PM": "Walk through the nearby GUM department store, a historic shopping complex"\\ \tt     },\\ \tt     "evening": {\\ \tt       "7:00 PM": "Dinner at a local restaurant",\\ \tt       "9:00 PM": "Departure from Moscow"\\ \tt     }\\ \tt   }\\ \tt } 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'keywords:frequency': {'relation': 'less than', 'keyword': 'founding', 'frequency': 2}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

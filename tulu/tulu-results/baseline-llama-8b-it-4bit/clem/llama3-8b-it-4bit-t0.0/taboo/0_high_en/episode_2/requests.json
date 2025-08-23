@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-07-21T12:04:28.431422",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:27.476974",
+        "call_duration": "0:00:00.954395",
+        "response": "CLUE: It's a fundamental concept in computer science, often used in coding and game development.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:28.762560",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALGORITHM<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:28.431782",
+        "call_duration": "0:00:00.330728",
+        "response": "GUESS: ALGORITHM",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:29.761046",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: ALGORITHM<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: ALGORITHM<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: It's a number that's used to determine something, like a score or a ranking.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:28.762694",
+        "call_duration": "0:00:00.998299",
+        "response": "CLUE: It's a number that's used to determine something, like a score or a ranking.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:30.050933",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALGORITHM<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: It's a number that's used to determine something, like a score or a ranking.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALGORITHM<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: It's a number that's used to determine something, like a score or a ranking.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: SCORE<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:29.761378",
+        "call_duration": "0:00:00.289511",
+        "response": "GUESS: SCORE",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:31.051554",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: ALGORITHM<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: It's a number that's used to determine something, like a score or a ranking.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: SCORE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: ALGORITHM<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: It's a number that's used to determine something, like a score or a ranking.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: SCORE<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: It's a key part of many computer systems, helping them make decisions or process data.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:30.051063",
+        "call_duration": "0:00:01.000440",
+        "response": "CLUE: It's a key part of many computer systems, helping them make decisions or process data.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:04:31.344805",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALGORITHM<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: It's a number that's used to determine something, like a score or a ranking.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: SCORE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: It's a key part of many computer systems, helping them make decisions or process data.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: It's a fundamental concept in computer science, often used in coding and game development.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALGORITHM<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: It's a number that's used to determine something, like a score or a ranking.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: SCORE<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: It's a key part of many computer systems, helping them make decisions or process data.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: DATABASE<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:04:31.051908",
+        "call_duration": "0:00:00.292850",
+        "response": "GUESS: DATABASE",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  }
+]

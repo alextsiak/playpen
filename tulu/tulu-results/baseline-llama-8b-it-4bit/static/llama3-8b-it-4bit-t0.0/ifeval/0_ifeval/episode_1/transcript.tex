@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a blog post with 400 or more words about the benefits of sleeping in a hammock. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **The Sweet Slumber of Hammock Sleeping: Unlocking the Benefits**\\ \tt \\ \tt Are you tired of tossing and turning on a traditional mattress, only to wake up feeling stiff and groggy? Do you yearn for a more restful and rejuvenating sleep experience? Look no further than hammock sleeping. This ancient practice, popularized by indigenous cultures and outdoor enthusiasts, offers a unique set of benefits that can transform the way you sleep.\\ \tt \\ \tt **Improved Sleep Quality**\\ \tt \\ \tt Hammock sleeping allows your body to maintain its natural sleep position, with your spine aligned and your muscles relaxed. This promotes deeper, more restorative sleep, as your body is able to repair and rejuvenate itself without the constraints of a traditional mattress. By sleeping in a hammock, you'll wake up feeling refreshed, revitalized, and ready to take on the day.\\ \tt \\ \tt **Reduced Back Pain**\\ \tt \\ \tt The ergonomic design of a hammock cradles your body, providing optimal support for your spine and reducing pressure on your joints. This can be especially beneficial for people who suffer from back pain, as the hammock's gentle sway helps to realign your spine and alleviate discomfort. By sleeping in a hammock, you'll wake up feeling more comfortable and less achy.\\ \tt \\ \tt **Increased Comfort**\\ \tt \\ \tt Hammock sleeping is often described as a "weightless" experience, as the hammock's suspension system allows you to float above the ground, free from the constraints of a mattress. This can be especially beneficial for people who struggle with insomnia or restlessness, as the hammock's gentle motion can help to calm the mind and promote relaxation.\\ \tt \\ \tt **Environmental Benefits**\\ \tt \\ \tt Hammock sleeping is an eco-friendly alternative to traditional mattress sleeping. By using a hammock, you'll reduce your carbon footprint and minimize your impact on the environment. Plus, many hammocks are made from sustainable materials, such as cotton or recycled plastic, making them a more environmentally responsible choice.\\ \tt \\ \tt **Portability and Versatility**\\ \tt \\ \tt Hammocks are incredibly portable, making them an ideal choice for outdoor enthusiasts, travelers, and anyone who wants to enjoy the benefits of hammock sleeping on-the-go. Whether you're camping in the wilderness, backpacking through the mountains, or simply looking for a unique sleeping experience, a hammock is the perfect solution.\\ \tt \\ \tt **Tips for Hammock Sleeping**\\ \tt \\ \tt If you're new to hammock sleeping, here are a few tips to get you started:\\ \tt \\ \tt * Choose a high-quality hammock with a sturdy suspension system.\\ \tt * Experiment with different sleeping positions to find what works best for you.\\ \tt * Consider adding a bug net or rain fly to protect yourself from the elements.\\ \tt * Don't be afraid to try out different hammock styles and materials to find the one that suits your needs.\\ \tt \\ \tt In conclusion, hammock sleeping offers a unique set of benefits that can transform the way you sleep. From improved sleep quality and reduced back pain to increased comfort and environmental benefits, there's never been a better time to give hammock sleeping a try. So why not give it a shot? You might just find yourself sleeping like a baby in no time. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:number_words': {'relation': 'at least', 'num_words': 400}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

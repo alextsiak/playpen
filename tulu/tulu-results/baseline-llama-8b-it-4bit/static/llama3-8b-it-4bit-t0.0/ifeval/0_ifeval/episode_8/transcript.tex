@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a funny article about why the dinosaurs went extinct and put double quotations marks around your whole response. Include exactly 8 bullet points in your response. The bullet points should be in the form of:\\ \tt * This is bullet 1\\ \tt * This is bullet 2\\ \tt ... 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "**The Utterly Ridiculous, Totally-Not-Scientific Explanation for the Dinosaurs' Demise**"\\ \tt \\ \tt It's a little-known fact that the dinosaurs didn't actually go extinct due to a massive asteroid impact or a combination of volcanic eruptions and climate change. No, no, no. It's much more complicated (and hilarious) than that. Here's the real story:\\ \tt \\ \tt * This is bullet 1: **The Great Dinosaur Dance Party**. It's said that the dinosaurs were so tired of the same old T-Rex, Triceratops, and Stegosaurus dance moves that they decided to throw a massive dance party to end all dance parties. Unfortunately, the music was so bad that it caused a rift in the space-time continuum, leading to their extinction.\\ \tt \\ \tt * This is bullet 2: **The Dinosaur Disco Disaster**. As the dinosaurs boogied the night away, their funky dance moves triggered a chain reaction of disco balls, platform shoes, and polyester suits, which ultimately led to a catastrophic explosion of sparkly, glittery goodness.\\ \tt \\ \tt * This is bullet 3: **The Giant Squid Invasion**. It's rumored that a group of giant squid, tired of being the ocean's most feared predators, decided to take over the land and rule with an iron... tentacle. The dinosaurs, caught off guard by the cephalopod coup, were quickly overwhelmed and, well, you know the rest.\\ \tt \\ \tt * This is bullet 4: **The Great Dinosaur Cook-Off**. In a bizarre twist, the dinosaurs were all competing in a cook-off to see who could make the tastiest T-Rex tacos. Unfortunately, the judges were a group of particularly picky pterodactyls, and the competition got out of hand, resulting in a culinary catastrophe.\\ \tt \\ \tt * This is bullet 5: **The Dinosaur Disco Ball of Doom**. As the dinosaurs danced the night away, they accidentally created a massive disco ball that reflected the sun's rays directly onto the Earth's surface, causing a massive solar flare that wiped out the entire species.\\ \tt \\ \tt * This is bullet 6: **The Time-Traveling Tourists**. A group of time-traveling tourists, tired of visiting the same old historical landmarks, decided to visit the Mesozoic Era and, well, let's just say they didn't exactly blend in with the locals.\\ \tt \\ \tt * This is bullet 7: **The Dinosaur Disco Fever**. It's said that the dinosaurs were so caught up in the excitement of the dance party that they started to dance themselves into a frenzy, causing a massive outbreak of disco fever that spread throughout the land and led to their extinction.\\ \tt \\ \tt * This is bullet 8: **The Giant Space Hamster**. In a bizarre twist, a giant space hamster, tired of being cooped up in its space station, decided to take over the Earth and rule with an iron... paw. The dinosaurs, caught off guard by the hamster's intergalactic ambitions, were quickly overwhelmed and, well, you know the rest. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'startend:quotation': {}, 'detectable_format:number_bullet_lists': {'num_bullets': 8}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 177,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:23:19.160219",
+        "action": {
+          "type": "send message",
+          "content": "My brother is trying to install a new toilet in his bathroom. Could you give me details of how-to? You don't need to show all details -- just the first 5 steps for now. Separated them with \"***\", such as:\nStep 1: ......\n***\nStep 2: ......\n***\n...\n\nEnd your whole response with the phrase \"Let me know how it works. I can give you next steps when you finish all steps above.\"",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:23:39.839930",
+        "action": {
+          "type": "get message",
+          "content": "Here are the first 5 steps for your brother:\n\nStep 1: Shut off the water supply to the toilet by locating the shut-off valve behind the toilet and turning it clockwise. This will prevent any water from flowing into the toilet while the installation is in progress.\n***\nStep 2: Disconnect the water supply line from the toilet by loosening the nut that holds the supply line in place. Be prepared for any water that may still be in the line to spill out.\n***\nStep 3: Remove the old toilet by breaking the wax ring that holds it in place. This may require some force, but be careful not to damage the surrounding floor.\n***\nStep 4: Inspect the flange (the metal ring that holds the toilet in place) for any old wax or debris. Clean it thoroughly to ensure a proper seal with the new toilet.\n***\nStep 5: Place the new toilet onto the flange, ensuring it is centered and the bolts are aligned with the holes in the flange. Use a spirit level to ensure the toilet is properly aligned.\n***\nLet me know how it works. I can give you next steps when you finish all steps above.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:23:39.840019",
+        "action": {
+          "type": "target",
+          "content": {
+            "length_constraints:number_paragraphs": {
+              "num_paragraphs": 5
+            },
+            "startend:end_checker": {
+              "end_phrase": "Let me know how it works. I can give you next steps when you finish all steps above."
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:23:39.840123",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

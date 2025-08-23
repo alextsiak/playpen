@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "game_name": "taboo",
+    "experiment_name": "high_en",
+    "game_id": 8,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "WordDescriber",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    },
+    "Player 2": {
+      "game_role": "WordGuesser",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:55:53.838345",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:54.982329",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: Counting concept. Guesses start here.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:54.982385",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:54.982551",
+        "action": {
+          "type": "valid clue",
+          "content": "counting concept guesses start here"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:55:54.982594",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n",
+          "label": "initial prompt"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:55:54.982611",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: Counting concept. Guesses start here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:55.520538",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: NUMBER",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:55.520592",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:55.520621",
+        "action": {
+          "type": "valid guess",
+          "content": "number"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:55:55.520667",
+        "action": {
+          "type": "send message",
+          "content": "GUESS: NUMBER",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:56.489345",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: Found in math. Guesses.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:56.489399",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:56.489551",
+        "action": {
+          "type": "valid clue",
+          "content": "found in math guesses"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:55:56.489593",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: Found in math. Guesses.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:57.113773",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: MATH",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:57.113852",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:57.113886",
+        "action": {
+          "type": "valid guess",
+          "content": "math"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:55:57.113936",
+        "action": {
+          "type": "send message",
+          "content": "GUESS: MATH",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:59.032663",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: Used in calculations. Guesses. \n\n(You're getting close, but be careful!)",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:59.032718",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:59.032953",
+        "action": {
+          "type": "valid clue",
+          "content": "used in calculations guesses \n\nyoure getting close but be careful"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:55:59.032996",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: Used in calculations. Guesses. \n\n(You're getting close, but be careful!)",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:59.742868",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: CALCULUS",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:59.742923",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:59.742953",
+        "action": {
+          "type": "valid guess",
+          "content": "calculus"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:55:59.742981",
+        "action": {
+          "type": "max rounds reached",
+          "content": "3"
+        }
+      }
+    ]
+  ]
+}

@@ -1,0 +1,7426 @@
+{
+  "meta": {
+    "game_name": "adventuregame",
+    "experiment_name": "home_deliver_three_basic_hard_invlimittwo",
+    "game_id": 4,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Adventurer",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:21.101899",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a text adventure game. I will describe what you can perceive in the game. You write the single action you want to take in the game starting with >. Only reply with an action.\nFor example:\n> open cupboard\n\nYou can have up to two objects in your inventory at the same time.\n\nYour goal for this game is: Put the pillow in the refrigerator, the book in the wardrobe and the plate on the shelf.\n\nOnce you have achieved your goal, write \"> done\" to end the game.\n\nYou are in a living room now. There are a couch, a side table, a chair and a table. There is a passage to a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.391303",
+        "action": {
+          "type": "get message",
+          "content": "> look at the table",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.391352",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 0"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.393487",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.393538",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:21.393581",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.640334",
+        "action": {
+          "type": "get message",
+          "content": "> examine the table",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.640381",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 1"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.644583",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "examine",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.644634",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:21.644677",
+        "action": {
+          "type": "send message",
+          "content": "There is nothing on the table.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.935854",
+        "action": {
+          "type": "get message",
+          "content": "> look at the couch",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.935900",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 2"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.937933",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:21.937982",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:21.938023",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.186773",
+        "action": {
+          "type": "get message",
+          "content": "> examine the couch",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.186821",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 3"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.191027",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "examine",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.191077",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:22.191119",
+        "action": {
+          "type": "send message",
+          "content": "There is nothing on the couch.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.527670",
+        "action": {
+          "type": "get message",
+          "content": "> look at the side table",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.527719",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 4"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.530035",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.530086",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:22.530126",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.823760",
+        "action": {
+          "type": "get message",
+          "content": "> examine the side table",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.823807",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 5"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.828405",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "examine",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:22.828456",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:22.828498",
+        "action": {
+          "type": "send message",
+          "content": "There is nothing on the sidetable.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.080293",
+        "action": {
+          "type": "get message",
+          "content": "> examine the chair",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.080342",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 6"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.084635",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "examine",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.084686",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:23.084729",
+        "action": {
+          "type": "send message",
+          "content": "There is nothing on the chair.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.465857",
+        "action": {
+          "type": "get message",
+          "content": "> examine the passage to the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.465906",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 7"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.469242",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "malformed_command",
+            "arg": "{'type': 'unknown', 'arg1': 'examine'}",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.469294",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:23.469337",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what you mean.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.897999",
+        "action": {
+          "type": "get message",
+          "content": "> go through the passage to the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.898047",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 8"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.901406",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "malformed_command",
+            "arg": "{'type': 'unknown', 'arg1': 'go'}",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:23.901456",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:23.901500",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what you mean.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.208622",
+        "action": {
+          "type": "get message",
+          "content": "> go into the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.208669",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 9"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.211171",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "malformed_command",
+            "arg": "{'type': 'unknown', 'arg1': 'go'}",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.211222",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:24.211265",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what you mean.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.519460",
+        "action": {
+          "type": "get message",
+          "content": "> move into the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.519507",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 10"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.522018",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "move",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.1724137931034483,
+              "visited_rooms": [
+                "livingroom1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.522069",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:24.522112",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'move' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.787457",
+        "action": {
+          "type": "get message",
+          "content": "> enter the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.787504",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 11"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.792084",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "exit",
+                  "hallway1",
+                  "kitchen1"
+                ],
+                [
+                  "on",
+                  "pottedplant1",
+                  "hallway1floor1"
+                ],
+                [
+                  "exit",
+                  "hallway1",
+                  "bedroom1"
+                ],
+                [
+                  "exit",
+                  "hallway1",
+                  "broomcloset1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "exit",
+                  "hallway1",
+                  "livingroom1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 7,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "known_entities_ratio": 0.20689655172413793,
+              "visited_rooms": [
+                "livingroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:24.792155",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:24.792200",
+        "action": {
+          "type": "send message",
+          "content": "You are in a hallway now. There is a potted plant. The potted plant is on the floor. There are passages to a broom closet, a living room, a kitchen and a bedroom here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.190323",
+        "action": {
+          "type": "get message",
+          "content": "> pick up the potted plant",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.190372",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 12"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.196147",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "take",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "known_entities_ratio": 0.20689655172413793,
+              "visited_rooms": [
+                "livingroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.196199",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:25.196242",
+        "action": {
+          "type": "send message",
+          "content": "You take the potted plant. In your inventory you have a potted plant.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.511200",
+        "action": {
+          "type": "get message",
+          "content": "> go to the kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.511249",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 13"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.517450",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "exit",
+                  "kitchen1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "exit",
+                  "kitchen1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "closed",
+                  "cupboard1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 7,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.27586206896551724,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.5,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.517526",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:25.517570",
+        "action": {
+          "type": "send message",
+          "content": "You are in a kitchen now. There are a cupboard and a counter. The cupboard is closed. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.790536",
+        "action": {
+          "type": "get message",
+          "content": "> open the cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.790588",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 14"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.795417",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "open",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "open",
+                  "cupboard1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "in",
+                  "plate1",
+                  "cupboard1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "in",
+                  "book1",
+                  "cupboard1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 5,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.3448275862068966,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.5,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.3333333333333333
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:25.795497",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:25.795542",
+        "action": {
+          "type": "send message",
+          "content": "The cupboard is now open. In the cupboard there are a plate and a book.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.069026",
+        "action": {
+          "type": "get message",
+          "content": "> take the plate",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.069077",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 15"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.074041",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "take",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.3448275862068966,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.5,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.3333333333333333
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.074109",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:26.074153",
+        "action": {
+          "type": "send message",
+          "content": "You take the plate. In your inventory you have a plate and a potted plant.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.488725",
+        "action": {
+          "type": "get message",
+          "content": "> put the plate on the counter",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.488776",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 16"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.496152",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "put",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.3448275862068966,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.5,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.3333333333333333
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.496222",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:26.496267",
+        "action": {
+          "type": "send message",
+          "content": "You put the plate on the counter.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.782040",
+        "action": {
+          "type": "get message",
+          "content": "> take the book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.782091",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 17"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.787080",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "take",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.3448275862068966,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.5,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.3333333333333333
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:26.787148",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:26.787193",
+        "action": {
+          "type": "send message",
+          "content": "You take the book. In your inventory you have a book and a potted plant.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.159017",
+        "action": {
+          "type": "get message",
+          "content": "> go to the living room",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.159071",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 18"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.163866",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "no_exit_to",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "exit",
+                  "kitchen1",
+                  "livingroom1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 2
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.3448275862068966,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.5,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.3333333333333333
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.163947",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:27.163993",
+        "action": {
+          "type": "send message",
+          "content": "You can't go to a living room from here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.492195",
+        "action": {
+          "type": "get message",
+          "content": "> go to the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.492246",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 19"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.497725",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 3,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "known_entities_ratio": 0.3448275862068966,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.5,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "book1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.3333333333333333
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.497802",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:27.497847",
+        "action": {
+          "type": "send message",
+          "content": "You are in a hallway now. There are passages to a broom closet, a living room, a kitchen and a bedroom here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.837441",
+        "action": {
+          "type": "get message",
+          "content": "> go to the bedroom",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.837492",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 20"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.843063",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "pottedplant1",
+                  "bedroom1"
+                ],
+                [
+                  "closed",
+                  "wardrobe1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "bedroom1"
+                ],
+                [
+                  "exit",
+                  "bedroom1",
+                  "hallway1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 7,
+              "known_entities": [
+                [
+                  "at",
+                  "pottedplant1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.41379310344827586,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.5
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:27.843156",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:27.843200",
+        "action": {
+          "type": "send message",
+          "content": "You are in a bedroom now. There are a bed and a wardrobe. The wardrobe is closed. There is a passage to a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.141192",
+        "action": {
+          "type": "get message",
+          "content": "> open the wardrobe",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.141243",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 21"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.146051",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "open",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "open",
+                  "wardrobe1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "in",
+                  "pillow1",
+                  "wardrobe1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 3,
+              "known_entities": [
+                [
+                  "at",
+                  "pottedplant1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.146140",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:28.146185",
+        "action": {
+          "type": "send message",
+          "content": "The wardrobe is now open. In the wardrobe there is a pillow.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.446168",
+        "action": {
+          "type": "get message",
+          "content": "> take the pillow",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.446218",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 22"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.450007",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "inventory_limit_exceeded",
+            "arg": {
+              "failed_action_type": "take",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "itemcount",
+                  "inventory",
+                  2
+                ],
+                "fulfilled": false,
+                "precon_idx": 5
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "pottedplant1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.450097",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:28.450140",
+        "action": {
+          "type": "send message",
+          "content": "Your inventory can not hold more than two objects at the same time.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.883144",
+        "action": {
+          "type": "get message",
+          "content": "> put the book in the wardrobe",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.883196",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 23"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.891238",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "put",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "pottedplant1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:28.891321",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 1
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:28.891365",
+        "action": {
+          "type": "send message",
+          "content": "You put the book in the wardrobe.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:29.323753",
+        "action": {
+          "type": "get message",
+          "content": "> put the pillow in the refrigerator",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:29.323805",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 24"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:29.330225",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "put",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "refrigerator1",
+                  "bedroom1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 2
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "pottedplant1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:29.330318",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:29.330366",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a refrigerator here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:29.679705",
+        "action": {
+          "type": "get message",
+          "content": "> go to the kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:29.679756",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 25"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:29.684301",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "no_exit_to",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "exit",
+                  "bedroom1",
+                  "kitchen1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 2
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "pottedplant1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:29.684395",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:29.684444",
+        "action": {
+          "type": "send message",
+          "content": "You can't go to a kitchen from here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.035165",
+        "action": {
+          "type": "get message",
+          "content": "> go to the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.035215",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 26"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.040675",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 2,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.040762",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:30.040807",
+        "action": {
+          "type": "send message",
+          "content": "You are in a hallway now. There are passages to a broom closet, a living room, a kitchen and a bedroom here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.394651",
+        "action": {
+          "type": "get message",
+          "content": "> go to the kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.394700",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 27"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.400201",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 2,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.400288",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:30.400334",
+        "action": {
+          "type": "send message",
+          "content": "You are in a kitchen now. There are a cupboard, a plate and a counter. The cupboard is open. The plate is on the counter. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.848024",
+        "action": {
+          "type": "get message",
+          "content": "> put the plate in the cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.848074",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 28"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.855389",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "put",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:30.855469",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:30.855514",
+        "action": {
+          "type": "send message",
+          "content": "You put the plate in the cupboard.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:31.258391",
+        "action": {
+          "type": "get message",
+          "content": "> go to the kitchen cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:31.258443",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 29"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:31.261933",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_repr_str",
+            "arg": "kitchen cupboard",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:31.262016",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:31.262063",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what 'kitchen cupboard' means.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:31.623214",
+        "action": {
+          "type": "get message",
+          "content": "> go to the cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:31.623263",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 30"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:31.627797",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "domain_trait_type_mismatch",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_parameter": "cupboard"
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:31.627883",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:31.627931",
+        "action": {
+          "type": "send message",
+          "content": "Cupboard is not a room.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.077240",
+        "action": {
+          "type": "get message",
+          "content": "> put the pillow in the cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.077291",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 31"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.083571",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "put",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "pillow1",
+                  "kitchen1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.083660",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:32.083709",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a pillow here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.442240",
+        "action": {
+          "type": "get message",
+          "content": "> go to the bedroom",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.442290",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 32"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.446795",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "no_exit_to",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "exit",
+                  "kitchen1",
+                  "bedroom1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 2
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.446886",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:32.446932",
+        "action": {
+          "type": "send message",
+          "content": "You can't go to a bedroom from here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.824680",
+        "action": {
+          "type": "get message",
+          "content": "> go to the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.824738",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 33"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.830406",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 2,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:32.830494",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:32.830540",
+        "action": {
+          "type": "send message",
+          "content": "You are in a hallway now. There are passages to a broom closet, a living room, a kitchen and a bedroom here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:33.202806",
+        "action": {
+          "type": "get message",
+          "content": "> go to the kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:33.202855",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 34"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:33.208485",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 2,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:33.208580",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:33.208625",
+        "action": {
+          "type": "send message",
+          "content": "You are in a kitchen now. There are a cupboard, a plate and a counter. The cupboard is open. The plate is in the cupboard. The plate is on the counter. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:33.673130",
+        "action": {
+          "type": "get message",
+          "content": "> put the plate on the shelf",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:33.673181",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 35"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:33.679677",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "put",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "shelf1",
+                  "kitchen1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 2
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:33.679770",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:33.679817",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a shelf here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:34.059920",
+        "action": {
+          "type": "get message",
+          "content": "> go to the cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:34.059971",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 36"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:34.064258",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "domain_trait_type_mismatch",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_parameter": "cupboard"
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:34.064347",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:34.064395",
+        "action": {
+          "type": "send message",
+          "content": "Cupboard is not a room.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:34.534586",
+        "action": {
+          "type": "get message",
+          "content": "> take the plate from the cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:34.534636",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 37"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:34.541236",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "take",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:34.541317",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:34.541362",
+        "action": {
+          "type": "send message",
+          "content": "You take the plate. In your inventory you have a plate and a potted plant.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:35.012914",
+        "action": {
+          "type": "get message",
+          "content": "> put the plate on the counter",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:35.012967",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 38"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:35.021752",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "put",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:35.021833",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:35.021879",
+        "action": {
+          "type": "send message",
+          "content": "You put the plate on the counter.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:36.941742",
+        "action": {
+          "type": "get message",
+          "content": "> put the plate on the counter is not the goal, I need to put the plate on a shelf. I need to go to a room with a shelf. \n\n> go to the living room",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:36.941793",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 39"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:36.946868",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "lark_exception",
+            "arg": "No terminal matches ',' in the current parser context, at line 1 col 45\n\nthe plate on the counter is not the goal, i need to put the plate on a shelf. i \n                                        ^\nExpected one of: \n\t* WS\n\t* WORD\n",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:36.946952",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:36.947001",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what you mean.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:37.340105",
+        "action": {
+          "type": "get message",
+          "content": "> go to the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:37.340157",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 40"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:37.345699",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 2,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:37.345787",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:37.345831",
+        "action": {
+          "type": "send message",
+          "content": "You are in a hallway now. There are passages to a broom closet, a living room, a kitchen and a bedroom here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:37.784687",
+        "action": {
+          "type": "get message",
+          "content": "> go to the living room",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:37.784738",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 41"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:37.790657",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "livingroom1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 2,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:37.790744",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:37.790787",
+        "action": {
+          "type": "send message",
+          "content": "You are in a living room now. There are a couch, a side table, a chair and a table. There is a passage to a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.186183",
+        "action": {
+          "type": "get message",
+          "content": "> look around the room",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.186234",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 42"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.188533",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.188615",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:38.188662",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.542478",
+        "action": {
+          "type": "get message",
+          "content": "> examine the room",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.542527",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 43"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.545059",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_repr_str",
+            "arg": "room",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.545142",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:38.545189",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what 'room' means.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.945762",
+        "action": {
+          "type": "get message",
+          "content": "> examine the living room",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.945811",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 44"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.949858",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "domain_type_discrepancy",
+            "arg": {
+              "failed_action_type": "examine",
+              "failed_parameter": "livingroom"
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:38.949945",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:38.949992",
+        "action": {
+          "type": "send message",
+          "content": "Livingroom is not an entity. (this should not occur.)",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:39.309007",
+        "action": {
+          "type": "get message",
+          "content": "> examine the table",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:39.309057",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 45"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:39.313759",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "examine",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:39.313842",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:39.313887",
+        "action": {
+          "type": "send message",
+          "content": "There is nothing on the table.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:39.716457",
+        "action": {
+          "type": "get message",
+          "content": "> look at the shelf",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:39.716542",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 46"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:39.718833",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:39.718914",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:39.718960",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.078029",
+        "action": {
+          "type": "get message",
+          "content": "> examine the shelf",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.078079",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 47"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.082010",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "examine",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "shelf1",
+                  "livingroom1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.082102",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:40.082149",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a shelf here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.505033",
+        "action": {
+          "type": "get message",
+          "content": "> go to the kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.505084",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 48"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.510696",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "no_exit_to",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "exit",
+                  "livingroom1",
+                  "kitchen1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 2
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.510788",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              [
+                "in",
+                "book1",
+                "wardrobe1"
+              ]
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:40.510836",
+        "action": {
+          "type": "send message",
+          "content": "You can't go to a kitchen from here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.934173",
+        "action": {
+          "type": "get message",
+          "content": "> go to the hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.934223",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 49"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.939727",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 2,
+              "known_entities": [
+                [
+                  "at",
+                  "couch1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "table1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "hallway1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "bed1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "sidetable1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "chair1",
+                  "livingroom1"
+                ],
+                [
+                  "at",
+                  "pottedplant1",
+                  "hallway1"
+                ]
+              ],
+              "known_entities_ratio": 0.4482758620689655,
+              "visited_rooms": [
+                "kitchen1",
+                "livingroom1",
+                "bedroom1",
+                "hallway1"
+              ],
+              "visited_rooms_ratio": 0.6666666666666666,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "wardrobe1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "pillow1",
+                  "bedroom1"
+                ],
+                [
+                  "at",
+                  "book1",
+                  "bedroom1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.6666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.939814",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "turn_goal_score": 0
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.939842",
+        "action": {
+          "type": "turn_limit_reached",
+          "content": "Turn limit 50 reached, end episode."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:40.939855",
+        "action": {
+          "type": "game_result",
+          "content": {
+            "goal_states_achieved": [
+              "in(book1,wardrobe1)"
+            ],
+            "game_successfully_finished": false
+          }
+        }
+      }
+    ]
+  ],
+  "adventure_info": {
+    "variant": "basic",
+    "max_turns": 50,
+    "optimal_turns": 21,
+    "goal_count": 3
+  }
+}

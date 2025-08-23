@@ -1,0 +1,1438 @@
+{
+  "meta": {
+    "game_name": "textmapworld_specificroom",
+    "experiment_name": "far",
+    "game_id": 23,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "PathGuesser",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "PathDescriber",
+      "model_name": "programmatic"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:38.970313",
+        "action": {
+          "type": "send message",
+          "content": "Please help me with the following task. The goal is to explore rooms and find the target room. In each room, you need to decide the direction to go in. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. Most importantly, once we have found the target room, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nThe target room is a Bedroom. You are in the Kitchen. Currently available directions: south, west. What is your next instruction?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next instruction?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next instruction?\nDONE\nLet us start. The target room is Dining room. You are in the Home gym. Currently available directions: south. What is your next instruction?\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.175197",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.175278",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:39.175314",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.175386",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.175418",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.175454",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Home gym\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:39.175482",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.382969",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.383049",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:39.383084",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.383158",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.383190",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.383224",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Sunroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:39.383251",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.591105",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.591185",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:39.591219",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.591290",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.591322",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.591357",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Sunroom\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:39.591383",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.798666",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.798746",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:39.798781",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.798855",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Home gym. Currently available directions: south. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.798886",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:39.798920",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Home gym\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:39.798947",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Home gym. Currently available directions: south. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.019234",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.019318",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:40.019352",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.019422",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.019454",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.019488",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Home gym\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:40.019515",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.240380",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.240466",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:40.240502",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.240587",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.240619",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.240653",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Sunroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:40.240681",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.462694",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.462800",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:40.462835",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.462907",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.462938",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.462973",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Sunroom\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:40.463002",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.687486",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.687573",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:40.687609",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.687683",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.687715",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.687749",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Sunroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:40.687776",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.915247",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.915336",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:40.915372",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.915444",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.915475",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:40.915511",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Sunroom\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:40.915538",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.143326",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.143416",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:41.143451",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.143527",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Home gym. Currently available directions: south. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.143558",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.143593",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Home gym\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:41.143619",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Home gym. Currently available directions: south. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.374683",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.374773",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:41.374809",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.374881",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.374912",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.374947",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Home gym\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:41.374973",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.611720",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.611814",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:41.611850",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.611926",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.611957",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.611993",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Sunroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:41.612020",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.851833",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.851930",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:41.851965",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.852036",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.852067",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:41.852101",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Sunroom\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:41.852128",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.091061",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.091158",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:42.091193",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.091269",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.091300",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.091334",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Sunroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:42.091361",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.345388",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.345488",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:42.345524",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.345597",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.345627",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.345663",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Sunroom\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:42.345690",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.598692",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.598792",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:42.598826",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.598902",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Home gym. Currently available directions: south. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.598933",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.598968",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Home gym\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:42.598995",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Home gym. Currently available directions: south. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.853422",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.853524",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:42.853559",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.853631",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.853661",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:42.853698",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Home gym\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:42.853725",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.109598",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.109703",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:43.109740",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.109818",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.109850",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.109887",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Sunroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:43.109914",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: west. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.372633",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.372729",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:43.372765",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.372841",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.372872",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.372909",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Sunroom\", \"new\": \"Playroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:09:43.372937",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Playroom. Currently available directions: east, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.640347",
+        "action": {
+          "type": "get message",
+          "content": "GO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.640445",
+        "action": {
+          "type": "parse",
+          "content": "GO: north"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T12:09:43.640481",
+        "action": {
+          "type": "send message",
+          "content": "GO: north",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.640573",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Home gym. Currently available directions: south. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.640604",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.640642",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Playroom\", \"new\": \"Home gym\"}"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:09:43.640655",
+        "action": {
+          "type": "turns_limit",
+          "content": "20"
+        }
+      }
+    ]
+  ]
+}

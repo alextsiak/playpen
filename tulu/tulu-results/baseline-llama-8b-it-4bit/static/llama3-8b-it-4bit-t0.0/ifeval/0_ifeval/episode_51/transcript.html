@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+
+.game-round {
+  padding: 20px 0 20px 0;
+  background-color: #f0f8ff; /* light background for content */
+  position: relative; /* Important to position the badge */
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge in top-right corner */
+.game-round::before {
+  content: "Round " attr(data-round);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #c4c3c3;
+  padding: 0px 2px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for ifeval, episode 514 with llama3-8b-it-4bit-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+<div class="game-round" data-round="0">
+    <div speaker="GM (Game Master) to Player 1 (InstructionFollower)" class="msg gm-a" style="">
+        <p>Write an essay on wilderness preservation. Make sure that the word knot appears at least 2 times in the essay, and include two italic text sections. Like: *this is italic text*</p>
+    </div>
+
+    <div speaker="Player 1 (InstructionFollower) to GM (Game Master)" class="msg a-gm" style="">
+        <p>Wilderness preservation is a vital aspect of maintaining the delicate balance of our planet&#x27;s ecosystems. The preservation of untouched lands, free from human development and intervention, allows for the natural world to flourish in its most authentic form. In these areas, the intricate web of life is woven together by the complex relationships between plants, animals, and the environment itself, forming a knot that is both beautiful and resilient.<br/><br/>_*The Importance of Wilderness Preservation*_ <br/><br/>Wilderness areas provide a sanctuary for countless species of plants and animals, many of which are found nowhere else on Earth. These ecosystems are often characterized by a unique combination of geological features, climate, and vegetation, which support a diverse array of life. For example, the ancient forests of the Pacific Northwest, with their towering trees and lush undergrowth, are home to a vast array of species, from the majestic grizzly bear to the tiny, iridescent hummingbird. The preservation of these areas ensures that these species continue to thrive, and that the delicate balance of their ecosystems remains intact.<br/><br/>_*The Human Connection to Wilderness*_ <br/><br/>Humans have a deep and abiding connection to the natural world, one that is rooted in our very being. From the earliest days of human existence, we have been drawn to the wilderness, seeking solace, inspiration, and a sense of connection to something greater than ourselves. In the wilderness, we find a sense of freedom and release, a chance to untangle the knots of our daily lives and reconnect with the world around us. Whether we are hiking through the mountains, camping in the woods, or simply sitting by a river, the wilderness has a way of calming our minds and soothing our souls.<br/><br/>In addition to its spiritual and emotional benefits, wilderness preservation also has a significant impact on our physical health. Studies have shown that spending time in nature can lower blood pressure, reduce stress levels, and even alleviate symptoms of depression. The great outdoors has a way of working its magic, untangling the knots of our minds and bodies, and leaving us feeling refreshed and renewed.<br/><br/>In conclusion, wilderness preservation is a vital aspect of maintaining the health and well-being of our planet. By protecting these areas from human development and intervention, we ensure that the natural world continues to flourish, and that the intricate web of life remains intact. As we move forward in this modern age, it is essential that we prioritize the preservation of our wilderness areas, for the benefit of both ourselves and the planet as a whole.</p>
+    </div>
+
+    <div speaker="Game Master: target" class="msg gm-gm" style="">
+        <p>{&#x27;keywords:frequency&#x27;: {&#x27;relation&#x27;: &#x27;at least&#x27;, &#x27;keyword&#x27;: &#x27;knot&#x27;, &#x27;frequency&#x27;: 2}, &#x27;detectable_format:number_highlighted_sections&#x27;: {&#x27;num_highlights&#x27;: 2}}</p>
+    </div>
+
+    <div speaker="Game Master: followed all instructions" class="msg gm-gm" style="">
+        <p>game_result = WIN</p>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

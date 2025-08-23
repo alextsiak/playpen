@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Can you write a poem about the pros and cons of playing a lot of video games? Please make sure it's at least 40 sentences long (don't forget to add punctuations). You must highlight some words or phrases in your response, like *highlighted phrase*. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 In virtual realms, we find our delight,\\ \tt Where *controllers* guide us through the night,\\ \tt A world of wonder, a world of play,\\ \tt Where we escape, and let our worries stray.\\ \tt \\ \tt But as we delve, and our hours slip away,\\ \tt We must consider the pros and the sway,\\ \tt Of gaming's influence on our daily lives,\\ \tt A double-edged sword, that cuts through strife.\\ \tt \\ \tt On one hand, it's a social bond we form,\\ \tt With friends and strangers, in a virtual norm,\\ \tt We connect, we share, we laugh, and we play,\\ \tt Together, in a world, that's far away.\\ \tt \\ \tt It's a stress-reliever, a calming breeze,\\ \tt That soothes our minds, and brings us to our knees,\\ \tt In a world of *high scores*, we find our pride,\\ \tt And the thrill of victory, is our heart's inside.\\ \tt \\ \tt But on the other hand, there's a darker side,\\ \tt A world of addiction, where we can't divide,\\ \tt The line between fun, and a *gaming disorder*,\\ \tt That consumes our lives, and leaves us in a disorder.\\ \tt \\ \tt We sacrifice our time, our health, our sleep,\\ \tt For just one more level, or a *raid to keep*,\\ \tt We neglect our duties, our relationships too,\\ \tt And the consequences, are a price we must pay anew.\\ \tt \\ \tt Our eyes, they strain, our backs, they ache,\\ \tt From hours of sitting, in a *gaming trance* we make,\\ \tt Our social skills, they wither away,\\ \tt As we interact, only with a screen's gray.\\ \tt \\ \tt But still, we play, and we can't resist,\\ \tt The allure of *loot boxes*, and the thrill of the list,\\ \tt We're drawn to the *grind*, the *raid*, the *quest*,\\ \tt And the sense of accomplishment, is our gaming quest.\\ \tt \\ \tt So let's be aware, of the pros and the cons,\\ \tt And find a balance, that makes our hearts feel strong,\\ \tt Let's play with moderation, and a clear mind,\\ \tt And remember, there's a world, beyond the digital find.\\ \tt \\ \tt For in the end, it's not just about the game,\\ \tt But about our lives, and the choices we proclaim,\\ \tt So let's be mindful, of our gaming habits too,\\ \tt And find a healthy balance, that's good for me and you.\\ \tt \\ \tt In the virtual world, we find our delight,\\ \tt But in the real world, we must shine with all our might,\\ \tt Let's play with purpose, and a sense of control,\\ \tt And remember, gaming's just a part of our soul.\\ \tt \\ \tt So let's play on, but with a careful eye,\\ \tt And remember, there's a world, beyond the digital sky,\\ \tt Where we can connect, and share, and play,\\ \tt But also live, and love, and find our way. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'detectable_format:number_highlighted_sections': {'num_highlights': 1}, 'length_constraints:number_sentences': {'relation': 'at least', 'num_sentences': 40}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

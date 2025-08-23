@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "game_name": "guesswhat",
+    "experiment_name": "Abs_Level_1",
+    "game_id": 3,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:36.102920",
+        "action": {
+          "type": "send message",
+          "content": "Let's play a guessing game. Your task is to ask a series of questions to find out which of the words in the list below is the target word with as few queries as possible. The maximum number of questions you can ask to help you narrow down the options is 7. Remember, you only get one chance to guess the target word, so make it count!\n\nThe rules of the game are: \n\n1. Only ask one question per turn. DO NOT ASK MORE THAN ONE QUESTION.\n\n2. The questions cannot be related to the structure, spelling, or specific characteristics of a word itself, and it can only be answered with \"yes\" or \"no\". \n\n3. Use the following format for asking questions and DO NOT ADD ANY TEXT OTHER THAN THIS: \n\nQUESTION: <your question>\n\n4. You have only one opportunity to guess the target word. To make your guess, use the following format and DO NOT ADD ANY TEXT OTHER THAN THIS: \n\nGUESS: <target word>\n\nRemember you cannot ask for a hint. Make your question brief. Let’s start!\n\nList of candidate words: ['biography', 'horror', 'hierarchy', 'marxism', 'surrealism', 'gothic', 'islam', 'wiccan']",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:36.791887",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word associated with a specific group of people?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:36.791996",
+        "action": {
+          "type": "send message",
+          "content": "Let’s play a guessing game! Your task is to answer the other player's questions. Based on your knowledge of the word: gothic, respond to the following questions or guesses. Limit your response to only 'yes' or 'no' with no explanation or other words. Never reveal the answer in your response.\n\nYou must reply using the format below and DO NOT ADD ANY TEXT OTHER THAN THIS:\n\nANSWER: <some text>\n\nTarget Word: gothic\n\nQUESTION: Is the target word associated with a specific group of people?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:37.034865",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:37.034939",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:37.595275",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word associated with a religion?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:37.595383",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word associated with a religion?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:37.838887",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:37.838963",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:38.484218",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word associated with a major world religion?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:38.484329",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word associated with a major world religion?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:38.730241",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: no",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:38.730314",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: no",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:39.380049",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word associated with a new religious movement?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:39.380196",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word associated with a new religious movement?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:39.626617",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:39.626690",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:40.198502",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Does the target word originate from Western culture?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:40.198615",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Does the target word originate from Western culture?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:40.447399",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:40.447473",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:41.281292",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word associated with a practice that involves magic or supernatural elements?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:41.281408",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word associated with a practice that involves magic or supernatural elements?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:41.533015",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:41.533088",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:42.280563",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word associated with a practice that involves witchcraft?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:42.280678",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word associated with a practice that involves witchcraft?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:42.532548",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:42.532621",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:42.931684",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: wiccan",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:42.931772",
+        "action": {
+          "type": "incorrect guess",
+          "content": "wiccan"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:42.931795",
+        "action": {
+          "type": "incorrect guess",
+          "content": "end game"
+        }
+      }
+    ]
+  ]
+}

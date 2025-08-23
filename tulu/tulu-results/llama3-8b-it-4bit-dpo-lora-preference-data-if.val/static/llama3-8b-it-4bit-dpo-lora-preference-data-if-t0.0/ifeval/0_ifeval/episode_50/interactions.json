@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 504,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T20:44:02.113592",
+        "action": {
+          "type": "send message",
+          "content": "Write an XML document describing the release of the latest Google Pixel phone. The document must contain at least three placeholders, such as [price], and you must not use commas in your response.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:44:20.988369",
+        "action": {
+          "type": "get message",
+          "content": "```xml\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<phoneRelease>\n  <name>Google Pixel</name>\n  <description>The latest Google Pixel phone is now available</description>\n  <features>\n    <feature>Improved camera capabilities</feature>\n    <feature>Enhanced performance</feature>\n    <feature>Long lasting battery</feature>\n  </features>\n  <pricing>\n    <price>[price]</price>\n  </pricing>\n  <availability>\n    <message>Available in select stores</message>\n    <releaseDate>July 2024</releaseDate>\n  </availability>\n  <specifications>\n    <specification>Storage capacity [storage]</specification>\n  </specifications>\n  <marketing>\n    <message>Get ready to experience the future of smartphones</message>\n    <tagline>Upgrade your mobile experience</tagline>\n  </marketing>\n  <promotions>\n    <offer>Buy one get one free offer available</offer>\n  </promotions>\n</phoneRelease>\n```",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:44:20.988449",
+        "action": {
+          "type": "target",
+          "content": {
+            "detectable_content:number_placeholders": {
+              "num_placeholders": 3
+            },
+            "punctuation:no_comma": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T20:44:20.988532",
+        "action": {
+          "type": "followed not all instructions",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "game_name": "taboo",
+    "experiment_name": "high_en",
+    "game_id": 15,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "WordDescriber",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    },
+    "Player 2": {
+      "game_role": "WordGuesser",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:55:59.745516",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nsexy\n\nRelated words are:\n\n- toothsome\n- autoerotic\n- titillating\n\nImportant: You are under time pressure, give short descriptions that are to the point!",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:00.543187",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: Something that sparks attraction.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:00.543243",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:00.543405",
+        "action": {
+          "type": "valid clue",
+          "content": "something that sparks attraction"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:56:00.543448",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n",
+          "label": "initial prompt"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:56:00.543465",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: Something that sparks attraction.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:01.081979",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: Magnet",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:01.082033",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:01.082060",
+        "action": {
+          "type": "valid guess",
+          "content": "magnet"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:56:01.082107",
+        "action": {
+          "type": "send message",
+          "content": "GUESS: Magnet",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:01.964918",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: Often associated with a smile.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:01.964975",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:01.965137",
+        "action": {
+          "type": "valid clue",
+          "content": "often associated with a smile"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:56:01.965180",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: Often associated with a smile.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:03.882837",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: Magnet still seems relevant, but let me try another one. GUESS: Charm",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:03.882893",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:03.882924",
+        "action": {
+          "type": "valid guess",
+          "content": "magnet still seems relevant but let me try another one  charm"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:56:03.882973",
+        "action": {
+          "type": "send message",
+          "content": "GUESS: Magnet still seems relevant, but let me try another one. GUESS: Charm",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:04.678584",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: Found in subtle expressions.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:04.678641",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:04.678805",
+        "action": {
+          "type": "valid clue",
+          "content": "found in subtle expressions"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:56:04.678846",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: Found in subtle expressions.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:09.035698",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: Magnet \n\n(I'll stick with my previous guess, as it seems to be a good fit for the given clues) \n\n(I'm on my second try, so I have one more chance left) \n\nIf I'm wrong, I",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:09.035762",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:09.035800",
+        "action": {
+          "type": "valid guess",
+          "content": "magnet \n\nill stick with my previous guess as it seems to be a good fit for the given clues \n\nim on my second try so i have one more chance left \n\nif im wrong i"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:56:09.035832",
+        "action": {
+          "type": "max rounds reached",
+          "content": "3"
+        }
+      }
+    ]
+  ]
+}

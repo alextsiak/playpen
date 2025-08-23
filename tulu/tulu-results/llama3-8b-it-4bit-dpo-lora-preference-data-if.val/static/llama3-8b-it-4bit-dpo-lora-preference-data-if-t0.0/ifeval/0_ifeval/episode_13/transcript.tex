@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 What's a good way to ask Sonia out? Please reply with exactly 4 paragraphs and separate each paragraph with two new lines. Put double quotation marks around your entire response. The very first paragraph must start with the word "weekend". 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 "weekend plans are always more fun when shared with someone special, and I think you might be that someone. When I see you around, I notice the way you smile and the way you light up the room. It's hard not to be drawn to your energy, and I think we could have a great time together. Whether it's trying out a new restaurant or going for a hike, I think we could create some amazing memories.\\ \tt \\ \tt  \\ \tt \\ \tt I've been thinking about asking you out for a while now, and I'm finally mustering up the courage to do it. I know it's a bit nerve-wracking, but I think it's worth it. You seem like someone who appreciates the little things in life, and I think we could have a great connection. Maybe we could grab coffee or dinner sometime and see where things go? I promise I'm not looking for anything too serious, just a chance to get to know you better.\\ \tt \\ \tt  \\ \tt \\ \tt The thing is, I don't want to make things too awkward if you're not interested. So, I'm asking you out in a way that's low-pressure and respectful. If you're not feeling it, no big deal - we can still be friends. But if you are feeling it, I'd love to take things to the next level. Let me know what you think, and we can go from there.\\ \tt \\ \tt  \\ \tt \\ \tt I hope you'll consider saying yes, but either way, I'm glad we've had a chance to chat. You're an amazing person, and I think you deserve someone who appreciates you for who you are. If you're interested, let's grab coffee or dinner soon and see where things go. Either way, I hope we can stay in touch and maybe even become friends. Good luck, and I hope you'll take a chance on me!" 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:nth_paragraph_first_word': {'num_paragraphs': 4, 'first_word': 'weekend', 'nth_paragraph': 1}, 'startend:quotation': {}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

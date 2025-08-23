@@ -1,0 +1,364 @@
+{
+  "meta": {
+    "game_name": "matchit_ascii",
+    "experiment_name": "similar_grid_2",
+    "game_id": 2,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    },
+    "Player 2": {
+      "game_role": "MatchItPlayer",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:46:50.525640",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\nX ▢ ▢ ▢ X\nX X ▢ X X\nX ▢ X ▢ X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:46:54.340696",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: X ▢ ▢ ▢ X\nX X ▢ X X\nX ▢ X ▢ X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:46:54.340755",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:46:54.340797",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this grid and another picture only I can see, are the same.\nPlease describe your grid first. Then, I will provide my description and we can ask each other questions about the grids to figure out whether they are the same. Now start your short grid description with \"DESCRIPTION:\" followed by the description. Do not add anything else. This is your grid:\nX ▢ ▢ ▢ X\nX ▢ ▢ X X\nX X X ▢ X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:46:58.158571",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: X ▢ ▢ ▢ X\nX ▢ ▢ X X\nX X X ▢ X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:46:58.158630",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:46:58.158666",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: X ▢ ▢ ▢ X\nX X ▢ X X\nX ▢ X ▢ X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nNow ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:46:59.821810",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any instances of three ▢ symbols in a row in your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:46:59.821870",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:46:59.821921",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: X ▢ ▢ ▢ X\nX ▢ ▢ X X\nX X X ▢ X\nX ▢ ▢ ▢ X\nX ▢ ▢ ▢ X\nQUESTION: Are there any instances of three ▢ symbols in a row in your grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:00.360113",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:00.360171",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:47:00.360204",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:02.024697",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any instances of two X symbols next to each other in your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:02.024758",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:47:02.024798",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes.\nQUESTION: Are there any instances of two X symbols next to each other in your grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:04.379856",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: No. \n\nQUESTION: Are there any instances of a single X symbol isolated from other X symbols in your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:04.379917",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:47:04.379952",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:05.876134",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any ▢ symbols in the top row of your grid?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:05.876194",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:47:05.876244",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: No. \n\nQUESTION: Are there any instances of a single X symbol isolated from other X symbols in your grid?\nQUESTION: Are there any ▢ symbols in the top row of your grid? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:10.211656",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: Yes. \n\nQUESTION: Are there any ▢ symbols in the top row of your grid? \n\n(I'll answer this one since it was already asked) \n\nANSWER: No. \n\n(I'll answer the second part of your new",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:10.211721",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:47:10.211757",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my grid that may be different to your grid. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:11.767710",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any rows in your grid that consist entirely of ▢ symbols?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:11.767773",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:47:11.767818",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: Yes. \n\nQUESTION: Are there any ▢ symbols in the top row of your grid? \n\n(I'll answer this one since it was already asked) \n\nANSWER: No. \n\n(I'll answer the second part of your new\nQUESTION: Are there any rows in your grid that consist entirely of ▢ symbols? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:13.240564",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any rows in your grid that consist entirely of X symbols?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:13.240623",
+        "action": {
+          "type": "invalid format",
+          "content": "abort, first word: QUESTION:, but expected ANSWER:"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:47:13.240640",
+        "action": {
+          "type": "Game over",
+          "content": "Aborted"
+        }
+      }
+    ]
+  ]
+}

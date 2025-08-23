@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "game_name": "guesswhat",
+    "experiment_name": "Level_3",
+    "game_id": 9,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:26.679014",
+        "action": {
+          "type": "send message",
+          "content": "Let's play a guessing game. Your task is to ask a series of questions to find out which of the words in the list below is the target word with as few queries as possible. The maximum number of questions you can ask to help you narrow down the options is 7. Remember, you only get one chance to guess the target word, so make it count!\n\nThe rules of the game are: \n\n1. Only ask one question per turn. DO NOT ASK MORE THAN ONE QUESTION.\n\n2. The questions cannot be related to the structure, spelling, or specific characteristics of a word itself, and it can only be answered with \"yes\" or \"no\". \n\n3. Use the following format for asking questions and DO NOT ADD ANY TEXT OTHER THAN THIS: \n\nQUESTION: <your question>\n\n4. You have only one opportunity to guess the target word. To make your guess, use the following format and DO NOT ADD ANY TEXT OTHER THAN THIS: \n\nGUESS: <target word>\n\nRemember you cannot ask for a hint. Make your question brief. Let’s start!\n\nList of candidate words: ['Shorts', 'Jeans', 'Pants', 'Panties', 'Leggings', 'Suit', 'Underwear', 'Bra']",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:27.279150",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word something that women typically wear?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:27.279259",
+        "action": {
+          "type": "send message",
+          "content": "Let’s play a guessing game! Your task is to answer the other player's questions. Based on your knowledge of the word: Bra, respond to the following questions or guesses. Limit your response to only 'yes' or 'no' with no explanation or other words. Never reveal the answer in your response.\n\nYou must reply using the format below and DO NOT ADD ANY TEXT OTHER THAN THIS:\n\nANSWER: <some text>\n\nTarget Word: Bra\n\nQUESTION: Is the target word something that women typically wear?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:27.521685",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:27.521759",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:28.124308",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word typically worn for formal occasions?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:28.124414",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word typically worn for formal occasions?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:28.368406",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: no",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:28.368481",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: no",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:29.101924",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word something that is worn on the lower body?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:29.102038",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word something that is worn on the lower body?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:29.348564",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: no",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:29.348638",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: no",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:30.084544",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word something that is worn on the upper body?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:30.084655",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word something that is worn on the upper body?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:30.329938",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:30.330011",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:31.205958",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word something that is worn by women for support or modesty?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:31.206073",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word something that is worn by women for support or modesty?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:31.452571",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:31.452644",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:32.241660",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word something that is worn by women as outerwear?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:32.241772",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word something that is worn by women as outerwear?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:32.491587",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: no",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:32.491660",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: no",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:33.370460",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word something that is worn by women as an undergarment?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:33.370575",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word something that is worn by women as an undergarment?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:33.621285",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:33.621358",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:33.930689",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: Bra",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:33.930767",
+        "action": {
+          "type": "correct guess",
+          "content": "bra"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:33.930789",
+        "action": {
+          "type": "correct guess",
+          "content": "end game"
+        }
+      }
+    ]
+  ]
+}

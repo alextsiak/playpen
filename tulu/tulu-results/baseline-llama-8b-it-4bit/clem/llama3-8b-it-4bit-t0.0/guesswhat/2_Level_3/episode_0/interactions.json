@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "game_name": "guesswhat",
+    "experiment_name": "Level_3",
+    "game_id": 2,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Guesser",
+      "model_name": "llama3-8b-it-4bit"
+    },
+    "Player 2": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:21.383038",
+        "action": {
+          "type": "send message",
+          "content": "Let's play a guessing game. Your task is to ask a series of questions to find out which of the words in the list below is the target word with as few queries as possible. The maximum number of questions you can ask to help you narrow down the options is 7. Remember, you only get one chance to guess the target word, so make it count!\n\nThe rules of the game are: \n\n1. Only ask one question per turn. DO NOT ASK MORE THAN ONE QUESTION.\n\n2. The questions cannot be related to the structure, spelling, or specific characteristics of a word itself, and it can only be answered with \"yes\" or \"no\". \n\n3. Use the following format for asking questions and DO NOT ADD ANY TEXT OTHER THAN THIS: \n\nQUESTION: <your question>\n\n4. You have only one opportunity to guess the target word. To make your guess, use the following format and DO NOT ADD ANY TEXT OTHER THAN THIS: \n\nGUESS: <target word>\n\nRemember you cannot ask for a hint. Make your question brief. Let’s start!\n\nList of candidate words: ['Pear', 'Apple', 'Plum', 'Peach', 'Lemon', 'Orange', 'Pine', 'Cedar']",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:21.941491",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word typically eaten as fruit?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:21.941599",
+        "action": {
+          "type": "send message",
+          "content": "Let’s play a guessing game! Your task is to answer the other player's questions. Based on your knowledge of the word: Peach, respond to the following questions or guesses. Limit your response to only 'yes' or 'no' with no explanation or other words. Never reveal the answer in your response.\n\nYou must reply using the format below and DO NOT ADD ANY TEXT OTHER THAN THIS:\n\nANSWER: <some text>\n\nTarget Word: Peach\n\nQUESTION: Is the target word typically eaten as fruit?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:22.183756",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:22.183831",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:22.652665",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word commonly red?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:22.652768",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word commonly red?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:22.896645",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: no",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:22.896718",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: no",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:23.454017",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Does the target word grow on a tree?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:23.454121",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Does the target word grow on a tree?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:23.700019",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:23.700090",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:24.306522",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word often used for making juice?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:24.306632",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word often used for making juice?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:24.552432",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:24.552504",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:25.300692",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Does the target word have a pit or stone in the center?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:25.300812",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Does the target word have a pit or stone in the center?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:25.547136",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:25.547208",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:26.118844",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the target word typically yellow when ripe?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-07-21T11:42:26.118956",
+        "action": {
+          "type": "send message",
+          "content": "QUESTION: Is the target word typically yellow when ripe?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:26.365967",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: yes",
+          "label": "response"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:42:26.366040",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: yes",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:26.676073",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: Lemon",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:26.676148",
+        "action": {
+          "type": "incorrect guess",
+          "content": "lemon"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:42:26.676170",
+        "action": {
+          "type": "incorrect guess",
+          "content": "end game"
+        }
+      }
+    ]
+  ]
+}

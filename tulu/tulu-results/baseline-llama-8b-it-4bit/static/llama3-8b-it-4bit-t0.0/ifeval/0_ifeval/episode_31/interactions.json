@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "game_name": "ifeval",
+    "experiment_name": "ifeval",
+    "game_id": 294,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "InstructionFollower",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T12:45:48.779248",
+        "action": {
+          "type": "send message",
+          "content": "Write an email to your friend about what triggers you. Make sure to wrap the entire email in double quotation marks.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:46:02.191039",
+        "action": {
+          "type": "get message",
+          "content": "\"Dear [Friend's Name],\n\nI hope this email finds you well. I wanted to take a moment to talk to you about something that's been on my mind lately. As you know, we've been friends for a long time, and I value our relationship deeply. However, there are a few things that tend to trigger me, and I thought it would be helpful to share them with you.\n\nFirstly, I get really frustrated when people interrupt me while I'm speaking. I know it's not always intentional, but it makes me feel like my thoughts and opinions aren't being valued. I'd appreciate it if you could make an effort to let me finish speaking before responding.\n\nSecondly, I'm sensitive to criticism, especially when it's not constructive. I know we all have different opinions, and I'm open to hearing yours, but please try to phrase it in a way that's not hurtful or condescending.\n\nLastly, I get anxious when plans change at the last minute. I like to plan ahead and make sure everyone is on the same page, so if you need to make changes, please give me as much notice as possible.\n\nI know these are just small things, but they can make a big difference in how I feel. I appreciate your understanding and support.\n\nBest,\n[Your Name]\"",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:46:02.191101",
+        "action": {
+          "type": "target",
+          "content": {
+            "startend:quotation": {}
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T12:46:02.191130",
+        "action": {
+          "type": "followed all instructions",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

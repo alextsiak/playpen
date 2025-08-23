@@ -1,0 +1,6751 @@
+{
+  "meta": {
+    "game_name": "adventuregame",
+    "experiment_name": "home_deliver_three_basic_hard_invlimittwo",
+    "game_id": 13,
+    "results_folder": "llama3-8b-it-4bit-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en"
+      ],
+      "license": {
+        "name": "Meta Llama 3 Community License",
+        "url": "https://github.com/meta-llama/llama3/blob/main/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-06-18"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Adventurer",
+      "model_name": "llama3-8b-it-4bit"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:42.103218",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a text adventure game. I will describe what you can perceive in the game. You write the single action you want to take in the game starting with >. Only reply with an action.\nFor example:\n> open cupboard\n\nYou can have up to two objects in your inventory at the same time.\n\nYour goal for this game is: Put the potted plant on the table, the book in the refrigerator and the mop in the wardrobe.\n\nOnce you have achieved your goal, write \"> done\" to end the game.\n\nYou are in a kitchen now. There are a cupboard and a counter. The cupboard is closed. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.303914",
+        "action": {
+          "type": "get message",
+          "content": "> open cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.303963",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 0"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.308053",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "open",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "in",
+                  "plate1",
+                  "cupboard1"
+                ],
+                [
+                  "open",
+                  "cupboard1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 3,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ]
+              ],
+              "known_entities_ratio": 0.13793103448275862,
+              "visited_rooms": [
+                "kitchen1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.308110",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:42.308155",
+        "action": {
+          "type": "send message",
+          "content": "The cupboard is now open. In the cupboard there is a plate.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.511648",
+        "action": {
+          "type": "get message",
+          "content": "> take plate",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.511695",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 1"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.515884",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "take",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ]
+              ],
+              "known_entities_ratio": 0.13793103448275862,
+              "visited_rooms": [
+                "kitchen1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.515931",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:42.515976",
+        "action": {
+          "type": "send message",
+          "content": "You take the plate. In your inventory you have a plate.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.763666",
+        "action": {
+          "type": "get message",
+          "content": "> look at cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.763714",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 2"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.765573",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ]
+              ],
+              "known_entities_ratio": 0.13793103448275862,
+              "visited_rooms": [
+                "kitchen1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:42.765621",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:42.765664",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.101766",
+        "action": {
+          "type": "get message",
+          "content": "> take plate out of cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.101816",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 3"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.106315",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_already_inventory",
+            "arg": {
+              "failed_action_type": "take",
+              "failed_precon_predicate": {
+                "not": {
+                  "predicate_tuple": [
+                    "in",
+                    "plate1",
+                    "inventory"
+                  ],
+                  "fulfilled": true,
+                  "precon_idx": 2
+                },
+                "fulfilled": false
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ]
+              ],
+              "known_entities_ratio": 0.13793103448275862,
+              "visited_rooms": [
+                "kitchen1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.106376",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:43.106423",
+        "action": {
+          "type": "send message",
+          "content": "The plate is already in your inventory.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.401320",
+        "action": {
+          "type": "get message",
+          "content": "> put plate in cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.401370",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 4"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.407249",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "put",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ]
+              ],
+              "known_entities_ratio": 0.13793103448275862,
+              "visited_rooms": [
+                "kitchen1"
+              ],
+              "visited_rooms_ratio": 0.16666666666666666,
+              "known_goal_entities": [],
+              "known_goal_entities_ratio": 0.0
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.407298",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:43.407343",
+        "action": {
+          "type": "send message",
+          "content": "You put the plate in the cupboard.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.658644",
+        "action": {
+          "type": "get message",
+          "content": "> go to pantry",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.658695",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 5"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.663485",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "closed",
+                  "freezer1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "exit",
+                  "pantry1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "closed",
+                  "refrigerator1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 6,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.20689655172413793,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.663560",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:43.663605",
+        "action": {
+          "type": "send message",
+          "content": "You are in a pantry now. There are a freezer and a refrigerator. The freezer is closed. The refrigerator is closed. There is a passage to a kitchen here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.871798",
+        "action": {
+          "type": "get message",
+          "content": "> open refrigerator",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.871848",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 6"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.876194",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "open",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "in",
+                  "sandwich1",
+                  "refrigerator1"
+                ],
+                [
+                  "open",
+                  "refrigerator1"
+                ],
+                [
+                  "in",
+                  "banana1",
+                  "refrigerator1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "in",
+                  "apple1",
+                  "refrigerator1"
+                ],
+                [
+                  "in",
+                  "peach1",
+                  "refrigerator1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ],
+                [
+                  "in",
+                  "orange1",
+                  "refrigerator1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 11,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:43.876293",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:43.876338",
+        "action": {
+          "type": "send message",
+          "content": "The refrigerator is now open. In the refrigerator there are a orange, a sandwich, a apple, a banana and a peach.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.096136",
+        "action": {
+          "type": "get message",
+          "content": "> take book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.096187",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 7"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.099708",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "take",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "book1",
+                  "pantry1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.099788",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:44.099833",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a book here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.363816",
+        "action": {
+          "type": "get message",
+          "content": "> go to kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.363864",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 8"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.368937",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.369010",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:44.369055",
+        "action": {
+          "type": "send message",
+          "content": "You are in a kitchen now. There are a cupboard, a plate and a counter. The cupboard is open. The plate is in the cupboard. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.636836",
+        "action": {
+          "type": "get message",
+          "content": "> go to pantry",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.636886",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 9"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.642382",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.642456",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:44.642500",
+        "action": {
+          "type": "send message",
+          "content": "You are in a pantry now. There are a freezer, a peach, a banana, a sandwich, a orange, a refrigerator and a apple. The freezer is closed. The peach is in the refrigerator. The banana is in the refrigerator. The sandwich is in the refrigerator. The orange is in the refrigerator. The refrigerator is open. The apple is in the refrigerator. There is a passage to a kitchen here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.870898",
+        "action": {
+          "type": "get message",
+          "content": "> take book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.870947",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 10"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.874471",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "take",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "book1",
+                  "pantry1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:44.874548",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:44.874592",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a book here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.146695",
+        "action": {
+          "type": "get message",
+          "content": "> go to hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.146745",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 11"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.151568",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "no_exit_to",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "exit",
+                  "pantry1",
+                  "hallway1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 2
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.151650",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:45.151696",
+        "action": {
+          "type": "send message",
+          "content": "You can't go to a hallway from here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.382932",
+        "action": {
+          "type": "get message",
+          "content": "> close cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.382984",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 12"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.386337",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "close",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "cupboard1",
+                  "pantry1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.386416",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:45.386461",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a cupboard here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.661121",
+        "action": {
+          "type": "get message",
+          "content": "> go to kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.661173",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 13"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.666398",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.666471",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:45.666517",
+        "action": {
+          "type": "send message",
+          "content": "You are in a kitchen now. There are a cupboard, a plate and a counter. The cupboard is open. The plate is in the cupboard. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.905937",
+        "action": {
+          "type": "get message",
+          "content": "> take book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.905990",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 14"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.909342",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "take",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "book1",
+                  "kitchen1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:45.909420",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:45.909465",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a book here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.194049",
+        "action": {
+          "type": "get message",
+          "content": "> go to pantry",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.194103",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 15"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.199752",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.199825",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:46.199872",
+        "action": {
+          "type": "send message",
+          "content": "You are in a pantry now. There are a freezer, a peach, a banana, a sandwich, a orange, a refrigerator and a apple. The freezer is closed. The peach is in the refrigerator. The banana is in the refrigerator. The sandwich is in the refrigerator. The orange is in the refrigerator. The refrigerator is open. The apple is in the refrigerator. There is a passage to a kitchen here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.456409",
+        "action": {
+          "type": "get message",
+          "content": "> take book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.456463",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 16"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.460068",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "take",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "book1",
+                  "pantry1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.460146",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:46.460192",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a book here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.761121",
+        "action": {
+          "type": "get message",
+          "content": "> go to kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.761175",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 17"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.766298",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:46.766370",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:46.766415",
+        "action": {
+          "type": "send message",
+          "content": "You are in a kitchen now. There are a cupboard, a plate and a counter. The cupboard is open. The plate is in the cupboard. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.068514",
+        "action": {
+          "type": "get message",
+          "content": "> look around kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.068575",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 18"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.070612",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.070682",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:47.070727",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.379544",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.379596",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 19"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.383657",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "domain_trait_type_mismatch",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_parameter": "cupboard"
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.383734",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:47.383780",
+        "action": {
+          "type": "send message",
+          "content": "Cupboard is not a room.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.779063",
+        "action": {
+          "type": "get message",
+          "content": "> take plate out of cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.779117",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 20"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.784795",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "take",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:47.784865",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:47.784910",
+        "action": {
+          "type": "send message",
+          "content": "You take the plate. In your inventory you have a plate.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.135800",
+        "action": {
+          "type": "get message",
+          "content": "> put plate on counter",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.135852",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 21"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.141923",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "put",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.141992",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:48.142037",
+        "action": {
+          "type": "send message",
+          "content": "You put the plate on the counter.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.451765",
+        "action": {
+          "type": "get message",
+          "content": "> go to pantry",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.451816",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 22"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.457438",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.457511",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:48.457557",
+        "action": {
+          "type": "send message",
+          "content": "You are in a pantry now. There are a freezer, a peach, a banana, a sandwich, a orange, a refrigerator and a apple. The freezer is closed. The peach is in the refrigerator. The banana is in the refrigerator. The sandwich is in the refrigerator. The orange is in the refrigerator. The refrigerator is open. The apple is in the refrigerator. There is a passage to a kitchen here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.727342",
+        "action": {
+          "type": "get message",
+          "content": "> take sandwich",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.727393",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 23"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.731950",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "take",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:48.732017",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:48.732062",
+        "action": {
+          "type": "send message",
+          "content": "You take the sandwich. In your inventory you have a sandwich.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.092935",
+        "action": {
+          "type": "get message",
+          "content": "> put sandwich in refrigerator",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.092986",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 24"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.099330",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "put",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.099399",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:49.099444",
+        "action": {
+          "type": "send message",
+          "content": "You put the sandwich in the refrigerator.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.415916",
+        "action": {
+          "type": "get message",
+          "content": "> go to kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.415969",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 25"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.421202",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.421277",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:49.421323",
+        "action": {
+          "type": "send message",
+          "content": "You are in a kitchen now. There are a cupboard, a plate and a counter. The cupboard is open. The plate is on the counter. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.749358",
+        "action": {
+          "type": "get message",
+          "content": "> go to pantry",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.749409",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 26"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.754991",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:49.755064",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:49.755111",
+        "action": {
+          "type": "send message",
+          "content": "You are in a pantry now. There are a freezer, a peach, a banana, a sandwich, a orange, a refrigerator and a apple. The freezer is closed. The peach is in the refrigerator. The banana is in the refrigerator. The sandwich is in the refrigerator. The orange is in the refrigerator. The refrigerator is open. The apple is in the refrigerator. There is a passage to a kitchen here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.043081",
+        "action": {
+          "type": "get message",
+          "content": "> take book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.043133",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 27"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.046734",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "take",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "book1",
+                  "pantry1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.046813",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:50.046859",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a book here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.383135",
+        "action": {
+          "type": "get message",
+          "content": "> go to hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.383185",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 28"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.388303",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "no_exit_to",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "exit",
+                  "pantry1",
+                  "hallway1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 2
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.388387",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:50.388434",
+        "action": {
+          "type": "send message",
+          "content": "You can't go to a hallway from here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.725655",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.725707",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 29"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.729729",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "domain_trait_type_mismatch",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_parameter": "cupboard"
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:50.729805",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:50.729850",
+        "action": {
+          "type": "send message",
+          "content": "Cupboard is not a room.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.200772",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard and look inside",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.200821",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 30"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.204519",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "malformed_command",
+            "arg": "{'type': 'unknown', 'arg1': 'go'}",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.204597",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:51.204643",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what you mean.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.500275",
+        "action": {
+          "type": "get message",
+          "content": "> open cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.500325",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 31"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.503816",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "open",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "cupboard1",
+                  "pantry1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.503897",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:51.503943",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a cupboard here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.846412",
+        "action": {
+          "type": "get message",
+          "content": "> go to kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.846463",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 32"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.851507",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:51.851581",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:51.851627",
+        "action": {
+          "type": "send message",
+          "content": "You are in a kitchen now. There are a cupboard, a plate and a counter. The cupboard is open. The plate is on the counter. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.202406",
+        "action": {
+          "type": "get message",
+          "content": "> look at cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.202459",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 33"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.204469",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.204546",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:52.204591",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.554810",
+        "action": {
+          "type": "get message",
+          "content": "> go to pantry",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.554861",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 34"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.560561",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.560634",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:52.560680",
+        "action": {
+          "type": "send message",
+          "content": "You are in a pantry now. There are a freezer, a peach, a banana, a sandwich, a orange, a refrigerator and a apple. The freezer is closed. The peach is in the refrigerator. The banana is in the refrigerator. The sandwich is in the refrigerator. The orange is in the refrigerator. The refrigerator is open. The apple is in the refrigerator. There is a passage to a kitchen here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.873774",
+        "action": {
+          "type": "get message",
+          "content": "> take book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.873825",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 35"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.877486",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "take",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "book1",
+                  "pantry1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:52.877565",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:52.877609",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a book here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:53.233034",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:53.233086",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 36"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:53.237225",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "domain_trait_type_mismatch",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_parameter": "cupboard"
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:53.237300",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:53.237345",
+        "action": {
+          "type": "send message",
+          "content": "Cupboard is not a room.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:53.726403",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard and look inside",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:53.726455",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 37"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:53.730262",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "malformed_command",
+            "arg": "{'type': 'unknown', 'arg1': 'go'}",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:53.730332",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:53.730378",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what you mean.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.089492",
+        "action": {
+          "type": "get message",
+          "content": "> look inside cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.089546",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 38"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.092008",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.092080",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:54.092125",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.600983",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard and take book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.601033",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 39"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.604774",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "malformed_command",
+            "arg": "{'type': 'unknown', 'arg1': 'go'}",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.604845",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:54.604891",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what you mean.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.982585",
+        "action": {
+          "type": "get message",
+          "content": "> go to hallway",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.982636",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 40"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.986964",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "no_exit_to",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "exit",
+                  "pantry1",
+                  "hallway1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 2
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:54.987045",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:54.987090",
+        "action": {
+          "type": "send message",
+          "content": "You can't go to a hallway from here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:55.367361",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:55.367414",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 41"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:55.371350",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "domain_trait_type_mismatch",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_parameter": "cupboard"
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:55.371424",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:55.371469",
+        "action": {
+          "type": "send message",
+          "content": "Cupboard is not a room.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:55.887468",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard and take book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:55.887520",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 42"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:55.892026",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "malformed_command",
+            "arg": "{'type': 'unknown', 'arg1': 'go'}",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:55.892097",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:55.892141",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what you mean.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:56.405692",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard and look inside",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:56.405745",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 43"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:56.409585",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "malformed_command",
+            "arg": "{'type': 'unknown', 'arg1': 'go'}",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:56.409656",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:56.409701",
+        "action": {
+          "type": "send message",
+          "content": "I don't know what you mean.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:56.793933",
+        "action": {
+          "type": "get message",
+          "content": "> go to kitchen",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:56.793984",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 44"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:56.799274",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:56.799348",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:56.799393",
+        "action": {
+          "type": "send message",
+          "content": "You are in a kitchen now. There are a cupboard, a plate and a counter. The cupboard is open. The plate is on the counter. There are passages to a pantry and a hallway here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.188719",
+        "action": {
+          "type": "get message",
+          "content": "> look at cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.188770",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 45"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.190830",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "undefined_action_verb",
+            "arg": "look",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "player1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.190898",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:57.190943",
+        "action": {
+          "type": "send message",
+          "content": "I don't know how to interpret this 'look' action.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.581060",
+        "action": {
+          "type": "get message",
+          "content": "> go to pantry",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.581111",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 46"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.586757",
+        "action": {
+          "type": "action_info",
+          "content": {
+            "action_type": "go",
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ]
+              ],
+              "effective_epistemic_gain_amount": 1,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.586830",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:57.586877",
+        "action": {
+          "type": "send message",
+          "content": "You are in a pantry now. There are a freezer, a peach, a banana, a sandwich, a orange, a refrigerator and a apple. The freezer is closed. The peach is in the refrigerator. The banana is in the refrigerator. The sandwich is in the refrigerator. The orange is in the refrigerator. The refrigerator is open. The apple is in the refrigerator. There is a passage to a kitchen here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.941665",
+        "action": {
+          "type": "get message",
+          "content": "> take book",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.941716",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 47"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.945389",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "entity_not_accessible",
+            "arg": {
+              "failed_action_type": "take",
+              "failed_precon_predicate": {
+                "predicate_tuple": [
+                  "at",
+                  "book1",
+                  "pantry1"
+                ],
+                "fulfilled": false,
+                "precon_idx": 1
+              }
+            },
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:57.945470",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:57.945515",
+        "action": {
+          "type": "send message",
+          "content": "You can't see a book here.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.343742",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.343792",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 48"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.347938",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "resolution",
+            "fail_type": "domain_trait_type_mismatch",
+            "arg": {
+              "failed_action_type": "go",
+              "failed_parameter": "cupboard"
+            },
+            "exploration_info": {
+              "action_epistemic": true,
+              "action_pragmatic": true,
+              "effective_epistemic_gain_facts": [],
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.348012",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-07-21T11:36:58.348058",
+        "action": {
+          "type": "send message",
+          "content": "Cupboard is not a room.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.878663",
+        "action": {
+          "type": "get message",
+          "content": "> go to cupboard and look inside",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.878715",
+        "action": {
+          "type": "metadata",
+          "content": "Round: 49"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.882540",
+        "action": {
+          "type": "action_fail",
+          "content": {
+            "phase": "parsing",
+            "fail_type": "malformed_command",
+            "arg": "{'type': 'unknown', 'arg1': 'go'}",
+            "exploration_info": {
+              "action_epistemic": false,
+              "action_pragmatic": false,
+              "effective_epistemic_gain_amount": 0,
+              "known_entities": [
+                [
+                  "at",
+                  "player1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "banana1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "apple1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "peach1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "cupboard1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "sandwich1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "plate1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "freezer1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ],
+                [
+                  "at",
+                  "counter1",
+                  "kitchen1"
+                ],
+                [
+                  "at",
+                  "orange1",
+                  "pantry1"
+                ]
+              ],
+              "known_entities_ratio": 0.3793103448275862,
+              "visited_rooms": [
+                "kitchen1",
+                "pantry1"
+              ],
+              "visited_rooms_ratio": 0.3333333333333333,
+              "known_goal_entities": [
+                [
+                  "at",
+                  "refrigerator1",
+                  "pantry1"
+                ]
+              ],
+              "known_goal_entities_ratio": 0.16666666666666666
+            }
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.882612",
+        "action": {
+          "type": "goal_status",
+          "content": {
+            "goal_states_achieved": [],
+            "turn_goal_score": 0
+          }
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.882640",
+        "action": {
+          "type": "turn_limit_reached",
+          "content": "Turn limit 50 reached, end episode."
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-07-21T11:36:58.882653",
+        "action": {
+          "type": "game_result",
+          "content": {
+            "goal_states_achieved": [],
+            "game_successfully_finished": false
+          }
+        }
+      }
+    ]
+  ],
+  "adventure_info": {
+    "variant": "basic",
+    "max_turns": 50,
+    "optimal_turns": 21,
+    "goal_count": 3
+  }
+}

@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Draft a blog post about Ripley's Aquarium. Make sure your blog post contains at least 7 placeholders represented by square brackets, such as [location]. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 **Dive into the Wonders of [Ripley's Aquarium Name]**\\ \tt \\ \tt Located in the heart of [location], [Ripley's Aquarium Name] is a world-renowned aquarium that offers an unforgettable experience for visitors of all ages. As one of the largest aquariums in the world, it boasts an incredible array of marine life from around the globe.\\ \tt \\ \tt **The Journey Begins**\\ \tt \\ \tt As you step into the aquarium, you're immediately immersed in an underwater world of wonder. The moment you enter, you're surrounded by the majestic sight of [number] sharks and rays gliding effortlessly through the crystal-clear waters of the [aquarium feature]. The sheer scale of the aquarium is awe-inspiring, with over [number] species of fish and other marine animals on display.\\ \tt \\ \tt **The Highlights**\\ \tt \\ \tt One of the main attractions at [Ripley's Aquarium Name] is the [aquarium feature], a massive tank that's home to a stunning array of marine life. Take a stroll through the [aquarium feature] and get up close and personal with the incredible creatures that call it home. Be sure to check out the [aquarium feature] exhibit, where you can see [number] species of fish and other marine animals in a recreated [aquatic environment].\\ \tt \\ \tt **Interactive Experiences**\\ \tt \\ \tt But [Ripley's Aquarium Name] isn't just about looking at fish – it's also about getting involved. The aquarium offers a range of interactive experiences that let you get hands-on with the marine life. Take a [ride/attraction] through the [aquarium feature] and get a glimpse of the underwater world from a unique perspective. Or, try your hand at [activity] and see if you can [achieve goal].\\ \tt \\ \tt **Behind the Scenes**\\ \tt \\ \tt Ever wondered what goes on behind the scenes at an aquarium? [Ripley's Aquarium Name] offers a range of behind-the-scenes tours that give you a glimpse into the daily operations of the aquarium. From the [aquarium feature] to the [aquarium feature], you'll get to see the hard work and dedication that goes into caring for the incredible marine life on display.\\ \tt \\ \tt **Plan Your Visit**\\ \tt \\ \tt So why not plan a visit to [Ripley's Aquarium Name] today? With [number] exhibits, [number] species of fish, and a range of interactive experiences, there's something for everyone at this incredible aquarium. Whether you're a marine life enthusiast or just looking for a fun day out, [Ripley's Aquarium Name] is a must-visit destination.\\ \tt \\ \tt **Opening Hours and Ticket Information**\\ \tt \\ \tt * Opening hours: [opening hours]\\ \tt * Ticket prices: [ticket prices]\\ \tt * Address: [address]\\ \tt * Phone number: [phone number]\\ \tt \\ \tt **Get Ready to Dive In!**\\ \tt \\ \tt With its incredible array of marine life, interactive experiences, and behind-the-scenes tours, [Ripley's Aquarium Name] is a must-visit destination for anyone who loves the ocean. So why not plan a visit today and experience the wonders of the underwater world for yourself? 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'detectable_content:number_placeholders': {'num_placeholders': 7}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

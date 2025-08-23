@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+
+.game-round {
+  padding: 20px 0 20px 0;
+  background-color: #f0f8ff; /* light background for content */
+  position: relative; /* Important to position the badge */
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge in top-right corner */
+.game-round::before {
+  content: "Round " attr(data-round);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #c4c3c3;
+  padding: 0px 2px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for ifeval, episode 64 with llama3-8b-it-4bit-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+<div class="game-round" data-round="0">
+    <div speaker="GM (Game Master) to Player 1 (InstructionFollower)" class="msg gm-a" style="">
+        <p>Write a funny article about why the dinosaurs went extinct and put double quotations marks around your whole response. Include exactly 8 bullet points in your response. The bullet points should be in the form of:<br/>* This is bullet 1<br/>* This is bullet 2<br/>...</p>
+    </div>
+
+    <div speaker="Player 1 (InstructionFollower) to GM (Game Master)" class="msg a-gm" style="">
+        <p>&quot;**The Utterly Ridiculous, Totally-Not-Scientific Explanation for the Dinosaurs&#x27; Demise**&quot;<br/><br/>It&#x27;s a little-known fact that the dinosaurs didn&#x27;t actually go extinct due to a massive asteroid impact or a combination of volcanic eruptions and climate change. No, no, no. It&#x27;s much more complicated (and hilarious) than that. Here&#x27;s the real story:<br/><br/>* This is bullet 1: **The Great Dinosaur Dance Party**. It&#x27;s said that the dinosaurs were so tired of the same old T-Rex, Triceratops, and Stegosaurus dance moves that they decided to throw a massive dance party to end all dance parties. Unfortunately, the music was so bad that it caused a rift in the space-time continuum, leading to their extinction.<br/><br/>* This is bullet 2: **The Dinosaur Disco Disaster**. As the dinosaurs boogied the night away, their funky dance moves triggered a chain reaction of disco balls, platform shoes, and polyester suits, which ultimately led to a catastrophic explosion of sparkly, glittery goodness.<br/><br/>* This is bullet 3: **The Giant Squid Invasion**. It&#x27;s rumored that a group of giant squid, tired of being the ocean&#x27;s most feared predators, decided to take over the land and rule with an iron... tentacle. The dinosaurs, caught off guard by the cephalopod coup, were quickly overwhelmed and, well, you know the rest.<br/><br/>* This is bullet 4: **The Great Dinosaur Cook-Off**. In a bizarre twist, the dinosaurs were all competing in a cook-off to see who could make the tastiest T-Rex tacos. Unfortunately, the judges were a group of particularly picky pterodactyls, and the competition got out of hand, resulting in a culinary catastrophe.<br/><br/>* This is bullet 5: **The Dinosaur Disco Ball of Doom**. As the dinosaurs danced the night away, they accidentally created a massive disco ball that reflected the sun&#x27;s rays directly onto the Earth&#x27;s surface, causing a massive solar flare that wiped out the entire species.<br/><br/>* This is bullet 6: **The Time-Traveling Tourists**. A group of time-traveling tourists, tired of visiting the same old historical landmarks, decided to visit the Mesozoic Era and, well, let&#x27;s just say they didn&#x27;t exactly blend in with the locals.<br/><br/>* This is bullet 7: **The Dinosaur Disco Fever**. It&#x27;s said that the dinosaurs were so caught up in the excitement of the dance party that they started to dance themselves into a frenzy, causing a massive outbreak of disco fever that spread throughout the land and led to their extinction.<br/><br/>* This is bullet 8: **The Giant Space Hamster**. In a bizarre twist, a giant space hamster, tired of being cooped up in its space station, decided to take over the Earth and rule with an iron... paw. The dinosaurs, caught off guard by the hamster&#x27;s intergalactic ambitions, were quickly overwhelmed and, well, you know the rest.</p>
+    </div>
+
+    <div speaker="Game Master: target" class="msg gm-gm" style="">
+        <p>{&#x27;startend:quotation&#x27;: {}, &#x27;detectable_format:number_bullet_lists&#x27;: {&#x27;num_bullets&#x27;: 8}}</p>
+    </div>
+
+    <div speaker="Game Master: followed not all instructions" class="msg gm-gm" style="">
+        <p>game_result = LOSE</p>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

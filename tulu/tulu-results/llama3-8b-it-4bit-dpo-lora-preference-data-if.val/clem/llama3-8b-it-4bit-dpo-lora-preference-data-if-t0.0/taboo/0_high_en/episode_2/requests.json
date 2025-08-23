@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-08-21T19:55:54.982329",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Counting concept. Guesses start here.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:55:53.838361",
+        "call_duration": "0:00:01.143918",
+        "response": "CLUE: Counting concept. Guesses start here.",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:55:55.520538",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NUMBER<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:55:54.982622",
+        "call_duration": "0:00:00.537858",
+        "response": "GUESS: NUMBER",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:55:56.489345",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: NUMBER<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: NUMBER<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Found in math. Guesses.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:55:55.520680",
+        "call_duration": "0:00:00.968613",
+        "response": "CLUE: Found in math. Guesses.",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:55:57.113773",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NUMBER<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Found in math. Guesses.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NUMBER<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Found in math. Guesses.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: MATH<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:55:56.489606",
+        "call_duration": "0:00:00.624096",
+        "response": "GUESS: MATH",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:55:59.032663",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: NUMBER<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Found in math. Guesses.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: MATH<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nint\n\nRelated words are:\n\n- rpg\n- intelligence\n- programming\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: NUMBER<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Found in math. Guesses.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: MATH<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: Used in calculations. Guesses. \n\n(You're getting close, but be careful!)<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:55:57.113949",
+        "call_duration": "0:00:01.918657",
+        "response": "CLUE: Used in calculations. Guesses. \n\n(You're getting close, but be careful!)",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-21T19:55:59.742868",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NUMBER<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Found in math. Guesses.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: MATH<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Used in calculations. Guesses. \n\n(You're getting close, but be careful!)<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 50,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: Counting concept. Guesses start here.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: NUMBER<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Found in math. Guesses.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: MATH<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: Used in calculations. Guesses. \n\n(You're getting close, but be careful!)<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: CALCULUS<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-21 19:55:59.033008",
+        "call_duration": "0:00:00.709809",
+        "response": "GUESS: CALCULUS",
+        "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+      }
+    }
+  }
+]

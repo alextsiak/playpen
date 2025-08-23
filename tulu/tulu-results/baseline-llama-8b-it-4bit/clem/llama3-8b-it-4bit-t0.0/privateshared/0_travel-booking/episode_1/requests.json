@@ -1,0 +1,707 @@
+[
+  {
+    "timestamp": "2025-07-21T11:59:04.175824",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent already know your origin? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent already know your origin? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:03.885334",
+        "call_duration": "0:00:00.290444",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:04.467364",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Is the travel agent aware of your destination? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Is the travel agent aware of your destination? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:04.175949",
+        "call_duration": "0:00:00.291368",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:04.757129",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  If I asked the travel agent how you are travelling, would he or she know the answer? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  If I asked the travel agent how you are travelling, would he or she know the answer? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:04.467485",
+        "call_duration": "0:00:00.289596",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:05.049871",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows in which class the trip will happen? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows in which class the trip will happen? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:04.757253",
+        "call_duration": "0:00:00.292572",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:05.340078",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you informed the travel agent about your dates? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you informed the travel agent about your dates? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:05.049993",
+        "call_duration": "0:00:00.290039",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:05.340233",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "What is the next request?"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:05.340211",
+        "call_duration": "0:00:00.000005",
+        "response": "Please inform your destination.",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:05.630778",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:05.340297",
+        "call_duration": "0:00:00.290437",
+        "response": "ANSWER: Dresden.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:05.921604",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Has the travel agent been informed about your place of departure? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Has the travel agent been informed about your place of departure? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:05.630901",
+        "call_duration": "0:00:00.290656",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:06.213405",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  If I asked the travel agent where you want to go, would he or she know the answer? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  If I asked the travel agent where you want to go, would he or she know the answer? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:05.921724",
+        "call_duration": "0:00:00.291635",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:06.504360",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you believe that the travel agent is aware of how you are going to travel? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you believe that the travel agent is aware of how you are going to travel? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:06.213528",
+        "call_duration": "0:00:00.290788",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:06.796101",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows in which class the trip will happen? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows in which class the trip will happen? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:06.504482",
+        "call_duration": "0:00:00.291572",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:07.086437",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you told the travel agent when you want to travel? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you told the travel agent when you want to travel? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:06.796225",
+        "call_duration": "0:00:00.290167",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:07.086607",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "What is the next request?"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:07.086584",
+        "call_duration": "0:00:00.000005",
+        "response": "Please inform your place of departure.",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:07.379624",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:07.086665",
+        "call_duration": "0:00:00.292914",
+        "response": "ANSWER: Paris.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:07.672236",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent know where your trip is starting? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent know where your trip is starting? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:07.379751",
+        "call_duration": "0:00:00.292440",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:07.965430",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows where you want to go to? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows where you want to go to? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:07.672357",
+        "call_duration": "0:00:00.293027",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:08.259529",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Has the travel agent been informed about your preferred means of transportation? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Has the travel agent been informed about your preferred means of transportation? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:07.965552",
+        "call_duration": "0:00:00.293934",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:08.552049",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you informed the travel agent about your class preference? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you informed the travel agent about your class preference? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:08.259650",
+        "call_duration": "0:00:00.292353",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:08.845351",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you already mentioned the dates of your trip to the travel agent? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you already mentioned the dates of your trip to the travel agent? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:08.552168",
+        "call_duration": "0:00:00.293138",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:08.845523",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "What is the next request?"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:08.845500",
+        "call_duration": "0:00:00.000005",
+        "response": "Do you want a specific kind of transport?",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:09.137212",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:08.845581",
+        "call_duration": "0:00:00.291586",
+        "response": "ANSWER: Taxi.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:09.431352",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent already know your origin? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent already know your origin? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:09.137339",
+        "call_duration": "0:00:00.293967",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:09.725223",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you already mentioned the destination of your trip to the travel agent? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you already mentioned the destination of your trip to the travel agent? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:09.431473",
+        "call_duration": "0:00:00.293707",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:10.019974",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Is the travel agent aware of your means of transportation? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Is the travel agent aware of your means of transportation? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:09.725341",
+        "call_duration": "0:00:00.294586",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:10.314820",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent know your preference for class? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent know your preference for class? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:10.020096",
+        "call_duration": "0:00:00.294678",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:10.607915",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Is the travel agent aware of the dates of your trip? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Is the travel agent aware of the dates of your trip? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:10.314943",
+        "call_duration": "0:00:00.292928",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:10.608084",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "What is the next request?"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:10.608062",
+        "call_duration": "0:00:00.000005",
+        "response": "Do you have a preference for class?",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:10.902133",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:10.608143",
+        "call_duration": "0:00:00.293945",
+        "response": "ANSWER: First.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:11.195579",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you told the travel agent where you are leaving from? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you told the travel agent where you are leaving from? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:10.902260",
+        "call_duration": "0:00:00.293274",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:11.491538",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent already know your destination? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Does the travel agent already know your destination? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:11.195699",
+        "call_duration": "0:00:00.295795",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:11.785758",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows how you want to travel? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows how you want to travel? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:11.491659",
+        "call_duration": "0:00:00.294053",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:12.080359",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows in which class the trip will happen? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows in which class the trip will happen? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:11.785878",
+        "call_duration": "0:00:00.294435",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:12.374376",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Has the travel agent been informed about the dates of your trip? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Has the travel agent been informed about the dates of your trip? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:12.080480",
+        "call_duration": "0:00:00.293849",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:12.374543",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "What is the next request?"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:12.374521",
+        "call_duration": "0:00:00.000004",
+        "response": "When does your trip begin?",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:12.887962",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:12.374600",
+        "call_duration": "0:00:00.513313",
+        "response": "ANSWER: At the end of next week.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:13.181715",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows where you depart from? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Do you think the travel agent knows where you depart from? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:12.888088",
+        "call_duration": "0:00:00.293579",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:13.476482",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you already mentioned the destination of your trip to the travel agent? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you already mentioned the destination of your trip to the travel agent? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:13.181839",
+        "call_duration": "0:00:00.294597",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:13.770769",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Is the travel agent aware of your means of transportation? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Is the travel agent aware of your means of transportation? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: No.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:13.476610",
+        "call_duration": "0:00:00.294113",
+        "response": "ASIDE: No.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:14.065742",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you informed the travel agent about your class preference? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you informed the travel agent about your class preference? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:13.770891",
+        "call_duration": "0:00:00.294804",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T11:59:14.359926",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you already mentioned the dates of your trip to the travel agent? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are a customer of a travel agency. Here is a description of the details of the travel you want to make:\n\nWHAT: Travel\nFROM: Paris\nTO: Dresden\nBY: Taxi\nCLASS: First\nWHEN: At the end of next week\n\nThe travel agent does not know about it yet. \n\nQuestions from the travel agent will start with TRAVEL-AGENT. Please reply in the form: ANSWER: <one sentence>\n\nI will also ask you questions. These questions will start with ME:. Please answer these questions with: ASIDE: <one sentence>\n\nImportant: Give short, direct answers!\n\nLet us start.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nOk.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your destination.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Dresden.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Please inform your place of departure.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Paris.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you want a specific kind of transport?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: Taxi.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: Do you have a preference for class?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: First.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nTRAVEL-AGENT: When does your trip begin?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nANSWER: At the end of next week.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nME:  Have you already mentioned the dates of your trip to the travel agent? Answer this question with yes or no and then stop.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nASIDE: Yes.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 11:59:14.065862",
+        "call_duration": "0:00:00.294017",
+        "response": "ASIDE: Yes.",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  }
+]

@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 What are the uses of poppy seeds? Your answer should have exactly 7 paragraphs and the last paragraph must start with the word "Summary". Each paragraph should be separated by two new lines. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Poppy seeds have been used for centuries in various cultures for their medicinal, culinary, and spiritual properties. They are obtained from the opium poppy plant (Papaver somniferum), which is native to Europe and Asia.\\ \tt \\ \tt \\ \tt The most well-known use of poppy seeds is in baking, particularly in sweet breads, cakes, and pastries. They add a nutty flavor and a delicate crunch to these treats. Poppy seeds are also used as a topping for bagels, muffins, and other baked goods.\\ \tt \\ \tt \\ \tt In addition to their culinary uses, poppy seeds have been used in traditional medicine for their analgesic and anti-inflammatory properties. They contain compounds like morphine and codeine, which are responsible for their pain-relieving effects. However, it's essential to note that the seeds themselves do not contain enough of these compounds to produce significant effects.\\ \tt \\ \tt \\ \tt Poppy seeds have also been used in spiritual and ritual contexts. In some cultures, they are believed to promote good luck, prosperity, and fertility. They are often used in wedding ceremonies and are considered a symbol of love and commitment.\\ \tt \\ \tt \\ \tt In the food industry, poppy seeds are used as a natural food coloring and as a thickening agent. They are also used in the production of cosmetics and pharmaceuticals due to their emollient and moisturizing properties.\\ \tt \\ \tt \\ \tt Poppy seeds are a good source of nutrients, including protein, fiber, and minerals like calcium and iron. They are also rich in antioxidants and have been shown to have potential health benefits, such as reducing inflammation and improving cardiovascular health.\\ \tt \\ \tt \\ \tt Summary: In conclusion, poppy seeds have a wide range of uses, from culinary and medicinal applications to spiritual and industrial uses. While they have been used for centuries, it's essential to note that the seeds themselves do not contain significant amounts of the psychoactive compounds found in the opium poppy plant. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:nth_paragraph_first_word': {'num_paragraphs': 7, 'first_word': 'summary', 'nth_paragraph': 7}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

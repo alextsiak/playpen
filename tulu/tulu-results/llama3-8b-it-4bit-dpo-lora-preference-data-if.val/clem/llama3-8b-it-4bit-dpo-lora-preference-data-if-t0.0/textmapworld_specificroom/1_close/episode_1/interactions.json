@@ -1,0 +1,366 @@
+{
+  "meta": {
+    "game_name": "textmapworld_specificroom",
+    "experiment_name": "close",
+    "game_id": 14,
+    "results_folder": "llama3-8b-it-4bit-dpo-lora-preference-data-if-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if",
+      "backend": "huggingface_local",
+      "context_size": "8192",
+      "huggingface_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta (with LoRA)",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "/home/users/rzorin/playpen/model_registry.json",
+      "model_config": {
+        "peft_model": "/home/users/rzorin/playpen/8b-instruct-4bit-dpo-lora-preference-data-if",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2025-06-18",
+      "tokenizer_kwargs": {
+        "use_fast": true
+      }
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "PathGuesser",
+      "model_name": "llama3-8b-it-4bit-dpo-lora-preference-data-if"
+    },
+    "Player 2": {
+      "game_role": "PathDescriber",
+      "model_name": "programmatic"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:59:49.697700",
+        "action": {
+          "type": "send message",
+          "content": "Please help me with the following task. The goal is to explore rooms and find the target room. In each room, you need to decide the direction to go in. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. Most importantly, once we have found the target room, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nThe target room is a Bedroom. You are in the Kitchen. Currently available directions: south, west. What is your next instruction?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next instruction?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next instruction?\nDONE\nLet us start. The target room is Bar. You are in the Guest room. Currently available directions: south, north. What is your next instruction?\n",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.060286",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.060370",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:59:50.060406",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.060483",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: south, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.060515",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.060562",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Guest room\", \"new\": \"Sunroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:59:50.060590",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: south, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.422623",
+        "action": {
+          "type": "get message",
+          "content": "GO: west",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.422710",
+        "action": {
+          "type": "parse",
+          "content": "GO: west"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:59:50.422747",
+        "action": {
+          "type": "send message",
+          "content": "GO: west",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.422828",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Mudroom. Currently available directions: east, south. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.422860",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.422900",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Sunroom\", \"new\": \"Mudroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:59:50.422927",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Mudroom. Currently available directions: east, south. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.785151",
+        "action": {
+          "type": "get message",
+          "content": "GO: east",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.785239",
+        "action": {
+          "type": "parse",
+          "content": "GO: east"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:59:50.785278",
+        "action": {
+          "type": "send message",
+          "content": "GO: east",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.785354",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: south, west, north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.785386",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:50.785424",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Mudroom\", \"new\": \"Sunroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:59:50.785451",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Sunroom. Currently available directions: south, west, north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:51.151173",
+        "action": {
+          "type": "get message",
+          "content": "GO: south",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:51.151266",
+        "action": {
+          "type": "parse",
+          "content": "GO: south"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-21T19:59:51.151305",
+        "action": {
+          "type": "send message",
+          "content": "GO: south",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:51.151388",
+        "action": {
+          "type": "get message",
+          "content": "You have made a step and entered Bedroom. Currently available directions: north. What is your next instruction?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:51.151420",
+        "action": {
+          "type": "Valid format",
+          "content": "Continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:51.151459",
+        "action": {
+          "type": "move",
+          "content": "{\"old\": \"Sunroom\", \"new\": \"Bedroom\"}"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-21T19:59:51.151487",
+        "action": {
+          "type": "send message",
+          "content": "You have made a step and entered Bedroom. Currently available directions: north. What is your next instruction?",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:54.267900",
+        "action": {
+          "type": "get message",
+          "content": "GO: north \n\n \n\n(I made a mistake, I should have only written \"GO: north\" without the extra text) \n\nHere is the corrected answer:\n\nGO: north",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-21T19:59:54.267998",
+        "action": {
+          "type": "aborted",
+          "content": "abort game"
+        }
+      }
+    ]
+  ]
+}

@@ -1,0 +1,218 @@
+[
+  {
+    "timestamp": "2025-07-21T12:09:01.481568",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:01.274651",
+        "call_duration": "0:00:00.206871",
+        "response": "GO: east",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:01.481759",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "GO: east"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:01.481697",
+        "call_duration": "0:00:00.000042",
+        "response": "You have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:01.688189",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:01.481864",
+        "call_duration": "0:00:00.206274",
+        "response": "GO: south",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:01.688388",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "GO: south"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:01.688322",
+        "call_duration": "0:00:00.000046",
+        "response": "You have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:01.896365",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:01.688496",
+        "call_duration": "0:00:00.207822",
+        "response": "GO: west",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:01.896564",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "GO: west"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:01.896492",
+        "call_duration": "0:00:00.000051",
+        "response": "You have made a step and entered Mudroom. Currently available directions: west, east. What is your next command?",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:02.106902",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Mudroom. Currently available directions: west, east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Mudroom. Currently available directions: west, east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:01.896668",
+        "call_duration": "0:00:00.210187",
+        "response": "GO: east",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:02.107093",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "GO: east"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:02.107031",
+        "call_duration": "0:00:00.000043",
+        "response": "You have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:02.328508",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Mudroom. Currently available directions: west, east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Mudroom. Currently available directions: west, east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: north<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:02.107198",
+        "call_duration": "0:00:00.221265",
+        "response": "GO: north",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:02.328710",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "GO: north"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:02.328649",
+        "call_duration": "0:00:00.000041",
+        "response": "You have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:02.548839",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Mudroom. Currently available directions: west, east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: north<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Mudroom. Currently available directions: west, east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: north<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:02.328815",
+        "call_duration": "0:00:00.219979",
+        "response": "GO: west",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:02.549032",
+    "manipulated_prompt_obj": {
+      "role": "user",
+      "content": "GO: west"
+    },
+    "raw_response_obj": {
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:02.548970",
+        "call_duration": "0:00:00.000042",
+        "response": "You have made a step and entered Nursery. Currently available directions: east. What is your next command?",
+        "model_name": "programmatic"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-21T12:09:02.684076",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Mudroom. Currently available directions: west, east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: north<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nPlease help me with the following task. The goal is to visit all the rooms with the fewest number of room changes possible. In each room, you need to decide the direction to go in. Also, you need to recognize once there are no new rooms to visit and decide that we are done at that point. Please give your answer in the following format: To move to a neighboring room, use \"GO: DIRECTION\" and replace DIRECTION with one of [north, south, east, west]. To stop the exploration, answer with \"DONE\" instead. Omit any other text.\nHere is an example:\nYou are in the Kitchen. Currently available directions: south, west. What is your next command?\nGO: west\nYou have made a step and entered a Lobby. Currently available directions: east, north. What is your next command?\nGO: north\n...\nYou have made a step and entered a Bedroom. Currently available directions: south. What is your next command?\nDONE\nLet us start. You are in the Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: south<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Mudroom. Currently available directions: west, east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: east<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Sunroom. Currently available directions: west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: north<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Dining room. Currently available directions: south, west, north. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGO: west<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou have made a step and entered Nursery. Currently available directions: east. What is your next command?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nDONE<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-07-21 12:09:02.549136",
+        "call_duration": "0:00:00.134896",
+        "response": "DONE",
+        "model_name": "llama3-8b-it-4bit"
+      }
+    }
+  }
+]

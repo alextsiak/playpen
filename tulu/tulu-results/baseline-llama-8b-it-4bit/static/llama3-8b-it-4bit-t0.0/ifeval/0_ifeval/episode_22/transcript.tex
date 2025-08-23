@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Write a story about the importance of understanding the truths that are not obvious. Add stress words which are capitalized. Limit those stress words for less than 20 times. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 In the small village of Ashwood, nestled in the heart of a dense forest, there lived a young apprentice named Eira. She was learning the art of healing from the village's renowned healer, Thorne. Eira was a diligent student, but she often found herself frustrated with the seemingly **ARBITRARY** rules and **MYSTERIOUS** remedies that Thorne employed.\\ \tt \\ \tt One day, while gathering herbs in the forest, Eira stumbled upon a **SECRET** glade. In the center of the clearing stood an ancient tree, its branches twisted and gnarled with age. As she approached the tree, Eira noticed that its bark was **SCRATCHED** and **SCRIBBLED** with strange symbols. She felt an **UNSETTLING** sense of curiosity and decided to investigate further.\\ \tt \\ \tt Thorne, who had been watching Eira from a distance, approached her and revealed that the tree was a **LEGENDARY** site, where the village's ancestors had left behind a **HIDDEN** message. The symbols on the tree's bark were a **CRYPTIC** code, which, when deciphered, would reveal the secrets of the forest and its healing properties.\\ \tt \\ \tt Eira was **THRILLED** to learn about the tree's significance and begged Thorne to teach her the code. Thorne, however, was **REERVED**, explaining that the code was **COMPLEX** and required a deep understanding of the forest's **SYMBOLIC** language.\\ \tt \\ \tt Undeterred, Eira spent countless hours studying the code, pouring over ancient texts and seeking out **EXPERT** opinions. As she delved deeper into the mystery, she began to **UNRAVEL** the secrets of the forest, discovering new healing properties and **UNCONVENTIONAL** remedies.\\ \tt \\ \tt Thorne, who had been observing Eira's progress, was **IMPRESSED** by her dedication and **INSIGHT**. He revealed that the code was not just a **MYSTERIOUS** puzzle, but a **METAPHOR** for the complexities of life itself. Eira's journey had taught her that the truths that are not **OBSERVABLE** are often the most **POWERFUL** and **TRANSFORMATIVE**.\\ \tt \\ \tt From that day on, Eira approached her studies with a new sense of **CURIOUSITY** and **OPEN-MINDEDNESS**. She understood that the **OBVIOUS** is often just the tip of the iceberg, and that the **HIDDEN** truths are what truly hold the key to understanding and growth. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'change_case:capital_word_frequency': {'capital_relation': 'less than', 'capital_frequency': 20}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSE 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

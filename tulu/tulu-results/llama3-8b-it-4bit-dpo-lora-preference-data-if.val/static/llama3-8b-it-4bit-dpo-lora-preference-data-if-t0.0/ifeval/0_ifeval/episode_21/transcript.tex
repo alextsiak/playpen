@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 What are the uses of poppy seeds? Your answer should have exactly 7 paragraphs and the last paragraph must start with the word "Summary". Each paragraph should be separated by two new lines. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 Poppy seeds have been used for centuries in various cultures for their medicinal, culinary, and spiritual significance. The seeds are obtained from the opium poppy plant, which is native to Europe, Asia, and Africa. The plant has been cultivated for its seeds, which are rich in nutrients and have been used in traditional medicine for their analgesic and anti-inflammatory properties. Poppy seeds are a good source of essential fatty acids, protein, and fiber, making them a nutritious addition to a healthy diet. They are also a rich source of minerals such as calcium, iron, and zinc.\\ \tt \\ \tt The uses of poppy seeds are diverse, and they have been used in various forms, including whole seeds, ground seeds, and oil extracted from the seeds. The seeds can be used as a spice in baking, adding a nutty flavor to cakes, cookies, and bread. They are also used in traditional medicine to treat a range of ailments, including insomnia, anxiety, and digestive issues. In some cultures, poppy seeds are used as a natural remedy for skin conditions, such as acne and eczema. The seeds have also been used in traditional rituals and ceremonies for their spiritual significance.\\ \tt \\ \tt Poppy seeds have been used in the production of various food products, including bread, cakes, and pastries. They are often used as a topping for baked goods, adding a crunchy texture and a nutty flavor. The seeds can also be used as an ingredient in smoothies, adding a boost of nutrients and flavor. In some parts of the world, poppy seeds are used as a garnish for salads, adding a pop of color and a nutty flavor. The seeds are also used in the production of traditional dishes, such as Indian and Middle Eastern cuisine.\\ \tt \\ \tt The medicinal properties of poppy seeds have been well-documented, and they have been used to treat a range of health issues. The seeds contain a compound called morphine, which has analgesic and anti-inflammatory properties. However, the amount of morphine in poppy seeds is relatively small, and they are considered safe for consumption. The seeds have also been used to treat digestive issues, such as constipation and diarrhea. In some cultures, poppy seeds are used as a natural remedy for menstrual cramps and other women's health issues.\\ \tt \\ \tt Poppy seeds have been used in traditional rituals and ceremonies for their spiritual significance. In some cultures, the seeds are believed to have spiritual powers, and they are used in rituals to promote good luck and prosperity. The seeds are also used in meditation and yoga practices, where they are believed to promote relaxation and inner peace. In some parts of the world, poppy seeds are used as an offering to the gods, symbolizing gratitude and respect. The seeds have also been used in traditional weddings, where they are believed to promote fertility and happiness.\\ \tt \\ \tt Poppy seeds have been used in the production of various cosmetics and skincare products. The seeds are rich in antioxidants and have anti-inflammatory properties, making them an effective ingredient in skincare products. The seeds are also used in hair care products, where they are believed to promote healthy hair growth. In some cultures, poppy seeds are used as a natural remedy for skin conditions, such as acne and eczema. The seeds have also been used in traditional medicine to treat wounds and promote healing.\\ \tt \\ \tt Summary\\ \tt In conclusion, poppy seeds have a range of uses, from culinary and medicinal to spiritual and cosmetic. The seeds are a nutritious addition to a healthy diet, and they have been used in various forms, including whole seeds, ground seeds, and oil extracted from the seeds. The seeds have been used in traditional medicine to treat a range of ailments, including insomnia, anxiety, and digestive issues. They have also been used in traditional rituals and ceremonies for their spiritual significance. The seeds have been used in the production of various food products, including bread, cakes, and pastries. They have also been used in the production of cosmetics and skincare products. The seeds are a versatile ingredient, and their uses continue to expand as more people discover their benefits. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'length_constraints:nth_paragraph_first_word': {'num_paragraphs': 7, 'first_word': 'summary', 'nth_paragraph': 7}} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}
