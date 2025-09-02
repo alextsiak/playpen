@@ -1,0 +1,294 @@
+{
+  "meta": {
+    "game_name": "taboo",
+    "experiment_name": "low_en",
+    "game_id": 0,
+    "results_folder": "llama3-8b-sft-playpen-t0.7",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "WordDescriber",
+      "model_name": "llama3-8b-sft-playpen"
+    },
+    "Player 2": {
+      "game_role": "WordGuesser",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T11:43:14.389869",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nchan\n\nRelated words are:\n\n- chinese\n- internet\n- irc\n\nImportant: You are under time pressure, give short descriptions that are to the point!",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:14.783720",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: social network, commonly used for direct messaging.||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:14.783774",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:14.783959",
+        "action": {
+          "type": "valid clue",
+          "content": "social network commonly used for direct messaging"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-15T11:43:14.783998",
+        "action": {
+          "type": "send message",
+          "content": "You are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n",
+          "label": "initial prompt"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-15T11:43:14.784014",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: social network, commonly used for direct messaging.||",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:14.965964",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: WhatsApp||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:14.966008",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:14.966031",
+        "action": {
+          "type": "valid guess",
+          "content": "whatsapp"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T11:43:14.966071",
+        "action": {
+          "type": "send message",
+          "content": "GUESS: WhatsApp||",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:15.505704",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: older, more text-based version of the social network I described before.||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:15.505750",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:15.505926",
+        "action": {
+          "type": "valid clue",
+          "content": "older more textbased version of the social network i described before"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-15T11:43:15.505967",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: older, more text-based version of the social network I described before.||",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:15.718182",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: Messenger||||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:15.718228",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:15.718252",
+        "action": {
+          "type": "valid guess",
+          "content": "messenger"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T11:43:15.718289",
+        "action": {
+          "type": "send message",
+          "content": "GUESS: Messenger||||",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:16.142507",
+        "action": {
+          "type": "get message",
+          "content": "CLUE: where you can post anonymously and spark heated debates.||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:16.142555",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:16.142724",
+        "action": {
+          "type": "valid clue",
+          "content": "where you can post anonymously and spark heated debates"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-15T11:43:16.142761",
+        "action": {
+          "type": "send message",
+          "content": "CLUE: where you can post anonymously and spark heated debates.||",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:16.327801",
+        "action": {
+          "type": "get message",
+          "content": "GUESS: Reddit||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:16.327847",
+        "action": {
+          "type": "valid response",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:16.327872",
+        "action": {
+          "type": "valid guess",
+          "content": "reddit"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T11:43:16.327897",
+        "action": {
+          "type": "max rounds reached",
+          "content": "3"
+        }
+      }
+    ]
+  ]
+}

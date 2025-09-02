@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "game_name": "cladder",
+    "experiment_name": "full_v1.5_default",
+    "game_id": 1920,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T04:59:43.575755",
+        "action": {
+          "type": "send message",
+          "content": "You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\nImagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Appearance has a direct effect on fame. Talent has a direct effect on fame. The overall probability of attractive appearance is 81%. For people considered unattractive and are not famous, the probability of talent is 94%. For people considered unattractive and are famous, the probability of talent is 83%. For people considered attractive and are not famous, the probability of talent is 92%. For people considered attractive and are famous, the probability of talent is 75%. If we look at people who are famous, does the chance of talent increase when attractive appearance?\nStart your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:59:49.499330",
+        "action": {
+          "type": "get message",
+          "content": "No\nThe key to this question is understanding the relationships between the variables and carefully examining the specific groups being compared. The goal is to see whether the chance of talent (T) among famous (F) people is higher when they are also attractive (A) compared to when they are not.\n- The probability of T given F and A is 75%.\n- The probability of T given F and not A is 83%.\n\nThe two numbers are not directly compared in the question, so we need to look at the joint probability of T and A given F. The probability of T and A given F is the same as the probability of T given F and A, which is 75%. The probability of T and not A given F is the same as the probability of T given F and not A, which is 83%.\n\nSince 75% is less than 83%, the chance of T among famous people is higher when they are not A than when they are A.||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:59:49.499412",
+        "action": {
+          "type": "parsed",
+          "content": "No"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:59:49.499427",
+        "action": {
+          "type": "target",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T04:59:49.499438",
+        "action": {
+          "type": "correct label",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

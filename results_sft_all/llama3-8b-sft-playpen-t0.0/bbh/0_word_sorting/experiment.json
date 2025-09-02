@@ -1,0 +1,71 @@
+{
+  "name": "word_sorting",
+  "meta": {
+    "dataset_path": "lukaemon/bbh",
+    "output_type": "generate_until",
+    "test_split": "test",
+    "doc_to_target": "{{target}}",
+    "metric_list": [
+      {
+        "metric": "exact_match",
+        "aggregation": "mean",
+        "higher_is_better": true
+      }
+    ],
+    "generation_kwargs": {
+      "until": [
+        "</s>",
+        "Q",
+        "\n\n"
+      ],
+      "do_sample": false,
+      "temperature": 0.0
+    },
+    "num_fewshot": 3,
+    "metadata": {
+      "version": 2.0
+    },
+    "dataset_name": "word_sorting",
+    "description": "Sort a list of words.\n\n",
+    "doc_to_text": "Q: {{input}}\nA:",
+    "fewshot_config": {
+      "sampler": "first_n",
+      "samples": [
+        {
+          "input": "Sort the following words alphabetically: List: oven costume counterpart",
+          "target": "costume counterpart oven"
+        },
+        {
+          "input": "Sort the following words alphabetically: List: hypochlorite ponderosa phone credulity",
+          "target": "credulity hypochlorite phone ponderosa"
+        },
+        {
+          "input": "Sort the following words alphabetically: List: newt arson parthia seismography mugho aspect census",
+          "target": "arson aspect census mugho newt parthia seismography"
+        }
+      ]
+    },
+    "task": "playschool_bbh_fewshot_word_sorting"
+  },
+  "initial_prompt": "Sort a list of words.\n\nQ: Sort the following words alphabetically: List: oven costume counterpart\nA: costume counterpart oven\n\nQ: Sort the following words alphabetically: List: hypochlorite ponderosa phone credulity\nA: credulity hypochlorite phone ponderosa\n\nQ: Sort the following words alphabetically: List: newt arson parthia seismography mugho aspect census\nA: arson aspect census mugho newt parthia seismography\n\nQ: {{input}}\nA:",
+  "timestamp": "2025-08-14T17:46:56.083977",
+  "game_name": "bbh",
+  "experiment_name": "word_sorting",
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "duration": "0:22:05.817291"
+}

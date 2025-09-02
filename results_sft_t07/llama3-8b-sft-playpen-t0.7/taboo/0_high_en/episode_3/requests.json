@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-08-15T11:42:31.814442",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: military, stone, secure.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:42:31.505908",
+        "call_duration": "0:00:00.308484",
+        "response": "CLUE: military, stone, secure.||",
+        "model_name": "llama3-8b-sft-playpen"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:42:32.000689",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: wall<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:42:31.814739",
+        "call_duration": "0:00:00.185894",
+        "response": "GUESS: wall||",
+        "model_name": "llama3-8b-sft-playpen"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:42:32.341508",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: wall||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: wall||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: wooden, structure, barrier.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:42:32.000829",
+        "call_duration": "0:00:00.340626",
+        "response": "CLUE: wooden, structure, barrier.||",
+        "model_name": "llama3-8b-sft-playpen"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:42:32.526879",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: wall||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: wooden, structure, barrier.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: wall||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: wooden, structure, barrier.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: bridge<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:42:32.341754",
+        "call_duration": "0:00:00.185078",
+        "response": "GUESS: bridge||",
+        "model_name": "llama3-8b-sft-playpen"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:42:32.825685",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: wall||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: wooden, structure, barrier.||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: bridge||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nfort\n\nRelated words are:\n\n- meet\n- garrison\n- fortify\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: wall||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: wooden, structure, barrier.||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: bridge||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: shelter, military.||<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:42:32.527005",
+        "call_duration": "0:00:00.298631",
+        "response": "CLUE: shelter, military.||||",
+        "model_name": "llama3-8b-sft-playpen"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:42:33.039349",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: wall||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: wooden, structure, barrier.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: bridge||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: shelter, military.||||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.7,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: military, stone, secure.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: wall||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: wooden, structure, barrier.||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: bridge||<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: shelter, military.||||<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: bunker<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:42:32.825935",
+        "call_duration": "0:00:00.213351",
+        "response": "GUESS: bunker||",
+        "model_name": "llama3-8b-sft-playpen"
+      }
+    }
+  }
+]

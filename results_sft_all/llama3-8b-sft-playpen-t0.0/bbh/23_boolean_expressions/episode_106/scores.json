@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "game_name": "bbh",
+    "experiment_name": "boolean_expressions",
+    "game_id": 106,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turn scores": {},
+  "episode scores": {
+    "Aborted": 0,
+    "Lose": 1,
+    "Success": 0,
+    "Request Count": 1,
+    "Parsed Request Count": 1,
+    "Violated Request Count": 0,
+    "Request Success Ratio": 1.0,
+    "Main Score": 0
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  }
+}

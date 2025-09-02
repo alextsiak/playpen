@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "game_name": "cladder",
+    "experiment_name": "full_v1.5_default",
+    "game_id": 364,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T03:14:21.428022",
+        "action": {
+          "type": "send message",
+          "content": "You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\nImagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: My decision has a direct effect on penguin mood and penguin survival. Penguin mood has a direct effect on penguin survival. The overall probability of taking the elevator is 65%. For those who choose to take the stairs, the probability of penguin death is 29%. For those who choose to take the elevator, the probability of penguin death is 27%. Is penguin death less likely than penguin lives overall?\nStart your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T03:14:26.585696",
+        "action": {
+          "type": "get message",
+          "content": "No\nThe probability of penguin death is 29% for those who take the stairs and 27% for those who take the elevator. Since the probability of taking the stairs is 35% (100% - 65%) and the probability of taking the elevator is 65%, we can weight the probabilities of penguin death by the corresponding probabilities of taking the stairs and the elevator. The overall probability of penguin death is then (0.35 * 0.29) + (0.65 * 0.27) = 0.1025 + 0.1755 = 0.278. The probability of penguin lives is 1 - 0.278 = 0.722. Since 0.722 is greater than 0.278, penguin death is less likely than penguin lives overall.||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T03:14:26.585774",
+        "action": {
+          "type": "parsed",
+          "content": "No"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T03:14:26.585788",
+        "action": {
+          "type": "target",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T03:14:26.585800",
+        "action": {
+          "type": "wrong label",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

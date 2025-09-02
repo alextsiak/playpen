@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-08-15T11:54:38.849634",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nrichardson\n\nRelated words are:\n\n- richard\n- texas\n- usa\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nrichardson\n\nRelated words are:\n\n- richard\n- texas\n- usa\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A surname often associated with a famous American state.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:54:38.428024",
+        "call_duration": "0:00:00.421567",
+        "response": "CLUE: A surname often associated with a famous American state.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:54:39.090873",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALABAMA<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:54:38.849924",
+        "call_duration": "0:00:00.240910",
+        "response": "GUESS: ALABAMA",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:54:39.749371",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nrichardson\n\nRelated words are:\n\n- richard\n- texas\n- usa\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: ALABAMA<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nrichardson\n\nRelated words are:\n\n- richard\n- texas\n- usa\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: ALABAMA<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: This surname is more commonly linked to a state in the south-central part of the country.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:54:39.090993",
+        "call_duration": "0:00:00.658335",
+        "response": "CLUE: This surname is more commonly linked to a state in the south-central part of the country.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:54:40.049877",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALABAMA<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: This surname is more commonly linked to a state in the south-central part of the country.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALABAMA<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: This surname is more commonly linked to a state in the south-central part of the country.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: OKLAHOMA<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:54:39.749674",
+        "call_duration": "0:00:00.300162",
+        "response": "GUESS: OKLAHOMA",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:54:40.649411",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nrichardson\n\nRelated words are:\n\n- richard\n- texas\n- usa\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: ALABAMA<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: This surname is more commonly linked to a state in the south-central part of the country.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: OKLAHOMA<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nrichardson\n\nRelated words are:\n\n- richard\n- texas\n- usa\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: ALABAMA<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: This surname is more commonly linked to a state in the south-central part of the country.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: OKLAHOMA<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: The state associated with this surname is known for its cowboy culture and oil industry.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:54:40.049996",
+        "call_duration": "0:00:00.599373",
+        "response": "CLUE: The state associated with this surname is known for its cowboy culture and oil industry.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T11:54:40.863074",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALABAMA<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: This surname is more commonly linked to a state in the south-central part of the country.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: OKLAHOMA<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: The state associated with this surname is known for its cowboy culture and oil industry.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: A surname often associated with a famous American state.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: ALABAMA<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: This surname is more commonly linked to a state in the south-central part of the country.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: OKLAHOMA<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: The state associated with this surname is known for its cowboy culture and oil industry.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: TEXAS<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 11:54:40.649713",
+        "call_duration": "0:00:00.213320",
+        "response": "GUESS: TEXAS",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  }
+]
