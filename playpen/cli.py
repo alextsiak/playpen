@@ -151,7 +151,7 @@ def collect_failures(results_dir, failures_dir):
                         try:
                             data = json.load(f)
                             episode_scores = data.get("episode scores", {})
-                            if episode_scores.get("Lose") == 1 or episode_scores.get("Aborted") == 1:
+                            if episode_scores.get("Lose") == 1:
                                 dest_path = os.path.join(failures_dir, game, exp_dir.name, episode_dir.name)
                                 os.makedirs(os.path.dirname(dest_path), exist_ok=True)
                                 shutil.copytree(episode_dir, dest_path, dirs_exist_ok=True)

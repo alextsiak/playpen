@@ -13,12 +13,14 @@ import argparse
 import yaml
 import os
 import wandb
+import json
 
-def load_config(config_path="training_config.yaml"):
+def load_config(config_path="examples/trl/training_config.yaml"):
     with open(config_path, "r") as f:
         return yaml.safe_load(f)
 
 config = load_config()
+
 
 class PeftSftTrainer(BasePlayPen):
 
@@ -44,14 +46,32 @@ class PeftSftTrainer(BasePlayPen):
             )
 
 
-        # dataset
-        dataset = load_dataset(path="./results_teachers/results.jsonl")
+        # local dataset
+        dataset = load_dataset("json", data_files="./results_teachers/results.jsonl")
+        dataset = dataset["train"]
+        # add examples from best models (playpen-data dataset)
+        dataset_best = load_dataset("colab-potsdam/playpen-data", "interactions", split="train")
 
 
+
+        # only get learner failed instances from dataset_best
+        with open(config["failed_instances_path"], "r") as f:
+            failed_instances = json.load(f)
+        failed_set = {(x["game"], x["experiment"], x["task_id"]) for x in failed_instances}
+        dataset_best = dataset_best.filter(
+            lambda ep: (ep["meta"]["game"], ep["meta"]["experiment"], ep["meta"]["task_id"]) in failed_set)
+        
+        dataset_best = dataset_best.filter(lambda episode: episode["meta"]["model"] == "claude-3-5-sonnet-20241022" or episode["meta"]["model"] == "claude-3-5-sonnet-20250219" or episode["meta"]["model"] == "qwen-max")
 
         dataset = dataset.filter(lambda episode: episode["meta"]["outcome"] == "success")
+        dataset_best = dataset_best.filter(lambda episode: episode["meta"]["outcome"] == "success")
 
-        dataset = dataset.train_test_split(0.2, shuffle=True, seed=42)
+        #ensure same format for both datasets
+        dataset_best = dataset_best.cast(dataset.features)
+
+        combined_dataset = concatenate_datasets([dataset, dataset_best])
+
+        combined_dataset = combined_dataset.train_test_split(0.2, shuffle=True, seed=42)
 
         lora_config = LoraConfig(
             r=config["lora_r"],
@@ -71,10 +91,11 @@ class PeftSftTrainer(BasePlayPen):
         # Initialize training configuration
         config_trl = trl.SFTConfig(
                 max_length=300,
-                output_dir=f"models/sft+lora/{self.learner.get_name()}",
+                output_dir=f"models/sft+lora/{model_name}",
                 eval_strategy="epoch",
-                max_steps=config["max_steps"],
-                logging_steps=1,
+                #max_steps=config["max_steps"],
+                num_train_epochs = config["num_train_epochs"],
+                logging_steps=10,
                 per_device_train_batch_size=config["batch_size"],
                 gradient_accumulation_steps=config["grad_accum_steps"],
                 learning_rate=config["learning_rate"],
@@ -86,8 +107,8 @@ class PeftSftTrainer(BasePlayPen):
         # Initialize trainer context
         trainer = trl.SFTTrainer(
                 model=self.learner.model,
-                train_dataset=dataset["train"],
-                eval_dataset=dataset["test"],
+                train_dataset=combined_dataset["train"],
+                eval_dataset=combined_dataset["test"],
                 args=config_trl
                 # see https://huggingface.co/docs/trl/sft_trainer#training-adapters
             )
