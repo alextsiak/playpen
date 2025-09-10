@@ -4,6 +4,7 @@ import importlib.util as importlib_util
 import json
 import os
 import shutil
+import glob
 from pathlib import Path
 from typing import Dict, Callable, List
 from datetime import datetime
@@ -12,7 +13,6 @@ import clemcore.cli as clem
 from clemcore.backends import ModelSpec, ModelRegistry, BackendRegistry
 from clemcore.clemgame import GameRegistry, GameSpec
 from playpen import BasePlayPen
-from pathlib import Path
 from .data_utils import create_conversational_dataset_for
 
 
@@ -21,7 +21,7 @@ def train(file_path: str, learner: ModelSpec, teacher: ModelSpec, temperature: f
         return inspect.isclass(obj) and issubclass(obj, BasePlayPen) and obj is not BasePlayPen
 
     try:
-        file_name = os.path.splitext(file_path)[0]
+        file_name = Path(file_path).stem
         spec = importlib_util.spec_from_file_location(file_name, file_path)
         module = importlib_util.module_from_spec(spec)
         spec.loader.exec_module(module)
@@ -85,13 +85,22 @@ def store_eval_score(file_path: Path, name: str, value):
     return new_scores
 
 
-def to_task_selector(dataset) -> Callable[[str, str], List[int]]:
+def to_task_selector(dataset) -> Callable[[str, str], list[int]]:
     import collections
     tasks_by_group = collections.defaultdict(list)
-    for row in dataset:  # a list of rows with game, experiment, task_id columns
-        key = (row['game'], row['experiment'])
-        tasks_by_group[key].append(int(row['task_id']))
-    return lambda game, experiment: tasks_by_group[(game, experiment)]
+
+    for row in dataset:
+        # Try meta first, fall back to top-level
+        game = row.get('meta', {}).get('game', row.get('game'))
+        experiment = row.get('meta', {}).get('experiment', row.get('experiment'))
+        task_id = row.get('meta', {}).get('task_id', row.get('task_id'))
+
+        if game is None or experiment is None or task_id is None:
+            continue  # skip incomplete rows
+
+        tasks_by_group[(game, experiment)].append(int(task_id))
+
+    return lambda game, experiment: tasks_by_group.get((game, experiment), [])
 
 
 def get_default_results_dir():
@@ -100,15 +109,14 @@ def get_default_results_dir():
     return results_dir
 
 
-def evaluate_suite(suite: str, model_spec: ModelSpec, gen_args: Dict, results_dir: Path, game_selector: str,
+def evaluate_suite(suite: str, model_spec: ModelSpec, gen_args: dict, results_dir: Path, game_selector: str,
                    dataset_name: str):
-    suite_results_dir = str(results_dir / suite)
+    suite_results_dir = results_dir / suite  # keep as Path
     if dataset_name is not None:
         from datasets import load_dataset
         dataset = load_dataset("colab-potsdam/playpen-data", dataset_name, split="validation")
-        task_selector = to_task_selector(dataset)
         clem.run(game_selector, [model_spec],
-                 gen_args=gen_args, results_dir=suite_results_dir, task_selector=task_selector)
+                 gen_args=gen_args, results_dir_path=suite_results_dir, sub_selector=to_task_selector(dataset))
     clem.score(game_selector, suite_results_dir)
     clem.transcripts(game_selector, suite_results_dir)
     df = clem.clemeval.perform_evaluation(suite_results_dir, return_dataframe=True)
@@ -116,54 +124,55 @@ def evaluate_suite(suite: str, model_spec: ModelSpec, gen_args: Dict, results_di
     return clem_score
 
 
-def evaluate(suite: str, model_spec: ModelSpec, gen_args: Dict, results_dir: Path, game_selector: str,
+def evaluate(suite: str, model_spec: ModelSpec, gen_args: dict, results_dir: Path, game_selector: str,
              skip_gameplay: bool):
     overall_results_file = results_dir / f"{model_spec.model_name}.val.json"
+    
     if suite in ["all", "clem"]:
         dataset_name = None if skip_gameplay else "instances"
-        game_selector = GameSpec.from_dict({"benchmark": ["2.0"]}, allow_underspecified=True) \
+        _game_selector = GameSpec.from_dict({"benchmark": ["2.0"]}, allow_underspecified=True) \
             if game_selector is None else game_selector
-        clem_score = evaluate_suite("clem", model_spec, gen_args, results_dir, game_selector, dataset_name)
+        clem_score = evaluate_suite("clem", model_spec, gen_args, results_dir, _game_selector, dataset_name)
         store_eval_score(overall_results_file, "clemscore", clem_score)
+        
     if suite in ["all", "static"]:
         dataset_name = None if skip_gameplay else "instances-static"
-        game_selector = GameSpec.from_dict({"benchmark": ["static_1.0"]}, allow_underspecified=True) \
+        _game_selector = GameSpec.from_dict({"benchmark": ["static_1.0"]}, allow_underspecified=True) \
             if game_selector is None else game_selector
-        stat_score = evaluate_suite("static", model_spec, gen_args, results_dir, game_selector, dataset_name)
+        stat_score = evaluate_suite("static", model_spec, gen_args, results_dir, _game_selector, dataset_name)
         store_eval_score(overall_results_file, "statscore", stat_score)
 
-def collect_failures(results_dir, failures_dir):
-    for f in os.listdir(results_dir):
-        file_path = os.path.join(results_dir, f)
-        
-        for game in os.listdir(file_path):
-            game_path = os.path.join(file_path, game)
-            if not os.path.isdir(game_path):
+def collect_failures(results_dir: Path, failures_dir: Path):
+    results_dir = Path(results_dir)
+    failures_dir = Path(failures_dir)
+
+    for file_path in results_dir.iterdir():
+        for game_path in file_path.iterdir():
+            if not game_path.is_dir():
                 continue
-            for exp_dir in Path(game_path).iterdir():
-                if not os.path.isdir(exp_dir):
+            for exp_dir in game_path.iterdir():
+                if not exp_dir.is_dir():
                     continue
-                for episode_dir in Path(exp_dir).iterdir():
-                    if not os.path.isdir(episode_dir):
+                for episode_dir in exp_dir.iterdir():
+                    if not episode_dir.is_dir():
                         continue
                     scores_path = episode_dir / "scores.json"
-                    with open(scores_path, "r") as f:
-                        try:
+                    try:
+                        with scores_path.open("r") as f:
                             data = json.load(f)
-                            episode_scores = data.get("episode scores", {})
-                            if episode_scores.get("Lose") == 1:
-                                dest_path = os.path.join(failures_dir, game, exp_dir.name, episode_dir.name)
-                                os.makedirs(os.path.dirname(dest_path), exist_ok=True)
-                                shutil.copytree(episode_dir, dest_path, dirs_exist_ok=True)
-                        except json.JSONDecodeError:
-                            print("error: couldn't parse scores.json'")
+                        episode_scores = data.get("episode scores", {})
+                        if episode_scores.get("Lose") == 1 or episode_scores.get("Aborted") == 1:
+                            dest_path = failures_dir / game_path.name / exp_dir.name / episode_dir.name
+                            dest_path.parent.mkdir(parents=True, exist_ok=True)
+                            shutil.copytree(episode_dir, dest_path, dirs_exist_ok=True)
+                    except json.JSONDecodeError:
+                        print("error: couldn't parse scores.json'")
     print(f"Data copied to: {failures_dir}")
 
-def build_instances(dataset_path: str, instances_name: str):
-    '''
-    From a given dataset, build failed_instances.json, compatible with to_task_selector() - contains a list of rows with game, experiment, task_id columns
-    '''
-    with open(dataset_path, "r") as f:
+
+def build_instances(dataset_path: Path, instances_name: str):
+    dataset_path = Path(dataset_path)
+    with dataset_path.open("r") as f:
         data = [json.loads(line) for line in f]
 
     instances = []
@@ -177,14 +186,14 @@ def build_instances(dataset_path: str, instances_name: str):
 
         if key not in seen:
             seen.add(key)
-            instance_data = {"game": game, "experiment": experiment, "task_id": task_id}
-            instances.append(instance_data)
+            instances.append({"game": game, "experiment": experiment, "task_id": task_id})
 
-    output_path = os.path.join(os.path.dirname(dataset_path), f"{instances_name}.json")
-    with open(output_path, "w") as fp:
+    output_path = dataset_path.parent / f"{instances_name}.json"
+    with output_path.open("w") as fp:
         json.dump(instances, fp)
 
     print(f"Saved failed instances to {output_path}")
+
 
 
 
@@ -212,41 +221,55 @@ def cli(args: argparse.Namespace):
         learner_spec = ModelSpec.from_string(args.learner)
         learner_name = learner_spec['model_name']
         #teacher_spec = ModelSpec.from_string(args.teacher)
-        teacher_specs = [ModelSpec.from_string(t) for t in args.teacher.split()]
+        teacher_specs = [ModelSpec.from_string(t) for t in args.teacher]
         #teacher_name = teacher_spec['model_name']
         gen_args = dict(temperature=args.temperature, max_tokens=args.max_tokens)
 
-        results_dir_learner = f"./results_{learner_name}"
-        failures_dir = f"./failures_{learner_name}/{learner_name}-t0.0"
-        
+        results_dir_learner = Path(f"./results_{learner_name}")
+        failures_dir = Path(f"./failures_{learner_name}/{learner_name}-t0.0")
+
         # create llama playthroughs
-        clem.run("{'benchmark':['2.0']}", [learner_spec],
-        gen_args=gen_args, results_dir=results_dir_learner)
+        if not results_dir_learner.exists() or not any(results_dir_learner.iterdir()):
+            clem.run(
+                "{'benchmark':['2.0']}", 
+                [learner_spec],
+                gen_args=gen_args,
+                results_dir_path=results_dir_learner
+            )
+        else:
+            print(f"Skipping clem.run(): results already exist in {results_dir_learner}")
 
-        # score them because for some reason run doesn't do that
-        clem.score("{'benchmark':['2.0']}", results_dir=results_dir_learner)
+        failed_instances_file = failures_dir / "failed_instances.json"
 
-        # identify only failed instances from llama playthroughs and copy failed instances to new folder
-        os.makedirs(failures_dir, exist_ok=True)
-        collect_failures(results_dir_learner, failures_dir)
-        print(f"Creating dataset from {failures_dir}...")
-        create_conversational_dataset_for(failures_dir)
-        print(f"Created dataset from {failures_dir}")
-        print(f"Extracting tasks from dataset...")
+        if not failed_instances_file.exists():
+            # score them because for some reason run doesn't do that
+            clem.score("{'benchmark':['2.0']}", results_dir=results_dir_learner)
 
-        # make failed_instances.json
-        build_instances(f"{failures_dir}/results.jsonl", "failed_instances")
+            # identify only failed instances from llama playthroughs and copy failed instances to new folder
+            failures_dir.mkdir(parents=True, exist_ok=True)
+            collect_failures(results_dir_learner, failures_dir)
+            print(f"Creating dataset from {failures_dir}...")
+            create_conversational_dataset_for(failures_dir)
+            print(f"Created dataset from {failures_dir}")
+            print(f"Extracting tasks from dataset...")
+
+            # make failed_instances.json
+            build_instances(failures_dir / "results.jsonl", "failed_instances")
+        else:
+            print(f"Skipped processing: {failed_instances_file} already exists.")
+
 
         # run better model on these
-        with open(os.path.join(os.path.dirname(f"./{failures_dir}/results.jsonl"), "failed_instances.json")) as f:
-            dataset = json.load(f)
+        dataset_path = failures_dir / "results.jsonl"
+        with dataset_path.open("r", encoding="utf-8") as f:
+            dataset = [json.loads(line) for line in f]
         task_selector = to_task_selector(dataset)
-        results_dir_teacher = f"./results_teachers"
+        results_dir_teacher = Path("./results_teachers")
         for teacher in teacher_specs:
             teacher_name = teacher['model_name']
             print(f"Running better model {teacher_name} on failed instances...")
             clem.run("{'benchmark':['2.0']}", [teacher],
-                    gen_args=gen_args, results_dir=results_dir_teacher, task_selector=task_selector)
+                    gen_args=gen_args, results_dir_path=results_dir_teacher, sub_selector=task_selector)
             clem.score("{'benchmark':['2.0']}", results_dir=results_dir_teacher)
         print(f"Creating conversational dataset from {teacher_name} runs...")
         create_conversational_dataset_for(results_dir_teacher)
@@ -254,6 +277,51 @@ def cli(args: argparse.Namespace):
         # finetune learner model on successful best model runs
         print(f"Dataset created. Finetune learner model by running the command:")
         print(f"playpen run sft_trainer_lora.py -l {learner_name}")
+
+    if args.command_name == "evolve":
+        learner_spec = ModelSpec.from_string(args.learner)
+        teachers = [ModelSpec.from_string(t) for t in args.teacher]
+        prev_score = None
+        for r in range(args.rounds):
+            print(f"---Evolution round {r}---")
+
+            #run learn-from-failures like normal
+            cli(argparse.Namespace(
+                command_name="learn-from-failures",
+                learner=learner_spec.to_string(),
+                teacher=args.teacher,
+                temperature=args.temperature,
+                max_tokens=args.max_tokens
+            ))
+            
+            #finetune learner model
+            os.system(f"playpen run evolve_trainer_lora.py -l {learner_spec.model_name}")
+            sft_path = f"models/sft+lora/{learner_spec.model_name}"
+            learner_spec = ModelSpec.from_string(sft_path)
+            #eval
+            results_dir = Path("./evolve-evaluations")
+            results_dir.mkdir(parents=True, exist_ok=True)
+            
+            cli(argparse.Namespace(
+                command_name="eval",
+                model=learner_spec.to_string(),
+                suite="all",
+                game=None,
+                results_dir=results_dir,
+                skip_gameplay=False,
+                temperature=args.temperature,
+                max_tokens=args.max_tokens
+            ))
+            scores_file = results_dir / f"{learner_spec.model_name}.val.json"
+            with open(scores_file, "r") as f:
+                scores = json.load(f)
+                score = scores.get("clemscore", 0)
+                if prev_score is not None and score - prev_score < args.stop_threshold:
+                    print(f"Stopping early: score improved only {score - prev_score:.3f}")
+                    break
+                prev_score = score
+            
+            
 
 
 def main():
@@ -308,7 +376,7 @@ def main():
     failure_parser = sub_parsers.add_parser("learn-from-failures", description="Play selected games with chosen model and gather failed episodes to make a new dataset from them")
     failure_parser.add_argument("--learner", type=str,
                              help="The model name of the model to be run (as listed by 'playpen list models').")
-    failure_parser.add_argument("--teacher", type=str,
+    failure_parser.add_argument("--teacher", type=str,nargs="+",
                              help="The model name of the model to learn from (as listed by 'playpen list models').")
     failure_parser.add_argument("-T", "--temperature", type=float, default=0.0,
                              help="The temperature used for generation. Should be the same as during training. "
@@ -316,6 +384,14 @@ def main():
     failure_parser.add_argument("-L", "--max_tokens", type=int, default=300,
                              help="The token limit for generated responses. Should be the same as during training. "
                                   "Default: 300.")
+    evolve_parser = sub_parsers.add_parser("evolve", description="Iteratively improve learner model by looping failure collecting > teacher replay > fine-tuning > eval.")
+    evolve_parser.add_argument("--learner", type=str, required=True)
+    evolve_parser.add_argument("--teacher", type=str, nargs="+", required=True)
+    evolve_parser.add_argument("--rounds", type=int, default=3, help="Number of evolution rounds to run.")
+    evolve_parser.add_argument("--temperature", type=float, default=0.0)
+    evolve_parser.add_argument("--max_tokens", type=int, default=300)
+    evolve_parser.add_argument("--stop_threshold", type=float, default=0.0,
+    help="Stop early if improvement < threshold.")
     
     # todo: add a 'playpen play' option to allow collection of new interaction data on the train split
 
