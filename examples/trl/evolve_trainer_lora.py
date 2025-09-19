@@ -66,12 +66,42 @@ class PeftSftTrainer(BasePlayPen):
         dataset = dataset.filter(lambda episode: episode["meta"]["outcome"] == "success")
         dataset_best = dataset_best.filter(lambda episode: episode["meta"]["outcome"] == "success")
 
-        #ensure same format for both datasets
+
         dataset_best = dataset_best.cast(dataset.features)
 
-        combined_dataset = concatenate_datasets([dataset, dataset_best])
+        def keep_messages(example):
+            return {"messages": example["messages"]}
 
-        combined_dataset = combined_dataset.train_test_split(0.2, shuffle=True, seed=42)
+        dataset = dataset.map(keep_messages, remove_columns=dataset.column_names)
+        dataset_best = dataset_best.map(keep_messages, remove_columns=dataset_best.column_names)
+
+        print(f"Local dataset size: {len(dataset)}")
+        print(f"Best model dataset size (after filtering): {len(dataset_best)}")
+
+        combined_dataset = concatenate_datasets([dataset, dataset_best])
+        print(f"Combined dataset size: {len(combined_dataset)}")
+
+
+        #add tulu data
+        tulu = load_dataset("allenai/tulu-3-sft-personas-instruction-following", split="train")
+        print(f"Raw Tulu dataset size: {len(tulu)}")
+
+        # keep only messages
+        tulu = tulu.map(keep_messages, remove_columns=tulu.column_names)
+
+        print("Example Tulu row:", tulu[0])
+        #tulu = tulu.cast(dataset.features)
+        #print("Example Tulu row (after cast):", tulu[0])
+
+        tulu = tulu.shuffle(seed=42).select(range(int(0.3 * len(combined_dataset))))
+        print(f"Final combined size before split: {len(combined_dataset) + len(tulu)}")
+
+        final_dataset = concatenate_datasets([combined_dataset, tulu])
+        final_dataset = final_dataset.shuffle(seed=42).train_test_split(0.2, seed=42)
+        print(f"Train split size: {len(final_dataset['train'])}")
+        print(f"Test split size: {len(final_dataset['test'])}")
+        print("Features of final dataset:", final_dataset["train"].features)
+        print("Sample row:", final_dataset["train"][5])
 
         lora_config = LoraConfig(
             r=config["lora_r"],
@@ -101,14 +131,12 @@ class PeftSftTrainer(BasePlayPen):
                 learning_rate=config["learning_rate"],
                 report_to=["wandb"] if config.get("wandb", {}).get("enable", False) else []
             )
-
-
             
         # Initialize trainer context
         trainer = trl.SFTTrainer(
                 model=self.learner.model,
-                train_dataset=combined_dataset["train"],
-                eval_dataset=combined_dataset["test"],
+                train_dataset=final_dataset["train"],
+                eval_dataset=final_dataset["test"],
                 args=config_trl
                 # see https://huggingface.co/docs/trl/sft_trainer#training-adapters
             )

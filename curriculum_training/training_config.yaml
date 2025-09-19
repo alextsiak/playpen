@@ -1,0 +1,11 @@
+batch_size: 1
+grad_accum_steps: 4
+learning_rate: 2e-4
+max_steps: 10
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+wandb:
+  project: "playpen-sft"
+  name: "lora-sft-curriculum-run"
+  enable: true
