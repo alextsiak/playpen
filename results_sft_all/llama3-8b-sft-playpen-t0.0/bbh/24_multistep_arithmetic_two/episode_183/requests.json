@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "2025-08-15T01:51:57.499950",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nSolve multi-step arithmetic problems.\n\nQ: ((-5 + 9 * -4 - 0) * (4 + -7 + 0 * -5)) =\nA: 123\n\nQ: ((-9 * 7 * 7 * -9) + (4 * -9 - 8 - -4)) =\nA: 3929\n\nQ: ((-3 + 5 * 8 * -4) - (9 - 8 * -7 + -9)) =\nA: -219\n\nQ: ((-7 - 1 + 3 * -2) + (0 - 4 + 6 + 1)) =\nA:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nSolve multi-step arithmetic problems.\n\nQ: ((-5 + 9 * -4 - 0) * (4 + -7 + 0 * -5)) =\nA: 123\n\nQ: ((-9 * 7 * 7 * -9) + (4 * -9 - 8 - -4)) =\nA: 3929\n\nQ: ((-3 + 5 * 8 * -4) - (9 - 8 * -7 + -9)) =\nA: -219\n\nQ: ((-7 - 1 + 3 * -2) + (0 - 4 + 6 + 1)) =\nA:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nQ: ((-5 + 9 * -4 - 0) * (4 + -7 + 0 * -5)) =\nA: 123\nQ: ((-9 * 7 * 7 * -9) + (4 * -9 - 8 - -4)) =\nA: 3929\nQ: ((-3 + 5 * 8 * -4) - (9 - 8 * -7 + -9)) =\nA: -219\nQ: ((-7 - 1 + 3 * -2) + (0 - 4 + 6 + 1)) =\nA: -3<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 01:51:53.437032",
+        "call_duration": "0:00:04.062868",
+        "response": "Q: ((-5 + 9 * -4 - 0) * (4 + -7 + 0 * -5)) =\nA: 123\nQ: ((-9 * 7 * 7 * -9) + (4 * -9 - 8 - -4)) =\nA: 3929\nQ: ((-3 + 5 * 8 * -4) - (9 - 8 * -7 + -9)) =\nA: -219\nQ: ((-7 - 1 + 3 * -2) + (0 - 4 + 6 + 1)) =\nA: -3||",
+        "model_name": "llama3-8b-sft-playpen"
+      }
+    }
+  }
+]

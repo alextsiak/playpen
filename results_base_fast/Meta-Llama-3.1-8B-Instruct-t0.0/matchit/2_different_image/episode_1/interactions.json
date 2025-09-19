@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "game_name": "matchit",
+    "experiment_name": "different_image",
+    "game_id": 1,
+    "results_folder": "Meta-Llama-3.1-8B-Instruct-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "Meta-Llama-3.1-8B-Instruct",
+      "backend": "huggingface_local",
+      "context_size": "128k",
+      "huggingface_id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "languages": [
+        "en",
+        "de",
+        "fr",
+        "it",
+        "pt",
+        "hi",
+        "es",
+        "th"
+      ],
+      "license": {
+        "name": "Meta",
+        "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+      },
+      "lookup_source": "packaged",
+      "model_config": {
+        "requires_api_key": true,
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>"
+      },
+      "open_weight": true,
+      "parameters": "8B",
+      "release_date": "2024-07-23"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "MatchItPlayer",
+      "model_name": "Meta-Llama-3.1-8B-Instruct"
+    },
+    "Player 2": {
+      "game_role": "MatchItPlayer",
+      "model_name": "Meta-Llama-3.1-8B-Instruct"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T10:05:40.750479",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this picture and another picture only I can see, are the same.\nPlease describe your image first. Then, I will provide my description and we can ask each other questions about the images to figure out whether they are the same. Now start your short image description with \"DESCRIPTION:\" followed by the description. Do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:41.760152",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: A serene landscape of a misty forest with tall trees, a small clearing in the center, and a faint glow of sunlight peeking through the mist.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:41.760211",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-15T10:05:41.760250",
+        "action": {
+          "type": "send message",
+          "content": "You are participating in a collaborative guessing game.\nThe goal is to find out whether this picture and another picture only I can see, are the same.\nPlease describe your image first. Then, I will provide my description and we can ask each other questions about the images to figure out whether they are the same. Now start your short image description with \"DESCRIPTION:\" followed by the description. Do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:42.769265",
+        "action": {
+          "type": "get message",
+          "content": "DESCRIPTION: A serene landscape of a misty forest with tall trees, a small clearing in the center, and a faint glow of sunlight peeking through the mist.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:42.769322",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-15T10:05:42.769526",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: A serene landscape of a misty forest with tall trees, a small clearing in the center, and a faint glow of sunlight peeking through the mist.\nNow ask a question in order to find out new aspects of my image that may be different to your image. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:43.400502",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the clearing in your image empty, or is there something or someone present within it?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:43.400563",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T10:05:43.400605",
+        "action": {
+          "type": "send message",
+          "content": "This is my DESCRIPTION: A serene landscape of a misty forest with tall trees, a small clearing in the center, and a faint glow of sunlight peeking through the mist.\nQUESTION: Is the clearing in your image empty, or is there something or someone present within it? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:44.030110",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: The clearing in my image is empty, with no visible objects or living beings present.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:44.030163",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T10:05:44.030199",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my image that may be different to your image. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:45.253145",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Is the mist in your image more dense and fog-like, obscuring the view of the trees, or is it lighter and more wispy, allowing for a clearer view of the landscape?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:45.253199",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-15T10:05:45.253237",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: The clearing in my image is empty, with no visible objects or living beings present.\nQUESTION: Is the mist in your image more dense and fog-like, obscuring the view of the trees, or is it lighter and more wispy, allowing for a clearer view of the landscape? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:46.240215",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: The mist in my image is more dense and fog-like, obscuring the view of the trees, making them appear as vague silhouettes.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:46.240268",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "Player 2",
+        "timestamp": "2025-08-15T10:05:46.240300",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my image that may be different to your image. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 2",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:47.151313",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are the trees in your image uniform in height and density, or are there some that appear to be taller or more sparse than others?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:47.151369",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T10:05:47.151410",
+        "action": {
+          "type": "send message",
+          "content": "ANSWER: The mist in my image is more dense and fog-like, obscuring the view of the trees, making them appear as vague silhouettes.\nQUESTION: Are the trees in your image uniform in height and density, or are there some that appear to be taller or more sparse than others? Start your answer with \"ANSWER:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:48.300905",
+        "action": {
+          "type": "get message",
+          "content": "ANSWER: The trees in my image are relatively uniform in height and density, with a few slightly taller trees scattered throughout the forest, but no significant variations in tree height or spacing.",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:48.300960",
+        "action": {
+          "type": "valid format",
+          "content": "continue"
+        }
+      }
+    ],
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T10:05:48.300997",
+        "action": {
+          "type": "send message",
+          "content": "Now ask a question in order to find out new aspects of my image that may be different to your image. Start with \"QUESTION:\" and do not add anything else.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:49.481019",
+        "action": {
+          "type": "get message",
+          "content": "QUESTION: Are there any visible bodies of water, such as rivers, lakes, or streams, present in your image, or is the landscape solely composed of the misty forest and clearing?",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:49.481074",
+        "action": {
+          "type": "invalid format",
+          "content": "abort, first word: QUESTION:"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:49.481088",
+        "action": {
+          "type": "Game over",
+          "content": "Aborted"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T10:05:49.481103",
+        "action": {
+          "type": "Game over",
+          "content": "Aborted"
+        }
+      }
+    ]
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "2025-08-15T01:25:46.394701",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nEvaluate the result of a random Boolean expression.\n\nQ: not ( ( not not True ) ) is\nA: False\n\nQ: True and False and not True and True is\nA: False\n\nQ: not not ( not ( False ) ) is\nA: True\n\nQ: True and not ( True or False ) is\nA:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nEvaluate the result of a random Boolean expression.\n\nQ: not ( ( not not True ) ) is\nA: False\n\nQ: True and False and not True and True is\nA: False\n\nQ: not not ( not ( False ) ) is\nA: True\n\nQ: True and not ( True or False ) is\nA:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nQ: not ( ( not not True ) ) is\nA: False\n\nQ: True and False and not True and True is\nA: False\n\nQ: not not ( not ( False ) ) is\nA: True\n\nQ: True and not ( True or False ) is\nA: True<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 01:25:44.498056",
+        "call_duration": "0:00:01.896594",
+        "response": "Q: not ( ( not not True ) ) is\nA: False\n\nQ: True and False and not True and True is\nA: False\n\nQ: not not ( not ( False ) ) is\nA: True\n\nQ: True and not ( True or False ) is\nA: True||",
+        "model_name": "llama3-8b-sft-playpen"
+      }
+    }
+  }
+]

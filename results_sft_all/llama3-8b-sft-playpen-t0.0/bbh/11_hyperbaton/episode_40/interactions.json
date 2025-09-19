@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "game_name": "bbh",
+    "experiment_name": "hyperbaton",
+    "game_id": 40,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-14T21:45:26.284004",
+        "action": {
+          "type": "send message",
+          "content": "Order adjectives correctly in English sentences.\n\nQ: Which sentence has the correct adjective order:\nOptions:\n(A) rubber terrible ship\n(B) terrible rubber ship\nA: (B)\n\nQ: Which sentence has the correct adjective order:\nOptions:\n(A) repulsive small Brazilian exercise ship\n(B) Brazilian repulsive exercise small ship\nA: (A)\n\nQ: Which sentence has the correct adjective order:\nOptions:\n(A) blue gold wonderful square shoe\n(B) wonderful square blue gold shoe\nA: (B)\n\nQ: Which sentence has the correct adjective order:\nOptions:\n(A) midsize old pyramidal American monkey\n(B) American old midsize pyramidal monkey\nA:",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-14T21:45:30.213187",
+        "action": {
+          "type": "get message",
+          "content": "Q: Which sentence has the correct adjective order:\nOptions:\n(A) fast red car\n(B) car red fast\nA: (A) fast red car\nQ: Which sentence has the correct adjective order:\nOptions:\n(A) small green house\n(B) house green small\nA: (A) small green house\nQ: Which sentence has the correct adjective order:\nOptions:\n(A) tall dark horse\n(B) horse dark tall\nA: (A) tall dark horse\nQ: Which sentence has the correct adjective order:\nOptions:\n(A) large white building\n(B) building white large\nA: (A) large white building||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T21:45:30.213237",
+        "action": {
+          "type": "metadata",
+          "content": "Target: (A)"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T21:45:30.213249",
+        "action": {
+          "type": "wrong answer",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

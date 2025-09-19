@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "game_name": "cladder",
+    "experiment_name": "full_v1.5_default",
+    "game_id": 2431,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T05:32:43.658109",
+        "action": {
+          "type": "send message",
+          "content": "You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\nImagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on treatment and recovery. Treatment has a direct effect on recovery. For patients who are not male and not receiving treatment, the probability of recovery is 98%. For patients who are not male and receiving treatment, the probability of recovery is 64%. For patients who are male and not receiving treatment, the probability of recovery is 36%. For patients who are male and receiving treatment, the probability of recovery is 2%. The overall probability of male gender is 48%. Will receives treatment decrease the chance of recovery?\nStart your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:32:52.631851",
+        "action": {
+          "type": "get message",
+          "content": "No\nThe probability of male gender is 48%, and the probability of not male is 52%. The probability of not male and not receiving treatment is 52% (since the probability of male and not receiving treatment is 36%, and the probability of male is 48%, so the probability of not male is 52%). The probability of not male and not receiving treatment is 52% (since the probability of male and not receiving treatment is 36%, and the probability of male is 48%, so the probability of not male is 52%). The probability of not male and not receiving treatment is 52% (since the probability of male and not receiving treatment is 36%, and the probability of male is 48%, so the probability of not male is 52%). The probability of not male and not receiving treatment is 52% (since the probability of male and not receiving treatment is 36%, and the probability of male is 48%, so the probability of not male is 52%). The probability of not male and not receiving treatment is 52% (since the probability of male and not receiving treatment is 36%, and the probability of male is 48%, so the probability of not male is 52%). The probability of not male and not receiving treatment is 52% (since the probability of male and not receiving treatment is 36%, and the probability of male is 48%, so the probability of not male is 52%). The probability of",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:32:52.631949",
+        "action": {
+          "type": "parsed",
+          "content": "No"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:32:52.631964",
+        "action": {
+          "type": "target",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:32:52.631975",
+        "action": {
+          "type": "wrong label",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}
