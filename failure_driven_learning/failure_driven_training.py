@@ -26,18 +26,9 @@ class PeftSftTrainer(BasePlayPen):
 
     def __init__(self, learner: HuggingfaceLocalModel):
         super().__init__(learner)
-        # Note: We configure the proper chat template for the tokenizer already during model loading in the backend
 
 
     def learn(self, game_registry: GameRegistry):
-        # Load a conversational dataset for SFT, that is, a list of "messages" -- basically tuples of role and content.
-        # The role can be "user" or "assistant" and typically alternates within the list.
-        # During training, everything up to the last assistant message becomes the prefix for prediction.
-        # The loss is calculated based on the differences to the last assistant message.
-        # Here we load the canonical training split as available in the huggingface playpen-data repository.
-        # By default, the dataset is stored in ~/.cache/huggingface/datasets/ on your machine. This might take a while.
-
-
         if config.get("wandb", {}).get("enable", False):
             wandb.init(
                 project=config["wandb"]["project"],
@@ -110,11 +101,9 @@ class PeftSftTrainer(BasePlayPen):
                 train_dataset=combined_dataset["train"],
                 eval_dataset=combined_dataset["test"],
                 args=config_trl
-                # see https://huggingface.co/docs/trl/sft_trainer#training-adapters
             )
 
             
-        # Train on the dataset; this will save only the adapters to the checkpoints directory
         trainer.train()
 
         if config.get("wandb", {}).get("enable", False):
@@ -122,7 +111,6 @@ class PeftSftTrainer(BasePlayPen):
 
         save_path = f"models/sft+lora/{model_name}"
             
-        # Optional: Uncomment these lines to merge and save directly
         merged_model = trainer.model.merge_and_unload()
         merged_model.save_pretrained(save_path)
         self.learner.tokenizer.save_pretrained(save_path)

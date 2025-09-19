@@ -2,9 +2,11 @@ from clemcore.backends.huggingface_local_api import HuggingfaceLocalModel
 from clemcore.clemgame import GameRegistry
 
 import trl
+import yaml
 from datasets import load_dataset
 
 from playpen import BasePlayPen
+
 
 
 class SimpleSftTrainer(BasePlayPen):
@@ -20,11 +22,10 @@ class SimpleSftTrainer(BasePlayPen):
         # The loss is calculated based on the differences to the last assistant message.
         # Here we load the canonical training split as available in the huggingface playpen-data repository.
         # By default, the dataset is stored in ~/.cache/huggingface/datasets/ on your machine. This might take a while.
-        dataset = load_dataset("colab-potsdam/playpen-data", "interactions", split="train")
+        dataset = load_dataset(path="./results_Mistral-Small-24B-Instruct-2501/results.jsonl")
 
         # Only use the episodes we are interested to train on: here the llama3-8b ones with successful outcome
-        dataset = dataset.filter(lambda episode: episode["meta"]["outcome"] == "success"
-                                                 and episode["meta"]["model"] == "Meta-Llama-3.1-8B-Instruct")
+        dataset = dataset.filter(lambda episode: episode["meta"]["outcome"] == "success")
 
         # We shuffle and split the remaining filtered samples to receive a dev split
         # For evaluation on the actual games performance use the validation split
