@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "game_name": "bbh",
+    "experiment_name": "date_understanding",
+    "game_id": 165,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-14T20:13:21.686242",
+        "action": {
+          "type": "send message",
+          "content": "Infer the date from context.\n\nQ: Today is Christmas Eve of 1937. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 12/14/2026\n(B) 12/14/1950\n(C) 12/14/2007\n(D) 12/14/1937\n(E) 07/14/1938\n(F) 12/14/1988\nA: (D)\n\nQ: Tomorrow is 11/12/2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 09/04/2018\n(B) 11/11/2018\n(C) 08/25/2018\n(D) 11/02/2018\n(E) 11/04/2018\nA: (B)\n\nQ: Jane and John married on Jan 2, 1958. It is their 5-year anniversary today. What is the date tomorrow in MM/DD/YYYY?\nOptions:\n(A) 01/11/1961\n(B) 01/03/1963\n(C) 01/18/1961\n(D) 10/14/1960\n(E) 01/03/1982\n(F) 12/03/1960\nA: (B)\n\nQ: Yesterday was 12/31/1929. Today could not be 12/32/1929 because December has only 31 days. What is the date 24 hours later in MM/DD/YYYY?\nOptions:\n(A) 01/02/1930\n(B) 08/02/1930\n(C) 01/02/1884\n(D) 11/06/1929\n(E) 03/30/1930\n(F) 01/02/1877\nA:",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-14T20:13:25.821367",
+        "action": {
+          "type": "get message",
+          "content": "Q: The target grid has a pattern where the first and last rows are identical, and the second and fourth rows are identical. The third row is the only one that is different from the others. In the third row, the first and last cells are empty, and the second and fourth cells are filled with X. The middle cell is empty. What is the pattern of the third row in the target grid?\nOptions:\n(A) ▢ ▢ ▢ ▢ ▢\n(B) ▢ ▢ X ▢ ▢\n(C) ▢ X ▢ X ▢\n(D) ▢ ▢ ▢ ▢ ▢\nA: (B)||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T20:13:25.821414",
+        "action": {
+          "type": "metadata",
+          "content": "Target: (A)"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-14T20:13:25.821426",
+        "action": {
+          "type": "wrong answer",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

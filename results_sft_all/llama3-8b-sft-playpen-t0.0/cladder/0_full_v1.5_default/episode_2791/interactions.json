@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "game_name": "cladder",
+    "experiment_name": "full_v1.5_default",
+    "game_id": 2791,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T05:58:03.071676",
+        "action": {
+          "type": "send message",
+          "content": "You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\nImagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Husband has a direct effect on wife and alarm clock. Wife has a direct effect on alarm clock. We know that alarm set by husband causes alarm not set by wife. alarm set by husband or alarm set by wife causes ringing alarm. Would the alarm rings the next morning if alarm set by husband instead of alarm not set by husband?\nStart your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:58:12.027812",
+        "action": {
+          "type": "get message",
+          "content": "No\nThe direct relationship between the husband and the alarm clock is that the husband sets the alarm, which in turn leads to the alarm ringing. The direct relationship between the wife and the alarm clock is that the wife sets the alarm, which in turn leads to the alarm not set by the husband (alarm not set by the husband) and then the alarm rings. If the alarm is set by the husband, it directly leads to the alarm not set by the wife, and then the alarm rings. If the alarm is set by the husband, it directly leads to the alarm not set by the wife, and then the alarm rings. If the alarm is set by the husband, it directly leads to the alarm not set by the wife, and then the alarm rings. If the alarm is set by the husband, it directly leads to the alarm not set by the wife, and then the alarm rings. If the alarm is set by the husband, it directly leads to the alarm not set by the wife, and then the alarm rings. If the alarm is set by the husband, it directly leads to the alarm not set by the wife, and then the alarm rings. If the alarm is set by the husband, it directly leads to the alarm not set by the wife, and then the alarm rings. If the alarm is set by the husband, it directly leads to the alarm not set by the wife, and then the alarm rings. If the alarm is set by the husband, it directly",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:58:12.027903",
+        "action": {
+          "type": "parsed",
+          "content": "No"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:58:12.027918",
+        "action": {
+          "type": "target",
+          "content": "yes"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:58:12.027928",
+        "action": {
+          "type": "wrong label",
+          "content": "game_result = LOSE"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 1,
+  "Success": 0,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}

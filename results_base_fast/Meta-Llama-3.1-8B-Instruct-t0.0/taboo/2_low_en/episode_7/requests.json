@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2025-08-15T10:00:28.591623",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbradley\n\nRelated words are:\n\n- brad\n- england\n- bradlea\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbradley\n\nRelated words are:\n\n- brad\n- england\n- bradlea\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 10:00:28.115322",
+        "call_duration": "0:00:00.476262",
+        "response": "CLUE: English surname often associated with a famous World War II pilot.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T10:00:28.772207",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Churchill<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 10:00:28.591946",
+        "call_duration": "0:00:00.180223",
+        "response": "GUESS: Churchill",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T10:00:29.221856",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbradley\n\nRelated words are:\n\n- brad\n- england\n- bradlea\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Churchill<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbradley\n\nRelated words are:\n\n- brad\n- england\n- bradlea\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Churchill<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: This surname is also associated with a British television series.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 10:00:28.772326",
+        "call_duration": "0:00:00.449489",
+        "response": "CLUE: This surname is also associated with a British television series.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T10:00:29.402662",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Churchill<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: This surname is also associated with a British television series.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Churchill<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: This surname is also associated with a British television series.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Harris<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 10:00:29.222137",
+        "call_duration": "0:00:00.180486",
+        "response": "GUESS: Harris",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T10:00:29.824444",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbradley\n\nRelated words are:\n\n- brad\n- england\n- bradlea\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Churchill<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: This surname is also associated with a British television series.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Harris<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to describe a target word for another player to guess.\n\nRules:\n(a) You have to reply in the form: CLUE: <some text>. Guesses from the other player will start with GUESS.\n(b) You cannot use the target word itself, parts or morphological variants of it in your description.\n(c) In addition, the same rules apply for related words which are provided below.\n\nEnd conditions:\n(i) If you use the target word or a related word in your description, then you lose.\n(ii) If the other player can guess the target word in 3 tries, you both win.\n\nLet us start.\n\nThis is the target word that you need to describe and that the other player needs to guess:\n\nbradley\n\nRelated words are:\n\n- brad\n- england\n- bradlea\n\nImportant: You are under time pressure, give short descriptions that are to the point!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Churchill<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: This surname is also associated with a British television series.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nGUESS: Harris<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nCLUE: The character is a teacher in a British school.<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 10:00:29.402781",
+        "call_duration": "0:00:00.421623",
+        "response": "CLUE: The character is a teacher in a British school.",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-15T10:00:30.036056",
+    "manipulated_prompt_obj": {
+      "inputs": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Churchill<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: This surname is also associated with a British television series.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Harris<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: The character is a teacher in a British school.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "max_new_tokens": 300,
+      "temperature": 0.0,
+      "return_full_text": false
+    },
+    "raw_response_obj": {
+      "response": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are playing a collaborative word guessing game in which you have to guess a target word that another player describes to you.\n\nYou can make one guess at each trial. You win when you guess the target word. You lose when you cannot guess it in 3 tries.\n\nAfter each trial you will get a new hint from the other player which starts with CLUE.\n\nMake your guesses by just saying the word using the following form: GUESS: <a word>\n\nLet us start.\n\n\nCLUE: English surname often associated with a famous World War II pilot.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Churchill<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: This surname is also associated with a British television series.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Harris<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nCLUE: The character is a teacher in a British school.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nGUESS: Keating<|eot_id|>",
+      "clem_player": {
+        "call_start": "2025-08-15 10:00:29.824702",
+        "call_duration": "0:00:00.211314",
+        "response": "GUESS: Keating",
+        "model_name": "Meta-Llama-3.1-8B-Instruct"
+      }
+    }
+  }
+]

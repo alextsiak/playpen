@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "game_name": "cladder",
+    "experiment_name": "full_v1.5_default",
+    "game_id": 2246,
+    "results_folder": "llama3-8b-sft-playpen-t0.0",
+    "clem_version": "3.2.1"
+  },
+  "player_models": {
+    "0": {
+      "model_name": "llama3-8b-sft-playpen",
+      "backend": "huggingface_local",
+      "dtype": "bfloat16",
+      "huggingface_id": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "id_or_path": "/home/users/iarefeva/playpen/runs/models/sft+lora/Meta-Llama-3.1-8B-Instruct/merged",
+      "lookup_source": "/home/users/iarefeva/playpen/model_registry.json",
+      "model_config": {
+        "requires_api_key": false,
+        "premade_chat_template": true,
+        "eos_to_cull": "<|eot_id|>"
+      },
+      "name": "llama3-8b-sft-playpen"
+    }
+  },
+  "players": {
+    "GM": {
+      "game_role": "Game Master",
+      "model_name": "programmatic"
+    },
+    "Player 1": {
+      "game_role": "Answerer",
+      "model_name": "llama3-8b-sft-playpen"
+    }
+  },
+  "turns": [
+    [
+      {
+        "from": "GM",
+        "to": "Player 1",
+        "timestamp": "2025-08-15T05:18:39.902222",
+        "action": {
+          "type": "send message",
+          "content": "You are an expert in causal inference. The following question is not a typical commonsense query, but rather a meticulously designed question created by a professor specializing in causal inference, intended to assess the students' mastery of the course content.\nImagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Parents' intelligence has a direct effect on parents' social status and child's intelligence. Other unobserved factors has a direct effect on parents' social status and child's intelligence. Parents' social status has a direct effect on child's intelligence. Other unobserved factors is unobserved. For children with unintelligent parents and with low parental social status, the probability of intelligent child is 82%. For children with unintelligent parents and with high parental social status, the probability of intelligent child is 46%. For children with intelligent parents and with low parental social status, the probability of intelligent child is 48%. For children with intelligent parents and with high parental social status, the probability of intelligent child is 14%. For children with unintelligent parents and confounder inactive, the probability of high parental social status is 63%. For children with unintelligent parents and confounder active, the probability of high parental social status is 68%. For children with intelligent parents and confounder inactive, the probability of high parental social status is 16%. For children with intelligent parents and confounder active, the probability of high parental social status is 30%. The overall probability of confounder active is 53%. Does parents' intelligence negatively affect child's intelligence through parents' social status?\nStart your answer with 'Yes' or 'No', followed by additional reasoning or evidence to support your explanation.",
+          "label": "context"
+        }
+      },
+      {
+        "from": "Player 1",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:18:43.121110",
+        "action": {
+          "type": "get message",
+          "content": "No\nThe relationship between parents' intelligence and child's intelligence is not direct; rather, it is mediated by parents' social status. The direct effect of parents' intelligence on child's intelligence is not clear from the given information, and the relationship is likely to be more complex than a direct negative effect. The probability of intelligent child given intelligent parents and high social status is lower than the probability of intelligent child given intelligent parents and low social status, which might indicate that parents' social status has a positive effect on child's intelligence.||",
+          "label": "response"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:18:43.121191",
+        "action": {
+          "type": "parsed",
+          "content": "No"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:18:43.121206",
+        "action": {
+          "type": "target",
+          "content": "no"
+        }
+      },
+      {
+        "from": "GM",
+        "to": "GM",
+        "timestamp": "2025-08-15T05:18:43.121217",
+        "action": {
+          "type": "correct label",
+          "content": "game_result = WIN"
+        }
+      }
+    ]
+  ],
+  "Aborted": 0,
+  "Lose": 0,
+  "Success": 1,
+  "Request Count": 1,
+  "Parsed Request Count": 1,
+  "Violated Request Count": 0
+}
