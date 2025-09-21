@@ -31,6 +31,15 @@ We evaluate both **post-training methods** (e.g., DPO/SFT with Tülu and custom 
 - **`tulu/`**  
   Experiments with Tülu datasets to improve general model abilities such as instruction-following, diversity, and preference alignment.  
 
+- **`results/text_only_evals/`**
+CLEMbench text-only baselines (Meta-Llama-3.1-8B-Instruct; t00/t02/t04). 
+
+- **`experiments/rg_nearmiss/`**
+ReferenceGame near-miss SFT to enforce the strict one-line answer format.
+
+- **`experiments/perfect_sft_nearfix/`**
+"Perfect-transcript" SFT plus a near-fix LoRA for RG. 
+
 ---
 
 ## Getting Started  
