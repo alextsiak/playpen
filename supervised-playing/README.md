@@ -1,6 +1,6 @@
 # Supervised Playing Architecture
 
-This repository contains experiments on **protocol-aware supervision** in Clembench, where mid-episode feedback is injected into gameplay to improve instruction adherence.
+This repository directory contains experiments on **protocol-aware supervision** in Clembench, where mid-episode feedback is injected into gameplay to improve instruction adherence.
 
 ## Idea
 
@@ -21,7 +21,7 @@ The Advisor:
 - **Player (LLM):** `meta-llama/Llama-3.1-8B-Instruct`  
 - **Advisor (LLM):** `Qwen/Qwen2.5-32B-Instruct`  
 
-The Advisor runs with 4-bit quantization (NF4) and injects advice at configurable turns.
+The Advisor runs with 4-bit quantization and injects advice at configurable turns.
 
 ## Key Results
 
