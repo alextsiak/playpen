@@ -14,8 +14,8 @@ The Advisor:
 
 ### Pipeline
 - The Clemcore sequential runner was extended so that, at **turns 10 and 25**, the Advisor’s feedback is injected alongside the Game Master’s message.  
-- Feedback prompt format and details are defined in `clemcore-clemcore-clemgame-runners-sequential.py`:contentReference[oaicite:0]{index=0}.  
-- To reproduce the results make sure to use slighlty modified files: `clemcore-clemcore-clemgame-runners-dispatch.py`:contentReference[oaicite:1]{index=1} and  `clemcore-clemcore-cli.py`:contentReference[oaicite:2]{index=2}.  
+- Feedback prompt format and details are defined in `clemcore-clemcore-clemgame-runners-sequential.py`.  
+- To reproduce the results make sure to use slighlty modified files: `clemcore-clemcore-clemgame-runners-dispatch.py` and  `clemcore-clemcore-cli.py`.  
 
 ### Models
 - **Player (LLM):** `meta-llama/Llama-3.1-8B-Instruct`  
@@ -30,7 +30,7 @@ Injecting advice at **turns 10 and 25** improved Clembench performance:
 | Setup                                        | Clemscore | Statscore |
 |----------------------------------------------|-----------|-----------|
 | Llama-8B-Instruct (baseline)                 | 29.05     | 55.45     |
-| Supervised Playing (advice @ 10 & 25)        | 32.30:contentReference[oaicite:3]{index=3} | 55.50:contentReference[oaicite:4]{index=4} |
+| Supervised Playing (advice @ 10 & 25)        | 32.30 | 55.50 |
 
 This corresponds to a **+11.19% improvement in Clemscore** with Statscore essentially unchanged (as expected, since core decoding was unaltered).
 
