@@ -4,7 +4,7 @@ This repository contains experiments with reasoning-based search strategies for 
 
 ## Implementation
 
-The reasoning backend is defined in [`vllm-reasoning-sal_api.py`](vllm-reasoning-sal_api.py):contentReference[oaicite:0]{index=0}.  
+The reasoning backend is defined in [`vllm-reasoning-sal_api.py`](vllm-reasoning-sal_api.py).  
 It integrates:
 - **LLM** (`meta-llama/Llama-3.1-8B-Instruct`)
 - **PRM (Reward Model):** `RLHFlow/Llama3.1-8B-PRM-Deepseek-Data`
@@ -19,9 +19,9 @@ Initial results showed **degraded performance relative to the baseline** when ap
 | Search Method | Clemscore | Statscore |
 |---------------|-----------|-----------|
 | Llama-8B-Instruct (baseline) | 29.05 | 55.45 |
-| Best-of-N | 13.27:contentReference[oaicite:1]{index=1} | 27.48:contentReference[oaicite:2]{index=2} |
-| Beam Search | 16.50:contentReference[oaicite:3]{index=3} | 46.87:contentReference[oaicite:4]{index=4} |
-| DVTS | 13.74:contentReference[oaicite:5]{index=5} | 43.92:contentReference[oaicite:6]{index=6} |
+| Best-of-N | 13.27 | 27.48 |
+| Beam Search | 16.50 | 46.87 |
+| DVTS | 13.74 | 43.92 |
 
 ## Error Analysis and Adjustments
 
@@ -34,7 +34,7 @@ To mitigate this, we tested:
 - Larger `n` (**12**) to preserve candidate diversity.
 - Strict **12-token cap** to suppress commentary.
 
-However, these adjustments (beam-style search) did **not improve results**:
+However, these adjustments did **not improve results**:
 
 | Search Method | Clemscore | Statscore |
 |---------------|-----------|-----------|
