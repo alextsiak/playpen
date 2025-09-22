@@ -67,7 +67,7 @@ class PeftSftTrainer(BasePlayPen):
         full_dataset = load_dataset("colab-potsdam/playpen-data", "interactions", split="train")
         full_dataset = full_dataset.filter(lambda ep: ep["meta"]["outcome"] == "success")
 
-        fail_file = Path("./failures_llama3-8b/failed_instances.json") 
+        fail_file = Path(config["failed_instances_path"]) 
         difficulties = load_task_difficulties(full_dataset, fail_file)
 
         # Configure LoRA
