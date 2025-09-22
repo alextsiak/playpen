@@ -111,8 +111,8 @@ class PeftSftTrainer(BasePlayPen):
                 max_length=300,
                 output_dir=output_dir,
                 eval_strategy="epoch",
-                max_steps=config["max_steps"],
-                logging_steps=1,
+                num_train_epochs=config["num_train_epochs"],
+                logging_steps=50,
                 per_device_train_batch_size=config["batch_size"],
                 learning_rate=config["learning_rate"],
                 report_to=["wandb"] if config.get("wandb", {}).get("enable", False) else []
