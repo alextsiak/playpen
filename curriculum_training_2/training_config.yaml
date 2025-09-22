@@ -1,9 +1,8 @@
-batch_size: 4
-# grad_accum_steps: 4
+batch_size: 1
+grad_accum_steps: 4
 learning_rate: 0.0002
-max_steps: 500
-# num_train_epochs: 1
-lora_r: 64
-lora_alpha: 32
+num_train_epochs: 2
+lora_r: 8
+lora_alpha: 16
 lora_dropout: 0.05
 failed_instances_path: "./failures_llama3-8b/llama3-8b-t0.0/failed_instances.json"
