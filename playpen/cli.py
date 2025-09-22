@@ -276,7 +276,7 @@ def cli(args: argparse.Namespace):
         
         # finetune learner model on successful best model runs
         print(f"Dataset created. Finetune learner model by running the command:")
-        print(f"playpen run sft_trainer_lora.py -l {learner_name}")
+        print(f"playpen run failure_driven_training.py -l {learner_name}")
 
     if args.command_name == "evolve":
         learner_spec = ModelSpec.from_string(args.learner)
