@@ -37,5 +37,4 @@ class PeftGRPOTrainer(BasePlayPen):
             peft_config=self.peft_config
         )
 
-        # Train on the dataset; this will save only the adapters to the checkpoints directory
         trainer.train()
