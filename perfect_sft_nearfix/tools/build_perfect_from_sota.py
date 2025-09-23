@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import os, re, json, sys, math
 from pathlib import Path
 from typing import Any, List, Dict
@@ -89,8 +87,6 @@ def is_perfect_for(game: str, scores: Any) -> bool:
     if sc is not None and (abs(sc-1.0) < 1e-9 or int(round(sc)) == 100): return True
     return False
 
-# -------- message reconstruction from requests.json --------
-
 HDR_RE = re.compile(r"<\|start_header_id\|>(system|user|assistant)<\|end_header_id\|>\s*\n\n(.*?)<\|eot_id\|>", re.S | re.I)
 
 def _extract_last_block(text: str, header: str) -> str | None:
@@ -148,7 +144,7 @@ def turns_from_requests(ep_dir: Path) -> List[Dict] | None:
             merged.append(m)
     return merged if any(m["role"]=="assistant" for m in merged) else None
 
-# -------- scan & build --------
+## scan and build 
 
 def detect_game_from_path(ep_dir: Path) -> str:
     try:
