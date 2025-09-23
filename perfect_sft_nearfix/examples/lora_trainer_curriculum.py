@@ -55,7 +55,6 @@ class PeftSftTrainer(BasePlayPen):
     
 
     def learn(self, game_registry: GameRegistry):
-        # Initialize wandb if enabled
         if config.get("wandb", {}).get("enable", False):
             wandb.init(
                 project=config["wandb"]["project"],
@@ -63,14 +62,12 @@ class PeftSftTrainer(BasePlayPen):
                 config=config
             )
 
-        # Load dataset
         full_dataset = load_dataset("colab-potsdam/playpen-data", "interactions", split="train")
         full_dataset = full_dataset.filter(lambda ep: ep["meta"]["outcome"] == "success")
 
         fail_file = Path("./failures_llama3-8b/failed_instances.json") 
         difficulties = load_task_difficulties(full_dataset, fail_file)
 
-        # Configure LoRA
         lora_config = LoraConfig(
             r=config["lora_r"],
             lora_alpha=config["lora_alpha"],
@@ -82,7 +79,6 @@ class PeftSftTrainer(BasePlayPen):
         self.learner.model = get_peft_model(self.learner.model, lora_config)
         print(self.learner.model.print_trainable_parameters())
 
-        #two stages: easy, hard
         for stage_idx, (difficulty_lvl, keys) in enumerate(difficulties.items()):
             print(f"Currently training on {difficulty_lvl}")
 
