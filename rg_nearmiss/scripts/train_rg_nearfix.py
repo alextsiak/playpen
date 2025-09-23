@@ -17,7 +17,6 @@ pathlib.Path(OUT).mkdir(parents=True, exist_ok=True)
 print("Loading dataset…")
 ds_all = load_dataset("json", data_files=DATA, split="train")
 
-# Convert your {messages:[{role:..., content:...}, ...]} to plain text
 def to_text(ex):
     msgs = ex.get("messages", [])
     u = next((m["content"] for m in msgs if m.get("role")=="user"), "")
@@ -54,7 +53,6 @@ peft_cfg = LoraConfig(
     bias="none", task_type="CAUSAL_LM",
 )
 
-# NOTE: new Transformers expects eval_strategy (not evaluation_strategy)
 args = TrainingArguments(
     output_dir=OUT,
     num_train_epochs=1,
