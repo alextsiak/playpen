@@ -11,13 +11,11 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 OUT_JSONL = OUT_DIR / "results.jsonl"
 STATS_CSV = OUT_DIR / "results_stats.csv"
 
-# Only interactive CLEM games
 KNOWN_GAMES = (
     "wordle", "wordle_withclue", "wordle_withcritic",
     "taboo", "referencegame", "privateshared", "imagegame", "drawing"
 )
 
-# Choose models via env; default is a broad SOTA regex
 MODEL_PAT = re.compile(os.environ.get(
     "MODEL_PAT",
     r"(o3[-_]?mini|gpt[-_]?4o|chatgpt[-_]?4o|claude[-_]?3(?:\.?5)?[-_]?sonnet)"
@@ -213,7 +211,6 @@ def main():
         print("No perfect episodes found for the chosen models under", RUNS / VERSION)
         return
 
-    # De-dupe by (game, instance_id, first assistant)
     seen, deduped = set(), []
     for e in kept:
         gid = e["meta"]["game"]
