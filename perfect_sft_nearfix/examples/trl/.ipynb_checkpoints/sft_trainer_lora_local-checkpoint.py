@@ -10,13 +10,11 @@ from playpen import BasePlayPen
 DATA_JSONL = Path.home() / "playpen/examples/trl/results.jsonl"
 
 def _infer_model_name(learner: HuggingfaceLocalModel) -> str:
-    # Try spec fields first
     spec = getattr(learner, "model_spec", None) or {}
     for k in ("model_name", "huggingface_id", "id_or_path"):
         v = spec.get(k) if isinstance(spec, dict) else None
         if v:
             return str(v).split("/")[-1]
-    # Fall back to HF config hint
     name = getattr(getattr(learner, "model", None), "config", None)
     name = getattr(name, "_name_or_path", None)
     if name:
@@ -28,15 +26,12 @@ class PeftSftTrainer(BasePlayPen):
         super().__init__(learner)
 
     def learn(self, game_registry: GameRegistry):
-        # Use your local perfect-episodes dataset
         ds_all = load_dataset("json", data_files=str(DATA_JSONL))["train"]
-        # simple split
         ds = ds_all.train_test_split(test_size=0.1, seed=42)
 
         model_name = _infer_model_name(self.learner)
         out_dir = Path("models") / "sft+lora" / model_name
 
-        # TRL training args
         config = trl.SFTConfig(
             output_dir=str(out_dir),
             per_device_train_batch_size=1,
@@ -45,18 +40,16 @@ class PeftSftTrainer(BasePlayPen):
             learning_rate=2e-4,
             num_train_epochs=1,
             logging_steps=10,
-            eval_strategy="epoch",     # <-- not evaluation_strategy
+            eval_strategy="epoch", 
             save_strategy="epoch",
-            bf16=True,                 # set to False if your GPU can’t do bf16
-            max_length=2048,           # <-- not max_seq_length
-            packing=False              # optional; put here, not in SFTTrainer
+            bf16=True,            
+            max_length=2048,    
+            packing=False         
         )
 
 
-        # Format each example using the model's chat template
         tok = self.learner.tokenizer
         def formatting_func(example):
-            # example["messages"] is a list of {role, content}
             return tok.apply_chat_template(
                 example["messages"],
                 tokenize=False,
@@ -79,11 +72,9 @@ class PeftSftTrainer(BasePlayPen):
 
         trainer.train()
 
-        # Save adapters
         trainer.model.save_pretrained(str(out_dir / "peft"))
         tok.save_pretrained(str(out_dir / "peft"))
 
-        # Try to merge LoRA into the base (handy for evaluation)
         try:
             merged = trainer.model.merge_and_unload()
             merged_dir = out_dir / "merged"
