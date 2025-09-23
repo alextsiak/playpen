@@ -1,25 +1,3 @@
-#!/usr/bin/env python3
-"""
-Mine Referencegame corrected format exemplars from any per-episode JSONs.
-
-Search pattern:
-  <root>/**/referencegame/**/episode_*/{scores.json,interaction.json,*.json}
-
-Extraction:
-  - Deep-scan every JSON dict/list for a gold/target/solution as either
-    - text:  "first" | "second" | "third"  (case-insensitive), or
-    - index: 0 | 1 | 2   (mapped to first/second/third)
-  - If none found in one file, continue scanning the rest inside the episode dir.
-  - If found -> write one corrected training example.
-
-Output JSONL fields:
-  {
-    "game": "referencegame",
-    "user": "<STRICT one-liner>\\n[id: <stable-episode-id>]",
-    "assistant": "Answer: <first|second|third>",
-    "source": "<episode_dir>"
-  }
-"""
 import argparse, json, re, hashlib, sys
 from pathlib import Path
 
@@ -71,7 +49,6 @@ def main():
 
     outp = Path(args.out); outp.parent.mkdir(parents=True, exist_ok=True)
 
-    # Build dedup set from perfect set (if present)
     seen = set()
     P = Path(args.perfect)
     if P.exists():
@@ -84,7 +61,6 @@ def main():
             except Exception:
                 pass
 
-    # Collect episode dirs
     eps = []
     for root in args.roots:
         rp = Path(root)
@@ -103,7 +79,6 @@ def main():
             if written >= args.max_items:
                 break
             gold = None
-            # scan all json files in the episode dir
             for jf in sorted(ep.glob("*.json")):
                 try:
                     J = json.loads(jf.read_text())
