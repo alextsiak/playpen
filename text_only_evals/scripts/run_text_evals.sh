@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 set -euo pipefail
 export CLEM_MODEL_REGISTRY="$(pwd)/model_registry.json"
 
