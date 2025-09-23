@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse, json, re, hashlib, sys
 from pathlib import Path
 
@@ -37,16 +36,13 @@ def extract_from_grouped_list(items, file_name):
         if not isinstance(gi, list): continue
         for inst_idx, inst in enumerate(gi):
             gold = None
-            # 1) explicit target_grid_name is usually ['first', 1] etc.
             tgn = inst.get('target_grid_name') if isinstance(inst, dict) else None
             if isinstance(tgn, list) and tgn:
                 gold = to_fst_snd_trd(tgn[0])
-            # 2) common index fields
             if gold is None:
                 for k in ('target_grid_idx','target_grid_index','target_index','gold_index','answer_index'):
                     if k in inst:
                         gold = to_fst_snd_trd(inst[k]); break
-            # 3) last resort: scan any value
             if gold is None:
                 for v in inst.values():
                     g=to_fst_snd_trd(v)
@@ -56,18 +52,15 @@ def extract_from_grouped_list(items, file_name):
                 ok += 1
                 src_id = f"{file_name}#{group_name}#{inst.get('game_id', inst_idx)}"
                 yield src_id, gold
-        # optional per-group progress to stderr
         print(f"[info] {file_name}:{group_name} -> {ok}/{total} extracted", file=sys.stderr)
     return
 
 def iter_all_instances(file_path):
     """Return iterator of (src_id, gold) across schema variants."""
     data = json.loads(file_path.read_text(encoding='utf-8'))
-    # Variant A: dict with 'instances' list
     if isinstance(data, dict):
         if isinstance(data.get('instances'), list):
             for i, it in enumerate(data['instances']):
-                # try typical fields
                 gold=None
                 for k in ('target','gold','solution','answer','target_idx','target_index','gold_index','answer_index'):
                     if k in it:
@@ -78,12 +71,10 @@ def iter_all_instances(file_path):
                 if gold in {'first','second','third'}:
                     yield f"{file_path.name}#{i}", gold
             return
-    # Variant B: top-level LIST of groups with 'game_instances' (v1.6/v2.0)
     if isinstance(data, list) and data and isinstance(data[0], dict) and 'game_instances' in data[0]:
         for src_id, gold in extract_from_grouped_list(data, file_path.name):
             yield src_id, gold
         return
-    # Variant C: fallback — scan any list in dict
     if isinstance(data, dict):
         for k,v in data.items():
             if isinstance(v, list):
@@ -115,7 +106,6 @@ def main():
     if not files:
         print(f"[warn] no matching instances*.json in {in_dir}", file=sys.stderr)
 
-    # dedup against perfect
     seen=set()
     P=Path(args.perfect)
     if P.exists():
