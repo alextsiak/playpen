@@ -8,11 +8,9 @@ from playpen import BasePlayPen
 
 
 class PeftGRPOTrainer(BasePlayPen):
-    # Note: We configure the proper chat template for the tokenizer already during model loading in the backend
 
     def __init__(self, learner: HuggingfaceLocalModel):
         super().__init__(learner)
-        # Initialize training configuration
         self.config = trl.GRPOConfig(
             num_train_epochs=10,
             disable_dropout=True,
@@ -30,7 +28,6 @@ class PeftGRPOTrainer(BasePlayPen):
         )
 
     def learn(self, game_registry: GameRegistry):
-        # Initialize trainer context
         trainer = trl.GRPOTrainer(
             model=self.learner.model,
             processing_class=self.learner.tokenizer,
