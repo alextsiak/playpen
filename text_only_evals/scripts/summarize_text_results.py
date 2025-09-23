@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import sys, json, pathlib
 
 def clamp01(x):
@@ -29,7 +28,6 @@ def summarize_one(root):
         g["total"]+=1
         if played:
             g["played"]+=1; g["q_sum"]+=q; g["q_cnt"]+=1
-    # keep text-only games
     per_game = {k:v for k,v in per_game.items() if k in {"taboo","referencegame"}}
     mp_list=[]; mq_list=[]
     lines=[]
