@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse, json, re, hashlib, os
 from pathlib import Path
 
@@ -32,7 +31,6 @@ def read_json_safe(p: Path):
     except Exception: return None
 
 def episode_stable_id(ep: Path):
-    # Use experiment folder + episode name + tiny hash of episode.json/input.json if present
     parts = ep.parts
     exp = parts[-2] if len(parts)>=2 else "exp"
     epi = parts[-1]
@@ -56,16 +54,12 @@ def main():
     ap.add_argument("--max_items", type=int, default=1000)
     args=ap.parse_args()
 
-    # Collect episode dirs
     eps=[]
     for root in args.roots:
         rootp=Path(root)
         if not rootp.exists(): continue
-        # Typical layout
         eps += [p for p in rootp.rglob("referencegame/*/episode_*") if p.is_dir()]
-        # Fallback layout
         eps += [p for p in rootp.rglob("episode_*") if p.is_dir()]
-    # De-dup episode dirs
     seen_dirs=set()
     uniq=[]
     for ep in sorted(eps):
