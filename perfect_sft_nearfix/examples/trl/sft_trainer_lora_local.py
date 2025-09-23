@@ -64,7 +64,6 @@ class PeftSftTrainer(BasePlayPen):
                 task_type="CAUSAL_LM",
             ),
             formatting_func=formatting_func,
-            # If your TRL version supports it, you could pass max_seq_length=4096 here.
         )
 
         trainer.train()
