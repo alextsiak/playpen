@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse, csv, json, re, hashlib
 from pathlib import Path
 RG_WORDS={"first","second","third"}
