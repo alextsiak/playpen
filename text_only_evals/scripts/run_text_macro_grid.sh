@@ -1,10 +1,8 @@
-#!/bin/sh
 set -eu
 
 BASE_MODEL='Meta-Llama-3.1-8B-Instruct'
 SFT_MODEL='llama3-8b-sft-tulu3-2025-09-merged'
 
-# Allow overriding GAMES from the environment:
 GAMES="${GAMES:-referencegame taboo matchit_ascii wordle wordle_withclue wordle_withcritic imagegame guesswhat cladder eqbench mmlu_pro textmapworld textmapworld_graphreasoning textmapworld_specificroom}"
 TEMPS="${TEMPS:-0.0 0.2 0.4 0.7}"
 
