@@ -18,7 +18,6 @@ print("Loading dataset…")
 ds_all = load_dataset("json", data_files=DATA, split="train")
 
 def to_text(example):
-    # messages = [{"role":"user","content":...},{"role":"assistant","content":...}]
     msgs = example.get("messages", [])
     u = next((m["content"] for m in msgs if m.get("role")=="user"), "")
     a = next((m["content"] for m in msgs if m.get("role")=="assistant"), "")
@@ -59,13 +58,10 @@ MAXLEN = 1024
 
 def tokenize_with_mask(example):
     full, prefix = to_text(example)
-    # tokenize without special tokens so prefix length aligns
     ids_full   = tok(full,   add_special_tokens=False, max_length=MAXLEN, truncation=True)["input_ids"]
     ids_prefix = tok(prefix, add_special_tokens=False)["input_ids"]
 
-    # If truncation cut the assistant, cap prefix to available length
     pref_len = min(len(ids_prefix), len(ids_full))
-    # labels: mask prefix with -100, learn only completion
     labels = [-100]*pref_len + ids_full[pref_len:]
 
     attn = [1]*len(ids_full)
@@ -75,7 +71,6 @@ ds_train_tok = ds_train.map(tokenize_with_mask, remove_columns=ds_train.column_n
 ds_eval_tok  = ds_eval.map(tokenize_with_mask,  remove_columns=ds_eval.column_names,  desc="tokenize-eval")
 
 def collate(batch):
-    # simple right-padding collator for causal LM with label masking
     maxlen = max(len(x["input_ids"]) for x in batch)
     def pad(seq, pad_id): return seq + [pad_id]*(maxlen - len(seq))
     input_ids      = [pad(x["input_ids"], tok.pad_token_id) for x in batch]
@@ -92,12 +87,12 @@ args = TrainingArguments(
     num_train_epochs=1,
     learning_rate=5e-6,
     per_device_train_batch_size=1,
-    gradient_accumulation_steps=32,  # effective batch 32
+    gradient_accumulation_steps=32,  
     logging_steps=10,
     save_strategy="epoch",
-    eval_strategy="epoch",           # use 'eval_strategy' for newer Transformers
+    eval_strategy="epoch",           
     bf16=True,
-    optim="paged_adamw_8bit",        # if this errors on your setup, switch to "adamw_torch"
+    optim="paged_adamw_8bit",      
     gradient_checkpointing=True,
     lr_scheduler_type="linear",
     warmup_ratio=0.03,
@@ -115,7 +110,7 @@ trainer = Trainer(
 print("Starting training…")
 trainer.train()
 print("Training done. Saving adapters…")
-trainer.save_model(OUT)  # saves LoRA adapters
+trainer.save_model(OUT) 
 
 print("Merging adapters into base and saving merged checkpoint…")
 merged_dir = pathlib.Path(OUT) / "merged"
