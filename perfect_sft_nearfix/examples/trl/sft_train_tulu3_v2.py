@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import os, json, random, argparse
 from pathlib import Path
 from datasets import Dataset
