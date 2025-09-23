@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import argparse, json, random
 from pathlib import Path
 from datasets import Dataset
