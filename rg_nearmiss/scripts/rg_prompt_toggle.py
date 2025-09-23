@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import sys, shutil
 from pathlib import Path
 
