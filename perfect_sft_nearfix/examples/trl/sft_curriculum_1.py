@@ -34,7 +34,6 @@ class PeftSftTrainer(BasePlayPen):
                 config=config
             )
 
-        # curriculum difficulty buckets
         difficulties = {
             "easy": {
                 "adventuregame": ["home_deliver_three_basic_easy", "home_deliver_three_basic_easy_invlimittwo"],
@@ -132,7 +131,6 @@ class PeftSftTrainer(BasePlayPen):
             model_name = self.learner.model.config._name_or_path.replace("/", "_")
             output_dir = f"models/sft+lora/{model_name}/stage_{stage_idx}_{difficulty_lvl}"
 
-            # Initialize training configuration
             config_trl = trl.SFTConfig(
                 max_length=300,
                 output_dir=output_dir,
@@ -144,7 +142,6 @@ class PeftSftTrainer(BasePlayPen):
                 report_to=["wandb"] if config.get("wandb", {}).get("enable", False) else []
             )
             
-            # Initialize trainer context
             trainer = trl.SFTTrainer(
                 model=self.learner.model,
                 train_dataset=stage_dataset["train"],
